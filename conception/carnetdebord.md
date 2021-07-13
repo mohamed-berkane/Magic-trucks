@@ -18,14 +18,19 @@ Nous avons eu en visio via Zoom pendant plus d'une heure, Guillaume et Audrey po
 Aujourd'hui, nous avons déterminé les rôles:
 
 Product Owner_____________________________Atouss
-Scrum Master______________________________Mickael & Florent
+Scrum Master______________________________Florent & Mickael
 Lead dev front____________________________Mickael & Mohamed 
-Laed dev back_____________________________Florent & Robert
+Lead dev back_____________________________Florent & Robert
 Référents techniques : git________________Robert
 Référents techniques : techno_____________Florent
 
 Ainsi que la création du MCD (fichier magic-trucks.drawio)
-Nous avons également installé WP
+Nous avons également installé WP chacun sur nos VM
+
+Cet après midi, nous avons le crée le cahier des charges (disponible sur Drive), 
+ainsi qu'une arbo.
+
+
 
 
 
