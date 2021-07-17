@@ -24,5 +24,6 @@ content/themes/*
 #!/content/themes/custom_theme
 
 content/plugins/*
-!content/plugins/
+!content/plugins
+!content/plugins/magic-trucks
 #!/content/plugins/custom_plugin
