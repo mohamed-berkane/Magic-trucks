@@ -1,0 +1,13 @@
+{
+    "autoload": {
+        "psr-4" : {
+            "magicTrucks\\" : "./class"
+        }
+    },
+    "config": {
+        "vendor-dir": "vendor-magic-trucks"
+    },
+    "require": {
+        "altorouter/altorouter": "^2.0"
+    }
+}
