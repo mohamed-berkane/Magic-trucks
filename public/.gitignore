@@ -8,6 +8,7 @@ package-lock.json
 vendor
 composer.lock
 
+
 .htaccess
 
 wp
