@@ -40,7 +40,7 @@ class Plugin
 
         // Création des custom tables au moment de l'activation du plugin
         $model = new WorkshopRegistration();
-        // $model->createTable();
+        $model->createTable();
 
 
     }
@@ -54,7 +54,7 @@ class Plugin
         // Suppresion des custom tables au moment de la désactivation du plugin
         // Attention ceci devrait être fait lors de la désinstallation du plugin ! (exemple ici à titre pédagogique)
         $model = new WorkshopRegistration();
-        // $model->dropTable();
+        $model->dropTable();
 
 
     }
