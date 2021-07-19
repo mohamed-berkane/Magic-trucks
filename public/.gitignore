@@ -26,6 +26,7 @@ content/themes/*
 .DS_Store
 wp-cli.yml
 content/plugins/*
-!content/plugins/magic-trucks/
+!content/plugins
+!content/plugins/magic-trucks
 
 
