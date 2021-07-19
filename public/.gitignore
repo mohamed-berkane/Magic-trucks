@@ -23,9 +23,14 @@ content/themes/*
 !content/themes/magic-trucks
 #!/content/themes/custom_theme
 
-content/plugins/*
 !content/plugins/
+<<<<<<< HEAD
 #!/content/plugins/custom_plugin
 
 .DS_Store
 wp-cli.yml
+=======
+content/plugins/*
+!content/plugins/magic-trucks/
+#!/content/plugins/custom_plugin
+>>>>>>> c625e64d75eff0ef943ea8df4d78b34473284aec
