@@ -26,3 +26,6 @@ content/themes/*
 content/plugins/*
 !content/plugins/
 #!/content/plugins/custom_plugin
+
+.DS_Store
+wp-cli.yml
