@@ -1,13 +1,13 @@
 <?php
 /**
- * Plugin Name: Magic-Trucks cours
+ * Plugin Name: Magic-Trucks
  * Author: Magic-Trucks team
- * Description: Pligin créé pour le projet d'apotheose 
+ * Description: Plugin créé pour le projet d'apotheose 
  */
 
 use magicTrucks\Plugin;
 
-//require __DIR__ . '/vendor-magic-trucks/autoload.php';
+require __DIR__ . '/vendor-magic-trucks/autoload.php';
 
 
 // instanciation du plugin

@@ -2,7 +2,7 @@
 
 namespace magicTrucks;
 
-// use OProfile\Models\DeveloperSkillModel;
+use magicTrucks\Models\WorkshopRegistration;
 // use OProfile\Models\DeveloperTechnologyModel;
 // use OProfile\Models\DeveloperProjectModel;
 
@@ -30,68 +30,33 @@ class Plugin
             [$this, 'createProjectCustomPostType']
         );
 
-        add_action(
-            'init',
-            [$this, 'createTechnologyCustomTaxonomie']
-        );
-
-        add_action(
-            'init',
-            [$this, 'createActivitySectorCustomTaxonomie']
-        );
-
-        add_action(
-            'init',
-            [$this, 'createSkillCustomTaxonomie']
-        );
-
-        add_action(
-            'init',
-            [$this, 'createDeveloperProfileCustomPostType']
-        );
-
-        add_action(
-            'init',
-            [$this, 'createCustomerProfileCustomPostType']
-        );
-
-
     }
 
     public function activate()
     {
         // STEP WP PLUGIN ROLE activation des rôles pour le plugin
-        $this->registerDeveloperRole();
-        $this->registerCustomerRole();
+        // $this->registerDeveloperRole();
+        // $this->registerCustomerRole();
 
         // Création des custom tables au moment de l'activation du plugin
-        $model = new DeveloperTechnologyModel();
-        $model->createTable();
+        $model = new WorkshopRegistration();
+        // $model->createTable();
 
-        $model = new DeveloperSkillModel();
-        $model->createTable();
-
-        $model = new DeveloperProjectModel();
-        $model->createTable();
 
     }
 
     public function deactivate()
     {
         // IMPORTANT WP PLUGIN ROLE ne pas oublier de supprimer les rôles lors de la désactivation du plugin !
-        remove_role('developer');
-        remove_role('customer');
+        // remove_role('developer');
+        // remove_role('customer');
 
         // Suppresion des custom tables au moment de la désactivation du plugin
         // Attention ceci devrait être fait lors de la désinstallation du plugin ! (exemple ici à titre pédagogique)
-        $model = new DeveloperTechnologyModel();
-        $model->dropTable();
+        $model = new WorkshopRegistration();
+        // $model->dropTable();
 
-        $model = new DeveloperSkillModel();
-        $model->dropTable();
 
-        $model = new DeveloperProjectModel();
-        $model->dropTable();
     }
 
 
