@@ -8,6 +8,7 @@ package-lock.json
 vendor
 composer.lock
 
+
 .htaccess
 
 wp
@@ -21,8 +22,7 @@ content/*
 content/themes/*
 !content/themes
 !content/themes/magic-trucks
+
 #!/content/themes/custom_theme
 
-content/plugins/*
-!content/plugins/
-#!/content/plugins/custom_plugin
+
