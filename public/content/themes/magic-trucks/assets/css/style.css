@@ -1,4 +1,5 @@
 #head .lead {
+    
 
     background-color: aliceblue;
     width: 30%;
@@ -10,7 +11,7 @@
     padding-bottom: 2%;
 }
 
-#head .tagline {
+ .tagline {
     color:black
 
 }
@@ -19,13 +20,15 @@
     background:  url( ../images/magic_trucks7.png);
 }
 
-#head .btn-default{
+ .btn-default{
 
     background-color: brown;
     color:white;
 }
 
-
+#head{
+    background:#181015 url( ../images/2camion.png)10% no-repeat; background-size: cover; min-height:520px; text-align: center; padding-top:240px; color:white; font-family:"Open sans", Helvetica, Arial; font-weight:300;
+}
     
 
 
