@@ -22,12 +22,7 @@ content/*
 content/themes/*
 !content/themes
 !content/themes/magic-trucks
-content/themes/magic-trucks/*
-#!/content/themes/custom_theme
 
-.DS_Store
-wp-cli.yml
-content/plugins/*
-!content/plugins/magic-trucks/
+#!/content/themes/custom_theme
 
 
