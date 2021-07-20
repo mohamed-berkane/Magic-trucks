@@ -23,6 +23,9 @@ content/themes/*
 !content/themes
 !content/themes/magic-trucks
 
+content/plugins/*
+!content/themes
+!content/themes/magic-trucks
 #!/content/themes/custom_theme
 
 
