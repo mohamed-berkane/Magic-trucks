@@ -1,5 +1,7 @@
 <?php
 
+
+
 //instanciation d'un nouveu router
 
 // use OProfile\Controllers\TestModelController;
@@ -7,11 +9,15 @@
 // use OProfile\Models\CoreModel;
 
 // $router = variable globale. 
-global $router;
+// global $router;
 
+// On instancie un nouveau router
 $router = new AltoRouter();
 
-// Calcul du base URI, altorouter en a besoin pour fonctionner
+// On détecte la racine du site 
+
+print_r($_SERVER);
+
 $baseURI = str_replace(
     '/index.php',
     '',
@@ -52,4 +58,4 @@ if($match) {
     // execution de la fonction
     $functionToCall();
 }
-
+ */
