@@ -2,7 +2,7 @@
 
 namespace magicTrucks;
 
-use magicTrucks\Models\WorkshopRegistration;
+//use magicTrucks\Models\WorkshopRegistration;
 
 
 class Plugin
@@ -11,13 +11,14 @@ class Plugin
     /**
      * @var Router
      */
+    
+     // On instancie la classe router depuis notre plugin
     protected $router;
-
 
     public function __construct()
     {
 
-        $registration = new Registration();
+        // $registration = new Registration();
 
         $this->router = new Router();
 
