@@ -3,6 +3,7 @@
 //instanciation d'un nouveu router
 
 use magicTrucks\Controllers\TestModelController;
+use magicTrucks\Controllers\UserController;
 
 // $router = variable globale. 
 // global $router;
@@ -10,10 +11,7 @@ use magicTrucks\Controllers\TestModelController;
 // On instancie un nouveau router
 $router = new AltoRouter();
 
-// On détecte la racine du site 
-
-print_r($_SERVER);
-
+// On configure la racine du site en allant chercher l'accueil du site et en retirant l'index
 $baseURI = str_replace(
     '/index.php',
     '',
@@ -24,19 +22,25 @@ $baseURI = str_replace(
 $router->setBasePath($baseURI);
 
 $router->map(
+    
     // methode HTTP a surveiller
     'GET',
+
     // url à matcher
     '/user/home/',
 
-    // fonction qui devra être appelée si la route est validée
     function() {
-    //     // instanciation du controller User
-    //    $controller = new UserController();
 
-    //    // appel de la méthode home
-    //    $controller->home();
+        //echo __LINE__; exit();
+
+        // On instancie le controller User
+        $controller = new UserController();
+
+        // On appelle la méthode home
+        $controller->home();
     },
+
+    // Id de la route
     'user-home'
 );
 
@@ -68,10 +72,10 @@ $match = $router->match();
 
 // si une route a été validée
 if($match) {
+
     // récuration de la fonction a executer
     $functionToCall = $match['target'];
 
     // execution de la fonction
     $functionToCall();
 }
-
