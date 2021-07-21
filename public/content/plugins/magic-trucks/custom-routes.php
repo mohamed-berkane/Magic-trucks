@@ -1,12 +1,8 @@
 <?php
 
-
-
 //instanciation d'un nouveu router
 
-// use OProfile\Controllers\TestModelController;
-// use OProfile\Controllers\UserController;
-// use OProfile\Models\CoreModel;
+use magicTrucks\Controllers\TestModelController;
 
 // $router = variable globale. 
 // global $router;
@@ -44,7 +40,27 @@ $router->map(
     'user-home'
 );
 
+//---------- Routes du projet Magic-Trucks ------------------
 
+$router->map(
+    'GET',
+    '/test/model/getWorkshopsByUserId/',
+    function() {
+        $controller = new TestModelController();
+       $controller->getWorkshopsByUserId();
+    },
+    'test-model-get-workshops-by-user-id'
+);
+
+$router->map(
+    'GET',
+    '/test/model/update/',
+    function() {
+        $controller = new TestModelController();
+       $controller->update();
+    },
+    'test-model-update'
+);
 
 
 // nous demandons à altorouter de vérifier s'il y a une route valide
@@ -58,4 +74,4 @@ if($match) {
     // execution de la fonction
     $functionToCall();
 }
- */
+
