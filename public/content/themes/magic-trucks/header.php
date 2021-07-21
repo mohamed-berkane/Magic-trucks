@@ -16,6 +16,9 @@
 	<link rel="stylesheet" href="content/themes/magic-trucks/assets/css/bootstrap-theme.css" media="screen" >
     <link rel="stylesheet" href="content/themes/magic-trucks/assets/css/main.css">
     <link rel="stylesheet" href="content/themes/magic-trucks/assets/css/style.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
 
 	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
 	<!--[if lt IE 9]>
@@ -32,34 +35,21 @@
 			<div class="navbar-header">
 				<!-- Button for smallest screens -->
 				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"><span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
-				<a class="navbar-brand" href="index.html"><img src="content/themes/magic-trucks/assets/images/logo.png" alt="Progressus HTML5 template"> Magic-trucks</a>
+				<a class="navbar-brand" href="index.html"><img src="assets/images/magic_trucks7.png" alt=""></a>
 			</div>
 			<div class="navbar-collapse collapse">
 				<ul class="nav navbar-nav pull-right">
 					<li class="active"><a href="#">Accueil</a></li>
-					<li><a href="about.html">Atelier</a></li>
-					<li class="dropdown">
-						<a href="#" class="dropdown-toggle" data-toggle="dropdown">A propos <b class="caret"></b></a>
-						<ul class="dropdown-menu">
-							<li><a href="sidebar-left.html">Left Sidebar</a></li>
-							<li class="active"><a href="sidebar-right.html">Right Sidebar</a></li>
-						</ul>
-					</li>
-					<li><a href="contact.html">Contactez moi</a></li>
-					<li><a class="btn" href="signin.html">Se connecter</a></li>
+					<li><a href="content/themes/magic-trucks/partials/workshop.php">Atelier</a></li>
+					<li><a href="about.html">Devis</a></li>
+					<li><a href="about.html">Galerie</a></li>
+					<li><a href="content/themes/magic-trucks/partials/about.php">Qui suis-je</a></li>
+					<li><a href="content/themes/magic-trucks/partials/contact.php">Contactez moi</a></li>
+					<li><a class="btn" href="content/themes/magic-trucks/partials/login.php">Se connecter</a></li>
 				</ul>
 			</div><!--/.nav-collapse -->
 		</div>
 	</div> 
 	<!-- /.navbar -->
 
-	<!-- Header -->
-	<header id="head">
-		<div class="container">
-			<div class="row">
-				<h1 class="lead">Magic trucks</h1>
-				<p class="tagline">L'évasion en camion aménagé sur-mesure</a></p>
-				<p><a class="btn btn-default btn-lg" role="button">Atelier aménagement</a> <a class="btn btn-action btn-lg" role="button">Demande de devis</a></p>
-			</div>
-		</div>
-	</header>
+	
