@@ -16,23 +16,21 @@ class Router
     public function registerRoutes()
     {
 
-
-        // STEP WP PLUGIN ROUTING déclaration d'une nouvelle route custom
+        // On déclare une nouvelle route custom
         add_rewrite_rule(
             // regexp de validation de l'url demandée par le visiteur
             'user/?.*',
 
-            // "URL virtuelle" comprise par wordpress
-            // de façon nous définissons une variable "$_GET" custom-route=true
+            // On définit une URL virtuelle équivalent à "$_GET" pour custom-route=true
             'index.php?custom-route=true',
 
-            // la règle se mettre en haut de la pile de priorité (donc sera prioritaire)
+            // On définit la priorité
             'top'
         );
 
          add_rewrite_rule(
-            'hello.php',
-            'index.php?routeTest=true',
+            'hello/?.*',
+            'index.php?test=true',
             'top'
         );
 
