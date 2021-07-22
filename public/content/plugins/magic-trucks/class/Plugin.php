@@ -1,8 +1,7 @@
 <?php
 
 namespace magicTrucks;
-
-//use magicTrucks\Models\WorkshopRegistration;
+use magicTrucks\Models\WorkshopRegistration;
 
 
 class Plugin
@@ -18,7 +17,7 @@ class Plugin
     public function __construct()
     {
 
-        // $registration = new Registration();
+        $registration = new Registration();
 
         $this->router = new Router();
 
