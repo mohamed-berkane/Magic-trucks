@@ -1,4 +1,8 @@
+<<<<<<< HEAD
+path: /var/www/html/apotheose/magic-trucks/public/wp
+=======
 path: wp
+>>>>>>> develop
 apache_modules:
   - mod_rewrite
   

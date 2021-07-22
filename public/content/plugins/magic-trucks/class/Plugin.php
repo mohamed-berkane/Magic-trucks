@@ -2,7 +2,7 @@
 
 namespace magicTrucks;
 
-use magicTrucks\Models\WorkshopRegistration;
+//use magicTrucks\Models\WorkshopRegistration;
 
 
 class Plugin
@@ -11,13 +11,14 @@ class Plugin
     /**
      * @var Router
      */
+    
+     // On instancie la classe router depuis notre plugin
     protected $router;
-
 
     public function __construct()
     {
 
-        $registration = new Registration();
+        // $registration = new Registration();
 
         $this->router = new Router();
 
@@ -36,7 +37,12 @@ class Plugin
         add_action(
             'init',
             [$this, 'createWorkshopCategoryCustomTaxonomie']
-        );      
+        ); 
+
+        add_action(
+            'init',
+            [$this, 'createQuotationCustomPostType']
+        );        
     }
 
     public function activate()
@@ -114,6 +120,37 @@ class Plugin
             ]
         );
     }
+
+       /* CPT Quotation */
+
+       public function createQuotationCustomPostType()
+       {
+           // enregistrement du custom post type "Dévis (Quotation)"
+           register_post_type(
+               'quotation',
+               [
+                   // L'identifiant du post_type
+                   'label' => 'Dévis',
+                   // true permet d'administrer le CPT dans le BO
+                   'public' => true,
+                   'hierarchical' => false,
+                   'menu_icon' => 'dashicons-money-alt',
+                   // NOTICE WP PLUGIN, fonctionnalités activable pour un cpt :  ‘title’, ‘editor’, ‘comments’, ‘revisions’, ‘trackbacks’, ‘author’, ‘excerpt’, ‘page-attributes’, ‘thumbnail’, ‘custom-fields’, and ‘post-formats’.
+                   'supports' => [
+                       'title',
+                       'author',
+                       'thumbnail',
+                       'editor',
+                       'excerpt',
+                       'custom-fields'
+                   ],
+                   // IMPORTANT WP PLUGIN cpt cababilities
+                   'capability_type' => 'post',
+                   'map_meta_cap' => false,
+               ]
+           );
+       }
+   
 
 
     // On ajoute le rôle Registered
