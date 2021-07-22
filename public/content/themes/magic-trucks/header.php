@@ -12,6 +12,8 @@
 	<link rel="stylesheet" href="content/themes/magic-trucks/assets/css/bootstrap.min.css">
 	<link rel="stylesheet" href="content/themes/magic-trucks/assets/css/font-awesome.min.css">
 
+	
+
 	<!-- Custom styles for our template -->
 	<link rel="stylesheet" href="content/themes/magic-trucks/assets/css/bootstrap-theme.css" media="screen" >
     <link rel="stylesheet" href="content/themes/magic-trucks/assets/css/main.css">
@@ -19,6 +21,8 @@
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
+
+	
 
 	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
 	<!--[if lt IE 9]>

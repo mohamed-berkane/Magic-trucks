@@ -26,6 +26,7 @@ body {
 }
 
 #head > div > div > h1 { /* L'évasion en camion aménagé sur-mesure */
+    
     color: #973a0e;
     font-size: 5rem;
     margin-top: 10rem;
@@ -37,7 +38,9 @@ body {
     padding:0.5rem;
     border-radius:5px;
     background-color: rgba(255, 228, 196, 0.89);
-    font-family: 'Permanent Marker', cursive;
+    font-family: "Gill Sans Extrabold", sans-serif;
+    font-family: "Goudy Bookletter 1911", sans-serif;
+    
 }
 
 #head > div > div > p > a.btn.btn-action.btn-lg { /* bouton Atelier aménagement */
@@ -100,6 +103,11 @@ body > div.jumbotron.top-space  {  /* section 4 icones */
     background: #1eb635;
     width: 100%;
     margin-top: 0px;
+}
+
+#carousel-magictrucks { /* Caroussel*/
+    margin-top: 30rem;
+    margin-bottom: -10rem;
 }
 
 body > div:nth-child(5) {  /* Mes réalisations */ 

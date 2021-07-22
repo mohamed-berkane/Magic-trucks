@@ -15,7 +15,7 @@
 	<!-- Intro -->
 	<div class="container text-center">
 		<br> <br>
-		<h2 class="thin">Changer de vie!</h2><br><br>
+		<h2 class="thin">Changez de vie!</h2><br><br>
 		<p class="text-muted">
 			<ul>Être en complète autonomie pourquoi tout quitter et vivre en camion aménagé?<br><br>
 				<li>Casser la routine</li><br>
@@ -67,35 +67,63 @@
 		</div>
 	</div>
 	<!-- /Highlights -->
+	
 
-	<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+	<div id="carousel-magictrucks" class="carousel slide" data-ride="carousel" data-interval="3000"> <!-- data = traitement JS -->
+  <!-- Indicators -->
   <ol class="carousel-indicators">
-    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+    <li data-target="#carousel-magictrucks" data-slide-to="0" class="active"></li>
+    <li data-target="#carousel-magictrucks" data-slide-to="1"></li>
+    <li data-target="#carousel-magictrucks" data-slide-to="2"></li>
+    <li data-target="#carousel-magictrucks" data-slide-to="3"></li>
+    <li data-target="#carousel-magictrucks" data-slide-to="4"></li>
   </ol>
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <img class="d-block w-100" src="..." alt="First slide">
+ 
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner" role="listbox">
+    <div class="item active">
+      <img src="/images/magictrucks10.png" alt="Installation de cuisine">
+      <div class="carousel-caption">
+        Installation de cuisine
+      </div>
     </div>
-    <div class="carousel-item">
-      <img class="d-block w-100" src="..." alt="Second slide">
+    <div class="item">
+      <img src="/images/cuisine2.jpg" alt="lit table">
+      <div class="carousel-caption">
+        Lit table
+      </div>
     </div>
-    <div class="carousel-item">
-      <img class="d-block w-100" src="..." alt="Third slide">
+    <div class="item">
+      <img src="/images/cuisine2.jpg" alt="Installation de poeles à granulés">
+      <div class="carousel-caption">
+        Installation de poeles à granulés
+      </div>
     </div>
+    <div class="item">
+      <img src="/images/cuisine2.jpg" alt="Extérieur en bardage bois">
+      <div class="carousel-caption">
+	   Extérieur en bardage bois
+      </div>
+    </div>
+    <div class="item">
+      <img src="/images/cuisine2.jpg" alt="Installation de panneaux solaire">
+      <div class="carousel-caption">
+	  Installation de panneaux solaire
+      </div>
+	</div>
   </div>
-  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="sr-only">Previous</span>
-  </a>
-  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="sr-only">Next</span>
-  </a>
 </div>
 
-
+		<!-- Controls -->
+		<a class="left carousel-control" href="#carousel-magictrucks" role="button" data-slide="prev">
+			<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+			<span class="sr-only">Précédent</span>
+		</a>
+		<a class="right carousel-control" href="#carousel-magictrucks" role="button" data-slide="next">
+			<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+			<span class="sr-only">Suivant</span>
+		</a>
+		</div>
 	
 	<!-- Social links. @TODO: replace by link/instructions in template -->
 	<section id="social">
