@@ -1,4 +1,6 @@
-<!-- container -->
+
+ <?php get_header() ?>
+       
 <div class="container">
 
 <ol class="breadcrumb">
@@ -70,3 +72,7 @@
 
 </div>
 </div>	<!-- /container -->
+
+<?php
+get_footer();
+?>
