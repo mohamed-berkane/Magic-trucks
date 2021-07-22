@@ -5,6 +5,7 @@ class Router
 {
     public function __construct()
     {
+        // hook permettant de lancer la méthode registerRoutes à l'initialisation du plugin
         add_action(
             'init',
             [$this, 'registerRoutes']
@@ -14,58 +15,51 @@ class Router
 
     public function registerRoutes()
     {
-        // DOC WP PLUGIN Custom route https://developer.wordpress.org/reference/functions/add_rewrite_rule/
 
-        // STEP WP PLUGIN ROUTING déclaration d'une nouvelle route custom
+        // On déclare une nouvelle route custom
         add_rewrite_rule(
             // regexp de validation de l'url demandée par le visiteur
-            // lorsque dans l'url il y aura la chaine "user" suivi d'un "/" optionnel, suivi de n'importe quoi
             'user/?.*',
 
-            // "URL virtuelle" comprise par wordpress
-            // de façon nous définissons une variable "$_GET" custom-route=true
-            'index.php?customRoute=true',
+            // On définit une URL virtuelle équivalent à "$_GET" pour custom-route=true
+            'index.php?custom-route=true',
 
-            // la règle se mettre en haut de la pile de priorité (donc sera prioritaire)
+            // On définit la priorité
             'top'
         );
 
-        // add_rewrite_rule(
-        //     'test/?.*',
-        //     'index.php?cEstNousQuOnVaGererNousMemeLaRoute=true',
-        //     'top'
-        // );
+         add_rewrite_rule(
+            'hello/?.*',
+            'index.php?test=true',
+            'top'
+        );
 
 
 
-        // STEP WP PLUGIN ROUTING rafraichissement du cache des règle de routing de wp
-        // WARNING WP PLUGIN ROUTING  attention faire un flush des routes de cette manière est mauvais pour les perfomances
-        // Wp enregistre les routes en bdd, il faut rafraichir les routes
+        // On rafraichit le cache des règle de routing de wp
         flush_rewrite_rules();
 
-        // STEP WP PLUGIN ROUTING nous demandons à wordpress de surveiller certaines "variables" passées dans l'url "virtuelle"
-
+        // On demande à WP de surveiller certaines "variables" passées dans l'url "virtuelle"
         add_filter('query_vars', function($query_vars) {
-            //Wordpress surveille la variable "virtuelle" custom-route
-            $query_vars[] = 'customRoute';
+
+            $query_vars[] = 'custom-route';
             return $query_vars;
         });
 
-        //Vérification est ce qu'une route custom a été détectée
-
+        
+        // Si on détecte la route, on lui affecte un template
         add_filter('template_include', function($template) {
 
             // récupération de la variable "virtuelle" custom-route
-            // "Equivalent" à  $customRoute = filter_input(INPUT_GET, 'custom-route');
-            $customRoute = get_query_var('customRoute');
+            $customRoute = get_query_var('custom-route');
+
             if($customRoute) {
-               //une custom route a été détecté, 
-               // nous indiquons à wordpress quel fichier il doit charger
+               // On indiquons à wordpress quel fichier il doit charger si la route est détectée
                return __DIR__ .'/../custom-routes.php';
             }
 
             // nous retournons le template que wordpress comptait utiliser
             return $template;
-        });
+        }); 
     }
 }

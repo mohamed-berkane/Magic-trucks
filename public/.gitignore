@@ -24,8 +24,13 @@ content/themes/*
 !content/themes/magic-trucks
 
 content/plugins/*
+<<<<<<< HEAD
+!content/plugins
+!content/plugins/magic-trucks
+=======
 !content/themes
 !content/themes/magic-trucks
 #!/content/themes/custom_theme
+>>>>>>> develop
 
 
