@@ -12,10 +12,17 @@
 	<link rel="stylesheet" href="content/themes/magic-trucks/assets/css/bootstrap.min.css">
 	<link rel="stylesheet" href="content/themes/magic-trucks/assets/css/font-awesome.min.css">
 
+	
+
 	<!-- Custom styles for our template -->
 	<link rel="stylesheet" href="content/themes/magic-trucks/assets/css/bootstrap-theme.css" media="screen" >
     <link rel="stylesheet" href="content/themes/magic-trucks/assets/css/main.css">
     <link rel="stylesheet" href="content/themes/magic-trucks/assets/css/style.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
+
+	
 
 	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
 	<!--[if lt IE 9]>
@@ -32,16 +39,16 @@
 			<div class="navbar-header">
 				<!-- Button for smallest screens -->
 				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"><span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
-				<a class="navbar-brand"> <href="index.php"> <img src="../magic-trucks/assets/images/magic trucks7.png" alt=""> </a>
+				<a class="navbar-brand" href="index.html"><img src="assets/images/magic_trucks7.png" alt=""></a>
 			</div>
 			<div class="navbar-collapse collapse">
 				<ul class="nav navbar-nav pull-right">
-				 	<li class="active"><a href="#">Accueil</a></li>
-					<li><a href="about.html">Atelier</a></li>
+					<li class="active"><a href="#">Accueil</a></li>
+					<li><a href="content/themes/magic-trucks/partials/workshop.php">Atelier</a></li>
 					<li><a href="about.html">Devis</a></li>
 					<li><a href="about.html">Galerie</a></li>
-					<li><a href="content/themes/magic-trucks/partials/about.php">Qui-sommes-nous</a></li>
-					<li><a href="content/themes/magic-trucks/partials/contact.php">Contacte moi</a></li>
+					<li><a href="content/themes/magic-trucks/partials/about.php">Qui suis-je</a></li>
+					<li><a href="content/themes/magic-trucks/partials/contact.php">Contactez moi</a></li>
 					<li><a class="btn" href="content/themes/magic-trucks/partials/login.php">Se connecter</a></li>
 				</ul>
 			</div><!--/.nav-collapse -->
@@ -49,13 +56,4 @@
 	</div> 
 	<!-- /.navbar -->
 
-	<!-- Header -->
-	<header id="head">
-		<div class="container">
-			<div class="row">
-				<h1 class="lead">Magic-Trucks</h1>
-				<p class="tagline">L'évasion en camion aménagé sur-mesure</a></p>
-				<p><a class="btn btn-action btn-lg" role="button">Atelier aménagement</a> <a class="btn btn-default btn-lg" role="button">Demande de devis</a> <a class="btn btn-action btn-lg" role="button">Galerie Photos</a></p>
-			</div>
-		</div>
-	</header>
+	

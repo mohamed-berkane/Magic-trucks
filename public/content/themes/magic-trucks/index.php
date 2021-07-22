@@ -1,97 +1,129 @@
 
-	<!-- /Header -->
 		<?php
 		get_header();
 		?>
+<!-- Header -->
+<header id="head">
+		<div class="container">
+			<div class="row">
+				<h1>L'évasion en camion aménagé sur-mesure</h1>
+				<p><a class="btn btn-action btn-lg" role="button">Atelier aménagement</a> <a class="btn btn-default btn-lg" role="button">Demande de devis</a> <a class="btn btn-action btn-lg2" role="button">Galerie Photos</a></p>
+			</div>
+		</div>
+	</header>
 
 	<!-- Intro -->
 	<div class="container text-center">
 		<br> <br>
-		<h2 class="thin">Change de vie</h2>
+		<h2 class="thin">Changez de vie!</h2><br><br>
 		<p class="text-muted">
-			The difference between involvement and commitment is like an eggs-and-ham breakfast:<br> 
-			the chicken was involved; the pig was committed.
+			<ul>Être en complète autonomie pourquoi tout quitter et vivre en camion aménagé?<br><br>
+				<li>Casser la routine</li><br>
+				<li>Se rapprocher de la nature</li><br>
+				<li>Vivre plus simplement</li><br>
+				<li>Profiter des moments présents</li><br>
+		        <li>S’ouvrir aux autres et au monde</li><br>
+			    <li>S’enrichir personnellement</li><br>
+				<li>Et plein d’autres encore à découvrir…</li><br>
+			</ul>
 		</p>
+
 	</div>
 	<!-- /Intro-->
 		
 	<!-- Highlights - jumbotron -->
 	<div class="jumbotron top-space">
-		<div class="container">
+		<div class="containerintro">
 			
-			<h3 class="text-center thin">Plan du site</h3>
+			<h3 class="text-center thin"></h3>
 			
 			<div class="row">
 				<div class="col-md-3 col-sm-6 highlight">
 					<div class="h-caption"><h4><i class="fa fa-cogs fa-5"></i>Conception</h4></div>
 					<div class="h-body text-center">
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque aliquid adipisci aspernatur. Soluta quisquam dignissimos earum quasi voluptate. Amet, dignissimos, tenetur vitae dolor quam iusto assumenda hic reprehenderit?</p>
+						<p>Je modifie votre camion dans mon local situé à Rouen</p>
 					</div>
 				</div>
 				<div class="col-md-3 col-sm-6 highlight">
-					<div class="h-caption"><h4><i class="fa fa-flash fa-5"></i>Atelier</h4></div>
+					<div class="h-caption"><h4><i class="fa fa-truck fa-5"></i>Aménagements de A à Z</h4></div>
 					<div class="h-body text-center">
-						<p>Seul ou avec tes amis, viens participer à nos ateliers ambulant. </p>
+						<p>Je vous aide à concevoir votre futur camion de A à Z</p>
 					</div>
 				</div>
 				<div class="col-md-3 col-sm-6 highlight">
-					<div class="h-caption"><h4><i class="fa fa-heart fa-5"></i>Capsule</h4></div>
+					<div class="h-caption"><h4><i class="fa fa-heart fa-5"></i>Aménagements partiels</h4></div>
 					<div class="h-body text-center">
-						<p>Tu veux faire des travaux sur ton camion, ou encore mieux : tu veux un nouveau camion entièrement aménagé par mes soins ? C'est par ici.</p>
+						<p>Je me déplace pour vous aider ou vous former</p>
 					</div>
 				</div>
 				<div class="col-md-3 col-sm-6 highlight">
-					<div class="h-caption"><h4><i class="fa fa-smile-o fa-5"></i>Agenda</h4></div>
+					<div class="h-caption"><h4><i class="fa fa-smile-o fa-5"></i>Ateliers thématiques</h4></div>
 					<div class="h-body text-center">
-						<p>Pour savoir où je suis, et où je serais les prochains mois. Très utile pour savoir si les prochains ateliers auront lieu non loin de chez toi...</p>
+						<p>Je vous aide à aménager ou à assurer la maintenance de votre camion</p>
 					</div>
 				</div>
 			</div> <!-- /row  -->
-		
+			<i class="fas fa-truck-moving"></i>
 		</div>
 	</div>
 	<!-- /Highlights -->
+	
 
-	<!-- container -->
-	<div class="container">
+	<div id="carousel-magictrucks" class="carousel slide" data-ride="carousel" data-interval="3000"> <!-- data = traitement JS -->
+  <!-- Indicators -->
+  <ol class="carousel-indicators">
+    <li data-target="#carousel-magictrucks" data-slide-to="0" class="active"></li>
+    <li data-target="#carousel-magictrucks" data-slide-to="1"></li>
+    <li data-target="#carousel-magictrucks" data-slide-to="2"></li>
+    <li data-target="#carousel-magictrucks" data-slide-to="3"></li>
+    <li data-target="#carousel-magictrucks" data-slide-to="4"></li>
+  </ol>
+ 
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner" role="listbox">
+    <div class="item active">
+      <img src="/images/magictrucks10.png" alt="Installation de cuisine">
+      <div class="carousel-caption">
+        Installation de cuisine
+      </div>
+    </div>
+    <div class="item">
+      <img src="/images/cuisine2.jpg" alt="lit table">
+      <div class="carousel-caption">
+        Lit table
+      </div>
+    </div>
+    <div class="item">
+      <img src="/images/cuisine2.jpg" alt="Installation de poeles à granulés">
+      <div class="carousel-caption">
+        Installation de poeles à granulés
+      </div>
+    </div>
+    <div class="item">
+      <img src="/images/cuisine2.jpg" alt="Extérieur en bardage bois">
+      <div class="carousel-caption">
+	   Extérieur en bardage bois
+      </div>
+    </div>
+    <div class="item">
+      <img src="/images/cuisine2.jpg" alt="Installation de panneaux solaire">
+      <div class="carousel-caption">
+	  Installation de panneaux solaire
+      </div>
+	</div>
+  </div>
+</div>
 
-		<h2 class="text-center top-space">Frequently Asked Questions</h2>
-		<br>
-
-		<div class="row">
-			<div class="col-sm-6">
-				<h3>Which code editor would you recommend?</h3>
-				<p>I'd highly recommend you <a href="http://www.sublimetext.com/">Sublime Text</a> - a free to try text editor which I'm using daily. Awesome tool!</p>
-			</div>
-			<div class="col-sm-6">
-				<h3>Nice header. Where do I find more images like that one?</h3>
-				<p>
-					Well, there are thousands of stock art galleries, but personally, 
-					I prefer to use photos from these sites: <a href="http://unsplash.com">Unsplash.com</a> 
-					and <a href="http://www.flickr.com/creativecommons/by-2.0/tags/">Flickr - Creative Commons</a></p>
-			</div>
-		</div> <!-- /row -->
-
-		<div class="row">
-			<div class="col-sm-6">
-				<h3>Can I use it to build a site for my client?</h3>
-				<p>
-					Yes, you can. You may use this template for any purpose, just don't forget about the <a href="http://creativecommons.org/licenses/by/3.0/">license</a>, 
-					which says: "You must give appropriate credit", i.e. you must provide the name of the creator and a link to the original template in your work. 
-				</p>
-			</div>
-			<div class="col-sm-6">
-				<h3>Can you customize this template for me?</h3>
-				<p>Yes, I can. Please drop me a line to sergey-at-pozhilov.com and describe your needs in details. Please note, my services are not cheap.</p>
-			</div>
-		</div> <!-- /row -->
-
-		<div class="jumbotron top-space">
-			<h4>Dicta, nostrum nemo soluta sapiente sit dolor quae voluptas quidem doloribus recusandae facere magni ullam suscipit sunt atque rerum eaque iusto facilis esse nam veniam incidunt officia perspiciatis at voluptatibus. Libero, aliquid illum possimus numquam fuga.</h4>
-     		<p class="text-right"><a class="btn btn-primary btn-large">Learn more »</a></p>
-  		</div>
-
-</div>	<!-- /container -->
+		<!-- Controls -->
+		<a class="left carousel-control" href="#carousel-magictrucks" role="button" data-slide="prev">
+			<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+			<span class="sr-only">Précédent</span>
+		</a>
+		<a class="right carousel-control" href="#carousel-magictrucks" role="button" data-slide="next">
+			<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+			<span class="sr-only">Suivant</span>
+		</a>
+		</div>
 	
 	<!-- Social links. @TODO: replace by link/instructions in template -->
 	<section id="social">
