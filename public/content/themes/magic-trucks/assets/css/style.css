@@ -88,12 +88,6 @@ body > div.container.text-center { /* Changer de vie */
     width: 100%;   
 }
 
-<<<<<<< HEAD
-#head .btn-default :hover{
-    background-color: brown;
-    color:white;
-}
-=======
 body > div.container.text-center > h2 { /* Changer de vie (titre) */
     color: #1eb635;
     font-weight: bold;
@@ -169,7 +163,6 @@ body > div:nth-child(5) > div:nth-child(3) {  /* Photos mes réalisations */
 
  
 
->>>>>>> develop
     
 
 
