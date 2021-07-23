@@ -1,0 +1,93 @@
+body {
+    display: flex;
+    background: #fff;
+}
+
+@media (min-width: 992px) {
+    .login__leftblock {
+        height:100vh;
+        width:50%;
+    }
+
+    #login {
+        width:50%;
+        margin: 0 5rem;
+        padding: 1% 0 0;
+    }    
+
+    #login:nth-child(1) {
+        width: 200px;
+    }
+}
+
+@media (max-width: 992px) {
+    .login form {
+        background:#F5F5F5;
+    }
+
+    .login__leftblock {
+        height:100vh;
+    }
+}
+
+.login__leftblock--imageblock {
+    height:100vh;
+    background: #eee;
+    background-image: url("../images/photoaccueil.jpg");
+    background-repeat:no-repeat;
+    background-attachment:fixed;
+    background-size:cover;
+    background-position:center center; 
+}
+
+.login h1 a {
+    display: none !important;
+}
+.login form {
+    border: none;
+    box-shadow: none;
+    border-radius: 4px;
+}
+
+.login h1 {
+    content: url("../images/magictrucks6.png");
+    max-width:25%;
+    max-height: 80px;
+    margin: auto;
+}
+
+
+.login input[type=password], .login input[type=text], .login input[type=email] {
+    font-size: .8rem;
+    min-height: 35px;
+    margin: 0 3px 8px 0;
+}
+
+.login input:hover {
+    border:3px #0a3b66 solid;
+}
+
+.login input[type=submit] {
+    background: #74d14c;
+    border:1px solid #74d14c;
+}
+
+.login label[for="user_login"]::after, .login label[for="user_email"]::after  {
+    content:" *";
+}
+
+.login label {
+    color: #74d14c;
+}
+
+.login #login_error {
+    background: rgba(214, 54, 56, .3);
+}
+
+#login a {
+    color: #0a3b66 !important;
+}
+
+.register {
+    font-weight: bold;
+}
