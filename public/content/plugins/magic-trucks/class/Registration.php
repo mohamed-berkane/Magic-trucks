@@ -43,6 +43,11 @@ class Registration
             10,
             3
         );
+
+/*         add_filter(
+            'wp_authenticate_user',
+            [$this, 'addSuccessRender']
+        ); */
     }
 
 
@@ -64,6 +69,19 @@ class Registration
             get_theme_file_uri('assets/css/register.css')
         );
         
+    }
+
+    // TODO --> rendu sur page conncernée
+    public function addSuccessRender(){
+
+        if (isset($_GET['checkemail'])) {
+            $checkRegistration = $_GET['checkemail'];
+            echo $checkRegistration . __LINE__ ;
+            if ($checkRegistration === 'registered') {
+                echo "trop fort !";
+            }
+        }
+
     }
 
     public function customizeForm()
@@ -219,7 +237,18 @@ class Registration
         // On l'associe à l'utilisateur
         wp_set_password($password, $userId);
 
-        // Todo création du profil utilisateur -> voir si table custom créée cf 2:03 - e08 n3
+        // On ajoute le rôle à l'utilisateur (1 seul choix pour le moment)
+        $userObject->add_role($currentRole);
+
+        // On crée le profil associé
+        if ($currentRome === 'registered') {
+            wp_insert_post([
+                'post_author' => $userId,
+                'post_status' => 'publish',
+                'post_title' => 'Mon compte',
+                'post_type' => 'registered-profile'
+            ]);
+        }
 
     }
 
