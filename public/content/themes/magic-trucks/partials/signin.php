@@ -59,7 +59,7 @@
 <div class="container">
 
 <ol class="breadcrumb">
-    <li><a href="index.html">Home</a></li>
+    <li><a href="/">Home</a></li>
     <li class="active">User access</li>
 </ol>
 
@@ -121,7 +121,6 @@
 
 </div>
 </div>	<!-- /container -->
-
 <footer id="footer" class="top-space">
 
 		<div class="footer1">
