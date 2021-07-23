@@ -2,11 +2,53 @@
 
 namespace magicTrucks\Controllers;
 
+use WP_Query;
 
-class UserController
+class UserController extends CoreController
 {
     public function home() 
     {
-        echo __LINE__; exit();
+        // On vérifie que l'utilisateur est connecté via le CoreController
+        $this->mustBeConnected();
+        
+        // On récupère les données de l'utilisateur WP actuel
+        $user = wp_get_current_user();
+
+        // On récupère le profil
+        $profile = $this->getProfile($user);
+        
+        $this->show(
+            'views/user/home', 
+            ['currentUser' => $user]
+        );
+
+    }
+
+    // Récupération du profile via la table custom
+    public function getProfile($user)
+    {
+        $options = [
+            'author' => $user->ID,
+            'post_type' => 'registered'
+        ];
+
+        // On prépare la requête dans une syntaxe propre à WP
+        $query = new WP_Query($options);
+
+        // On exécute la requête
+        $result = $query->have_posts();
+
+        // On vérifie que le profile de l'utilisateur connecté existe bien
+/*         if(count($query->posts) === 0) {
+            echo "Votre profil ne s'est pas créé correctement. Veuillez contacter l'administrateur du site";
+            // Todo -- trigger email
+            exit();
+        }
+
+        // Si oui on affiche les données du profil stockées dans un CPT - cf 1:18 e09 n2
+        else {
+            return $query->posts[0];
+        } */
+
     }
 }

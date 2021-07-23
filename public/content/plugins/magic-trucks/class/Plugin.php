@@ -1,8 +1,7 @@
 <?php
 
 namespace magicTrucks;
-
-//use magicTrucks\Models\WorkshopRegistration;
+use magicTrucks\Models\WorkshopRegistration;
 
 
 class Plugin
@@ -18,7 +17,7 @@ class Plugin
     public function __construct()
     {
 
-        // $registration = new Registration();
+        $registration = new Registration();
 
         $this->router = new Router();
 
@@ -29,20 +28,30 @@ class Plugin
             [$this, 'createWorkshopCustomPostType']
         );
 
+        // On associe une taxonomie difficulté au workshop
         add_action(
             'init',
             [$this, 'createWorkshopDifficultyCustomTaxonomie']
         );
 
+        // On associe une taxonomie catégorie au workshop
         add_action(
             'init',
             [$this, 'createWorkshopCategoryCustomTaxonomie']
         ); 
 
+        // On crée un CPT de type devis (quotation)
         add_action(
             'init',
             [$this, 'createQuotationCustomPostType']
-        );        
+        );      
+        
+        // On crée un CPT de type profile pour que les utilisateurs puissent gérer leurs données
+        add_action(
+            'init',
+            [$this, 'createRegisteredProfileCustomPostType']
+        );
+
     }
 
     public function activate()
@@ -121,36 +130,58 @@ class Plugin
         );
     }
 
-       /* CPT Quotation */
+    /* CPT Quotation */
 
-       public function createQuotationCustomPostType()
-       {
-           // enregistrement du custom post type "Dévis (Quotation)"
-           register_post_type(
-               'quotation',
-               [
-                   // L'identifiant du post_type
-                   'label' => 'Dévis',
-                   // true permet d'administrer le CPT dans le BO
-                   'public' => true,
-                   'hierarchical' => false,
-                   'menu_icon' => 'dashicons-money-alt',
-                   // NOTICE WP PLUGIN, fonctionnalités activable pour un cpt :  ‘title’, ‘editor’, ‘comments’, ‘revisions’, ‘trackbacks’, ‘author’, ‘excerpt’, ‘page-attributes’, ‘thumbnail’, ‘custom-fields’, and ‘post-formats’.
-                   'supports' => [
-                       'title',
-                       'author',
-                       'thumbnail',
-                       'editor',
-                       'excerpt',
-                       'custom-fields'
-                   ],
-                   // IMPORTANT WP PLUGIN cpt cababilities
-                   'capability_type' => 'post',
-                   'map_meta_cap' => false,
-               ]
-           );
-       }
+    public function createQuotationCustomPostType()
+    {
+        // enregistrement du custom post type "Dévis (Quotation)"
+        register_post_type(
+            'quotation',
+            [
+                // L'identifiant du post_type
+                'label' => 'Devis',
+                // true permet d'administrer le CPT dans le BO
+                'public' => true,
+                'hierarchical' => false,
+                'menu_icon' => 'dashicons-money-alt',
+                // NOTICE WP PLUGIN, fonctionnalités activable pour un cpt :  ‘title’, ‘editor’, ‘comments’, ‘revisions’, ‘trackbacks’, ‘author’, ‘excerpt’, ‘page-attributes’, ‘thumbnail’, ‘custom-fields’, and ‘post-formats’.
+                'supports' => [
+                    'title',
+                    'author',
+                    'thumbnail',
+                    'editor',
+                    'excerpt',
+                    'custom-fields'
+                ],
+                // IMPORTANT WP PLUGIN cpt cababilities
+                'capability_type' => 'post',
+                'map_meta_cap' => false,
+            ]
+        );
+    }
    
+    // CPT profile
+    public function createRegisteredProfileCustomPostType()
+    {
+        // echo __LINE__; exit();
+        register_post_type (
+            'registered-profile',
+            [
+                'label' => 'Profile inscrits',
+                'public' => true,
+                'hierarchical' => false,
+                'menu_icon' => 'dashicons-businessman',
+                'supports' => [
+                    'title',
+                    'thumbnail',
+                    'editor',
+                    'author'
+                ],
+                'capability_type' => 'post',
+                'map_meta_cap' => true,
+            ]
+        );
+    }
 
 
     // On ajoute le rôle Registered
