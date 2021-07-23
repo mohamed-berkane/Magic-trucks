@@ -12,7 +12,7 @@ body {
     margin: 0rem 0rem 10rem 0rem;
 }
 
-#head .tagline {
+ .tagline {
     color:black
 }
 
@@ -135,6 +135,8 @@ body > div:nth-child(5) > div:nth-child(3) {  /* Photos mes réalisations */
 
 .row {
     padding-top:1rem;
+    color: white;
+    text-align: center;
 }
 
 .header-workshop {
@@ -193,9 +195,26 @@ body > div:nth-child(5) > div:nth-child(3) {  /* Photos mes réalisations */
 
 
 
+.img-camion{
+    box-shadow: 0em 0em 1em 1em white;
+
+}
+.sidebar{
+    padding-top: 12em;
+    width: 38%;
+}
+.oupss{
+    margin-top: 12em;
+    color: white;
+    text-align: center;
+
+}
+body > div.jumbotron.top-space {
+    margin-top: 1rem;
+}
+
  
 
-    
 
 
 
