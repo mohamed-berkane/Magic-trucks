@@ -44,10 +44,6 @@ class Registration
             3
         );
 
-/*         add_filter(
-            'wp_authenticate_user',
-            [$this, 'addSuccessRender']
-        ); */
     }
 
 
@@ -69,19 +65,6 @@ class Registration
             get_theme_file_uri('assets/css/register.css')
         );
         
-    }
-
-    // TODO --> rendu sur page conncernée
-    public function addSuccessRender(){
-
-        if (isset($_GET['checkemail'])) {
-            $checkRegistration = $_GET['checkemail'];
-            echo $checkRegistration . __LINE__ ;
-            if ($checkRegistration === 'registered') {
-                echo "trop fort !";
-            }
-        }
-
     }
 
     public function customizeForm()
@@ -128,14 +111,14 @@ class Registration
                 // identifiant de l'erreur
                 'user_role_empty',
                 // message d'erreur
-                '<b>Rôle vide</b> : ce message ne devrait jamais apparaitre de toute manière'
+                '<strong>Rôle vide</strong> : ce message ne devrait jamais apparaitre de toute manière'
             );
         }
 
         if($role !== 'registered') {
             $errors->add(
                 'password_unmatched',
-                '<b>Rôle inconnu</b> : screugnieugnieu, vous essayez de faire des bêtises'
+                '<strong>Rôle inconnu</strong> : screugnieugnieu, vous essayez de faire des bêtises'
             );
         }
          
@@ -151,7 +134,7 @@ class Registration
                 // identifiant de l'erreur
                 'user_password_invalid',
                 // message d'erreur
-                '<b>Mot de passe invalide : </b>il doit contenir 8 caractères dont 1 majuscule, 1 minuscule, 1 caractère spécial et 1 chiffre'
+                '<strong>Mot de passe invalide : </strong>il doit contenir 8 caractères dont 1 majuscule, 1 minuscule, 1 caractère spécial et 1 chiffre'
             );
         }
 
@@ -159,7 +142,17 @@ class Registration
         if (!$this->checkPasswordConfirmation()) {
             $errors->add(
                 'user_passwords_unmatched',
-                '<b>Mot de passe non confirmé</b> : vous devez avoir la berlue'
+                '<strong>Mot de passe non confirmé</strong> : vous devez avoir la berlue'
+            );
+        }
+
+        $firstname = filter_input(INPUT_POST, 'user_firstname');
+        $lastname = filter_input(INPUT_POST, 'user_lastname');
+
+        if(!$firstname || !$lastname) {
+            $errors->add(
+                'empty_names',
+                '<strong>Nom et/ou prénom absent(s)</strong> : vous devez compléter le nom et le prénom'
             );
         }
 
@@ -241,7 +234,7 @@ class Registration
         $userObject->add_role($currentRole);
 
         // On crée le profil associé
-        if ($currentRome === 'registered') {
+        if ($currentRole === 'registered') {
             wp_insert_post([
                 'post_author' => $userId,
                 'post_status' => 'publish',

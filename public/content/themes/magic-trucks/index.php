@@ -3,14 +3,14 @@
 		get_header();
 		?>
 <!-- Header -->
-<header id="head">
-		<div class="container">
-			<div class="row">
-				<h1>L'évasion en camion aménagé sur-mesure</h1>
-				<p><a class="btn btn-action btn-lg" role="button">Atelier aménagement</a> <a class="btn btn-default btn-lg" role="button">Demande de devis</a> <a class="btn btn-action btn-lg2" role="button">Galerie Photos</a></p>
-			</div>
+<header id="head" >
+	<div class="container">
+		<div class="row">
+			<h1>L'évasion en camion aménagé sur-mesure</h1>
+			<p><a class="btn btn-action btn-lg" role="button">Atelier aménagement</a> <a class="btn btn-default btn-lg" role="button">Demande de devis</a> <a class="btn btn-action btn-lg2" role="button">Galerie Photos</a></p>
 		</div>
-	</header>
+	</div>
+</header>
 
 	<!-- Intro -->
 	<div class="container text-center">
@@ -82,31 +82,31 @@
   <!-- Wrapper for slides -->
   <div class="carousel-inner" role="listbox">
     <div class="item active">
-      <img src="/images/magictrucks10.png" alt="Installation de cuisine">
+      <img src="assets/images/magictrucks10.png" alt="Installation de cuisine">
       <div class="carousel-caption">
         Installation de cuisine
       </div>
     </div>
     <div class="item">
-      <img src="/images/cuisine2.jpg" alt="lit table">
+      <img src="content/themes/magic-trucks/assets/images/cuisine2.jpg" alt="lit table">
       <div class="carousel-caption">
         Lit table
       </div>
     </div>
     <div class="item">
-      <img src="/images/cuisine2.jpg" alt="Installation de poeles à granulés">
+      <img src="assets/images/cuisine2.jpg" alt="Installation de poeles à granulés">
       <div class="carousel-caption">
         Installation de poeles à granulés
       </div>
     </div>
     <div class="item">
-      <img src="/images/cuisine2.jpg" alt="Extérieur en bardage bois">
+      <img src="/assets/images/cuisine2.jpg" alt="Extérieur en bardage bois">
       <div class="carousel-caption">
 	   Extérieur en bardage bois
       </div>
     </div>
     <div class="item">
-      <img src="/images/cuisine2.jpg" alt="Installation de panneaux solaire">
+      <img src="assets/images/cuisine2.jpg" alt="Installation de panneaux solaire">
       <div class="carousel-caption">
 	  Installation de panneaux solaire
       </div>

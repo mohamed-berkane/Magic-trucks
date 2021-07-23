@@ -39,7 +39,7 @@ class UserController extends CoreController
         $result = $query->have_posts();
 
         // On vérifie que le profile de l'utilisateur connecté existe bien
-        if(count($query->posts) === 0) {
+/*         if(count($query->posts) === 0) {
             echo "Votre profil ne s'est pas créé correctement. Veuillez contacter l'administrateur du site";
             // Todo -- trigger email
             exit();
@@ -48,7 +48,7 @@ class UserController extends CoreController
         // Si oui on affiche les données du profil stockées dans un CPT - cf 1:18 e09 n2
         else {
             return $query->posts[0];
-        }
+        } */
 
     }
 }
