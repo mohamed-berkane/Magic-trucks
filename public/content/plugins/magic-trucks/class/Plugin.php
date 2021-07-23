@@ -44,7 +44,18 @@ class Plugin
         add_action(
             'init',
             [$this, 'createQuotationCustomPostType']
-        );      
+        ); 
+
+        // On associe une taxonomie budget au devis
+        add_action(
+            'init',
+            [$this, 'createQuotationBudgetCustomTaxonomie']
+        );  
+        // On associe une taxonomie place disponible au devis
+        add_action(
+        'init',
+        [$this, 'createQuotationPlaceCustomTaxonomie']
+    );        
         
         // On crée un CPT de type profile pour que les utilisateurs puissent gérer leurs données
         add_action(
@@ -160,7 +171,37 @@ class Plugin
             ]
         );
     }
-   
+
+    public function createQuotationBudgetCustomTaxonomie()
+    {
+        register_taxonomy(
+            'budget',
+            // On assigne cette taxonomie au CPT Quotation (Devis)
+            ['quotation'],
+            // On configure les options
+            [
+                'label' => 'Budget',
+                'hierachical' => false,
+                'public' => true
+            ]
+        );
+    }
+
+    public function createQuotationPlaceCustomTaxonomie()
+    {
+        register_taxonomy(
+            'place',
+            // On assigne cette taxonomie au CPT Quotation (Devis)
+            ['quotation'],
+            // On configure les options
+            [
+                'label' => 'Place disponible',
+                'hierachical' => false,
+                'public' => true
+            ]
+        );
+    }
+
     // CPT profile
     public function createRegisteredProfileCustomPostType()
     {

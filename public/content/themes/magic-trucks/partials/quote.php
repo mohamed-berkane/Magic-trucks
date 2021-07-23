@@ -99,7 +99,7 @@
                                     </select>
 								</div>
 								<div class="top-margin">
-									<label>J'ai de la place pour accueillir Guillaume (jardin, grand parking...)</label>
+									<label>J'ai de la place pour accueillir Guillaume (...)</label>
 									<select name="insite" id="insite-select" class="form-control">
                                         <option value="">--Choisissez une option--</option>
                                         <option value="small-work">Oui</option>
