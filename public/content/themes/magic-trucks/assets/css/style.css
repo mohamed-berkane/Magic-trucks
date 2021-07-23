@@ -1,14 +1,9 @@
-<<<<<<< HEAD
-#head .lead {
-    
-=======
 body {
     font-family: verdana, sans-serif;
     margin: 0;
     background: black;
     margin-bottom: 0px;
 }
->>>>>>> develop
 
 #head {
     height: 100rem;  
@@ -93,11 +88,6 @@ body > div.container.text-center { /* Changer de vie */
     width: 100%;   
 }
 
-<<<<<<< HEAD
-#head{
-    background:#181015 url( ../images/2camion.png)10% no-repeat; background-size: cover; min-height:520px; text-align: center; padding-top:240px; color:white; font-family:"Open sans", Helvetica, Arial; font-weight:300;
-}
-=======
 body > div.container.text-center > h2 { /* Changer de vie (titre) */
     color: #1eb635;
     font-weight: bold;
@@ -169,10 +159,30 @@ body > div:nth-child(5) > div:nth-child(3) {  /* Photos mes réalisations */
     padding-top:3rem;
 }
 
+.row{
+    color:rgb(158, 157, 157);
+    text-align: center;
 
+}
+.img-camion{
+    box-shadow: 0em 0em 1em 1em white;
+
+}
+.sidebar{
+    padding-top: 12em;
+    width: 38%;
+}
+.oupss{
+    margin-top: 12em;
+    color: white;
+    text-align: center;
+
+}
+body > div.jumbotron.top-space {
+    margin-top: 1rem;
+}
 
  
->>>>>>> develop
 
 
 

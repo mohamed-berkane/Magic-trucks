@@ -1,101 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport"    content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="">
+	<meta name="author"      content="Sergey Pozhilov (GetTemplate.com)">
 
-	<?php
-	get_header();
-	?>
-        
-<div class="container">
+	<link rel="shortcut icon" href="../assets/images/gt_favicon.png">
+	
+	<link rel="stylesheet" media="screen" href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,700">
+	<link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+	<link rel="stylesheet" href="../assets/css/font-awesome.min.css">
 
-		<ol class="breadcrumb">
-			<li><a href="index.html">Home</a></li>
-			<li class="active">About</li>
-		</ol>
+	<!-- Custom styles for our template -->
+	<link rel="stylesheet" href="../assets/css/bootstrap-theme.css" media="screen" >
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
 
-		<div class="row">
-			
-			<!-- Article main content -->
-			<article class="col-sm-8 maincontent">
-				<header class="page-header">
-					<h1 class="page-title">Qui sommes-nous ?</h1>
-				</header>
-				<h3>Lorem ipsum</h3>
-				<p><img src="assets/images/mac.jpg" alt="" class="img-rounded pull-right" width="300" > Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet, consequuntur eius repellendus eos aliquid molestiae ea laborum ex quibusdam laudantium voluptates placeat consectetur quam aliquam beatae soluta accusantium iusto nihil nesciunt unde veniam magnam repudiandae sapiente.</p>
-				<p>Quos, aliquam nam velit impedit minus tenetur beatae voluptas facere sint pariatur! Voluptatibus, quisquam, error, est assumenda corporis inventore illo nesciunt iure aut dolor possimus repellat minima veniam alias eius!</p>
-				<h3>Necessitatibus</h3>
-				<p>Velit, odit, eius, libero unde impedit quaerat dolorem assumenda alias consequuntur optio quae maiores ratione tempore sit aliquid architecto eligendi pariatur ab soluta doloremque dicta aspernatur labore quibusdam dolore corrupti quod inventore. Maiores, repellat, consequuntur eius repellendus eos aliquid molestiae ea laborum ex quibusdam laudantium voluptates placeat consectetur quam aliquam!</p>
-				<h3>Fugit, laboriosam</h3>
-				<p>Eum, quasi, est, vitae, ipsam nobis consectetur ea aspernatur ad eos voluptatibus fugiat nisi perferendis impedit. Quam, nulla, excepturi, voluptate minus illo tenetur sint ab in culpa cumque impedit quibusdam. Saepe, molestias quia voluptatem natus velit fugiat omnis rem eos sapiente quasi quaerat aspernatur quisquam deleniti accusantium laboriosam odio id?</p>
-				<h3>Doloribus, illo ipsum</h3>
-				<p>Velit, odit, eius, libero unde impedit quaerat dolorem assumenda alias consequuntur optio quae maiores ratione tempore sit aliquid architecto eligendi pariatur ab soluta doloremque dicta aspernatur labore quibusdam dolore corrupti quod inventore. Maiores, repellat, consequuntur eius repellendus eos aliquid molestiae ea laborum ex quibusdam laudantium voluptates placeat consectetur quam aliquam!</p>
-				<p>Eum, quasi, est, vitae, ipsam nobis consectetur ea aspernatur ad eos voluptatibus fugiat nisi perferendis impedit. Quam, nulla, excepturi, voluptate minus illo tenetur sint ab in culpa cumque impedit quibusdam. Saepe, molestias quia voluptatem natus velit fugiat omnis rem eos sapiente quasi quaerat aspernatur quisquam deleniti accusantium laboriosam odio id?</p>
-				
-			</article>
-			<!-- /Article -->
-			
-			<!-- Sidebar -->
-			<aside class="col-sm-4 sidebar sidebar-right">
-
-				<div class="widget">
-					<h4>Vacancies</h4>
-					<ul class="list-unstyled list-spaces">
-						<li><a href="">Lorem ipsum dolor</a><br><span class="small text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi, laborum.</span></li>
-                        <div class="container">
-
-<ol class="breadcrumb">
-    <li><a href="index.html">Home</a></li>
-    <li class="active">About</li>
-</ol>
-
-<div class="row">
+	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!--[if lt IE 9]>
+	<script src="assets/js/html5shiv.js"></script>
+	<script src="assets/js/respond.min.js"></script>
+	<![endif]-->
     
-    <!-- Article main content -->
-    <article class="col-sm-8 maincontent">
-        <header class="page-header">
-            <h1 class="page-title">About us</h1>
-        </header>
-        <h3>Lorem ipsum</h3>
-        <p><img src="assets/images/mac.jpg" alt="" class="img-rounded pull-right" width="300" > Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet, consequuntur eius repellendus eos aliquid molestiae ea laborum ex quibusdam laudantium voluptates placeat consectetur quam aliquam beatae soluta accusantium iusto nihil nesciunt unde veniam magnam repudiandae sapiente.</p>
-        <p>Quos, aliquam nam velit impedit minus tenetur beatae voluptas facere sint pariatur! Voluptatibus, quisquam, error, est assumenda corporis inventore illo nesciunt iure aut dolor possimus repellat minima veniam alias eius!</p>
-        <h3>Necessitatibus</h3>
-        <p>Velit, odit, eius, libero unde impedit quaerat dolorem assumenda alias consequuntur optio quae maiores ratione tempore sit aliquid architecto eligendi pariatur ab soluta doloremque dicta aspernatur labore quibusdam dolore corrupti quod inventore. Maiores, repellat, consequuntur eius repellendus eos aliquid molestiae ea laborum ex quibusdam laudantium voluptates placeat consectetur quam aliquam!</p>
-        <h3>Fugit, laboriosam</h3>
-        <p>Eum, quasi, est, vitae, ipsam nobis consectetur ea aspernatur ad eos voluptatibus fugiat nisi perferendis impedit. Quam, nulla, excepturi, voluptate minus illo tenetur sint ab in culpa cumque impedit quibusdam. Saepe, molestias quia voluptatem natus velit fugiat omnis rem eos sapiente quasi quaerat aspernatur quisquam deleniti accusantium laboriosam odio id?</p>
-        <h3>Doloribus, illo ipsum</h3>
-        <p>Velit, odit, eius, libero unde impedit quaerat dolorem assumenda alias consequuntur optio quae maiores ratione tempore sit aliquid architecto eligendi pariatur ab soluta doloremque dicta aspernatur labore quibusdam dolore corrupti quod inventore. Maiores, repellat, consequuntur eius repellendus eos aliquid molestiae ea laborum ex quibusdam laudantium voluptates placeat consectetur quam aliquam!</p>
-        <p>Eum, quasi, est, vitae, ipsam nobis consectetur ea aspernatur ad eos voluptatibus fugiat nisi perferendis impedit. Quam, nulla, excepturi, voluptate minus illo tenetur sint ab in culpa cumque impedit quibusdam. Saepe, molestias quia voluptatem natus velit fugiat omnis rem eos sapiente quasi quaerat aspernatur quisquam deleniti accusantium laboriosam odio id?</p>
-        
-    </article>
-    <!-- /Article -->
-    
-    <!-- Sidebar -->
-    <aside class="col-sm-4 sidebar sidebar-right">
+</head>
+				<body>
+					<!-- Fixed navbar -->
+					<div class="navbar navbar-inverse navbar-fixed-top headroom">
+						<div class="container">
+							<div class="navbar-header">
+								<!-- Button for smallest screens -->
+								<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"><span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+								
+							</div>
+							<div class="navbar-collapse collapse">
+								<ul class="nav navbar-nav pull-right">
+									<li><a href="index.html">Home</a></li>
+									<li class="active"><a href="about.html">About</a></li>
+									<li class="dropdown">
+										<a href="#" class="dropdown-toggle" data-toggle="dropdown">More Pages <b class="caret"></b></a>
+										<ul class="dropdown-menu">
+											<li><a href="sidebar-left.html">Left Sidebar</a></li>
+											<li><a href="sidebar-right.html">Right Sidebar</a></li>
+										</ul>
+									</li>
+									<li><a href="contact.html">Contact</a></li>
+									<li><a class="btn" href="signin.html">SIGN IN / SIGN UP</a></li>
+								</ul>
+							</div>
+							<!--/.nav-collapse -->
+						</div>
+					</div>
+					<!-- /.navbar -->
 
-        <div class="widget">
-            <h4>Vacancies</h4>
-            <ul class="list-unstyled list-spaces">
-                <li><a href="">Lorem ipsum dolor</a><br><span class="small text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi, laborum.</span></li>
-                <li><a href="">Totam, libero, quis</a><br><span class="small text-muted">Suscipit veniam debitis sed ipsam quia magnam eveniet perferendis nisi.</span></li>
-                <li><a href="">Enim, sequi dignissimos</a><br><span class="small text-muted">Reprehenderit illum quod unde quo vero ab inventore alias veritatis.</span></li>
-                <li><a href="">Suscipit, consequatur, aut</a><br><span class="small text-muted">Sed, mollitia earum debitis est itaque esse reiciendis amet cupiditate.</span></li>
-                <li><a href="">Nam, illo, veritatis</a><br><span class="small text-muted">Delectus, sapiente illo provident quo aliquam nihil beatae dignissimos itaque.</span></li>
-            </ul>
-        </div>
+					<header id="head" class="secondary"></header>
 
-    </aside>
-    <!-- /Sidebar -->
+					<!-- container -->
+					<div class="container">
 
-</div>
-</div>	<li><a href="">Suscipit, consequatur, aut</a><br><span class="small text-muted">Sed, mollitia earum debitis est itaque esse reiciendis amet cupiditate.</span></li>
-						<li><a href="">Nam, illo, veritatis</a><br><span class="small text-muted">Delectus, sapiente illo provident quo aliquam nihil beatae dignissimos itaque.</span></li>
-					</ul>
+						<ol class="breadcrumb">
+							<li><a href="index.html">Home</a></li>
+							<li class="active">About</li>
+						</ol>
+
+						<div class="row">
+
+							<!-- Article main content -->
+							<article class="col-sm-7 maincontent">
+								<header class="page-header">
+									<h1 class="page-title">Qui suis-je ?</h1>
+								</header>
+								
+								<p>
+									Moi c'est Guillaume, passionnés de voyages, de camions et d’aventure humaine.
+									Aspirant à la liberté, j'ai décidé de quitter le mode de vie conventionnel et de partir à l’aventure en compagnie de mes camions surnommés Bernard et Odette, sans oublier mes amis à quatre pattes, Zongo et Pépito.
+									J'ai donc commencé à arpenter les routes de France, des Pays-Bas et de Suisse au fil de mes envies et du travail qui s’offrait à moi.
+									Amoureux des travaux manuels, j'avai décidé d’allier mes forces et mes envies!
+									Mes envies, c’est bien sûr le voyage, car le “mouvement c’est ma vie”; le deuxième, la création, celle qui agite mon cerveau jour et nuit et la dernière, les rencontres humaines qui représentent l’essence même des voyages.
+									Je vous proposons une carte sur mon site internet afin de suivre mes itinéraire et de me retrouver lors d'événements mais aussi de me contacter si vous avez un projet d'aménagement et que je suis dans votre région.
+
+								<h1>Magic-Trucks-Creations</h1>
+
+								C’est l’entreprise qui est gérée par Guillaume. Il a une trentaine d'années et a adopté la vie en camion depuis 2013 et crée ses camions et leurs aménagements depuis 5 ans maintenant.
+								L'idée d’une "capsule" monter sur camion plateau formant LE magictrucks est née près de Benicassim en Espagne pendant un festival nommé “ROTOTOM”.
+								Le concept est de créer des cellules amovibles sur des camions plateaux. Que le tout soit complètement autonome et surtout que chaque création soit unique !
+								Magic-Trucks-Creations est itinérant et propose donc :
+								- Des ateliers lors d’évènements.
+								- Des stages un peu partout en France ou à l’étranger selon notre itinéraire, pour apprendre à créer par vous-mêmes, les indispensables pour votre camion.
+								- La possibilité de nous contacter via le formulaire ( à préciser avec flo) pour nous présenter ton projet d’aménagement de camion ou une demande de création d’un nouveau Magic Truck.
+								</p>
+
+							</article>
+							<!-- /Article -->
+
+							<!-- Sidebar -->
+							<aside class="col-sm-5 sidebar sidebar-right">
+
+							<div class="img-camion"><img src="../assets/images/2camion.png">
 				</div>
 
-			</aside>
-			<!-- /Sidebar -->
+							</aside>
+							<!-- /Sidebar -->
 
-		</div>
+						</div>
+					</div> <!-- /container -->
+					<footer id="footer" class="top-space">
+
+<div class="footer-about">
+	<div class="container">
+		<div class="row">
+			
+			<div class="col-md-3 widget">
+				<h3 class="widget-title">Contact</h3>
+				<div class="widget-body">
+					<p>06 74 28 54 17<br>
+						<a href="mailto:#">contact@magictrucks.com</a><br>
+					</p>	
+				</div>
+			</div>
+
+			<div class="col-md-3 widget">
+				<h3 class="widget-title">Mes réseaux sociaux</h3>
+				<div class="widget-body">
+					<p class="follow-me-icons">
+						<a href=""><i class="fa fa-twitter fa-2"></i></a>
+						<a href=""><i class="fa fa-dribbble fa-2"></i></a>
+						<a href=""><i class="fa fa-github fa-2"></i></a>
+						<a href=""><i class="fa fa-facebook fa-2"></i></a>
+					</p>	
+				</div>
+			</div>
+
+			
+
+		</div> <!-- /row of widgets -->
 	</div>
-	<?php
-	get_footer();
-	?>
+</div>
 
-   
+<div class="footer-about">
+	<div class="container">
+		<div class="row">
+			
+			<div class="col-md-6 widget">
+				<div class="widget-body">
+					<p class="simplenav">
+						<a href="#">accueil</a> | 
+						<a href="about.html">atelier</a> |
+						<a href="sidebar-right.html">devis</a> |
+						<a href="contact.html">contact</a> |
+						<b><a href="signup.html">se connecter</a></b>
+					</p>
+				</div>
+			</div>
+
+			<div class="col-md-6 widget">
+				<div class="widget-body">
+					<p class="text-right">
+						&copy;2021 Magic-trucks | Designed by O'clock 
+					</p>
+				</div>
+			</div>
+
+		</div> <!-- /row of widgets -->
+	</div>
+</div>
+
+</footer>	
+
+
+
+
+
+<!-- JavaScript libs are placed at the end of the document so the pages load faster -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+<script src="content/themes/magic-trucks/assets/js/headroom.min.js"></script>
+<script src="content/themes/magic-trucks/assets//js/jQuery.headroom.min.js"></script>
+<script src="content/themes/magic-trucks/assets//js/template.js"></script>
+
+</body>
+</html>
+
+					

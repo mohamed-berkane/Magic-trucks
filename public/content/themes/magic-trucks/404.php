@@ -1,17 +1,15 @@
 <?php get_header() ?>
 
 
-<?php
-    // STEP WP-CUSTOMIZER-06 utilisation d'une variable configurée via customizer
-    // DOC WP-CUSTOMIZER récupération valeur : https://developer.wordpress.org/reference/functions/get_theme_mod/
-    $selectedHeaderImage = get_theme_mod('header-background-image');
-?>
 
-<section class="section welcome" style="background-image: url(<?= $selectedHeaderImage;?>)">
-    <h1 class="section__title">Page introuvable</h1>
+
+<section class="oupss" >
+    <h1 class="section__title">OUPSS!!!!!!</h1>
     <p class="section__content">
         La page que vous avez demandé ne semble pas exister...
     </p>
+    <div class="img-404"><img src="content/themes/magic-trucks/assets/images/magictrucks12.png">
+				</div>
 
     
     <div class="welcome__cta">
@@ -20,4 +18,3 @@
     </div>
 </section>
 
-<?php get_footer() ?>
