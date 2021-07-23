@@ -88,7 +88,7 @@
       </div>
     </div>
     <div class="item">
-      <img src="content/themes/magic-trucks/assets/images/cuisine2.jpg" alt="lit table">
+      <img src="/themes/magic-trucks/assets/images/cuisine2.jpg" alt="lit table">
       <div class="carousel-caption">
         Lit table
       </div>
