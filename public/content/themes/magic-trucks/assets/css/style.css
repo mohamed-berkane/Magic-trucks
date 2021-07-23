@@ -3,11 +3,13 @@ body {
     margin: 0;
     background: black;
     margin-bottom: 0px;
-}
+    overflow-x: hidden; 
+     }
+
 
 #head {
-    height: 100rem;  
-    margin: 0rem 0rem 1rem 0rem;
+    height: 80rem;  
+    margin: 0rem 0rem 10rem 0rem;
 }
 
  .tagline {
@@ -133,6 +135,8 @@ body > div:nth-child(5) > div:nth-child(3) {  /* Photos mes réalisations */
 
 .row {
     padding-top:1rem;
+    color: white;
+    text-align: center;
 }
 
 .header-workshop {
@@ -159,11 +163,38 @@ body > div:nth-child(5) > div:nth-child(3) {  /* Photos mes réalisations */
     padding-top:3rem;
 }
 
-.row{
-    color:rgb(158, 157, 157);
-    text-align: center;
+#head {
+
+    background-image: url("../images/photoaccueil.jpg");
+    background-repeat:no-repeat;
+    background-attachment:fixed;
+    background-size:cover;
+    background-position:center-top;
+    background-position-x: 50%;
+    background-position-y: 65%;
+    -webkit-animation: zoomin 60s 1;
+    animation-iteration-count: infinite;
 
 }
+
+
+
+@-webkit-keyframes zoomin {
+    0% {
+        -webkit-transform: scale(1);
+    }
+    50% {
+        -webkit-transform: scale(1.3);
+    }
+    100% {
+        -webkit-transform: scale(1);
+    }
+    
+}
+
+
+
+
 .img-camion{
     box-shadow: 0em 0em 1em 1em white;
 
