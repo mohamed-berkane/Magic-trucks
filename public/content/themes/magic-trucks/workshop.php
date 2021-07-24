@@ -70,26 +70,53 @@
         <header class="page-header">
             <h1 class="page-title">Liste des atelier</h1>
         </header>
-		<article class="workshop-caps">
-			<div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
-				<div class="panel panel-default">
-					<div class="panel-body">
-						<h3 class="thin text-center"></h3>
-						<p class="text-center text-muted"></p>
-						<hr>
-							<div class="workshop-img "> 
-							<ul>
-									<li>Lieu : Avignon</li>
-									<li>Durée : 4h00</li>
-									<li>Prix : 160 euros</li>
-								</ul> 
 
-								<p>image</p> 
-							</div>
-							<button>En savoir plus</button> <button">S'insrire</button>
+
+
+
+		<?php $loop = new WP_Query( array( 'post_type' => 'workshop', 'posts_per_page' => '10' ) ); ?>
+		<?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
+			
+
+			<article class="workshop-caps">
+				<div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+					<div class="panel panel-default">
+						<div class="panel-body">
+							<h3 class="thin text-center"><?php the_title() ?></h3>
+							<p class="text-center text-muted"><?php the_content() ?></p>
+							<hr>
+								<div class="workshop-img "> 
+								<ul>
+										<li>Lieu : Avignon</li>
+										<li>Durée : 4h00</li>
+										<li>Prix : 160 euros</li>
+									</ul> 
+
+									<p>image</p> 
+								</div>
+
+								<?php
+									// récupération du router
+									$router = $args['router'];
+
+									//
+
+									// génération du lien d'inscription à l'atelier
+									$registerWorkshop = $router->$router->generate('user-insert', ['id' => the_ID()]);								
+								?>
+
+								<button>En savoir plus</button> <button onclick="<?php header($registerWorkshop); ?>">S'insrire</button>
+						</div>
 					</div>
-				</div>
-		</article>
+			</article>
+		<?php endwhile; wp_reset_query(); ?>
+
+
+
+
+
+
+
         <article>
                 <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
                 <div class="panel panel-default">

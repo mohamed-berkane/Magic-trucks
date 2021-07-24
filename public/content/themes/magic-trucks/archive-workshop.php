@@ -51,7 +51,7 @@
                 <div class="panel panel-default">
                     <div class="panel-body">
                         <h3 class="thin text-center"><?php the_title(); ?> </h3>
-                        <p class="text-center text-muted">Lorem ipsum dolor sit amet, adipisicing elit. Quo nulla quibusdam cum doloremque incidunt nemo sunt a tenetur omnis odio. </p>
+                        <p class="text-center text-muted"><?php the_content() ?></p>
                         <hr>
                             <div class="workshop-img "> 
                             <ul>
@@ -62,12 +62,28 @@
 
                                 <p>image</p> 
                             </div>
-                            <button>En savoir plus</button> <button>S'insrire</button>
+
+                            <?php
+                                // récupération du router
+                                //$router = $args['router'];
+
+                                // génération du lien d'inscription à l'atelier
+                                // $registerWorkshop = $router->$router->generate('user-insert', ['id' => the_ID()]);								
+                                //$url = $_SERVER['BASE_URI'];								
+                                $url = substr(get_site_url(),0, -2);
+
+                                //var_dump($url);
+                                $atelier_id = (get_the_ID());								
+                            ?>
+
+                            <!-- <button>En savoir plus</button onclick="<?php header($registerWorkshop); ?>"> <button>S'insrire</button> -->
+                            <a href="<?=$url . 'user/insert/' . $atelier_id;?>">S'insrire</a>
                     </div>
                 </div>
                 
         </article>
         <?php endwhile ?>
+
         </div>
         
     </article>

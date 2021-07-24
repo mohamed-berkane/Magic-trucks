@@ -3,6 +3,8 @@
 namespace magicTrucks\Controllers;
 
 use WP_Query;
+use magicTrucks\Models\WorkshopRegistration;
+
 
 class UserController extends CoreController
 {
@@ -20,6 +22,25 @@ class UserController extends CoreController
         $this->show(
             'views/user/home', 
             ['currentUser' => $user]
+        );
+
+    }
+
+    public function insert($atelier_id)
+    {
+        // vérification : est ce que le visiteur est connecté
+        // s'il n'est pas connecté, nous le redirigeons vers la page de login
+        //$this->mustBeConnected();
+
+        // récupération de l'utilisateur wordpress actuel
+        $user = wp_get_current_user();
+        // var_dump($user);
+        // var_dump($atelier_id);
+
+        $model = new WorkshopRegistration();
+        $model->insert(
+            $atelier_id, // id atelier
+            $user // id utilisateur
         );
 
     }

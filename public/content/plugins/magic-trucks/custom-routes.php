@@ -58,6 +58,28 @@ $router->map(
 
 $router->map(
     'GET',
+    '/user/insert/[i:id]/',
+    function($id) {
+        var_dump('$id');
+        $controller = new UserController();
+       $controller->insert($id);
+    },
+    'user-insert'
+);
+
+$router->map(
+
+    'GET',
+    '/test/model/insert/',
+    function() {
+        $controller = new TestModelController();
+       $controller->insert();
+    },
+    'test-model-insert'
+);
+
+$router->map(
+    'GET',
     '/test/model/update/',
     function() {
         $controller = new TestModelController();
@@ -66,16 +88,26 @@ $router->map(
     'test-model-update'
 );
 
+$router->map(
+    'GET',
+    '/test/model/delete/',
+    function() {
+        $controller = new TestModelController();
+       $controller->delete();
+    },
+    'test-model-delete'
+);
 
 // nous demandons à altorouter de vérifier s'il y a une route valide
 $match = $router->match();
 
 // si une route a été validée
 if($match) {
-
     // récuration de la fonction a executer
     $functionToCall = $match['target'];
-
     // execution de la fonction
-    $functionToCall();
+    // $functionToCall();
+
+    call_user_func_array( $functionToCall, $match['params'] );
+
 }
