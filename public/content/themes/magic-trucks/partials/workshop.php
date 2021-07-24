@@ -86,7 +86,19 @@
 
                                 <p>image</p> 
                             </div>
-                            <button>En savoir plus</button> <button>S'insrire</button>
+
+
+							<?php
+								// récupération du router
+								$router = $args['router'];
+
+								// génération du lien d'inscription à l'atelier
+								$registerURL = $router->generate('user-delete');
+							?>
+
+
+
+                            <button>En savoir plus</button> <button onclick="<?php header($deleteURL); ?>">S'insrire</button>
                     </div>
                 </div>
                 
