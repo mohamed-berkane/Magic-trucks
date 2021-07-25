@@ -9,16 +9,21 @@ class WorkshopRegistration extends CoreModel
 
     public function createTable()
     {
+
         $sql = "
-            CREATE TABLE `workshop_registration` (
-                `id` bigint(24) unsigned NOT NULL AUTO_INCREMENT PRIMARY KEY,
-                `comment` text COLLATE utf8mb4_general_ci NULL,
-                `workshop_id` bigint(24) unsigned NOT NULL,
-                `user_id` bigint(24) unsigned NOT NULL,
-                `created_at` datetime NOT NULL ON UPDATE CURRENT_TIMESTAMP,
-                `updated_at` datetime NULL
-            );
-        ";
+        CREATE TABLE `workshop_registration` (
+            `id` bigint(24) unsigned NOT NULL AUTO_INCREMENT PRIMARY KEY,
+            `first_name` varchar(255) CHARACTER SET utf8mb4 NULL,
+            `last_name` varchar(255) CHARACTER SET utf8mb4 NOT NULL,
+            `email` varchar(255) CHARACTER SET utf8mb4 NOT NULL,
+            `phone` varchar(20) CHARACTER SET utf8mb4 DEFAULT NULL,
+            `comment` text COLLATE utf8mb4_general_ci NULL,
+            `workshop_id` bigint(24) unsigned NOT NULL,
+            `user_id` bigint(24) unsigned NOT NULL,
+            `created_at` datetime NOT NULL ON UPDATE CURRENT_TIMESTAMP,
+            `updated_at` datetime NULL
+        );
+    ";
 
         require_once(ABSPATH . 'wp-admin/includes/upgrade.php');
         dbDelta($sql);
@@ -31,13 +36,17 @@ class WorkshopRegistration extends CoreModel
     }
 
 
-    public function insert($workshopId, $userId, $comment = '')
+    public function insert($workshopId, $firstname, $lastname, $email, $phone = '', $comment = '')
     {
+
         // STEP WP CUSTOMTABLE insert
         // le tableau data stocke les données à insérer dans la table
         $data = [
             'workshop_id' => $workshopId,
-            'user_id' => $userId,
+            'first_name' => $firstname,
+            'last_name' => $lastname,
+            'email' => $email,
+            'phone' => $phone,
             'comment' => $comment,
             "created_at" => date('Y-m-d H:i:s')
         ];

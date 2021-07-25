@@ -51,7 +51,7 @@
                 <div class="panel panel-default">
                     <div class="panel-body">
                         <h3 class="thin text-center"><?php the_title(); ?> </h3>
-                        <p class="text-center text-muted">Lorem ipsum dolor sit amet, adipisicing elit. Quo nulla quibusdam cum doloremque incidunt nemo sunt a tenetur omnis odio. </p>
+                        <p class="text-center text-muted"><?php the_content() ?></p>
                         <hr>
                             <div class="workshop-img "> 
                             <ul>
@@ -62,12 +62,19 @@
 
                                 <p>image</p> 
                             </div>
-                            <button>En savoir plus</button> <button>S'insrire</button>
+
+                            <?php
+                                // récupération de ID du post
+                                $atelier_id = get_the_ID();	
+                            ?>
+                            <!-- <button onclick="<?php get_post_permalink(); ?>>En savoir plus</button"> -->
+                            <a href="<?= get_permalink($atelier_id); ?>">En savoir plus</a>
                     </div>
                 </div>
                 
         </article>
         <?php endwhile ?>
+
         </div>
         
     </article>
