@@ -58,25 +58,33 @@ $router->map(
 
 $router->map(
     'GET',
-    '/user/insert/[i:id]/',
+    '/user/register/[i:id]/',
     function($id) {
-        var_dump('$id');
+        $controller = new UserController();
+       $controller->register($id);
+    },
+    'user-register'
+);
+
+$router->map(
+    'POST',
+    '/user/register/[i:id]/',
+    function($id) {
         $controller = new UserController();
        $controller->insert($id);
     },
     'user-insert'
 );
 
-$router->map(
-
-    'GET',
-    '/test/model/insert/',
-    function() {
-        $controller = new TestModelController();
-       $controller->insert();
-    },
-    'test-model-insert'
-);
+// $router->map(
+//     'GET',
+//     '/user/insert/[i:id]/',
+//     function($id) {
+//         $controller = new UserController();
+//        $controller->insert($id);
+//     },
+//     'user-insert'
+// );
 
 $router->map(
     'GET',

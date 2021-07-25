@@ -26,21 +26,49 @@ class UserController extends CoreController
 
     }
 
-    public function insert($atelier_id)
+    public function register($workshop_id)
     {
+        // On vérifie que l'utilisateur est connecté via le CoreController
+        $this->mustBeConnected();
+        
+        // On récupère les données de l'utilisateur WP actuel
+        $user = wp_get_current_user();
+
+        $this->show(
+            'views/user/register', 
+            [
+                'currentUser' => $user,
+                'workshopId' => $workshop_id
+            ]
+        );
+   
+    }
+
+    public function insert($workshopId)
+    {
+
+        // Récupération des données du formulaire d'enregistrement à l'atelier
+        $firstname = filter_input(INPUT_POST, 'firstname', FILTER_SANITIZE_STRING);
+        $lastname = filter_input(INPUT_POST, 'lastname', FILTER_SANITIZE_STRING);
+        $email = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_STRING);
+        $phone = filter_input(INPUT_POST, 'phone', FILTER_SANITIZE_STRING);
+        $comment = filter_input(INPUT_POST, 'comment', FILTER_SANITIZE_STRING);
+
         // vérification : est ce que le visiteur est connecté
         // s'il n'est pas connecté, nous le redirigeons vers la page de login
-        //$this->mustBeConnected();
+        $this->mustBeConnected();
 
         // récupération de l'utilisateur wordpress actuel
         $user = wp_get_current_user();
-        // var_dump($user);
-        // var_dump($atelier_id);
 
         $model = new WorkshopRegistration();
         $model->insert(
-            $atelier_id, // id atelier
-            $user // id utilisateur
+            $workshopId, // id atelier
+            $firstname, // Prénom
+            $lastname, // Nom
+            $email, // email
+            $phone, // nr de tel
+            $comment, // commentaire
         );
 
     }

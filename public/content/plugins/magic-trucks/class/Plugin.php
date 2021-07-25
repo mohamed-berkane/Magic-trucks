@@ -69,11 +69,17 @@ class Plugin
     {
         // On appelle la méthode de création des capabilities
         $this->registerRegisteredRole();
+
+        // Création de custom table au moment de l'activation du plugin
+        $model = new WorkshopRegistration();
+        $model->createTable();
     }
 
     public function deactivate()
     {
-
+        // Suppression de custom table au moment de l'desactivation du plugin
+        $model = new WorkshopRegistration();
+        $model->dropTable();
     }
 
 

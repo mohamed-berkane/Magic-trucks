@@ -64,20 +64,11 @@
                             </div>
 
                             <?php
-                                // récupération du router
-                                //$router = $args['router'];
-
-                                // génération du lien d'inscription à l'atelier
-                                // $registerWorkshop = $router->$router->generate('user-insert', ['id' => the_ID()]);								
-                                //$url = $_SERVER['BASE_URI'];								
-                                $url = substr(get_site_url(),0, -2);
-
-                                //var_dump($url);
-                                $atelier_id = (get_the_ID());								
+                                // récupération de ID du post
+                                $atelier_id = get_the_ID();	
                             ?>
-
-                            <!-- <button>En savoir plus</button onclick="<?php header($registerWorkshop); ?>"> <button>S'insrire</button> -->
-                            <a href="<?=$url . 'user/insert/' . $atelier_id;?>">S'insrire</a>
+                            <!-- <button onclick="<?php get_post_permalink(); ?>>En savoir plus</button"> -->
+                            <a href="<?= get_permalink($atelier_id); ?>">En savoir plus</a>
                     </div>
                 </div>
                 

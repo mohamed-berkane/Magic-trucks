@@ -61,8 +61,18 @@
 
                                 <p>image</p> 
                             </div>
+
+                            <?php
+                                // récupération de la url du site
+                                $url = substr(get_site_url(),0, -2);
+
+                                // récupération de ID du post
+                                $atelier_id = get_the_ID();	
+                            ?>
+
                             <button>En savoir plus</button> <button>S'insrire</button>
-                    </div>
+                            <a href="<?=$url . 'user/register/'.$atelier_id; ?>">S'insrire</a>
+                            </div>
                 </div>
                 
 </article>
