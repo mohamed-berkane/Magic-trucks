@@ -50,13 +50,20 @@ class Plugin
         add_action(
             'init',
             [$this, 'createQuotationBudgetCustomTaxonomie']
-        );  
+        ); 
+
         // On associe une taxonomie place disponible au devis
         add_action(
         'init',
         [$this, 'createQuotationPlaceCustomTaxonomie']
-    );        
-        
+        );        
+    
+        // On associe une taxonomie type d'amenagement au devis
+        add_action(
+            'init',
+            [$this, 'createQuotationTypeCustomTaxonomie']
+            );  
+
         // On crée un CPT de type profile pour que les utilisateurs puissent gérer leurs données
         add_action(
             'init',
@@ -179,6 +186,7 @@ class Plugin
         );
     }
 
+    // Taxonomie Budget associé au Devis
     public function createQuotationBudgetCustomTaxonomie()
     {
         register_taxonomy(
@@ -194,6 +202,7 @@ class Plugin
         );
     }
 
+    // Taxonomie Place disponible associé au Devis
     public function createQuotationPlaceCustomTaxonomie()
     {
         register_taxonomy(
@@ -208,6 +217,22 @@ class Plugin
             ]
         );
     }
+
+       // Taxonomie Type d'amenagement associé au Devis
+       public function createQuotationTypeCustomTaxonomie()
+       {
+           register_taxonomy(
+               'worktype',
+               // On assigne cette taxonomie au CPT Quotation (Devis)
+               ['quotation'],
+               // On configure les options
+               [
+                   'label' => 'Type d\'amenagement',
+                   'hierachical' => false,
+                   'public' => true
+               ]
+           );
+       }
 
     // CPT profile
     public function createRegisteredProfileCustomPostType()
