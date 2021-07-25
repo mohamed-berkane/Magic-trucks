@@ -1,6 +1,6 @@
 <?php
 		get_header();
-		?>
+?>
 
 <body class="home">
 	<!-- Fixed navbar -->
@@ -15,7 +15,7 @@
 				<ul class="nav navbar-nav pull-right">
 					<li class="active"><a href="#">Accueil</a></li>
 					<li><a href="content/themes/magic-trucks/partials/workshop.php">Atelier</a></li>
-					<li><a href="about.html">Devis</a></li>
+					<li><a href="<?= get_post_type_archive_link('quotation') ?>">Devis</a></li>
 					<li><a href="about.html">Galerie</a></li>
 					<li><a href="content/themes/magic-trucks/partials/about.php">Qui suis-je</a></li>
 					<li><a href="content/themes/magic-trucks/partials/contact.php">Contactez moi</a></li>

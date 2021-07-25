@@ -161,6 +161,7 @@ class Plugin
                 // true permet d'administrer le CPT dans le BO
                 'public' => true,
                 'hierarchical' => false,
+                'has_archive' => true,
                 'menu_icon' => 'dashicons-money-alt',
                 // NOTICE WP PLUGIN, fonctionnalités activable pour un cpt :  ‘title’, ‘editor’, ‘comments’, ‘revisions’, ‘trackbacks’, ‘author’, ‘excerpt’, ‘page-attributes’, ‘thumbnail’, ‘custom-fields’, and ‘post-formats’.
                 'supports' => [
