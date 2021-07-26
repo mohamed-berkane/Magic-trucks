@@ -2,26 +2,17 @@
     get_header();
 ?>
 <?php
-    if(isset($_POST['submit']))
-    {
-        global $wpdb;
-        $table_name = 'quotation'; // table devis à créer dans la BDD de WP
-        $worktype_post = $_POST[$worktype->slug]; // vérification de champs du formulaire de demande de devis
-        $budget_post = $_POST[$budget->slug]; // vérification de champs du formulaire de demande de devis
-        $place_post = $_POST[$place->slug]; // vérification de champs du formulaire de demande de devis
+    // $table_name = 'quotation'; // table devis à créer dans la BDD de WP
+    // global $wpdb;
+    // $retrieve_data = $wpdb->get_results( “SELECT * FROM $table_name where isbn = ‘”.$field.”‘”);
+    //     foreach ($retrieve_data as $retrieved_data) {
 
-        var_dump($worktype_post); die();
+    //     echo $retrieved_data->title;
+    //     // echo $retrieved_data->image; // for image
+    //     }
 
-
-
-        // $retrieve_data = $wpdb->get_results( “SELECT * FROM $table_name where isbn = ‘”.$field.”‘”);
-        //     foreach ($retrieve_data as $retrieved_data) {
-
-        //     echo $retrieved_data->title;
-        //     // echo $retrieved_data->image; // for image
-        //     }
-    }
 ?>
+
 
 
     <br><br><br>
@@ -48,8 +39,12 @@
                     </h3>
                     <p class="text-center text-muted">Vous êtes au bon endroit</p>
                     <hr>
-                    
-                    <form>
+
+                    <!-- traitement de l'envoie du formulaire en POST -->
+                   
+                    <form action="<?php echo esc_url( admin_url('admin-post.php') ); ?>" method="POST">
+                    <!-- Je redirige le traitement POST vers admin-post.php  avec la fonction admin_url -->
+
                         <div class="top-margin">
                             <label>Je veux</label>
                             <?php 
@@ -69,9 +64,9 @@
                                 'hide_empty' => false
                             ) );                                                               
                             ?>                           
-                            <select name="work" id="work-select" class="form-control">
+                            <select name="worktype" id="work-select" class="form-control">
                                 <?php foreach($worktypes as $worktype): ?>
-                                        <option  value="" name=<?= $worktype->slug ?>><?= $worktype->name ?>
+                                        <option  value="<?= $worktype->name ?>" name="worktype"><?= $worktype->name ?>
                                 <?php endforeach; ?>
 
                             </select>
@@ -80,27 +75,19 @@
                             <label>Mon Budget</label>
                             <select name="budget" id="budget-select" class="form-control">
                                 <?php foreach($budgets as $budget): ?>
-                                        <option  value=""  name=<?= $budget->slug ?>><?= $budget->name ?>
+                                        <option  value="<?= $budget->name ?>"  name="budget"><?= $budget->name ?>
                                 <?php endforeach; ?>
-                                <!-- <option value="">--Choisissez votre budget--</option>
-                                <option value="small">entre 0 à 5000 euros</option>
-                                <option value="middle">entre 5000 à 10 000 euros</option>
-                                <option value="big">entre 10 000 et 20 000 euros</option>
-                                <option value="other">Autre</option> -->
 
                             </select>
                         </div>
                         <div class="top-margin">
                             <label>J'ai de la place pour accueillir Guillaume (...)</label>
-                            <select name="insite" id="insite-select" class="form-control">
+                            <select name="place" id="insite-select" class="form-control">
 
                                 <?php foreach($places as $place): ?>
-                                        <option  value=""  name=<?= $place->slug ?>><?= $place->name ?>
+                                        <option  value="<?= $place->name ?>"  name="place"><?= $place->name ?>
                                 <?php endforeach; ?>
 
-                                <!-- <option value="">--Choisissez une option--</option>
-                                <option value="small-work">Oui</option>
-                                <option value="truck">Non</option> -->
                                 <textarea name="placedetail" id="placedetail" rows="3" cols="40" placeholder="Précisez."></textarea>
                                 </textarea>
                             </select>
@@ -114,6 +101,9 @@
                         </div>
                         <div class="row">
                             <div class="col-lg-4 text-right">
+
+                                <!-- traitement de l'envoie du formulaire en POST -->
+                                <input type="hidden" name="action" value="quotation_form">
                                 <button class="btn btn-action" type='submit' name='submit'>Let's Go !</button>
                             </div>
                         </div>

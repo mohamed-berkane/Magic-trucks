@@ -78,15 +78,15 @@ class Plugin
         $this->registerRegisteredRole();
 
         // Création de custom table au moment de l'activation du plugin
-        $model = new WorkshopRegistration();
-        $model->createTable();
+        // $model = new WorkshopRegistration();
+        // $model->createTable();
     }
 
     public function deactivate()
     {
         // Suppression de custom table au moment de l'desactivation du plugin
-        $model = new WorkshopRegistration();
-        $model->dropTable();
+        // $model = new WorkshopRegistration();
+        // $model->dropTable();
     }
 
 
