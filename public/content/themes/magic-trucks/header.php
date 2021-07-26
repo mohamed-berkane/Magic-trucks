@@ -2,10 +2,10 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	<meta name="viewport"    content="width=device-width, initial-scale=1.0">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<meta name="description" content="">
 	<meta name="author"      content="Sergey Pozhilov (GetTemplate.com)">
-
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 	<link rel="shortcut icon" href="content/themes/magic-trucks/assets/images/gt_favicon.png">
 	
 	<link rel="stylesheet" media="screen" href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,700">
@@ -22,7 +22,6 @@
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
 
-	
 
 	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
 	<!--[if lt IE 9]>
@@ -43,13 +42,7 @@
 			</div>
 			<div class="navbar-collapse collapse">
 				<ul class="nav navbar-nav pull-right">
-					<li class="active"><a href="#">Accueil</a></li>
-					<li><a href="<?= get_theme_file_uri()?>/workshop">Atelier</a></li>
-					<li><a href="<?= get_theme_file_uri()?>">Devis</a></li>
-					<li><a href="<?= get_theme_file_uri()?>">Galerie</a></li>
-					<li><a href="<?= get_theme_file_uri()?>">Qui suis-je</a></li>
-					<li><a href="<?= get_theme_file_uri()?>">Contactez moi</a></li>
-					<li><a class="btn" href="<?= get_theme_file_uri()?>">Se connecter</a></li>
+					<li><?=wp_nav_menu()?></li>
 				</ul>
 			</div><!--/.nav-collapse -->
 		</div>

@@ -75,7 +75,7 @@
 								</header>
 								
 								<p>
-									Moi c'est Guillaume, passionnés de voyages, de camions et d’aventure humaine.
+									Guillaume, passionnés de voyages, de camions et d’aventure humaine.
 									Aspirant à la liberté, j'ai décidé de quitter le mode de vie conventionnel et de partir à l’aventure en compagnie de mes camions surnommés Bernard et Odette, sans oublier mes amis à quatre pattes, Zongo et Pépito.
 									J'ai donc commencé à arpenter les routes de France, des Pays-Bas et de Suisse au fil de mes envies et du travail qui s’offrait à moi.
 									Amoureux des travaux manuels, j'avai décidé d’allier mes forces et mes envies!

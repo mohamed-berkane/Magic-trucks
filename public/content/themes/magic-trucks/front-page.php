@@ -11,24 +11,23 @@ get_header();
 	</div>
 </header>
 
-	<!-- Intro -->
-	<div class="container text-center">
-		<br> <br>
-		<h2 class="thin">Changez de vie!</h2><br><br>
-		<p class="text-muted">
-			<ul>Être en complète autonomie pourquoi tout quitter et vivre en camion aménagé?<br><br>
-				<li>Casser la routine</li><br>
-				<li>Se rapprocher de la nature</li><br>
-				<li>Vivre plus simplement</li><br>
-				<li>Profiter des moments présents</li><br>
-		        <li>S’ouvrir aux autres et au monde</li><br>
-			    <li>S’enrichir personnellement</li><br>
-				<li>Et plein d’autres encore à découvrir…</li><br>
-			</ul>
-		</p>
+	<!-- Atelier -->
+	<div id="wrapper-fluid">
+		<div id="left-side">	
+			<h2 class="thin">Les ateliers ambulants</h2><br><br>
+				<section class="workshop-home">
+					<p>Seul ou avec vos amis, venez découvrir mes ateliers ambulants. Ici, nous apprendrons à installer des panneaux solaire, fabriquer des mousticaires, construire des toilettes sèches, et bien plus !</p>
+
+					<p>J'acceuillerais jusqu'à 25 personnes</p>
+				</section>
+		</div>
+
+		<div id="right-side">
+
+		</div>
 
 	</div>
-	<!-- /Intro-->
+	<!-- /Atelier-->
 		
 	<!-- Highlights - jumbotron -->
 	<div class="jumbotron top-space">
