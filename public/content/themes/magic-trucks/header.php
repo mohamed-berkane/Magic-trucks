@@ -22,7 +22,6 @@
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
 
-	
 
 	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
 	<!--[if lt IE 9]>
@@ -43,9 +42,9 @@
 			</div>
 			<div class="navbar-collapse collapse">
 				<ul class="nav navbar-nav pull-right">
-					<li class="active"><a href="#">Accueil</a></li>
-					<li><a href="<?= get_theme_file_uri()?>/workshop">Atelier</a></li>
-					<li><a href="<?= get_theme_file_uri()?>">Devis</a></li>
+					<li class="active"><a href="<?= substr(get_site_url(),0, -2) ?>">Accueil</a></li>
+					<li><a href="<?= get_post_type_archive_link('workshop') ?>">Atelier</a></li>
+					<li><a href="<?= get_post_type_archive_link('quotation') ?>">Devis</a></li>
 					<li><a href="<?= get_theme_file_uri()?>">Galerie</a></li>
 					<li><a href="<?= get_permalink(get_page_by_path('about'));?>">Qui suis-je</a></li>
 					<li><a href="<?= get_theme_file_uri()?>">Contactez moi</a></li>
