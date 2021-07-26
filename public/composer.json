@@ -21,7 +21,8 @@
 
     "require": {
         "johnpbloch/wordpress": "^5.6",
-        "wpackagist-theme/twentytwentyone": "*"
+        "wpackagist-theme/twentytwentyone": "*",
+        "kint-php/kint": "^3.3"
     },
 
     "scripts": {
@@ -58,4 +59,3 @@
         ]
     }
 }
-
