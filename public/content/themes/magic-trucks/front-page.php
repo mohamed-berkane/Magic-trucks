@@ -7,7 +7,6 @@ get_header();
 	<div class="container">
 		<div class="row">
 			<h1>L'évasion en camion aménagé sur-mesure</h1>
-			<p><a class="btn btn-action btn-lg" role="button">Atelier aménagement</a> <a class="btn btn-default btn-lg" role="button">Demande de devis</a> <a class="btn btn-action btn-lg2" role="button">Galerie Photos</a></p>
 		</div>
 	</div>
 </header>

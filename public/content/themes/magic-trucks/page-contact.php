@@ -1,3 +1,14 @@
+<?php 
+/**
+ * Template Name: contact
+ * 
+ */
+?>
+
+<?php
+get_header();
+?>
+
 <div class='header-workshop'>
 
 </div>
@@ -54,3 +65,7 @@
 	<section class="container-full top-space">
 		<div id="map"></div>
 	</section>
+
+	<?php
+get_footer();
+?>
