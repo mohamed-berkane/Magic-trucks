@@ -70,27 +70,26 @@
         <header class="page-header">
             <h1 class="page-title">Liste des atelier</h1>
         </header>
-        <article class="workshop-caps">
-            <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
-                <div class="panel panel-default">
-                    <div class="panel-body">
-                        <h3 class="thin text-center">Atelier Panneau Solaire</h3>
-                        <p class="text-center text-muted">Lorem ipsum dolor sit amet, adipisicing elit. Quo nulla quibusdam cum doloremque incidunt nemo sunt a tenetur omnis odio. </p>
-                        <hr>
-                            <div class="workshop-img "> 
-                            <ul>
-                                    <li>Lieu : Avignon</li>
-                                    <li>Durée : 4h00</li>
-                                    <li>Prix : 160 euros</li>
-                                </ul> 
+		<article class="workshop-caps">
+			<div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+				<div class="panel panel-default">
+					<div class="panel-body">
+						<h3 class="thin text-center"></h3>
+						<p class="text-center text-muted"></p>
+						<hr>
+							<div class="workshop-img "> 
+							<ul>
+									<li>Lieu : Avignon</li>
+									<li>Durée : 4h00</li>
+									<li>Prix : 160 euros</li>
+								</ul> 
 
-                                <p>image</p> 
-                            </div>
-                            <button>En savoir plus</button> <button>S'insrire</button>
-                    </div>
-                </div>
-                
-        </article>
+								<p>image</p> 
+							</div>
+							<button>En savoir plus</button> <button">S'insrire</button>
+					</div>
+				</div>
+		</article>
         <article>
                 <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
                 <div class="panel panel-default">

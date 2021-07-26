@@ -68,65 +68,95 @@
     <!-- Article main content -->
     <article class="col-xs-12 maincontent">
         <header class="page-header">
-            <h1 class="page-title">Demande de devis</h1>
+            <h1 class="page-title">Liste des atelier</h1>
         </header>
-        
-        <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
-            <div class="panel panel-default">
-                <div class="panel-body">
-                    <h3 class="thin text-center">Ici vous pouvez faire une demande pour un tout nouveau camion. </br> </br> A moins que vous ne vouliez faire des travaux sur votre camion actuel ? 
-                    </h3>
-                    <p class="text-center text-muted">Vous êtes au bon endroit</p>
-                    <hr>
-                    
-                    <form>
-								<div class="top-margin">
-									<label>Je veux</label>
-									<select name="work" id="work-select" class="form-control">
-                                        <option value="">--Choisissez une option--</option>
-                                        <option value="small-work">Faire des travaux sur mon camion</option>
-                                        <option value="truck">Je veux un nouveau camion</option>
-                                    </select>
-								</div>
-								<div class="top-margin">
-									<label>Mon Budget</label>
-									<select name="budget" id="budget-select" class="form-control">
-                                        <option value="">--Choisissez votre budget--</option>
-                                        <option value="small">entre 0 à 5000 euros</option>
-                                        <option value="middle">entre 5000 à 10 000 euros</option>
-                                        <option value="big">entre 10 000 et 20 000 euros</option>
-                                        <option value="other">Autre</option>
-                                    </select>
-								</div>
-								<div class="top-margin">
-									<label>J'ai de la place pour accueillir Guillaume (...)</label>
-									<select name="insite" id="insite-select" class="form-control">
-                                        <option value="">--Choisissez une option--</option>
-                                        <option value="small-work">Oui</option>
-                                        <option value="truck">Non</option>
-                                        <textarea name="precise" id="precise" rows="3" cols="40" placeholder="Précisez."></textarea>
-                                        </textarea>
-                                    </select>
+
+
+
+
+		<?php $loop = new WP_Query( array( 'post_type' => 'workshop', 'posts_per_page' => '10' ) ); ?>
+		<?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
+			
+
+			<article class="workshop-caps">
+				<div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+					<div class="panel panel-default">
+						<div class="panel-body">
+							<h3 class="thin text-center"><?php the_title() ?></h3>
+							<p class="text-center text-muted"><?php the_content() ?></p>
+							<hr>
+								<div class="workshop-img "> 
+								<ul>
+										<li>Lieu : Avignon</li>
+										<li>Durée : 4h00</li>
+										<li>Prix : 160 euros</li>
+									</ul> 
+
+									<p>image</p> 
 								</div>
 
-								<div class="row top-margin">
-									<div class="col-sm-6">
-										<label>Autre indications</label>
-										<textarea name="precise" id="precise" rows="3" cols="40" placeholder="Si vous avez d'autres précisions à nous donner, décrivez les ici"></textarea>
-                                        </textarea>
-                                    </div>
-                                </div>
+								<?php
+									// récupération du router
+									$router = $args['router'];
 
-								
+									//
 
-								<div class="row">
-									<div class="col-lg-4 text-right">
-										<button class="btn btn-action" type="submit">Let's Go !</button>
-									</div>
-								</div>
-							</form>
+									// génération du lien d'inscription à l'atelier
+									$registerWorkshop = $router->$router->generate('user-insert', ['id' => the_ID()]);								
+								?>
+
+								<button>En savoir plus</button> <button onclick="<?php header($registerWorkshop); ?>">S'insrire</button>
+						</div>
+					</div>
+			</article>
+		<?php endwhile; wp_reset_query(); ?>
+
+
+
+
+
+
+
+        <article>
+                <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <h3 class="thin text-center">Atelier Toilette Seche</h3>
+                        <p class="text-center text-muted">Lorem ipsum dolor sit amet, adipisicing elit. Quo nulla quibusdam cum doloremque incidunt nemo sunt a tenetur omnis odio. </p>
+                        <hr>
+                        <div class="workshop-img "> 
+                                <ul>
+                                    <li>Lieu : Marseille</li>
+                                    <li>Durée : 2h00</li>
+                                    <li>Prix : 80 euros</li>
+                                </ul> 
+
+                                <p>image</p>
+                            </div>
+                        <button>En savoir plus</button> <button>S'insrire</button>
+                    </div>
                 </div>
-            </div>
+                </article>
+        <article>
+                <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <h3 class="thin text-center">Atelier Mousticaire</h3>
+                        <p class="text-center text-muted">Lorem ipsum dolor sit amet, adipisicing elit. Quo nulla quibusdam cum doloremque incidunt nemo sunt a tenetur omnis odio. </p>
+                        <hr>
+                        <div class="workshop-img "> 
+                        <ul>
+                                    <li>Lieu : Lyon</li>
+                                    <li>Durée : 2h00</li>
+                                    <li>Prix : 50 euros</li>
+                                </ul> 
+
+                                <p>image</p> 
+                            </div>
+                        <button>En savoir plus</button> <button>S'insrire</button>
+                    </div>
+                </div>
+        </article>
 
         </div>
         
@@ -135,7 +165,6 @@
 
 </div>
 </div>	<!-- /container -->
-
 <footer id="footer" class="top-space">
 
 		<div class="footer1">

@@ -19,7 +19,7 @@ class CoreController
         $this->router = $router;
     }
 
-    // cette méthode permet de vérifier si l'utilisateur est connecté. S'il n'est pas connecté, le visiteur est redirigé vers la page de login
+    // On vérifie la connexion de l'utilisateur
     protected function mustBeConnected()
     {
         if(!is_user_logged_in()) {

@@ -2,11 +2,102 @@
 
 namespace magicTrucks\Controllers;
 
+use WP_Query;
+use magicTrucks\Models\WorkshopRegistration;
 
-class UserController
+
+class UserController extends CoreController
 {
     public function home() 
     {
-        echo __LINE__; exit();
+        // On vérifie que l'utilisateur est connecté via le CoreController
+        $this->mustBeConnected();
+        
+        // On récupère les données de l'utilisateur WP actuel
+        $user = wp_get_current_user();
+
+        // On récupère le profil
+        $profile = $this->getProfile($user);
+        
+        $this->show(
+            'views/user/home', 
+            ['currentUser' => $user]
+        );
+
+    }
+
+    public function register($workshop_id)
+    {
+        // On vérifie que l'utilisateur est connecté via le CoreController
+        $this->mustBeConnected();
+        
+        // On récupère les données de l'utilisateur WP actuel
+        $user = wp_get_current_user();
+
+        $this->show(
+            'views/user/register', 
+            [
+                'currentUser' => $user,
+                'workshopId' => $workshop_id
+            ]
+        );
+   
+    }
+
+    public function insert($workshopId)
+    {
+
+        // Récupération des données du formulaire d'enregistrement à l'atelier
+        $firstname = filter_input(INPUT_POST, 'firstname', FILTER_SANITIZE_STRING);
+        $lastname = filter_input(INPUT_POST, 'lastname', FILTER_SANITIZE_STRING);
+        $email = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_STRING);
+        $phone = filter_input(INPUT_POST, 'phone', FILTER_SANITIZE_STRING);
+        $comment = filter_input(INPUT_POST, 'comment', FILTER_SANITIZE_STRING);
+
+        // vérification : est ce que le visiteur est connecté
+        // s'il n'est pas connecté, nous le redirigeons vers la page de login
+        $this->mustBeConnected();
+
+        // récupération de l'utilisateur wordpress actuel
+        $user = wp_get_current_user();
+
+        $model = new WorkshopRegistration();
+        $model->insert(
+            $workshopId, // id atelier
+            $firstname, // Prénom
+            $lastname, // Nom
+            $email, // email
+            $phone, // nr de tel
+            $comment, // commentaire
+        );
+
+    }
+
+    // Récupération du profile via la table custom
+    public function getProfile($user)
+    {
+        $options = [
+            'author' => $user->ID,
+            'post_type' => 'registered'
+        ];
+
+        // On prépare la requête dans une syntaxe propre à WP
+        $query = new WP_Query($options);
+
+        // On exécute la requête
+        $result = $query->have_posts();
+
+        // On vérifie que le profile de l'utilisateur connecté existe bien
+/*         if(count($query->posts) === 0) {
+            echo "Votre profil ne s'est pas créé correctement. Veuillez contacter l'administrateur du site";
+            // Todo -- trigger email
+            exit();
+        }
+
+        // Si oui on affiche les données du profil stockées dans un CPT - cf 1:18 e09 n2
+        else {
+            return $query->posts[0];
+        } */
+
     }
 }
