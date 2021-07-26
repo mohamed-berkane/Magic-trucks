@@ -29,34 +29,31 @@
 </head>
 				<body>
 					<!-- Fixed navbar -->
-					<div class="navbar navbar-inverse navbar-fixed-top headroom">
-						<div class="container">
-							<div class="navbar-header">
-								<!-- Button for smallest screens -->
-								<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"><span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
-								
-							</div>
-							<div class="navbar-collapse collapse">
-								<ul class="nav navbar-nav pull-right">
-									<li><a href="index.html">Home</a></li>
-									<li class="active"><a href="about.html">About</a></li>
-									<li class="dropdown">
-										<a href="#" class="dropdown-toggle" data-toggle="dropdown">More Pages <b class="caret"></b></a>
-										<ul class="dropdown-menu">
-											<li><a href="sidebar-left.html">Left Sidebar</a></li>
-											<li><a href="sidebar-right.html">Right Sidebar</a></li>
-										</ul>
-									</li>
-									<li><a href="contact.html">Contact</a></li>
-									<li><a class="btn" href="signin.html">SIGN IN / SIGN UP</a></li>
-								</ul>
-							</div>
+					<div class="navbar navbar-inverse navbar-fixed-top headroom" >
+		<div class="container">
+			<div class="navbar-header">
+				<!-- Button for smallest screens -->
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"><span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+				<a class="navbar-brand" href="index.html"><img src="assets/images/magic_trucks7.png" alt=""></a>
+			</div>
+			<div class="navbar-collapse collapse">
+				<ul class="nav navbar-nav pull-right">
+					<li class="active"><a href="#">Accueil</a></li>
+					<li><a href="content/themes/magic-trucks/partials/workshop.php">Atelier</a></li>
+					<li><a href="about.html">Devis</a></li>
+					<li><a href="about.html">Galerie</a></li>
+					<li><a href="content/themes/magic-trucks/partials/about.php">Qui suis-je</a></li>
+					<li><a href="content/themes/magic-trucks/partials/contact.php">Contactez moi</a></li>
+					<li><a class="btn" href="content/themes/magic-trucks/partials/login.php">Se connecter</a></li>
+				</ul>
+			</div><!--/.nav-collapse -->
+		</div>
+	</div> 
 							<!--/.nav-collapse -->
 						</div>
 					</div>
 					<!-- /.navbar -->
 
-					<header id="head" class="secondary"></header>
 
 					<!-- container -->
 					<div class="container">
@@ -66,7 +63,7 @@
 							<li class="active">About</li>
 						</ol>
 
-						<div class="row">
+						<div class="row-about">
 
 							<!-- Article main content -->
 							<article class="col-sm-7 maincontent">
