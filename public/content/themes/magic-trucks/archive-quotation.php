@@ -1,4 +1,5 @@
 <?php
+    acf_form_head();
     get_header();
 ?>
 <?php
@@ -42,72 +43,55 @@
 
                     <!-- traitement de l'envoie du formulaire en POST -->
                    
-                    <form action="<?php echo esc_url( admin_url('admin-post.php') ); ?>" method="POST">
+                    <!-- <form action="<?php echo esc_url( admin_url('admin-post.php') ); ?>" method="POST"> -->
+                    <!-- <form> -->
                     <!-- Je redirige le traitement POST vers admin-post.php  avec la fonction admin_url -->
 
-                        <div class="top-margin">
-                            <label>Je veux</label>
-                            <?php 
-                                // récupération des types des travaux associées au devis
-                                $worktypes = get_terms( array(
-                                    'taxonomy' => 'worktype',
-                                    'hide_empty' => false
-                                ) );
-                                // récupération des budgets associées au devis
-                                $budgets = get_terms( array(
-                                    'taxonomy' => 'budget',
-                                    'hide_empty' => false
-                                ) );  
-                               // récupération des options sur place disponible associées au devis
-                               $places = get_terms( array(
-                                'taxonomy' => 'place',
-                                'hide_empty' => false
-                            ) );                                                               
-                            ?>                           
-                            <select name="worktype" id="work-select" class="form-control">
-                                <?php foreach($worktypes as $worktype): ?>
-                                        <option  value="<?= $worktype->name ?>" name="worktype"><?= $worktype->name ?>
-                                <?php endforeach; ?>
-
-                            </select>
-                        </div>
-                        <div class="top-margin">
-                            <label>Mon Budget</label>
-                            <select name="budget" id="budget-select" class="form-control">
-                                <?php foreach($budgets as $budget): ?>
-                                        <option  value="<?= $budget->name ?>"  name="budget"><?= $budget->name ?>
-                                <?php endforeach; ?>
-
-                            </select>
-                        </div>
-                        <div class="top-margin">
-                            <label>J'ai de la place pour accueillir Guillaume (...)</label>
-                            <select name="place" id="insite-select" class="form-control">
-
-                                <?php foreach($places as $place): ?>
-                                        <option  value="<?= $place->name ?>"  name="place"><?= $place->name ?>
-                                <?php endforeach; ?>
-
-                                <textarea name="placedetail" id="placedetail" rows="3" cols="40" placeholder="Précisez."></textarea>
-                                </textarea>
-                            </select>
-                        </div>
                         <div class="row top-margin">
                             <div class="col-sm-6">
-                                <label for="precise">Autre indications</label>
-                                <textarea name="precise" id="precise" rows="3" cols="40" placeholder="Si vous avez d'autres précisions à nous donner, décrivez les ici"></textarea>
-                                </textarea>
+
+                                <?php
+                                    $user = wp_get_current_user();
+                                    $options = array(
+                                    //acf_form(array(
+                                        'post_id' => "quote_{$user->ID}",
+                                        'post_title'	=> false,
+                                        'post_content'	=> false,
+                                        'field_groups' => ['group_60ff07d8deb70'],
+                                        'form_attributes' => array(
+                                            'method' => 'POST',
+                                            'action' => admin_url("admin-post.php"),
+                                          ),
+                                        'html_before_fields' => sprintf(
+                                            '
+                                            <div class="top-margin">
+                                            <input type="hidden" name="action" value="quotation_form">
+                                            <input type="hidden" name="user_id" value="user_%s">
+                                            ',
+                                            $user->ID
+                                        ),
+                                        'form' => true,
+                                        'html_after_fields' => '</div>',
+                                        'new_post'		=> array(
+                                            'post_type'		=> 'quotation',
+                                            'post_status'	=> 'publish'
+                                        ),
+                                        'html_submit_button' => '<button class="btn btn-action" type="submit" name="submit" value="quotation">Let\'s Go !</button>'
+                                    );
+                                    acf_form($options);
+                                ?>
+
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-lg-4 text-right">
 
                                 <!-- traitement de l'envoie du formulaire en POST -->
-                                <input type="hidden" name="action" value="quotation_form">
-                                <button class="btn btn-action" type='submit' name='submit'>Let's Go !</button>
+                                <!-- <input type="hidden" name="action" value="quotation_form">
+                                <input type="hidden" name="user_id" value="user_%s"> -->
                             </div>
                         </div>
-					</form>
+					<!-- </form> -->
 
                 </div>
             </div>
@@ -117,6 +101,12 @@
 
 </div>
 </div>	<!-- /container -->
+
+<div id="content">
+	
+
+	
+</div>
 
 <?php
     get_footer();

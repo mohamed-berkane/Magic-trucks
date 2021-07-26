@@ -181,7 +181,7 @@ class Plugin
                 ],
                 // IMPORTANT WP PLUGIN cpt cababilities
                 'capability_type' => 'post',
-                'map_meta_cap' => false,
+                'map_meta_cap' => true,
             ]
         );
     }
