@@ -47,7 +47,7 @@
 					<li><a href="<?= get_theme_file_uri()?>/workshop">Atelier</a></li>
 					<li><a href="<?= get_theme_file_uri()?>">Devis</a></li>
 					<li><a href="<?= get_theme_file_uri()?>">Galerie</a></li>
-					<li><a href="<?= get_theme_file_uri()?>">Qui suis-je</a></li>
+					<li><a href="<?= get_permalink(get_page_by_path('about'));?>">Qui suis-je</a></li>
 					<li><a href="<?= get_theme_file_uri()?>">Contactez moi</a></li>
 					<li><a class="btn" href="<?= get_theme_file_uri()?>">Se connecter</a></li>
 				</ul>
