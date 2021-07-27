@@ -111,10 +111,7 @@ body > div.jumbotron.top-space  {  /* section 4 icones */
     margin-top: 0px;
 }
 
-#carousel-magictrucks { /* Caroussel*/
-    margin-top: 30rem;
-    margin-bottom: -10rem;
-}
+
 
 body > div:nth-child(5) {  /* Mes réalisations */ 
     color: #1eb635;
@@ -306,6 +303,10 @@ body > div.jumbotron.top-space {
 .gallery__card-content a:hover {
     background-color: #212121;
     transition: .5s;
+}
+
+.navbar-inverse .navbar-nav>li>a:hover{
+    color:#1eb635 ;
 }
 
 
