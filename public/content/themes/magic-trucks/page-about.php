@@ -9,7 +9,7 @@
 get_header();
 ?>
 
-					<header id="head" class="secondary"></header>
+					
 
 					<!-- container -->
 					<div class="container">
@@ -19,7 +19,7 @@ get_header();
 							<li class="active">About</li>
 						</ol>
 
-						<div class="row">
+						<div class="row-about">
 
 							<!-- Article main content -->
 							<article class="col-sm-7 maincontent">
@@ -52,7 +52,7 @@ get_header();
 							<!-- Sidebar -->
 							<aside class="col-sm-5 sidebar sidebar-right">
 
-							<div class="img-camion"><img src="../assets/images/2camion.png">
+							<div class="img-camion"><img src="<?= get_theme_file_uri()?>/assets/images/2camion.png">
 				</div>
 
 							</aside>
