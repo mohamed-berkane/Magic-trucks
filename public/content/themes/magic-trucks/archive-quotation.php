@@ -49,39 +49,27 @@
 
                         <div class="row top-margin">
                             <div class="col-sm-6">
-
-                                <?php
-                                    $user = wp_get_current_user();
-                                    $options = array(
-                                        //acf_form(array(
-                                    //acf_register_form(array(
-                                        //'post_id' => "quote_{$user->ID}",
-                                        //'id' => "new_quotation",
-                                        //'post_id' => "new_post",
-                                        'post_title'	=> false,
-                                        'post_content'	=> false,
-                                        'field_groups' => ['group_60ff07d8deb70'],
-                                        'form_attributes' => array(
-                                            'method' => 'POST',
-                                            'action' => admin_url("admin-post.php"),
-                                          ),
-                                        'html_before_fields' => sprintf(
-                                            '
-                                            <div class="top-margin">
-                                            <input type="hidden" name="action" value="quotation_form">
-                                            '
-                                        ),
-                                        'form' => true,
-                                        'html_after_fields' => '</div>',
-                                        'new_post'		=> array(
-                                            'post_type'		=> 'quotation',
-                                            'post_status'	=> 'publish'
-                                        ),
-                                        'html_submit_button' => '<button class="btn btn-action" type="submit" name="submit" value="quotation">Let\'s Go !</button>'
-                                    );
-                                    acf_form($options);
-                                ?>
-
+                        <?php
+                            $options = [
+                                    'post_id'        => 'new_post',
+                                    'post_title'    => false,
+                                    'post_content'    => false,
+                                    'field_groups' => ['group_60ff07d8deb70'],
+                                    'html_before_fields' => sprintf(
+                                        '
+                                        <div class="top-margin">
+                                        <input type="hidden" name="action" value="quotation_form">
+                                        '
+                                    ),
+                                    'html_after_fields' => '</div>',
+                                    'new_post'        => [
+                                            'post_type'    => 'quotation',
+                                            'post_status' => 'publish'
+                                    ],
+                                    'submit_value'	=> 'Send'
+                            ];
+                            acf_form($options);
+                        ?>
                             </div>
                         </div>
                         <div class="row">
