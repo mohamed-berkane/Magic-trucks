@@ -3,49 +3,52 @@ body {
     margin: 0;
     background: black;
     margin-bottom: 0px;
-    overflow-x: hidden; 
-     }
+    overflow-x: hidden;
+}
 
 
 #head {
-    height: 80rem;  
+    height: 80rem;
     margin: 0rem 0rem 5rem 0rem;
 }
 
- .tagline {
-    color:black
+.tagline {
+    color: black
 }
 
 .navbar {
     background-color: #121117;
 }
 
-.navbar-collapse {  /* magic trucks */
-    background: url( ../images/magictrucks10.png);
-    background-repeat: no-repeat;  
+.navbar-collapse {
+    /* magic trucks */
+    background: url(../images/magictrucks10.png);
+    background-repeat: no-repeat;
     margin-top: 2rem;
-    
+
 }
 
-#head > div > div > h1 { /* L'évasion en camion aménagé sur-mesure */
-    
+#head>div>div>h1 {
+    /* L'évasion en camion aménagé sur-mesure */
+
     color: #973a0e;
     font-size: 5rem;
     margin-top: 10rem;
     padding-right: 1.6rem;
     max-width: 85rem;
-    margin:auto;
+    margin: auto;
     text-shadow: 1px 1px rgb(0, 0, 0);
     border-style: double;
-    padding:0.5rem;
-    border-radius:5px;
+    padding: 0.5rem;
+    border-radius: 5px;
     background-color: rgba(255, 228, 196, 0.89);
     font-family: "Gill Sans Extrabold", sans-serif;
     font-family: "Goudy Bookletter 1911", sans-serif;
-    
+
 }
 
-#head > div > div > p > a.btn.btn-action.btn-lg { /* bouton Atelier aménagement */
+#head>div>div>p>a.btn.btn-action.btn-lg {
+    /* bouton Atelier aménagement */
     position: relative;
     display: inline-block;
     padding: 1rem 5rem;
@@ -53,11 +56,13 @@ body {
     font-weight: bold;
     color: #fff;
     border-radius: 15px;
-    overflow: hidden; /* Effet flaque que dans bouton */
+    overflow: hidden;
+    /* Effet flaque que dans bouton */
     background: linear-gradient(90deg, #1eb635, #121117);
 }
 
-#head > div > div > p > a.btn.btn-default.btn-lg { /* bouton Demande de devis */
+#head>div>div>p>a.btn.btn-default.btn-lg {
+    /* bouton Demande de devis */
     position: relative;
     display: inline-block;
     padding: 1rem 5rem;
@@ -65,12 +70,14 @@ body {
     font-weight: bold;
     color: #fff;
     border-radius: 15px;
-    overflow: hidden; /* Effet flaque que dans bouton */
+    overflow: hidden;
+    /* Effet flaque que dans bouton */
     background: #121117;
-    
+
 }
 
-#head > div > div > p > a.btn.btn-action.btn-lg2 { /* bouton Galerie photos */
+#head>div>div>p>a.btn.btn-action.btn-lg2 {
+    /* bouton Galerie photos */
     position: relative;
     display: inline-block;
     padding: 1rem 5rem;
@@ -78,60 +85,67 @@ body {
     font-weight: bold;
     color: #fff;
     border-radius: 15px;
-    overflow: hidden; /* Effet flaque que dans bouton */
+    overflow: hidden;
+    /* Effet flaque que dans bouton */
     background: linear-gradient(90deg, #121117, #1eb635);
 }
 
-body > div.container.text-center { /* Changer de vie */
-    background: url( ../images/changezdevie1.jpg); 
+body>div.container.text-center {
+    /* Changer de vie */
+    background: url(../images/changezdevie1.jpg);
     color: white;
     padding-bottom: 20rem;
     letter-spacing: 0.6rem;
-    width: 100%;   
+    width: 100%;
 }
 
-body > div.container.text-center > h2 { /* Changer de vie (titre) */
+body>div.container.text-center>h2 {
+    /* Changer de vie (titre) */
     color: #1eb635;
     font-weight: bold;
     letter-spacing: 1rem;
-    
+
 }
 
 ul {
     list-style: none;
 }
 
-body > div.jumbotron.top-space  {  /* section 4 icones */
+body>div.jumbotron.top-space {
+    /* section 4 icones */
     background: #1eb635;
     width: 100%;
     margin-top: 0px;
 }
 
-#carousel-magictrucks { /* Caroussel*/
+#carousel-magictrucks {
+    /* Caroussel*/
     margin-top: 30rem;
     margin-bottom: -10rem;
 }
 
-body > div:nth-child(5) {  /* Mes réalisations */ 
-     
+body>div:nth-child(5) {
+    /* Mes réalisations */
+
 }
 
-body > div:nth-child(5) > div:nth-child(3) {  /* Photos mes réalisations */
-    
+body>div:nth-child(5)>div:nth-child(3) {
+    /* Photos mes réalisations */
+
 }
 
 .footer1 {
     background: #1eb635;
 }
 
-#footer > div.footer1 {
+#footer>div.footer1 {
     color: black;
-    
+
 }
 
 .row {
-    padding-top:1rem;
-    
+    padding-top: 1rem;
+
 }
 
 .rom-about {
@@ -141,32 +155,32 @@ body > div:nth-child(5) > div:nth-child(3) {  /* Photos mes réalisations */
 
 .header-workshop {
 
-    padding:5rem;
+    padding: 5rem;
 }
 
 .workshop-img {
-    
-    padding:5rem 0 5rem 0rem;
-    display:flex;
-    justify-content:space-around;
+
+    padding: 5rem 0 5rem 0rem;
+    display: flex;
+    justify-content: space-around;
 }
 
 .workshop-img p {
 
     background-color: rgb(0, 238, 255);
-    padding:7rem;
-    
+    padding: 7rem;
+
 }
 
 .workshop-img ul {
 
-    padding-top:3rem;
+    padding-top: 3rem;
 }
 
 #head {
     background-image: url("../images/photoaccueil.jpg");
-    background-repeat:no-repeat;
-    background-size:cover;
+    background-repeat: no-repeat;
+    background-size: cover;
     /** background-position:center-top;
     background-attachment:fixed;
     background-position-x: 50%;
@@ -192,73 +206,198 @@ body > div:nth-child(5) > div:nth-child(3) {  /* Photos mes réalisations */
 }
 **/
 
-.img-camion{
+.img-camion {
     box-shadow: 0em 0em 1em 1em white;
 
 }
-.sidebar{
+
+.sidebar {
     padding-top: 12em;
     width: 38%;
 }
-.oupss{
+
+.oupss {
     margin-top: 12em;
     color: white;
     text-align: center;
 
 }
-body > div.jumbotron.top-space {
+
+body>div.jumbotron.top-space {
     margin-top: 1rem;
 }
 
+/* ################## Container Atelier + Devis ##################      */
+
+
 #wrapper-fluid {
     display: flex;
+    margin-bottom: 5rem;
+    padding-bottom: 5rem;
+}
+
+@media only screen and (min-width: 1300px) {
+    #wrapper-fluid {
+        display: flex;
+        margin-bottom: 8rem;
+        padding-bottom: 8rem;
+    }
+}
+
+@media only screen and (min-width: 1500px) {
+    #wrapper-fluid {
+        display: flex;
+        margin-bottom: 12rem;
+        padding-bottom: 12rem;
+    }
+}
+
+@media only screen and (min-width: 1500px) {
+    #wrapper-fluid {
+        display: flex;
+        margin-bottom: 12rem;
+        padding-bottom: 12rem;
+    }
+}
+
+@media only screen and (min-width: 1700px) {
+    #wrapper-fluid {
+        display: flex;
+        margin-bottom: 15rem;
+        padding-bottom: 15rem;
+    }
 }
 
 #left-side,
-#right-side {
+#right-side,
+#left-side-2,
+#right-side-2 {
     flex-basis: 50%;
-    height: 50rem;
-    min-height:50rem;
-}
-
-@media only screen and (max-width: 400px) {
-    #left-side,
-#right-side {
-    flex-basis: 70%;
-    height: 50rem;
-    min-height:50rem;
-}
-    }
-
-#left-side {
-    display: flex;
-    flex-direction: column;
-    color:wheat;
-    text-align: center;
-    font-size: 2rem;
-}
-
-#right-side {
-    background-image:url("../images/2camion.png");
+    max-height: 50rem;
     background-size: 100%;
     background-repeat: no-repeat;
     background-position: center;
     margin-right: 1rem;
+    margin-left: 1rem;
+    color: #4caf50;
+    font-size: 2rem;
+    height: 100%;
 }
 
-.thin {
-    padding:1rem;
+
+@media only screen and (max-width: 600px) {
+
+    #right-side-2,
+    #left-side {
+        font-size: 1.5rem;
+        max-height: 40rem;
+    }
+
 }
 
-.thin,h2 {
+@media only screen and (min-width: 1000px) {
+
+    #right-side-2,
+    #left-side {
+        font-size: 1.5rem;
+        max-height: 40rem;
+        padding-left: 10rem;
+        font-size: 2.2rem;
+    }
+
+}
+
+@media only screen and (min-width: 1700px) {
+
+    #right-side-2,
+    #left-side {
+        font-size: 2.2rem;
+    }
+
+}
+
+@media only screen and (max-width: 600px) {
+
+    #left-side,
+    #right-side,
+    #left-side-2,
+    #right-side-2 {
+        flex-direction: column;
+    }
+
+}
+
+
+
+
+.thin,
+h2 {
     font-size: 4rem;
 }
 
+@media only screen and (min-width: 1500px) {
+
+    .thin {
+        font-size: 5rem;
+
+    }
+
+}
+
+@media only screen and (max-width: 600px) {
+
+    #left-side-2,
+    #right-side-2 {
+        flex-basis: 50%;
+        max-height: 70rem;
+        height: 50rem;
+    }
+}
+
+#right-side-2 {
+    text-align: right;
+    text-align: justify;
+    color: #8bc34a;
+    padding-right: 4rem;
+}
+
+@media only screen and (max-width: 600px) {
+    #right-side-2 {
+        padding-right: 1rem;
+    }
+}
+
+.img-quote,
+.img-workshop {
+
+    position: relative;
+    top: 5rem;
+    left: 20%;
+    border-radius: 20%;
+    border: solid #38261f 5px;
+    max-width: 60%;
+    min-width: 15rem;
+}
 
 
- 
+
+@media only screen and (max-width: 600px) {
+
+    .img-workshop,
+    .img-quote {
+        margin-bottom: 5rem;
+        left: 0%;
+        top: 22rem;
+    }
+}
 
 
+.div-atelier {
+    position: absolute;
+}
 
+#right-side>button {
+    position: relative;
+    top:5rem;
+}
 
-	

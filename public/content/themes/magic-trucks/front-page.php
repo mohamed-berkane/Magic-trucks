@@ -14,58 +14,60 @@ get_header();
 	<!-- Atelier -->
 	<div id="wrapper-fluid">
 		<div id="left-side">	
-			<h2 class="thin">Les ateliers ambulants</h2><br><br>
+			<h2 class="thin">Les ateliers</h2><br><br>
 				<section class="workshop-home">
-					<p>Seul ou avec vos amis, venez découvrir mes ateliers ambulants. Ici, nous apprendrons à installer des panneaux solaire, fabriquer des mousticaires, construire des toilettes sèches, et bien plus !</p>
+					<p>Venez découvrir les ateliers ambulant de Magic-Trucks.
 
-					<p>J'acceuillerais jusqu'à 25 personnes</p>
+					</br>
+					   En groupe, nous apprendrons à fabriquer toutes sortes d'équipements ou de décorations utile pour la vie en camion.
+					</br>
+					</br>
+					   Vérifiez les dates et lieux des prochains rendez-vous, peut être que Magic-Trucks se présente à côté de chez toi !
+					</p>
+					<button type="button" class="btn btn-outline-success">En savoir plus</button>
+
+					
+
+					
 				</section>
 		</div>
 
 		<div id="right-side">
-
+			
+			<img class="img-workshop" src="<?= get_theme_file_uri()?>/assets/images/2camion.png">
 		</div>
 
 	</div>
 	<!-- /Atelier-->
-		
-	<!-- Highlights - jumbotron -->
-	<div class="jumbotron top-space">
-		<div class="containerintro">
-			
-			<h3 class="text-center thin"></h3>
-			
-			<div class="row">
-				<div class="col-md-3 col-sm-6 highlight">
-					<div class="h-caption"><h4><i class="fa fa-cogs fa-5"></i>Conception</h4></div>
-					<div class="h-body text-center">
-						<p>Je modifie votre camion dans mon local situé à Rouen</p>
-					</div>
-				</div>
-				<div class="col-md-3 col-sm-6 highlight">
-					<div class="h-caption"><h4><i class="fa fa-truck fa-5"></i>Aménagements de A à Z</h4></div>
-					<div class="h-body text-center">
-						<p>Je vous aide à concevoir votre futur camion de A à Z</p>
-					</div>
-				</div>
-				<div class="col-md-3 col-sm-6 highlight">
-					<div class="h-caption"><h4><i class="fa fa-heart fa-5"></i>Aménagements partiels</h4></div>
-					<div class="h-body text-center">
-						<p>Je me déplace pour vous aider ou vous former</p>
-					</div>
-				</div>
-				<div class="col-md-3 col-sm-6 highlight">
-					<div class="h-caption"><h4><i class="fa fa-smile-o fa-5"></i>Ateliers thématiques</h4></div>
-					<div class="h-body text-center">
-						<p>Je vous aide à aménager ou à assurer la maintenance de votre camion</p>
-					</div>
-				</div>
-			</div> <!-- /row  -->
-			<i class="fas fa-truck-moving"></i>
+
+	<!-- Devis -->
+	<div id="wrapper-fluid">
+		<div id="left-side-2">
+		<img class="img-quote" src="<?= get_theme_file_uri()?>/assets/images/effet-bloom.jpg">
 		</div>
+		<div id="right-side-2">	
+			<h2 class="thin">Les devis</h2><br><br>
+				<section class="quote-home">
+					<p>Vous rêvez vous aussi de vous lancer dans l'aventure ? Je construit votre camion personnalisé selon vos envies et à votre image. 
+
+					</br>
+					   En groupe, nous apprendrons à fabriquer toutes sortes d'équipements ou de décorations utile pour la vie en camion.
+					</br>
+					</br>
+					   Vérifiez les dates et lieux des prochains rendez-vous, peut être que Magic-Trucks se présente à côté de chez toi !
+					</p>
+					<button type="button" class="btn btn-outline-success">Success</button>
+
+					
+
+					
+				</section>
+		</div>
+
+
 	</div>
-	<!-- /Highlights -->
-	
+	<!-- /Devis-->
+
 
 	<div id="carousel-magictrucks" class="carousel slide" data-ride="carousel" data-interval="3000"> <!-- data = traitement JS -->
   <!-- Indicators -->
