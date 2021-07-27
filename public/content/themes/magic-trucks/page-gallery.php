@@ -1,4 +1,12 @@
 <?php
+
+/**
+ * Template Name: gallery
+ * 
+ */
+?>
+
+<?php
 get_header();
 ?>
 
