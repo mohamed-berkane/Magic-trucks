@@ -14,12 +14,6 @@ class TestModelController extends CoreController
 
 {
 
-
-
-
-
-
-
     public function insert()
 
     {

@@ -21,10 +21,14 @@ body {
 }
 
 .navbar-collapse {  /* magic trucks */
-    background: url( ../images/magictrucks10.png);
+    /*background: url( ../images/magictrucks10.png);*/
     background-repeat: no-repeat;  
     margin-top: 2rem;
     
+}
+
+.navbar-inverse .navbar-brand img {
+    margin-top: 8px;
 }
 
 #head > div > div > h1 { /* L'évasion en camion aménagé sur-mesure */

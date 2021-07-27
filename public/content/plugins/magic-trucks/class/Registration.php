@@ -233,6 +233,11 @@ class Registration
         // On ajoute le rôle à l'utilisateur (1 seul choix pour le moment)
         $userObject->add_role($currentRole);
 
+        $firstname = filter_input(INPUT_POST, 'user_firstname');
+        $lastname = filter_input(INPUT_POST, 'user_lastname');   
+        $nicename = $firstname . " " . $lastname;     
+
+
         // On crée le profil associé
         if ($currentRole === 'registered') {
             wp_insert_post([
@@ -243,6 +248,15 @@ class Registration
             ]);
         }
 
+        // On associe au nouveau profil les informations complémentaires
+        if($currentRole === 'registered') {
+            wp_update_user([
+                'ID' => $userId,
+                'first_name' => $firstname,
+                'last_name' => $lastname,
+                'display_name' => $nicename,
+                'user_nicename' => $nicename
+            ]);
+        }
     }
-
 }
