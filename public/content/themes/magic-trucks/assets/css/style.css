@@ -21,10 +21,14 @@ body {
 }
 
 .navbar-collapse {  /* magic trucks */
-    background: url( ../images/magictrucks10.png);
+    /*background: url( ../images/magictrucks10.png);*/
     background-repeat: no-repeat;  
     margin-top: 2rem;
     
+}
+
+.navbar-inverse .navbar-brand img {
+    margin-top: 8px;
 }
 
 #head > div > div > h1 { /* L'évasion en camion aménagé sur-mesure */
@@ -107,10 +111,7 @@ body > div.jumbotron.top-space  {  /* section 4 icones */
     margin-top: 0px;
 }
 
-#carousel-magictrucks { /* Caroussel*/
-    margin-top: 30rem;
-    margin-bottom: -10rem;
-}
+
 
 body > div:nth-child(5) {  /* Mes réalisations */ 
     color: #1eb635;
@@ -135,8 +136,9 @@ body > div:nth-child(5) > div:nth-child(3) {  /* Photos mes réalisations */
 
 .row {
     padding-top:1rem;
+    color: white;
+    text-align: center;
 }
-  
 
 .header-workshop {
 
@@ -169,15 +171,15 @@ body > div:nth-child(5) > div:nth-child(3) {  /* Photos mes réalisations */
     background-attachment:fixed;
     background-size:cover;
     background-position:center-top;
-    background-position-x: 50%;
+    /** background-position-x: 50%;
     background-position-y: 65%;
     -webkit-animation: zoomin 60s 1;
-    animation-iteration-count: infinite;
+    animation-iteration-count: infinite; **/
 
 }
 
 
-
+/**
 @-webkit-keyframes zoomin {
     0% {
         -webkit-transform: scale(1);
@@ -190,7 +192,7 @@ body > div:nth-child(5) > div:nth-child(3) {  /* Photos mes réalisations */
     }
     
 }
-
+**/
 
 
 
@@ -211,12 +213,98 @@ body > div:nth-child(5) > div:nth-child(3) {  /* Photos mes réalisations */
 body > div.jumbotron.top-space {
     margin-top: 1rem;
 }
-.row-about{
+
+.row-about  {
     padding-top:1rem;
     color: white;
     text-align: center;
     margin-top: 2rem;
 }
+
+/*********************************************************SECTION Gallerie ************************************************************/
+
+#gallery {
+    position: relative;
+    background-color: #212121;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 2rem 0 5rem 0;
+    width: 100%;
+    border-radius: 15px; 
+}
+
+.gallery__card {
+    position: relative;
+    height: 250px;
+    background: #1eb635;
+    display: flex;
+    width: 45%;
+    margin: 30px 0;
+    border-radius: 15px; 
+}
+
+.gallery__card-illu {
+    position: absolute;
+    background-color: #212121;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    filter: grayscale(0);
+    transition: 1s ease-in-out;
+    border-radius: 15px; 
+    
+}
+
+.gallery__card:hover .gallery__card-illu { /* Survol souris */
+    width: 200px;
+    height: 200px;
+    left: -120px;
+    top: calc(50% - 75px);
+    filter: grayscale(100%);
+    background-color: #1eb635;
+    transition: 1s ease-in-out;
+    border-radius: 15px;
+}
+
+
+.gallery__card-content {
+    position: absolute;
+    right: 0;
+    width: calc(100% - 75px);
+    height: 100%;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.gallery__card-content h3 {
+    margin-bottom: 5px;
+    font-size: 1.5rem;
+}
+
+.gallery__card-content a {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 6px 10px;
+    background-color: #212121;
+    border-radius: 15px;
+    color: white;
+
+}
+
+.gallery__card-content a:hover {
+    background-color: #212121;
+    transition: .5s;
+}
+
 
 
  
