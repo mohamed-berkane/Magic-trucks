@@ -68,80 +68,76 @@ get_header();
 	</div>
 	<!-- /Highlights -->
 	
-
-	<div id="carousel-magictrucks" class="carousel slide" data-ride="carousel" data-interval="3000"> <!-- data = traitement JS -->
-  <!-- Indicators -->
-  <ol class="carousel-indicators">
-    <li data-target="#carousel-magictrucks" data-slide-to="0" class="active"></li>
-    <li data-target="#carousel-magictrucks" data-slide-to="1"></li>
-    <li data-target="#carousel-magictrucks" data-slide-to="2"></li>
-    <li data-target="#carousel-magictrucks" data-slide-to="3"></li>
-    <li data-target="#carousel-magictrucks" data-slide-to="4"></li>
-  </ol>
- 
-  <!-- Wrapper for slides -->
-  <div class="carousel-inner" role="listbox">
-    <div class="item active">
-      <img src="assets/images/magictrucks10.png" alt="Installation de cuisine">
-      <div class="carousel-caption">
-        Installation de cuisine
-      </div>
-    </div>
-    <div class="item">
-      <img src="/themes/magic-trucks/assets/images/cuisine2.jpg" alt="lit table">
-      <div class="carousel-caption">
-        Lit table
-      </div>
-    </div>
-    <div class="item">
-      <img src="assets/images/cuisine2.jpg" alt="Installation de poeles à granulés">
-      <div class="carousel-caption">
-        Installation de poeles à granulés
-      </div>
-    </div>
-    <div class="item">
-      <img src="/assets/images/cuisine2.jpg" alt="Extérieur en bardage bois">
-      <div class="carousel-caption">
-	   Extérieur en bardage bois
-      </div>
-    </div>
-    <div class="item">
-      <img src="assets/images/cuisine2.jpg" alt="Installation de panneaux solaire">
-      <div class="carousel-caption">
-	  Installation de panneaux solaire
-      </div>
-	</div>
-  </div>
-</div>
-
-		<!-- Controls -->
-		<a class="left carousel-control" href="#carousel-magictrucks" role="button" data-slide="prev">
-			<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-			<span class="sr-only">Précédent</span>
-		</a>
-		<a class="right carousel-control" href="#carousel-magictrucks" role="button" data-slide="next">
-			<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-			<span class="sr-only">Suivant</span>
-		</a>
-		</div>
 	
-	<!-- Social links. @TODO: replace by link/instructions in template -->
-	<section id="social">
-		<div class="container">
-			<div class="wrapper clearfix">
-				<!-- AddThis Button BEGIN -->
-				<div class="addthis_toolbox addthis_default_style">
+	<section id="gallery">
+            <h2 class="titre-section"><span class="icone"><i class="fas fa-laptop-code"></i></span> Gallerie</h2>
+            <div class="gallery__card">
+                <div class="gallery__card-illu" data-text="gallery">
+                    <img src="http://localhost/apotheose/magic-trucks/public/content/themes/magic-trucks/assets/images/camion7.jpg" alt="">
+                </div>
+                <div class="gallery__card-content">
+                    <div>
+                        <h3>Effet atypique garanti!</h3>
+                        <p>Je vous propose la pose de bardage bois extérieur, donnez une touche chaleureuse à votre camion!</p>
+                        <a href="#">Demandez moi un devis</a>
+                    </div>
+                </div>
+            </div>
+			<div class="gallery__card">
+                <div class="gallery__card-illu" data-text="gallery">
+                    <img src="http://localhost/apotheose/magic-trucks/public/content/themes/magic-trucks/assets/images/lit.jpg" alt="">
+                </div>
+                <div class="gallery__card-content">
+                    <div>
+                        <h3>Coin détente avec lit superposé</h3>
+                        <p>Chez Magic-Trucks, tout est possible, nous réalisons vos souhaits!</p>
+                        <a href="#">Demandez moi un devis</a>
+                    </div>
+                </div>
+            </div>
+			<div class="gallery__card">
+                <div class="gallery__card-illu" data-text="gallery">
+                    <img src="http://localhost/apotheose/magic-trucks/public/content/themes/magic-trucks/assets/images/bois-beau.jpg" alt="">
+                </div>
+                <div class="gallery__card-content">
+                    <div>
+                        <h3>Effet chaleureux garanti</h3>
+                        <p>Rien de tels que le bois pour apporté un coté naturel à votre intérieur</p>
+                        <a href="#">Demandez moi un devis</a>
+                    </div>
+                </div>
+            </div>
+			<div class="gallery__card">
+                <div class="gallery__card-illu" data-text="gallery">
+                    <img src="http://localhost/apotheose/magic-trucks/public/content/themes/magic-trucks/assets/images/toit_2.jpg" alt="">
+                </div>
+                <div class="gallery__card-content">
+                    <div>
+                        <h3>Besoin de tranquillité?</h3>
+                        <p>En option, je peux vous installer une échelle pour accèder au toit, rien de tels pour profiter d'un moment au calme</p>
+                        <a href="#">Demandez moi un devis</a>
+                    </div>
+                </div>
+            </div>
+
+
+<!-- Social links. @TODO: replace by link/instructions in template -->
+<section id="social">
+	<div class="container">
+		<div class="wrapper clearfix">
+			<!-- AddThis Button BEGIN -->
+			<div class="addthis_toolbox addthis_default_style">
 				<a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
 				<a class="addthis_button_tweet"></a>
 				<a class="addthis_button_linkedin_counter"></a>
 				<a class="addthis_button_google_plusone" g:plusone:size="medium"></a>
-				</div>
-				<!-- AddThis Button END -->
 			</div>
+			<!-- AddThis Button END -->
 		</div>
-	</section>
-    <!-- /social links -->
-    
+	</div>
+</section>
+<!-- /social links -->
+
 <?php
 get_footer();
 ?>
