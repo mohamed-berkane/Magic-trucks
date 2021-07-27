@@ -53,8 +53,11 @@
                                 <?php
                                     $user = wp_get_current_user();
                                     $options = array(
-                                    //acf_form(array(
-                                        'post_id' => "quote_{$user->ID}",
+                                        //acf_form(array(
+                                    //acf_register_form(array(
+                                        //'post_id' => "quote_{$user->ID}",
+                                        //'id' => "new_quotation",
+                                        //'post_id' => "new_post",
                                         'post_title'	=> false,
                                         'post_content'	=> false,
                                         'field_groups' => ['group_60ff07d8deb70'],
@@ -66,9 +69,7 @@
                                             '
                                             <div class="top-margin">
                                             <input type="hidden" name="action" value="quotation_form">
-                                            <input type="hidden" name="user_id" value="user_%s">
-                                            ',
-                                            $user->ID
+                                            '
                                         ),
                                         'form' => true,
                                         'html_after_fields' => '</div>',

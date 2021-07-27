@@ -44,10 +44,12 @@ function prefix_send_quotation_request() {
 
 add_action( 'admin_post_quotation_form', 'quotation_form' );
 function quotation_form() {
-    //var_dump($_REQUEST); die;
-    if(!isset($_REQUEST['user_id'])) return;
-    do_action('acf/save_post', $_REQUEST['user_id']);
+    var_dump($_REQUEST); die;
+    //if(!isset($_REQUEST['user_id'])) return;
+    //do_action('acf/save_post', $_REQUEST['user_id']);
+    do_action('acf/save_post');
+    //do_action('acf/save_post', 129);
 
-    //wp_redirect(add_query_arg('updated', 'success', wp_get_referer()));
+    wp_redirect(add_query_arg('updated', 'success', wp_get_referer()));
     exit;
 }
