@@ -305,6 +305,10 @@ body > div.jumbotron.top-space {
     transition: .5s;
 }
 
+.navbar-inverse .navbar-nav>li>a:hover{
+    color:#1eb635 ;
+}
+
 
 
  

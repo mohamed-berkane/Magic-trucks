@@ -1,7 +1,6 @@
 <?php
 get_header();
 ?>
-        
 <!-- Header -->
 <header id="head" >
 	<div class="container">
@@ -11,7 +10,6 @@ get_header();
 		</div>
 	</div>
 </header>
-
 	<!-- Intro -->
 	<div class="container text-center">
 		<br> <br>
@@ -27,7 +25,6 @@ get_header();
 				<li>Et plein d’autres encore à découvrir…</li><br>
 			</ul>
 		</p>
-
 	</div>
 	<!-- /Intro-->
 		
@@ -67,9 +64,9 @@ get_header();
 		</div>
 	</div>
 	<!-- /Highlights -->
-	
-	
-	<section id="gallery">
+Nouveau
+11 h 09
+<section id="gallery">
             <h2 class="titre-section"><span class="icone"><i class="fas fa-laptop-code"></i></span> Gallerie</h2>
             <div class="gallery__card">
                 <div class="gallery__card-illu" data-text="gallery">
@@ -119,8 +116,6 @@ get_header();
                     </div>
                 </div>
             </div>
-
-
 <!-- Social links. @TODO: replace by link/instructions in template -->
 <section id="social">
 	<div class="container">
@@ -137,11 +132,6 @@ get_header();
 	</div>
 </section>
 <!-- /social links -->
-
 <?php
 get_footer();
 ?>
-
-
-
-	
