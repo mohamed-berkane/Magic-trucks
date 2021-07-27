@@ -21,10 +21,14 @@ body {
 }
 
 .navbar-collapse {  /* magic trucks */
-    background: url( ../images/magictrucks10.png);
+    /*background: url( ../images/magictrucks10.png);*/
     background-repeat: no-repeat;  
     margin-top: 2rem;
     
+}
+
+.navbar-inverse .navbar-brand img {
+    margin-top: 8px;
 }
 
 #head > div > div > h1 { /* L'évasion en camion aménagé sur-mesure */
@@ -107,10 +111,7 @@ body > div.jumbotron.top-space  {  /* section 4 icones */
     margin-top: 0px;
 }
 
-#carousel-magictrucks { /* Caroussel*/
-    margin-top: 30rem;
-    margin-bottom: -10rem;
-}
+
 
 body > div:nth-child(5) {  /* Mes réalisations */ 
     color: #1eb635;
@@ -302,6 +303,10 @@ body > div.jumbotron.top-space {
 .gallery__card-content a:hover {
     background-color: #212121;
     transition: .5s;
+}
+
+.navbar-inverse .navbar-nav>li>a:hover{
+    color:#1eb635 ;
 }
 
 
