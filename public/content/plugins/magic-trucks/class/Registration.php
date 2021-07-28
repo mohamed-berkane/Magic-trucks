@@ -249,17 +249,25 @@ class Registration
 
         $firstname = filter_input(INPUT_POST, 'user_firstname');
         $lastname = filter_input(INPUT_POST, 'user_lastname');   
-        $nicename = $firstname . " " . $lastname;     
+        $nicename = $firstname . " " . $lastname;  
+        
+        // var_dump($firstname . $lastname . $nicename);
+
 
 
         // On crée le profil associé
         if ($currentRole === 'registered') {
+
+            echo __LINE__;
+            exit();
+
             wp_insert_post([
                 'post_author' => $userId,
                 'post_status' => 'publish',
-                'post_title' => 'Mon compte',
+                'post_title' => 'Mon compte' . $userId,
                 'post_type' => 'registered-profile'
             ]);
+
         }
 
         // On associe au nouveau profil les informations complémentaires

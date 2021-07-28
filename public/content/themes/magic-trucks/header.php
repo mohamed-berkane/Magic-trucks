@@ -1,19 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
-    <meta name="viewport"    content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
-    <meta name="author"      content="Sergey Pozhilov (GetTemplate.com)">
+    <meta name="author" content="Sergey Pozhilov (GetTemplate.com)">
     <link rel="shortcut icon" href="content/themes/magic-trucks/assets/images/gt_favicon.png" />
     <link rel="stylesheet" media="screen" href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,700"/>
     <link rel="stylesheet" href="<?= get_theme_file_uri()?>/assets/css/bootstrap.min.css"/>
     <!-- <link rel="stylesheet" href="<?= get_theme_file_uri()?>/assets/css/font-awesome.min.css">-->
     <script src="https://kit.fontawesome.com/9b1a6d9179.js" crossorigin="anonymous"></script>
     <!-- Custom styles for our template -->
-    <link rel="stylesheet" href="<?= get_theme_file_uri()?>/assets/css/bootstrap-theme.css" media="screen" >
-    <link rel="stylesheet" href="<?= get_theme_file_uri()?>/assets/css/main.css">
-    <link rel="stylesheet" href="<?= get_theme_file_uri()?>/assets/css/style.css">
+    <link rel="stylesheet" href="<?= get_theme_file_uri() ?>/assets/css/bootstrap-theme.css" media="screen">
+    <link rel="stylesheet" href="<?= get_theme_file_uri() ?>/assets/css/main.css">
+    <link rel="stylesheet" href="<?= get_theme_file_uri() ?>/assets/css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com/">
     <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
@@ -22,21 +23,22 @@
     <script src="assets/js/html5shiv.js"></script>
     <script src="assets/js/respond.min.js"></script>
     <![endif]-->
-    <?php wp_head();?>
+    <?php wp_head(); ?>
 </head>
+
 <body class="home">
     <!-- Fixed navbar -->
-    <div class="navbar navbar-inverse navbar-fixed-top headroom" >
+    <div class="navbar navbar-inverse navbar-fixed-top headroom">
         <div class="container">
             <div class="navbar-header">
                 <!-- Button for smallest screens -->
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"><span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
-                <a class="navbar-brand" href="<?= substr(get_site_url(),0, -2) ?>">
+                <a class="navbar-brand" href="<?= substr(get_site_url(), 0, -2) ?>">
                     <img src="<?= get_theme_file_uri('assets/images/magictrucks10.png') ?>" alt="">
                 </a>
             </div>
             <div class="navbar-collapse collapse">
-            <?php
+                <?php
                 $defaults = array(
                     'theme_location'  => '',
                     'menu'            => '',
@@ -84,24 +86,21 @@
                 
                 
                 echo $menu;
-            ?>
-            </div><!--/.nav-collapse -->
-        </div>
-    </div>
-    <!-- /.navbar -->
-    <!--
-                <ul class="nav navbar-nav pull-right">
-                    <li class="active"><a href="<?= substr(get_site_url(),0, -2) ?>">Accueil</a></li>
-                    <li><a href="<?= get_post_type_archive_link('workshop') ?>">Atelier</a></li>
-                    <li><a href="<?= get_post_type_archive_link('quotation') ?>">Devis</a></li>
-                    <li><a href="<?= get_theme_file_uri()?>">Galerie</a></li>
-                    <li><a href="<?= get_permalink(get_page_by_path('about'));?>">Qui suis-je</a></li>
-                    <li><a href="<?= get_theme_file_uri()?>">Contactez moi</a></li>
-                    <li><a class="btn" href="<?= get_theme_file_uri()?>">Se connecter</a></li>
-                </ul>
+                ?>
             </div>
-            -->
             <!--/.nav-collapse -->
-            </div>
-    </div> 
+        </div>
+                
+        <?php 
+
+            // Code commenté car il semble faire doublon avec la gestion du menu côté BO de Wordpress - to be confirmed
+            /* substr(get_site_url(), 0, -2) 
+            get_post_type_archive_link('workshop') 
+            get_post_type_archive_link('quotation') 
+            get_permalink(get_page_by_path('about')); 
+            */
+        ?>
+              
+    </div>
+    <!--/.nav-collapse -->
     <!-- /.navbar -->
