@@ -20,7 +20,7 @@
                 "Faire des travaux sur mon camion": "Faire des travaux sur mon camion",
                 "Je veux un nouveau camion": "Je veux un nouveau camion"
             },
-            "default_value": false,
+            "default_value": "--Choisissez une option--",
             "allow_null": 0,
             "multiple": 0,
             "ui": 0,
@@ -32,7 +32,7 @@
             "key": "field_60ff09ac0f8bf",
             "label": "Budget",
             "name": "",
-            "type": "select",
+            "type": "taxonomy",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -41,19 +41,14 @@
                 "class": "",
                 "id": ""
             },
-            "choices": {
-                "0 - 5000": "0 - 5000",
-                "5000 - 10000": "5000 - 10000",
-                "10000 - 20000": "10000 - 20000",
-                "Autre": "Autre"
-            },
-            "default_value": false,
+            "taxonomy": "budget",
+            "field_type": "select",
             "allow_null": 0,
-            "multiple": 0,
-            "ui": 0,
-            "return_format": "value",
-            "ajax": 0,
-            "placeholder": ""
+            "add_term": 1,
+            "save_terms": 1,
+            "load_terms": 1,
+            "return_format": "id",
+            "multiple": 0
         },
         {
             "key": "field_60ff0a7f0f8c0",
@@ -66,8 +61,7 @@
                 [
                     {
                         "field": "field_60ff09ac0f8bf",
-                        "operator": "==",
-                        "value": "Autre"
+                        "operator": "==empty"
                     }
                 ]
             ],
@@ -78,7 +72,7 @@
             },
             "default_value": "",
             "min": "",
-            "max": "",
+            "max": 1000000,
             "step": "",
             "prepend": "",
             "append": ""
@@ -100,7 +94,7 @@
                 "Non": "Non",
                 "Oui": "Oui"
             },
-            "default_value": false,
+            "default_value": "Non",
             "allow_null": 0,
             "multiple": 0,
             "ui": 0,
@@ -205,5 +199,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1627341606
+    "modified": 1627415964
 }

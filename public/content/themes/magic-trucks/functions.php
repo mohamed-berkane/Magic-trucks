@@ -3,29 +3,26 @@
 add_theme_support('menus');
 
 add_action('acf/save_post', 'quotation_post_save');
+ function quotation_post_save( $post_id ) {
+ 	// on verifie si c'est bien le formulaire de devis
+ 	if( get_post_type($post_id) !== 'quotation' ) {
+ 		return;
+ 	}
 
-function quotation_post_save( $post_id ) {
-	// on verifie si c'est bien le formulaire de devis
-	if( get_post_type($post_id) !== 'quotation' ) {
-		return;
-	}
+ 	// bail early if editing in admin
+ 	// if( is_admin() ) {
+ 	// 	return;
+ 	// }
 
-	// bail early if editing in admin
-	if( is_admin() ) {
-		return;
-	}
-
-	// on recupere le devis
-	$post = get_post( $post_id );
-    
-    //var_dump($post); die;
-	// get custom fields (field group exists for content_form)
-	// $name = get_field('name', $post_id);
-	// $email = get_field('email', $post_id);
-	update_field('post_title', 'Devis_', $post_id);
-    do_action('acf/save_post', $post_id);
-    wp_redirect(add_query_arg('updated', 'success', wp_get_referer()));
-    exit;	
+	$args = [
+		'ID'           => $post_id,
+		'post_title'   => 'Devis_'. $post_id,
+	];
+   
+  // Update the post into the database
+	wp_update_post( $args );
+	wp_redirect(add_query_arg('updated', 'success', wp_get_referer()));
+	
 	// email data
 	// $to = 'robas@windowslive.com';
 	// $headers = 'From: ' . $name . ' <' . $email . '>' . "\r\n";

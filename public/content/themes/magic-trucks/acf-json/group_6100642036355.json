@@ -1,0 +1,108 @@
+{
+    "key": "group_6100642036355",
+    "title": "Budget",
+    "fields": [
+        {
+            "key": "field_6100643179cc7",
+            "label": "0 - 5000",
+            "name": "0_-_5000",
+            "type": "number",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "€",
+            "min": 0,
+            "max": 5000,
+            "step": ""
+        },
+        {
+            "key": "field_6100649279cc8",
+            "label": "5000 - 10000",
+            "name": "5000_-_10000",
+            "type": "number",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "€",
+            "min": 5000,
+            "max": 10000,
+            "step": ""
+        },
+        {
+            "key": "field_610064bd79cc9",
+            "label": "10000 - 20000",
+            "name": "10000_-_20000",
+            "type": "number",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "€",
+            "min": 10000,
+            "max": 20000,
+            "step": ""
+        },
+        {
+            "key": "field_610064e779cca",
+            "label": "Autre",
+            "name": "autre",
+            "type": "number",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "€",
+            "min": 20000,
+            "max": "",
+            "step": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "taxonomy",
+                "operator": "==",
+                "value": "budget"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "modified": 1627415918
+}
