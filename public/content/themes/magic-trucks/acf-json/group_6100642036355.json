@@ -4,8 +4,8 @@
     "fields": [
         {
             "key": "field_6100643179cc7",
-            "label": "0 - 5000",
-            "name": "0_-_5000",
+            "label": "1 - 5000",
+            "name": "1_-_5000",
             "type": "number",
             "instructions": "",
             "required": 0,
@@ -15,11 +15,11 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": "",
+            "default_value": 1,
             "placeholder": "",
             "prepend": "",
             "append": "€",
-            "min": 0,
+            "min": 1,
             "max": 5000,
             "step": ""
         },
@@ -36,7 +36,7 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": "",
+            "default_value": 5000,
             "placeholder": "",
             "prepend": "",
             "append": "€",
@@ -57,7 +57,7 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": "",
+            "default_value": 10000,
             "placeholder": "",
             "prepend": "",
             "append": "€",
@@ -66,9 +66,9 @@
             "step": ""
         },
         {
-            "key": "field_610064e779cca",
-            "label": "Autre",
-            "name": "autre",
+            "key": "field_61013b8f599ad",
+            "label": "100000 - 500000",
+            "name": "100000_-_500000",
             "type": "number",
             "instructions": "",
             "required": 0,
@@ -78,13 +78,32 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": "",
+            "default_value": 100000,
             "placeholder": "",
             "prepend": "",
-            "append": "€",
-            "min": 20000,
-            "max": "",
+            "append": "",
+            "min": 100000,
+            "max": 500000,
             "step": ""
+        },
+        {
+            "key": "field_610064e779cca",
+            "label": "Autre",
+            "name": "autre",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": 1100000,
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
         }
     ],
     "location": [
@@ -104,5 +123,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1627415918
+    "modified": 1627471077
 }
