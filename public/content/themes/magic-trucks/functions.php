@@ -1,4 +1,5 @@
 <?php
+<<<<<<< HEAD
 
 add_theme_support('menus');
 
@@ -47,3 +48,7 @@ add_action('acf/save_post', 'quotation_post_save');
 //     wp_redirect(add_query_arg('updated', 'success', wp_get_referer()));
 //     exit;
 // }
+=======
+add_theme_support('menus');
+register_nav_menu( 'menu-header', 'Menu principal in header');
+>>>>>>> develop
