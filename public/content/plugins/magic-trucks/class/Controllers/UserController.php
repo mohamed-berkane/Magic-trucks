@@ -26,6 +26,94 @@ class UserController extends CoreController
 
     }
 
+
+    public function update() 
+    {
+        // avant de supprimer l'utilisateur, nous nous assurons que le le visiteur est bien connecté
+        if(!$this->mustBeConnected()) {
+            // si l'utilisateur n'est pas connecté, nous faisons un return pour nous assurer qu'aucun traitements ultérieur ne soit exécutés
+            return;
+        }
+
+        // récupération de l'utilisateur
+        $user = wp_get_current_user();
+        // suppresion de l'utilisateur
+        // WARNING WP User il faut faire un include manuel des fonction de gestion des utilisateurs avant de pouvoir appeler la fonction wp_delete_user
+        require_once(ABSPATH.'wp-admin/includes/user.php');
+
+        $this->show(
+            'views/user/update', 
+            ['currentUser' => $user]
+        );
+    }
+    
+    
+    public function updateConfirmed() {
+
+        $user = wp_get_current_user();
+        //print_r($user);
+        $userId = $user->data->ID;
+        // var_dump($userId);
+        $login = filter_input(INPUT_POST, 'user_login');
+        $firstname = filter_input(INPUT_POST, 'user_firstname');
+        $lastname = filter_input(INPUT_POST, 'user_lastname');
+        $nicename = $firstname . " " . $lastname;
+        $email = filter_input(INPUT_POST, 'user_email');
+
+        //var_dump("id :" . $userId . "    login :" . $login . "      1st :" . $firstname . "    last :" . $lastname . "    nice :" . $nicename . "     email :" . $email);
+
+
+        wp_update_user([
+            'ID' => $userId,
+            'first_name' => $firstname,
+            'last_name' => $lastname,
+            'display_name' => $nicename,
+            'user_nicename' => $nicename,
+            'user_email' => $email
+        ]);
+
+    }
+    
+
+    public function delete()
+    {
+        // avant de supprimer l'utilisateur, nous nous assurons que le le visiteur est bien connecté
+        if(!$this->mustBeConnected()) {
+            // si l'utilisateur n'est pas connecté, nous faisons un return pour nous assurer qu'aucun traitements ultérieur ne soit exécutés
+            return;
+        }
+
+        if($this->isAdmin()) {
+            echo 'Il n\'est pas possible de supprimer un compte administrateur ainsi';
+            exit();
+        }
+
+        // récupération de l'utilisateur
+        $user = wp_get_current_user();
+        // suppresion de l'utilisateur
+        // WARNING WP User il faut faire un include manuel des fonction de gestion des utilisateurs avant de pouvoir appeler la fonction wp_delete_user
+        require_once(ABSPATH.'wp-admin/includes/user.php');
+        wp_delete_user($user->ID);
+
+        // redirection de l'utilisateur sur la home page une fois que son compte est supprimée
+        $url = 'user/delete-confirmed/';
+        wp_redirect(
+            $url
+        );
+        exit();
+
+
+    }    
+
+
+    public function deleteconfirmed() {
+        $this->show(
+            'views/user/delete-confirmed', 
+            ['message' => 'Votre compte a bien été supprimé']
+        );
+    }
+
+
     public function register($workshop_id)
     {
         // On vérifie que l'utilisateur est connecté via le CoreController
@@ -100,4 +188,8 @@ class UserController extends CoreController
         } */
 
     }
+
+
+
+
 }

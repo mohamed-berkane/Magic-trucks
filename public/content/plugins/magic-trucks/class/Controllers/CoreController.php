@@ -32,6 +32,12 @@ class CoreController
         return true;
     }
 
+    /* Redirections en mode oShop */
+    public function redirect($routeName, $params = []) {
+        global $router;
+        header('Location:'. $router->generate($routeName, $params));
+    }
+
 
     protected function isAdmin()
     {

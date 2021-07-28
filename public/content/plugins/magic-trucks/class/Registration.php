@@ -17,10 +17,10 @@ class Registration
         );
  
         // On ajoute un hook pour ajouter du HTML custom dans la page
-        add_action(
+/*         add_action(
             'login_enqueue_scripts', 
             [$this, 'loginAddDiv'],
-        );
+        ); */
 
         // On ajoute un hook de validation du formulaire
         add_filter(
@@ -44,12 +44,26 @@ class Registration
             3
         );
 
+        add_filter(
+            'login_redirect', 
+            [$this, 'defaultUserPageRedirect'], 
+            10, 
+            3 
+        );
+
+        add_filter(
+            'registration_redirect', 
+            [$this, 'successfulRegistrationRedirect'] 
+        );
+
+        
+
     }
 
 
     // Méthodes de customization des formulaires de login, registration, mdp oubliés
     
-    public function loginAddDiv() {
+/*     public function loginAddDiv() {
         
         $customBlock = '
             <div class="login__leftblock">
@@ -57,7 +71,7 @@ class Registration
             </div>
         ';
         echo $customBlock;
-    }
+    } */
 
     public function customizeCSS() {
         wp_enqueue_style(
@@ -258,5 +272,18 @@ class Registration
                 'user_nicename' => $nicename
             ]);
         }
+
     }
+
+    public function defaultUserPageRedirect() {
+        return '/apotheose/magic-trucks/public/user/home';
+    }
+
+
+    function successfulRegistrationRedirect() {
+        return home_url( '/user/home' );
+    }
+
 }
+
+

@@ -5,8 +5,8 @@
 use magicTrucks\Controllers\TestModelController;
 use magicTrucks\Controllers\UserController;
 
-// $router = variable globale. 
-// global $router;
+// Solution simple mais pas la plus élégante pour faire passer la route à la vue
+global $router;
 
 // On instancie un nouveau router
 $router = new AltoRouter();
@@ -21,28 +21,7 @@ $baseURI = str_replace(
 // configuration d'altorouter
 $router->setBasePath($baseURI);
 
-$router->map(
-    
-    // methode HTTP a surveiller
-    'GET',
 
-    // url à matcher
-    '/user/home/',
-
-    function() {
-
-        //echo __LINE__; exit();
-
-        // On instancie le controller User
-        $controller = new UserController();
-
-        // On appelle la méthode home
-        $controller->home();
-    },
-
-    // Id de la route
-    'user-home'
-);
 
 //---------- Routes du projet Magic-Trucks ------------------
 
@@ -51,7 +30,7 @@ $router->map(
     '/test/model/getWorkshopsByUserId/',
     function() {
         $controller = new TestModelController();
-       $controller->getWorkshopsByUserId();
+        $controller->getWorkshopsByUserId();
     },
     'test-model-get-workshops-by-user-id'
 );
@@ -61,7 +40,7 @@ $router->map(
     '/user/register/[i:id]/',
     function($id) {
         $controller = new UserController();
-       $controller->register($id);
+        $controller->register($id);
     },
     'user-register'
 );
@@ -71,7 +50,7 @@ $router->map(
     '/user/register/[i:id]/',
     function($id) {
         $controller = new UserController();
-       $controller->insert($id);
+        $controller->insert($id);
     },
     'user-insert'
 );
@@ -105,6 +84,91 @@ $router->map(
     },
     'test-model-delete'
 );
+
+
+/* User */
+
+// Accueil
+$router->map(
+    
+    // methode HTTP a surveiller
+    'GET',
+
+    // url à matcher
+    '/user/home/',
+
+    function() {
+
+        // On instancie le controller User
+        $controller = new UserController();
+
+        // On appelle la méthode home
+        $controller->home();
+    },
+
+    // Id de la route
+    'user-home'
+);
+
+// Mise à jour
+$router->map(
+    'GET',
+    '/user/update/',
+    function() {
+        $controller = new UserController();
+        $controller->update();
+    },
+    'user-update'
+);
+
+// Mise à jour
+$router->map(
+    'POST',
+    '/user/update/',
+    function() {
+        $controller = new UserController();
+        $controller->updateConfirmed();
+    },
+    'user-update-confirmed'
+);
+
+
+
+
+// Suppression
+$router->map(
+    'GET',
+    '/user/delete/',
+    function() {
+        $controller = new UserController();
+        $controller->delete();
+    },
+    'user-delete'
+);
+
+// Suppression confirmée
+$router->map(
+    
+    // methode HTTP a surveiller
+    'GET',
+
+    // url à matcher
+    '/user/delete-confirmed/',
+
+    function() {
+
+        // On instancie le controller User
+        $controller = new UserController();
+
+        // On appelle la méthode home
+        $controller->deleteconfirmed();
+    },
+
+    // Id de la route
+    'user-delete-confirm'
+);
+
+
 
 // nous demandons à altorouter de vérifier s'il y a une route valide
 $match = $router->match();
