@@ -258,9 +258,6 @@ class Registration
         // On crée le profil associé
         if ($currentRole === 'registered') {
 
-            echo __LINE__;
-            exit();
-
             wp_insert_post([
                 'post_author' => $userId,
                 'post_status' => 'publish',

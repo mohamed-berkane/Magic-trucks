@@ -60,9 +60,6 @@ class UserController extends CoreController
         $nicename = $firstname . " " . $lastname;
         $email = filter_input(INPUT_POST, 'user_email');
 
-        //var_dump("id :" . $userId . "    login :" . $login . "      1st :" . $firstname . "    last :" . $lastname . "    nice :" . $nicename . "     email :" . $email);
-
-
         wp_update_user([
             'ID' => $userId,
             'first_name' => $firstname,
@@ -71,6 +68,14 @@ class UserController extends CoreController
             'user_nicename' => $nicename,
             'user_email' => $email
         ]);
+
+        $this->show(
+            'views/user/update', 
+            [
+                'currentUser' => $user,
+                'message' => "Mise à jour effectuée avec succès"
+            ]
+        );
 
     }
     
@@ -84,7 +89,7 @@ class UserController extends CoreController
         }
 
         if($this->isAdmin()) {
-            echo 'Il n\'est pas possible de supprimer un compte administrateur ainsi';
+            echo 'Ne fais pas le zouave en supprimant ton compte administrateur';
             exit();
         }
 
@@ -96,22 +101,13 @@ class UserController extends CoreController
         wp_delete_user($user->ID);
 
         // redirection de l'utilisateur sur la home page une fois que son compte est supprimée
-        $url = 'user/delete-confirmed/';
-        wp_redirect(
-            $url
+        $this->show(
+            'views/user/delete', 
+            ['message' => 'Votre compte a bien été supprimé']
         );
-        exit();
 
 
     }    
-
-
-    public function deleteconfirmed() {
-        $this->show(
-            'views/user/delete-confirmed', 
-            ['message' => 'Votre compte a bien été supprimé']
-        );
-    }
 
 
     public function register($workshop_id)

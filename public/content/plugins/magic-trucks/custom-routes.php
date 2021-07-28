@@ -132,9 +132,6 @@ $router->map(
     'user-update-confirmed'
 );
 
-
-
-
 // Suppression
 $router->map(
     'GET',
@@ -144,28 +141,6 @@ $router->map(
         $controller->delete();
     },
     'user-delete'
-);
-
-// Suppression confirmée
-$router->map(
-    
-    // methode HTTP a surveiller
-    'GET',
-
-    // url à matcher
-    '/user/delete-confirmed/',
-
-    function() {
-
-        // On instancie le controller User
-        $controller = new UserController();
-
-        // On appelle la méthode home
-        $controller->deleteconfirmed();
-    },
-
-    // Id de la route
-    'user-delete-confirm'
 );
 
 

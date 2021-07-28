@@ -6,43 +6,77 @@
     
 ?>
 
+<style>
+.jumbotron {
+    margin-top:20px; 
+    background:#fff;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.jumbotron img {
+    max-height:60px;
+}
+
+.jumbotron .centered {
+    text-align: center;
+}
+
+.mon-profil {
+    padding: 0 10px;
+}
+
+.mt {
+    margin-top:150px;
+}
+
+.half {
+    width: 50%;
+}
+
+.jumbotron-wrapper {
+    width: 100%;
+}
+
+</style>
+
 <!-- container -->
-<div class="container" style="margin-top:150px">
+<div class="container mt">
 
-    <ol class="breadcrumb" >
-
-    </ol>
-
-    <div class="jumbotron" style="margin-top:20px; height: 380px; background:#fff;">
-        <div style="text-align:center;"><img style="max-height:60px;" src="<?= get_theme_file_uri()?>/assets/images/magictrucks6.png"/></div>
-        <h1 class="page-title">Mon profil</h1>
-        <p class="lead">Bienvenue dans votre espace personnel. Vous pouvez modifier vos coordonnées ou consulter votre historique d'actions sur le site. </p>
-
-
-            <div class="col-sm-6">
-                <h4>Coordonnées :</h4>
-                <strong>Prénom</strong> : <?= $currentUser->user_firstname; ?><br>
-                <strong>Nom</strong> : <?= $currentUser->user_lastname; ?><br>
-                <strong>Email</strong> : <?= $currentUser->data->user_email; ?>
+    <div class="jumbotron">
+        <div class="jumbotron-wrapper">
+            <div class="centered">
+                <img src="<?= get_theme_file_uri()?>/assets/images/magictrucks6.png"/>
             </div>
-
-            <div class="col-sm-6">
-                <h4>Actions :</h4>
-                <a href="/apotheose/magic-trucks/public/user/update/">
-                    <i class="fas fa-edit"></i> Mettre à jour
-                </a><br>
-                <a href="/apotheose/magic-trucks/public/user/delete" onclick="return confirm('Are you sure you want to delete this item?');">
-                    <i class="fas fa-trash-alt"></i> Supprimer
-                </a><br>
-                <a href="/apotheose/magic-trucks/public/wp/wp-login.php?action=logout">
-                    <i class="fas fa-sign-out-alt"></i> Déconnecter
-                </a>
-            </div>
-
+            <h1 class="page-title">Mon profil</h1>
+            <p class="lead">Bienvenue dans votre espace personnel. Vous pouvez modifier vos coordonnées ou consulter votre historique d'actions sur le site. </p>
         </div>
-    <div>
+
+        <div class="half">
+            <h4>Coordonnées :</h4>
+            <strong>Prénom</strong> : <?= $currentUser->user_firstname; ?><br>
+            <strong>Nom</strong> : <?= $currentUser->user_lastname; ?><br>
+            <strong>Email</strong> : <?= $currentUser->data->user_email; ?>
+        </div>
+
+        <div class="half">
+            <h4>Actions :</h4>
+            <a href="/apotheose/magic-trucks/public/user/update/">
+                <i class="fas fa-edit"></i> Mettre à jour
+            </a><br>
+            <a href="/apotheose/magic-trucks/public/user/delete" onclick="return confirm('Are you sure you want to delete this item?');">
+                <i class="fas fa-trash-alt"></i> Supprimer
+            </a><br>
+            <a href="/apotheose/magic-trucks/public/wp/wp-login.php?action=logout">
+                <i class="fas fa-sign-out-alt"></i> Déconnecter
+            </a>
+        </div>
+
+    </div>
 
     <div class="row">
+
+        <!-- panel 1 -->
         <div class="col-sm-6" style="color:black;">
             <div class="panel panel-default">
                 <div class="panel-body">
@@ -97,6 +131,8 @@
                 </div>
             </div>
         </div>
+       
+        <!-- panel 2 --> 
         <div class="col-sm-6" style="color:black;">
             <div class="panel panel-default">
                 <div class="panel-body">
@@ -116,11 +152,9 @@
                     <a href="http://localhost/apotheose/magic-trucks/public/workshop/mon-tout-1er-atelier/">En savoir plus</a>
                 </div>
             </div>
-        </div>        
+        </div>  
+
     </div>     
-
-</div>
-
 
 </div>	<!-- /container -->
 
