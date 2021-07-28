@@ -43,6 +43,7 @@
 
         "wp-install-classic-editor": "wp plugin install classic-editor --activate",
         "wp-install-html-editor-syntax-highlighter": "wp plugin install html-editor-syntax-highlighter --activate",
+        "wp-install-acf": "wp plugin install acf-to-rest-api --activate",
 
         "wp-install-all": [
             "wp plugin install classic-editor --activate",
