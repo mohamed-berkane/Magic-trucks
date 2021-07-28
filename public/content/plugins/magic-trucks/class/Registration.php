@@ -61,18 +61,6 @@ class Registration
     }
 
 
-    // Méthodes de customization des formulaires de login, registration, mdp oubliés
-    
-/*     public function loginAddDiv() {
-        
-        $customBlock = '
-            <div class="login__leftblock">
-                <div class="login__leftblock--imageblock"></div>
-            </div>
-        ';
-        echo $customBlock;
-    } */
-
     public function customizeCSS() {
         wp_enqueue_style(
             'custom-login',

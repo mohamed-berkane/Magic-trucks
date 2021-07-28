@@ -70,14 +70,15 @@ class Plugin
             [$this, 'createRegisteredProfileCustomPostType']
         );
 
-        add_action( 
+/*         add_action( 
             'save_post', 
             'set_post_default_category', 
             10,
             3 
-        );
+        ); */
+    }
  
-    function set_post_default_category($post_id, $post, $update ) {
+/*     function set_post_default_category( $post_id, $post, $update ) {
         // Only want to set if this is a new post!
         if ( $update ){
             return;
@@ -92,9 +93,9 @@ class Plugin
         $term = get_term_by( 'slug', 'my-custom-term', 'category' );
     
         wp_set_post_terms( $post_id, $term->term_id, 'category', true );
-    }
+    } */
 
-    }
+    
 
     public function activate()
     {
