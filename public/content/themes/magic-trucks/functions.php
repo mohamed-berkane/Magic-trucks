@@ -1,7 +1,10 @@
 <?php
-<<<<<<< HEAD
 
+add_action('acf/save_post', 'quotation_post_save');
 add_theme_support('menus');
+
+// On enregistre le menu de navigation principal
+register_nav_menu( 'menu-header', 'Menu principal in header');
 
 add_action('acf/save_post', 'quotation_post_save');
  function quotation_post_save( $post_id ) {
@@ -33,22 +36,3 @@ add_action('acf/save_post', 'quotation_post_save');
 	// // send email
 	// wp_mail($to, $subject, $body, $headers );
 }
-
-
-//add_action( 'admin_post_quotation_form', 'prefix_send_quotation_request' );
-
-// add_action( 'admin_post_quotation_form', 'quotation_form' );
-// function quotation_form($post_id) {
-//     //var_dump($_REQUEST); die;
-//     //if(!isset($_REQUEST['user_id'])) return;
-//     //do_action('acf/save_post', $_REQUEST['user_id']);
-//     //do_action('acf/save_post', 130);
-//     do_action('acf/save_post', $post_id);
-
-//     wp_redirect(add_query_arg('updated', 'success', wp_get_referer()));
-//     exit;
-// }
-=======
-add_theme_support('menus');
-register_nav_menu( 'menu-header', 'Menu principal in header');
->>>>>>> develop

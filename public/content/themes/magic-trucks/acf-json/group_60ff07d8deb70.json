@@ -31,7 +31,7 @@
         {
             "key": "field_60ff09ac0f8bf",
             "label": "Budget",
-            "name": "",
+            "name": "budget",
             "type": "select",
             "instructions": "",
             "required": 0,
@@ -145,7 +145,7 @@
         {
             "key": "field_60ff0bdf0f8c3",
             "label": "Precisez",
-            "name": "precisez",
+            "name": "precisez2",
             "type": "textarea",
             "instructions": "",
             "required": 0,
@@ -206,5 +206,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1627472324
+    "modified": 1627485073
 }
