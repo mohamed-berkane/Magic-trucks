@@ -37,3 +37,16 @@ add_action('acf/save_post', 'quotation_post_save');
 	 wp_update_post( $args );
 	 wp_redirect(add_query_arg('updated', 'success', wp_get_referer()));
 }
+
+add_action( 'phpmailer_init', 'send_smtp_email' );
+function send_smtp_email( $phpmailer ) {
+    $phpmailer->isSMTP();
+    $phpmailer->Host       = SMTP_HOST;
+    $phpmailer->SMTPAuth   = SMTP_AUTH;
+    $phpmailer->Port       = SMTP_PORT;
+    $phpmailer->SMTPSecure = SMTP_SECURE;
+    $phpmailer->Username   = SMTP_USERNAME;
+    $phpmailer->Password   = SMTP_PASSWORD;
+    $phpmailer->From       = SMTP_FROM;
+    $phpmailer->FromName   = SMTP_FROMNAME;
+}
