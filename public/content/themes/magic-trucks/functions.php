@@ -17,22 +17,23 @@ add_action('acf/save_post', 'quotation_post_save');
  	// if( is_admin() ) {
  	// 	return;
  	// }
-
+	$user = wp_get_current_user();
+	
 	$args = [
 		'ID'           => $post_id,
 		'post_title'   => 'Devis_'. $post_id,
 	];
-   
-  // Update the post into the database
-	wp_update_post( $args );
-	wp_redirect(add_query_arg('updated', 'success', wp_get_referer()));
 	
 	// email data
-	// $to = 'robas@windowslive.com';
-	// $headers = 'From: ' . $name . ' <' . $email . '>' . "\r\n";
-	// $subject = 'Demande de devis';
-	// $body = '<h1>Une nouvelle demande de devis est arrivé:</h1><br>'.$post->post_content;
-	
-	// // send email
-	// wp_mail($to, $subject, $body, $headers );
+	$to = 'robas@windowslive.com';
+	$headers = 'From: ' . $user->user_nicename . ' <' . $user->user_email . '>' . "\r\n";
+	$subject = 'Demande de devis';
+	$body = '<h1>Une nouvelle demande de devis est arrivé:</h1><br>'.get_the_content($post_id);
+	// send email
+	//wp_mail($to, $subject, $body, $headers );
+	var_dump($headers); die();
+
+	// Update the post into the database
+	 // wp_update_post( $args );
+	 // wp_redirect(add_query_arg('updated', 'success', wp_get_referer()));
 }
