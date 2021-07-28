@@ -25,7 +25,11 @@ add_action('acf/save_post', 'quotation_post_save');
 	];
 	
 	// email data
-	$to = 'robas@windowslive.com';
+	// florent.zoro@gmail.com
+	// florentverney@gmail.com
+	// georget.mickael84@gmail.com
+	// berkane251994@gmail.com
+	$to = 'robas@windowslive.com, robas@free.fr';
 	$headers = 'From: ' . $user->user_nicename . ' <' . $user->user_email . '>' . "\r\n";
 	$subject = 'Demande de devis';
 	$body = '<h1>Une nouvelle demande de devis est arrivé:</h1><br>'.get_the_content($post_id);
