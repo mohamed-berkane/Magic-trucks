@@ -63,12 +63,6 @@
             </div>
             <!--/.nav-collapse -->
         </div>
-    
-        <?= substr(get_site_url(), 0, -2) ?>
-        <?= get_post_type_archive_link('workshop') ?>
-        <?= get_post_type_archive_link('quotation') ?>
-        <?= get_permalink(get_page_by_path('about')); ?>
-
     </div>
     <!--/.nav-collapse -->
     <!-- /.navbar -->
