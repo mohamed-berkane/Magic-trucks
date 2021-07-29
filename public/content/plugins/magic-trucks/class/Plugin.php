@@ -78,15 +78,15 @@ class Plugin
         $this->registerRegisteredRole();
 
         // Création de custom table au moment de l'activation du plugin
-        $model = new WorkshopRegistration();
-        $model->createTable();
+        // $model = new WorkshopRegistration();
+        // $model->createTable();
     }
 
     public function deactivate()
     {
         // Suppression de custom table au moment de l'desactivation du plugin
-        $model = new WorkshopRegistration();
-        $model->dropTable();
+        // $model = new WorkshopRegistration();
+        // $model->dropTable();
     }
 
 
@@ -181,7 +181,7 @@ class Plugin
                 ],
                 // IMPORTANT WP PLUGIN cpt cababilities
                 'capability_type' => 'post',
-                'map_meta_cap' => false,
+                'map_meta_cap' => true,
             ]
         );
     }
