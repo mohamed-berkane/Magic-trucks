@@ -17,10 +17,10 @@ class Registration
         );
  
         // On ajoute un hook pour ajouter du HTML custom dans la page
-        add_action(
+/*         add_action(
             'login_enqueue_scripts', 
             [$this, 'loginAddDiv'],
-        );
+        ); */
 
         // On ajoute un hook de validation du formulaire
         add_filter(
@@ -44,20 +44,22 @@ class Registration
             3
         );
 
-    }
+        add_filter(
+            'login_redirect', 
+            [$this, 'defaultUserPageRedirect'], 
+            10, 
+            3 
+        );
 
+        add_filter(
+            'registration_redirect', 
+            [$this, 'successfulRegistrationRedirect'] 
+        );
 
-    // Méthodes de customization des formulaires de login, registration, mdp oubliés
-    
-    public function loginAddDiv() {
         
-        $customBlock = '
-            <div class="login__leftblock">
-                <div class="login__leftblock--imageblock"></div>
-            </div>
-        ';
-        echo $customBlock;
+
     }
+
 
     public function customizeCSS() {
         wp_enqueue_style(
@@ -233,16 +235,48 @@ class Registration
         // On ajoute le rôle à l'utilisateur (1 seul choix pour le moment)
         $userObject->add_role($currentRole);
 
+        $firstname = filter_input(INPUT_POST, 'user_firstname');
+        $lastname = filter_input(INPUT_POST, 'user_lastname');   
+        $nicename = $firstname . " " . $lastname;  
+        
+        // var_dump($firstname . $lastname . $nicename);
+
+
+
         // On crée le profil associé
         if ($currentRole === 'registered') {
+
             wp_insert_post([
                 'post_author' => $userId,
                 'post_status' => 'publish',
-                'post_title' => 'Mon compte',
+                'post_title' => 'Mon compte' . $userId,
                 'post_type' => 'registered-profile'
+            ]);
+
+        }
+
+        // On associe au nouveau profil les informations complémentaires
+        if($currentRole === 'registered') {
+            wp_update_user([
+                'ID' => $userId,
+                'first_name' => $firstname,
+                'last_name' => $lastname,
+                'display_name' => $nicename,
+                'user_nicename' => $nicename
             ]);
         }
 
     }
 
+    public function defaultUserPageRedirect() {
+        return '/apotheose/magic-trucks/public/user/home';
+    }
+
+
+    function successfulRegistrationRedirect() {
+        return home_url( '/user/home' );
+    }
+
 }
+
+

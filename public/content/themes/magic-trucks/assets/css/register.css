@@ -1,18 +1,21 @@
-body {
-    display: flex;
-    background: #fff;
-}
 
 @media (min-width: 992px) {
-    .login__leftblock {
+    /*     .login__leftblock {
         height:100vh;
         width:50%;
+    } */
+    
+    body {
+        display: flex;
+        background: #000;
     }
 
     #login {
         width:50%;
-        margin: 0 5rem;
+        margin: 5rem auto;
         padding: 1% 0 0;
+        background: #fff;
+        border-radius: 6px;
     }    
 
     #login:nth-child(1) {
@@ -21,16 +24,21 @@ body {
 }
 
 @media (max-width: 992px) {
+
+    body {
+        background: #fff;
+    }
+
     .login form {
         background:#F5F5F5;
     }
 
-    .login__leftblock {
+/*     .login__leftblock {
         height:100vh;
-    }
+    } */
 }
 
-.login__leftblock--imageblock {
+/* .login__leftblock--imageblock {
     height:100vh;
     background: #eee;
     background-image: url("../images/photoaccueil.jpg");
@@ -38,7 +46,7 @@ body {
     background-attachment:fixed;
     background-size:cover;
     background-position:center center; 
-}
+} */
 
 .login h1 a {
     display: none !important;
@@ -77,7 +85,7 @@ body {
 }
 
 .login label {
-    color: #74d14c;
+    color: #333;
 }
 
 .login #login_error {
@@ -85,9 +93,15 @@ body {
 }
 
 #login a {
-    color: #0a3b66 !important;
+    color: #74d14c !important;
+    text-decoration: underline;
 }
 
 .register {
     font-weight: bold;
+}
+
+
+.jumbotron {
+    padding-top: 200px !important;
 }
