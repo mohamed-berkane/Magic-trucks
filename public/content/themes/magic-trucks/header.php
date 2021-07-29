@@ -7,9 +7,10 @@
     <meta name="description" content="">
     <meta name="author" content="Sergey Pozhilov (GetTemplate.com)">
     <link rel="shortcut icon" href="content/themes/magic-trucks/assets/images/gt_favicon.png" />
-    <link rel="stylesheet" media="screen" href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,700" />
-    <link rel="stylesheet" href="<?= get_theme_file_uri() ?>/assets/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="<?= get_theme_file_uri() ?>/assets/css/font-awesome.min.css">
+    <link rel="stylesheet" media="screen" href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,700"/>
+    <link rel="stylesheet" href="<?= get_theme_file_uri()?>/assets/css/bootstrap.min.css"/>
+    <!-- <link rel="stylesheet" href="<?= get_theme_file_uri()?>/assets/css/font-awesome.min.css">-->
+    <script src="https://kit.fontawesome.com/9b1a6d9179.js" crossorigin="anonymous"></script>
     <!-- Custom styles for our template -->
     <link rel="stylesheet" href="<?= get_theme_file_uri() ?>/assets/css/bootstrap-theme.css" media="screen">
     <link rel="stylesheet" href="<?= get_theme_file_uri() ?>/assets/css/main.css">
@@ -57,18 +58,49 @@
                     'walker'          => ''
                 );
                 $menu = wp_nav_menu($defaults);
-                $menu = str_replace(' ', ' ', $menu);
+
+                // On remplace Se connecter par les coordonnées de l'utilisateur connecté
+                if(is_user_logged_in()) {
+
+                    // On récupère l'utilisateur courant
+                    $user = wp_get_current_user();
+                    
+                    // On récupère son avatar
+                    $avatar = get_avatar_url($user->data->ID,
+                    [
+                        'size' => 20,
+                        'force_default' => true
+                    ]);
+
+                    // On ajoute une class css sur le lien de connexion
+                    $menu = str_replace('btn-default', '', $menu);
+
+                    // On remplace le lien connexion par l'utilisateur connecté
+                    $menu = str_replace(
+                        '<a href="/apotheose/magic-trucks/public/wp-login.php">Se connecter</a></li>', 
+                        '<a href="/apotheose/magic-trucks/public/user/home">' . $user->data->user_nicename . ' <img style="border-radius:50%;" src="'. $avatar .'"/></a><li class="menu-item"><a style="text-decoration:underline;" href="/apotheose/magic-trucks/public/wp/wp-login.php?action=logout">Se déconnecter</a></li>',
+                        $menu
+                    );
+                }
+                
+                
+                
                 echo $menu;
                 ?>
             </div>
             <!--/.nav-collapse -->
         </div>
-    
-        <?= substr(get_site_url(), 0, -2) ?>
-        <?= get_post_type_archive_link('workshop') ?>
-        <?= get_post_type_archive_link('quotation') ?>
-        <?= get_permalink(get_page_by_path('about')); ?>
+                
+        <?php 
 
+            // Code commenté car il semble faire doublon avec la gestion du menu côté BO de Wordpress - to be confirmed
+            /* substr(get_site_url(), 0, -2) 
+            get_post_type_archive_link('workshop') 
+            get_post_type_archive_link('quotation') 
+            get_permalink(get_page_by_path('about')); 
+            */
+        ?>
+              
     </div>
     <!--/.nav-collapse -->
     <!-- /.navbar -->

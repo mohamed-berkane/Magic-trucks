@@ -32,7 +32,6 @@ class CoreController
         return true;
     }
 
-
     protected function isAdmin()
     {
         $user = wp_get_current_user();
