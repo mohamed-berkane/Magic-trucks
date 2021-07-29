@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="Sergey Pozhilov (GetTemplate.com)">
     <link rel="shortcut icon" href="content/themes/magic-trucks/assets/images/gt_favicon.png" />
@@ -17,7 +17,11 @@
     <link rel="preconnect" href="https://fonts.googleapis.com/">
     <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
-    
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="assets/js/html5shiv.js"></script>
+    <script src="assets/js/respond.min.js"></script>
+    <![endif]-->
     <?php wp_head(); ?>
 </head>
 
@@ -59,20 +63,9 @@
             </div>
             <!--/.nav-collapse -->
         </div>
+       
+    
+      
     </div>
-    <!-- /.navbar -->
-    <!--
-                
-                   <?= substr(get_site_url(), 0, -2) ?>
-                    <?= get_post_type_archive_link('workshop') ?>
-                <?= get_post_type_archive_link('quotation') ?>
-                <?= get_theme_file_uri() ?>
-                    
-                <?= get_theme_file_uri() ?>
-                <?= get_theme_file_uri() ?>
-              
-            -->
     <!--/.nav-collapse -->
-    </div>
-    </div>
     <!-- /.navbar -->

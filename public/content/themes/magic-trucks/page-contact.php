@@ -10,10 +10,10 @@
 get_header();
 ?>
 
+<body>
+	
 	
 
-	
-<body>
 	<!-- container -->
 	<div class="container">
 
@@ -24,9 +24,9 @@ get_header();
 			<!-- Article main content -->
 			<article class="col-sm-8 maincontent">
 				<header class="page-header">
-					<h1 class="page-title">About us</h1>
+					<h1 class="page-title">contacter le <img src="<?= get_theme_file_uri('assets/images/magictrucks10.png') ?>" alt=""> </h1>
 				</header>
-				<h3>Lorem ipsum</h3>
+				<h3>numero de téléphone</h3>
 				<p><img src="assets/images/mac.jpg" alt="" class="img-rounded pull-right" width="300" > Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet, consequuntur eius repellendus eos aliquid molestiae ea laborum ex quibusdam laudantium voluptates placeat consectetur quam aliquam beatae soluta accusantium iusto nihil nesciunt unde veniam magnam repudiandae sapiente.</p>
 				<p>Quos, aliquam nam velit impedit minus tenetur beatae voluptas facere sint pariatur! Voluptatibus, quisquam, error, est assumenda corporis inventore illo nesciunt iure aut dolor possimus repellat minima veniam alias eius!</p>
 				<h3>Necessitatibus</h3>
@@ -40,22 +40,7 @@ get_header();
 			</article>
 			<!-- /Article -->
 			
-			<!-- Sidebar -->
-			<aside class="col-sm-4 sidebar sidebar-right">
-
-				<div class="widget">
-					<h4>Vacancies</h4>
-					<ul class="list-unstyled list-spaces">
-						<li><a href="">Lorem ipsum dolor</a><br><span class="small text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi, laborum.</span></li>
-						<li><a href="">Totam, libero, quis</a><br><span class="small text-muted">Suscipit veniam debitis sed ipsam quia magnam eveniet perferendis nisi.</span></li>
-						<li><a href="">Enim, sequi dignissimos</a><br><span class="small text-muted">Reprehenderit illum quod unde quo vero ab inventore alias veritatis.</span></li>
-						<li><a href="">Suscipit, consequatur, aut</a><br><span class="small text-muted">Sed, mollitia earum debitis est itaque esse reiciendis amet cupiditate.</span></li>
-						<li><a href="">Nam, illo, veritatis</a><br><span class="small text-muted">Delectus, sapiente illo provident quo aliquam nihil beatae dignissimos itaque.</span></li>
-					</ul>
-				</div>
-
-			</aside>
-			<!-- /Sidebar -->
+			
 
 		</div>
 	</div>	<!-- /container -->
@@ -63,7 +48,6 @@ get_header();
 	<section class="container-full top-space">
 		<div id="map"></div>
 	</section>
-</body>
 
 
 <?php
