@@ -1,6 +1,7 @@
 <?php
 
 namespace magicTrucks;
+
 use magicTrucks\Models\WorkshopRegistration;
 
 
@@ -10,8 +11,8 @@ class Plugin
     /**
      * @var Router
      */
-    
-     // On instancie la classe router depuis notre plugin
+
+    // On instancie la classe router depuis notre plugin
     protected $router;
 
     public function __construct()
@@ -38,31 +39,31 @@ class Plugin
         add_action(
             'init',
             [$this, 'createWorkshopCategoryCustomTaxonomie']
-        ); 
+        );
 
         // On crée un CPT de type devis (quotation)
         add_action(
             'init',
             [$this, 'createQuotationCustomPostType']
-        ); 
+        );
 
         // On associe une taxonomie budget au devis
         add_action(
             'init',
             [$this, 'createQuotationBudgetCustomTaxonomie']
-        ); 
+        );
 
         // On associe une taxonomie place disponible au devis
         add_action(
-        'init',
-        [$this, 'createQuotationPlaceCustomTaxonomie']
-        );        
-    
+            'init',
+            [$this, 'createQuotationPlaceCustomTaxonomie']
+        );
+
         // On associe une taxonomie type d'amenagement au devis
         add_action(
             'init',
             [$this, 'createQuotationTypeCustomTaxonomie']
-            );  
+        );
 
         // On crée un CPT de type profile pour que les utilisateurs puissent gérer leurs données
         add_action(
@@ -70,13 +71,14 @@ class Plugin
             [$this, 'createRegisteredProfileCustomPostType']
         );
 
-        add_action( 
-            'save_post', 
-            'set_post_default_category', 
+        add_action(
+            'save_post',
+            'set_post_default_category',
             10,
-            3 
+            3
         );
     }
+    
 
     public function activate()
     {
@@ -142,7 +144,6 @@ class Plugin
                 'public' => true
             ]
         );
-
     }
 
 
@@ -224,27 +225,27 @@ class Plugin
         );
     }
 
-       // Taxonomie Type d'amenagement associé au Devis
-       public function createQuotationTypeCustomTaxonomie()
-       {
-           register_taxonomy(
-               'worktype',
-               // On assigne cette taxonomie au CPT Quotation (Devis)
-               ['quotation'],
-               // On configure les options
-               [
-                   'label' => 'Type d\'amenagement',
-                   'hierachical' => false,
-                   'public' => true
-               ]
-           );
-       }
+    // Taxonomie Type d'amenagement associé au Devis
+    public function createQuotationTypeCustomTaxonomie()
+    {
+        register_taxonomy(
+            'worktype',
+            // On assigne cette taxonomie au CPT Quotation (Devis)
+            ['quotation'],
+            // On configure les options
+            [
+                'label' => 'Type d\'amenagement',
+                'hierachical' => false,
+                'public' => true
+            ]
+        );
+    }
 
     // CPT profile
     public function createRegisteredProfileCustomPostType()
     {
         // echo __LINE__; exit();
-        register_post_type (
+        register_post_type(
             'registered-profile',
             [
                 'label' => 'Profile inscrits',
@@ -287,6 +288,4 @@ class Plugin
             ]
         );
     }
-
 }
-
