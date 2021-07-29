@@ -77,25 +77,6 @@ class Plugin
             3 
         );
     }
- 
-/*     function set_post_default_category( $post_id, $post, $update ) {
-        // Only want to set if this is a new post!
-        if ( $update ){
-            return;
-        }
-        
-        // Only set for post_type = post!
-        if ( 'post' !== $post->post_type ) {
-            return;
-        }
-        
-        // Get the default term using the slug, its more portable!
-        $term = get_term_by( 'slug', 'my-custom-term', 'category' );
-    
-        wp_set_post_terms( $post_id, $term->term_id, 'category', true );
-    } */
-
-    
 
     public function activate()
     {
@@ -103,15 +84,15 @@ class Plugin
         $this->registerRegisteredRole();
 
         // Création de custom table au moment de l'activation du plugin
-        $model = new WorkshopRegistration();
-        $model->createTable();
+        // $model = new WorkshopRegistration();
+        // $model->createTable();
     }
 
     public function deactivate()
     {
         // Suppression de custom table au moment de l'desactivation du plugin
-        $model = new WorkshopRegistration();
-        $model->dropTable();
+        // $model = new WorkshopRegistration();
+        // $model->dropTable();
     }
 
 
@@ -206,7 +187,7 @@ class Plugin
                 ],
                 // IMPORTANT WP PLUGIN cpt cababilities
                 'capability_type' => 'post',
-                'map_meta_cap' => false,
+                'map_meta_cap' => true,
             ]
         );
     }
