@@ -2,6 +2,7 @@
 
 add_action('acf/save_post', 'quotation_post_save');
 add_theme_support('menus');
+<<<<<<< HEAD
 
 // On enregistre le menu de navigation principal
 register_nav_menu( 'menu-header', 'Menu principal in header');
@@ -55,3 +56,6 @@ function send_smtp_email( $phpmailer ) {
     $phpmailer->From       = SMTP_FROM;
     $phpmailer->FromName   = SMTP_FROMNAME;
 }
+=======
+register_nav_menu('menu-header', 'Menu principal in header');
+>>>>>>> develop
