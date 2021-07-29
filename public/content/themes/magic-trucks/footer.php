@@ -25,13 +25,59 @@
 					</div>
 				</div>
 
-				<div class="col-md-6 widget">
-					<h3 class="widget-title">Avis clients</h3>
-					<div class="widget-body">
-						<p><strong>Robert, le 15/01/21</strong> ***** Guillaume a donné vie à mon camion! Le meilleur en conceptions et agencements! Camion fonctionnel et spacieux car réalisé par un <strong>VRAI</strong> professionnel! Bonne continuation à Guillaume aux mains d'or ;-)</p>
-						<p><strong>Mohamed, le 16/04/21</strong> ***** Super travail, professionnel à l'écoute du client, l'aménagement est très bien fait dans les normes, le patron a été de très bon conseils</p>
-						<p><strong>Florent, le 26/06/21</strong> ***** J'ai aujourd'hui récupéré mon camion aménagé et j'en suis ravi. Guillaume à travaillé brillamment sur un projet original et a su s'adapter à toutes mes exigences. A savoir optimiser un espace petit en une cuisine fonctionnelle</p>
-						<p><strong>Mickael, le 23/07/21</strong> ***** C'était l'interlocuteur idéal pour adapter la conception de notre camion à notre budget.<strong> Nous recommandons sans hésiter</strong></p>
+					<div class="col-md-6 widget">
+						<h3 class="widget-title">Avis clients</h3>
+						<div class="widget-body">
+							<div class="star">
+
+							<p><strong>Robert, le 15/01/21</strong> 
+								<div class="rating"><!--
+  							 --><a href="#1" title="Donner 1 étoiles">★</a><!--
+  							 --><a href="#2" title="Donner 2 étoiles">★</a><!--
+  							 --><a href="#3" title="Donner 3 étoiles">★</a><!--
+  							 --><a href="#4" title="Donner 4 étoiles">★</a><!--
+  							 --><a href="#5" title="Donner 5 étoile">★</a>
+							</div>
+							</div>
+							Guillaume a donné vie à mon camion! Le meilleur en conceptions et agencements! Camion fonctionnel et spacieux car réalisé par un <strong>VRAI</strong> professionnel! Bonne continuation à Guillaume aux mains d'or ;-)<div class="rating"></p>
+						<div class="star">
+							<p><strong> Mohamed, le 16/04/21 </strong>
+							<div class="rating"><!--
+   							  --><a href="#1" title="Donner 1 étoiles">☆</a><!--
+   							  --><a href="#2" title="Donner 2 étoiles">★</a><!--
+   							  --><a href="#3" title="Donner 3 étoiles">★</a><!--
+   							  --><a href="#4" title="Donner 4 étoiles">★</a><!--
+   							  --><a href="#" title="Donner  étoile">★</a>
+							</div>
+							 </div>
+							 <p> Super travail, professionnel à l'écoute du client, l'aménagement est très bien fait dans les normes, le patron a été de très bon conseils</p>
+							
+						</p>
+						<div class="star">
+							<p><strong>Florent, le 26/06/21 
+							<div class="rating"><!--
+   							  --><a href="#1" title="Donner 1 étoiles">☆</a><!--
+   							  --><a href="#2" title="Donner 2 étoiles">☆</a><!--
+   							  --><a href="#3" title="Donner 3 étoiles">★</a><!--
+   							  --><a href="#4" title="Donner 4 étoiles">★</a><!--
+   							  --><a href="#" title="Donner  étoile">★</a>
+							  </div>
+							  </div>
+							</strong> <p> J'ai aujourd'hui récupéré mon camion aménagé et j'en suis ravi. Guillaume à travaillé brillamment sur un projet original et a su s'adapter à toutes mes exigences. A savoir optimiser un espace petit en une cuisine fonctionnelle</p>
+							
+							<div class="star">
+							<p><strong>Mickael, le 23/07/21
+							<div class="rating"><!--
+  							 --><a href="#1" title="Donner 1 étoiles">★</a><!--
+  							 --><a href="#2" title="Donner 2 étoiles">★</a><!--
+  							 --><a href="#3" title="Donner 3 étoiles">★</a><!--
+  							 --><a href="#4" title="Donner 4 étoiles">★</a><!--
+  							 --><a href="#5" title="Donner 5 étoile">★</a>
+							</div>
+							</div>
+							</strong>  C'était l'interlocuteur idéal pour adapter la conception de notre camion à notre budget.<strong> Nous recommandons sans hésiter</strong>
+							
+						</p>
 
 					</div>
 				</div>

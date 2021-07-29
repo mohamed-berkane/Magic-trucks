@@ -91,30 +91,35 @@ class WorkshopRegistration extends CoreModel
 
     public function getWorkshopsByUserId($userId)
     {
-
+        // var_dump($userId);
+        // exit();
+        // Syntaxe WP : %d = partie variable qui est un entier - cf. sprintf
         $sql = "
-            SELECT
-                *
-            FROM `workshop_registration`
-            WHERE
+                SELECT *
+                FROM `workshop_registration`
+                WHERE
                 user_id = %d
-        ";
+            ";
 
-        $rows = $this->executePreparedStatement(
-            $sql,
+
+        $rows = $this->executePreparedStatement($sql,
             [
                 $userId
             ]
         );
+        
 
         $results = [];
+        // Pour chaque ligne de résultat, nous ajoutons l'id du Workshop à récupérer
         foreach($rows as $values) {
-            $workshop = get_term($values->workshop_id, 'workshop');
+
+            $workshop = get_post($values->workshop_id, 'workshop', 'raw');
+
+            // On stocke le résultat dans un tableau
             $results[] = [
-                'workshop' => $workshop,
-                'comment' => $values->comment
+                'workshop' => $workshop
             ];
-        }
+        } 
 
         return $results;
     }

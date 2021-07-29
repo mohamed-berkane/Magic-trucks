@@ -1,9 +1,12 @@
 <?php
 
     get_header();
+    //$user = wp_get_current_user();
+
     $currentUser = $args['currentUser'];
-    $user = wp_get_current_user();
-    
+
+    // workshop 
+    $workshops = $args['workshops'];
 ?>
 
 <style>
@@ -83,25 +86,28 @@
                 <h3 class="thin text-center">Mes ateliers</h3>
                 <p class="text-center text-muted"></p><p>Liste des ateliers dans lesquels vous êtes inscrits</p>
                 <hr>
+                
+                
                 <?php
 
-                    // pour l'instant on liste les post_type classiques pour vérifier le fonctionnement
-                    // TODO : remplacer par le bon post_type
+
+
+                    // Récupération des posts dont on est l'auteur
                     $args = array(
                         'post_type' => 'post',
                         'post_status' => 'publish',
                         'author' => $currentUser->ID,
                         'orderby' => 'post_date',
                         'order' => 'ASC',
-                        'posts_per_page' => 1
                     );
 
                     // On instancie l'objet auteur
                     $author_query = new WP_Query($args); 
-
+                    
                     // On regarde si l'auteur a un post 
-                    // TODO : remplacer par le bon post
                     $nb_post = count_user_posts($currentUser->ID, 'post', false );
+
+                    echo "blog :" . $nb_post; 
 
                     // Si l'auteur a des posts, on les affiche
                     if ($nb_post > 0) {
@@ -110,10 +116,9 @@
 
                         $title = get_the_title();
                         $content = substr(get_the_content(), 0, 150);
-    
-  
-                            echo $title;
-                            echo $content;
+
+                        echo $title;
+                        echo $content;
     
                         endwhile;
                     }
@@ -121,11 +126,45 @@
                     // Sinon, on lui indique qu'il pourrait se bouger un peu
                     else {
                     ?>
-                        <p>Vous êtes inscrit à aucun atelier pour l'intant</p>
-                        <p>Voir la <a href="/apotheose/magic-trucks/public/workshop/">liste des ateliers</a></p>
+                        <p>Vous n'avez pas écrit d'actus pour le moment</p>
+                        <p>Voir la <a href="/apotheose/magic-trucks/public/workshop/">liste des actus</a></p>
+
+          
                     <?php
                     }
 
+                    // print_r($workshops[0]);
+
+                    // Workshops
+                    $nb_workshops = count($workshops);
+                    echo "Atelier :" . $nb_workshops . "<br>";
+                    
+                    if ($nb_workshops > 0){
+
+                        for ($i = 0; $i < count($workshops); $i++) {
+                            $workshop = $workshops[$i]['workshop'];
+                            echo "<strong>" . $workshop->post_title . "</strong>";
+                            echo '<br>';
+                            echo $workshop->post_content;
+
+                        ?>
+                            <br>
+                            <a href="<?= $workshop->guid ;?>">En savoir plus</a>
+                            <br><br>
+
+                        <?php
+
+                        }
+                    }
+
+                    else {
+
+                    ?>    
+                        <p>Vous êtes inscrit à aucun atelier pour l'intant</p>
+                        <p>Voir la <a href="/apotheose/magic-trucks/public/workshop/">liste des ateliers</a></p>
+                    <?php        
+                    }
+                    
  
                     ?>
                 </div>

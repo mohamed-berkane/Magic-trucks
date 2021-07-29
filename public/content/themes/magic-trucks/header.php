@@ -90,17 +90,9 @@
             </div>
             <!--/.nav-collapse -->
         </div>
-                
-        <?php 
-
-            // Code commenté car il semble faire doublon avec la gestion du menu côté BO de Wordpress - to be confirmed
-            /* substr(get_site_url(), 0, -2) 
-            get_post_type_archive_link('workshop') 
-            get_post_type_archive_link('quotation') 
-            get_permalink(get_page_by_path('about')); 
-            */
-        ?>
-              
+       
+    
+      
     </div>
     <!--/.nav-collapse -->
     <!-- /.navbar -->

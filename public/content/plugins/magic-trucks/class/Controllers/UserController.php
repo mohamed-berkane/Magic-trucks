@@ -15,15 +15,27 @@ class UserController extends CoreController
         
         // On récupère les données de l'utilisateur WP actuel
         $user = wp_get_current_user();
+        //var_dump($user);
 
         // On récupère le profil
         $profile = $this->getProfile($user);
-        
-        $this->show(
-            'views/user/home', 
-            ['currentUser' => $user]
-        );
 
+        // TODO : déplacer le getWorkshopByUserId dans une autre méthode pour plus de propreté
+
+        // On instancie l'objet WorkshopRegistration
+        $model = new  WorkshopRegistration;
+
+        // On appelle la méthode getWorkshopsByUserId 
+        $workshops = $model->getWorkshopsByUserId($user->ID);
+
+        // On retoure les données à la vue
+        $this->show(
+            'views/user/home', [
+                'currentUser' => $user,
+                'profile' => $profile,
+                'workshops' => $workshops
+            ]
+        );
     }
 
 
@@ -162,14 +174,16 @@ class UserController extends CoreController
     {
         $options = [
             'author' => $user->ID,
-            'post_type' => 'registered'
+            'post_type' => 'registered-profile'
         ];
 
         // On prépare la requête dans une syntaxe propre à WP
         $query = new WP_Query($options);
 
+        //print_r($query);
+
         // On exécute la requête
-        $result = $query->have_posts();
+        //$result = $query->have_posts();
 
         // On vérifie que le profile de l'utilisateur connecté existe bien
 /*         if(count($query->posts) === 0) {

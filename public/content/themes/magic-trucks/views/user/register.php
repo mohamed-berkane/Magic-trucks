@@ -22,7 +22,7 @@
             <label for="email">Email</label><br>
             <input type="text"  id="email" name="email" placeholder="Email"  value="<?= $currentUser->data->user_email; ?>"><br>
 
-            <label for="phone">Email</label><br>
+            <label for="phone">Téléphone</label><br>
             <input type="text"  id="phone" name="phone" placeholder="Phone"  value=""><br>
 
             <label for="comment">Commentaire</label><br>
