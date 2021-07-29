@@ -128,5 +128,11 @@ if (isset($_POST['submit'])) {
     </div>
 </div> <!-- /container -->
 
+<div id="content">
+	
+
+	
+</div>
+
 <?php
 get_footer();
