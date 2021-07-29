@@ -77,6 +77,23 @@ class Plugin
             3 
         );
     }
+ 
+    /* function set_post_default_category( $post_id, $post, $update ) {
+        // Only want to set if this is a new post!
+        if ( $update ){
+            return;
+        }
+        
+        // Only set for post_type = post!
+        if ( 'post' !== $post->post_type ) {
+            return;
+        }
+        
+        // Get the default term using the slug, its more portable!
+        $term = get_term_by( 'slug', 'my-custom-term', 'category' );
+    
+        wp_set_post_terms( $post_id, $term->term_id, 'category', true );
+    } */
 
     public function activate()
     {
