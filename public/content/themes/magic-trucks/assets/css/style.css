@@ -31,60 +31,7 @@ body {
     margin-top: 8px;
 }
 
-#head > div > div > h1 { /* L'évasion en camion aménagé sur-mesure */
-    
-    color: #973a0e;
-    font-size: 5rem;
-    margin-top: 10rem;
-    padding-right: 1.6rem;
-    max-width: 85rem;
-    margin:auto;
-    text-shadow: 1px 1px rgb(0, 0, 0);
-    border-style: double;
-    padding:0.5rem;
-    border-radius:5px;
-    background-color: rgba(255, 228, 196, 0.89);
-    font-family: "Gill Sans Extrabold", sans-serif;
-    font-family: "Goudy Bookletter 1911", sans-serif;
-    
-}
 
-#head > div > div > p > a.btn.btn-action.btn-lg { /* bouton Atelier aménagement */
-    position: relative;
-    display: inline-block;
-    padding: 1rem 5rem;
-    margin-top: 8rem;
-    font-weight: bold;
-    color: #fff;
-    border-radius: 15px;
-    overflow: hidden; /* Effet flaque que dans bouton */
-    background: linear-gradient(90deg, #1eb635, #121117);
-}
-
-#head > div > div > p > a.btn.btn-default.btn-lg { /* bouton Demande de devis */
-    position: relative;
-    display: inline-block;
-    padding: 1rem 5rem;
-    margin-top: 8rem;
-    font-weight: bold;
-    color: #fff;
-    border-radius: 15px;
-    overflow: hidden; /* Effet flaque que dans bouton */
-    background: #121117;
-    
-}
-
-#head > div > div > p > a.btn.btn-action.btn-lg2 { /* bouton Galerie photos */
-    position: relative;
-    display: inline-block;
-    padding: 1rem 5rem;
-    margin-top: 8rem;
-    font-weight: bold;
-    color: #fff;
-    border-radius: 15px;
-    overflow: hidden; /* Effet flaque que dans bouton */
-    background: linear-gradient(90deg, #121117, #1eb635);
-}
 
 body > div.container.text-center { /* Changer de vie */
     background: url( ../images/changezdevie1.jpg); 
@@ -121,9 +68,7 @@ body > div:nth-child(5) {  /* Mes réalisations */
     padding-bottom: 10rem;    
 }
 
-body > div:nth-child(5) > div:nth-child(3) {  /* Photos mes réalisations */
-    
-}
+
 
 .footer1 {
     background: #1eb635;
@@ -168,31 +113,13 @@ body > div:nth-child(5) > div:nth-child(3) {  /* Photos mes réalisations */
 
     background-image: url("../images/photoaccueil.jpg");
     background-repeat:no-repeat;
-    background-attachment:fixed;
     background-size:cover;
-    background-position:center-top;
-    /** background-position-x: 50%;
-    background-position-y: 65%;
-    -webkit-animation: zoomin 60s 1;
-    animation-iteration-count: infinite; **/
+   
 
 }
 
 
-/**
-@-webkit-keyframes zoomin {
-    0% {
-        -webkit-transform: scale(1);
-    }
-    50% {
-        -webkit-transform: scale(1.3);
-    }
-    100% {
-        -webkit-transform: scale(1);
-    }
-    
-}
-**/
+
 
 
 
@@ -329,4 +256,28 @@ content: "\f082";
     color: black;
 }
 
-	
+footer{
+    width: 100%;
+}
+
+.rating a {
+    float: right;
+    color: white;
+    text-decoration: none;
+    font-size: 1.5em;
+    
+ }
+ .rating{
+     margin-left: 3px;
+     position: relative;
+     bottom: 0.5rem;
+ }
+
+ 
+ 
+ .star{
+   
+     display: flex;.
+     justify-content: space-between;
+}
+

@@ -64,8 +64,7 @@ get_header();
 		</div>
 	</div>
 	<!-- /Highlights -->
-Nouveau
-11 h 09
+
 <section id="gallery">
             <h2 class="titre-section"><span class="icone"><i class="fas fa-laptop-code"></i></span> Gallerie</h2>
             <div class="gallery__card">
