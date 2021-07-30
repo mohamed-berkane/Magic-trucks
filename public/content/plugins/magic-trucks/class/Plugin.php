@@ -71,12 +71,6 @@ class Plugin
             [$this, 'createRegisteredProfileCustomPostType']
         );
 
-        /**add_action(
-            'save_post',
-            'set_post_default_category',
-            10,
-            3
-        );*/
     }
     
 
