@@ -57,6 +57,7 @@ ul {
 
 .footer1 {
     background: #1eb635;
+    min-width: 100%;
 }
 
 #footer>div.footer1 {
@@ -67,29 +68,10 @@ ul {
     padding-top: 1rem;
 }
 
-.header-workshop {
-    padding: 5rem;
-}
-
-.workshop-img {
-    padding: 5rem 0 5rem 0rem;
-    display: flex;
-    justify-content: space-around;
-}
-
-.workshop-img p {
-    background-color: rgb(0, 238, 255);
-    padding: 7rem;
-}
-
-.workshop-img ul {
-    padding-top: 3rem;
-}
-
 #head {
     background-image: url("../images/photoaccueil.jpg");
     background-repeat: no-repeat;
-    background-size: cover;
+    
 }
 
 
@@ -212,7 +194,7 @@ body>div.jumbotron.top-space {
     text-align: right;
     text-align: justify;
     color: #8bc34a;
-    padding-right: 4rem;
+
 }
 @media only screen and (max-width: 600px) {
     #right-side-2 {
@@ -268,6 +250,7 @@ body>div.jumbotron.top-space {
     transition: transform .25s;
     font-family: 'Montserrat', sans-serif;
 }
+
 .button-front a:before,
 .button-front a:after {
     position: absolute;
@@ -290,9 +273,101 @@ body>div.jumbotron.top-space {
     color: rgb(20, 129, 6);
     transform: rotateX(90deg) translateZ(25px);
 }
+
 .button-front a:hover {
     transform: translateZ(-25px) rotateX(-90deg);
 }
+
+/************Liste des ateliers ********************/
+
+.workshop-caps {
+
+    border: rgb(19, 139, 45) solid 20px;
+}
+
+.header-workshop {
+    padding: 5rem;
+}
+
+.workshop-wrapp {
+    display: flex;
+    height: auto;
+    min-height: 15rem;
+}
+
+.workshop-left,
+.workshop-right {
+    flex-basis: 50%
+}
+
+.workshop-right {
+    background: url(../images/bois-beau.jpg);
+    background-size: cover;
+}
+
+.workshop-left {
+    text-align: left;
+}
+
+.workshop-title {
+    color: seagreen;
+}
+
+.button-workshop {
+    position: relative;
+    display: inline-flex;
+    width: 140px;
+    height: 55px;
+    margin: 0 15px;
+    perspective: 1000px;
+    padding-top: 3rem;
+}
+
+.button-workshop a {
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+    transform-style: preserve-3d;
+    transform: translateZ(-25px);
+    transition: transform .25s;
+    font-family: 'Montserrat', sans-serif;
+
+}
+
+.button-workshop a:before,
+.button-workshop a:after {
+    position: absolute;
+    content: "S'inscrire";
+    height: 55px;
+    width: 140px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 5px solid rgb(19, 80, 16);
+    box-sizing: border-box;
+    border-radius: 5px;
+}
+
+.button-workshop a:before {
+    color: rgb(255, 255, 255);
+    background: rgb(0, 0, 0);
+    transform: rotateY(0deg) translateZ(25px);
+}
+
+.button-workshop a:after {
+    color: rgb(20, 129, 6);
+    transform: rotateX(90deg) translateZ(25px);
+}
+
+.button-workshop a:hover {
+    transform: translateZ(-25px) rotateX(-90deg);
+}
+
+.honte {
+    color:white;
+    visibility: hidden
+}
+
+/************Fin Liste des ateliers ********************/
 
 /*********************************************************SECTION Gallerie ************************************************************/
 
@@ -411,7 +486,7 @@ body>div.jumbotron.top-space {
     color: black;
 }
 
-footer{
+footer {
     width: 100%;
 }
 
@@ -420,7 +495,14 @@ footer{
     color: white;
     text-align: center;
     margin-top: 10rem;
-   
+    text-decoration: none;
+    font-size: 1.5em;
+}
+
+.rating {
+    margin-left: 3px;
+    position: relative;
+    bottom: 0.5rem;
 }
 .details-contact{
     margin-bottom: 5rem;
@@ -440,3 +522,8 @@ footer{
 }
 
 
+.star {
+
+    display: flex;
+    justify-content: space-between;
+}
