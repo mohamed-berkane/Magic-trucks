@@ -64,7 +64,6 @@ class UserController extends CoreController
 
         $user = wp_get_current_user();
         //print_r($user);
-        $userId = $user->data->ID;
         // var_dump($userId);
         $login = filter_input(INPUT_POST, 'user_login');
         $firstname = filter_input(INPUT_POST, 'user_firstname');
@@ -143,6 +142,10 @@ class UserController extends CoreController
     public function insert($workshopId)
     {
 
+        // récupération de l'utilisateur wordpress actuel
+        $user = wp_get_current_user();
+        $userId = $user->data->ID;
+
         // Récupération des données du formulaire d'enregistrement à l'atelier
         $firstname = filter_input(INPUT_POST, 'firstname', FILTER_SANITIZE_STRING);
         $lastname = filter_input(INPUT_POST, 'lastname', FILTER_SANITIZE_STRING);
@@ -154,17 +157,25 @@ class UserController extends CoreController
         // s'il n'est pas connecté, nous le redirigeons vers la page de login
         $this->mustBeConnected();
 
-        // récupération de l'utilisateur wordpress actuel
-        $user = wp_get_current_user();
+
 
         $model = new WorkshopRegistration();
         $model->insert(
+            $userId,
             $workshopId, // id atelier
             $firstname, // Prénom
             $lastname, // Nom
             $email, // email
             $phone, // nr de tel
             $comment, // commentaire
+        );
+
+        $this->show(
+            'views/user/home', 
+            [
+                'currentUser' => $user,
+                'message' => 'Votre inscription a bien été enregistrée'
+            ]
         );
 
     }

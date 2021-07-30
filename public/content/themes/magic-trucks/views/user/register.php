@@ -12,6 +12,7 @@
     <h2>Merci de confirmer vos coordonnées</h2><br>
 
     <form action="" method="POST">
+
             <label for="firstname">Prénom</label><br>
             <input type="text"  id="firstname" name="firstname" placeholder="Prénom" value=""><br>
 
@@ -29,6 +30,8 @@
             <input type="text"  id="comment" name="comment" placeholder="Commentaire" value=""><br><br>
 
             <!-- <input type="hidden"  id="workshop-id" name="workshop-id" value="<?= $workshopId ?>"><br> -->
+
+            <!--<input type="hidden" name="user_id" id="user_id" value="<?= $currentUser->data->ID; ?>" disabled>-->
 
             <button type="submit" >Valider</button>
     </form>
