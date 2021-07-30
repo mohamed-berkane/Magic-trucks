@@ -144,10 +144,12 @@ class UserController extends CoreController
 
         // récupération de l'utilisateur wordpress actuel
         $user = wp_get_current_user();
+        $userId = $user->ID;
 
         $model = new WorkshopRegistration();
         $model->insert(
             $workshopId, // id atelier
+            $userId, // id user
             $firstname, // Prénom
             $lastname, // Nom
             $email, // email

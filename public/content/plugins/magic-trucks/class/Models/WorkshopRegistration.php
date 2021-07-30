@@ -36,13 +36,14 @@ class WorkshopRegistration extends CoreModel
     }
 
 
-    public function insert($workshopId, $firstname, $lastname, $email, $phone = '', $comment = '')
+    public function insert($workshopId, $userId, $firstname, $lastname, $email, $phone = '', $comment = '')
     {
 
         // STEP WP CUSTOMTABLE insert
         // le tableau data stocke les données à insérer dans la table
         $data = [
             'workshop_id' => $workshopId,
+            'user_id' => $userId,
             'first_name' => $firstname,
             'last_name' => $lastname,
             'email' => $email,
