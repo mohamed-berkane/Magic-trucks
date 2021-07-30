@@ -1,4 +1,6 @@
 <?php
+// Chargement des assets
+require __DIR__ . '/includes/load-assets.php';
 
 // gestion des menus via le back office de Wordpress pour le thème Magic-Trucks
 add_theme_support('menus');
