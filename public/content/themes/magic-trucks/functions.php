@@ -1,4 +1,6 @@
 <?php
+// Chargement des assets
+require __DIR__ . '/includes/load-assets.php';
 
 // Chargement des assets
 require __DIR__ . '/includes/load-assets.php';

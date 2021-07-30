@@ -24,19 +24,9 @@ get_header();
 				Vérifiez les dates et lieux des prochains rendez-vous, peut être que Magic-Trucks se présente à côté de chez toi !
 			</p>
 			<span class="button-front"><a href="<?= get_post_type_archive_link('workshop') ?>"></a></span>
-
-
-
-
 		</section>
 	</div>
-
-
 	<div id="right-side">
-
-
-
-
 		<img class="img-workshop" src="<?= get_theme_file_uri() ?>/assets/images/2camion.png">
 	</div>
 
@@ -66,7 +56,7 @@ get_header();
 
 		</section>
 	</div>
-	
+
 
 </div>
 <!-- /Devis-->
