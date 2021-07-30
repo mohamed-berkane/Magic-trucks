@@ -1,5 +1,5 @@
 <?php
-get_header();
+get_header();   
 ?>
 
 <div class='header-workshop'>
@@ -19,44 +19,52 @@ get_header();
         <article class="col-xs-12 maincontent">
             <header class="page-header">
                 <h1 class="page-title">Liste des atelier</h1>
+                <?php
+                    
+                ?>
             </header>
             <?php while (have_posts()) : the_post(); ?>
-                <article class="workshop-caps">
-                    <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
-                        <div class="panel panel-default">
-                            <div class="panel-body">
-                                <h3 class="thin text-center"> <?php the_title() ?> </h3>
-                                <p class="text-center text-muted">Lorem ipsum dolor sit amet, adipisicing elit. Quo nulla quibusdam cum doloremque incidunt nemo sunt a tenetur omnis odio. </p>
-                                <hr>
-                                <div class="workshop-img ">
+
+                <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+                    <div class="workshop-caps panel panel-default">
+                        <div class="panel-body">
+                            <h3 class="thin text-center"><?php the_title(); ?> </h3>
+                            <p class="text-center text-muted"><?php the_content() ?></p>
+                            <hr>
+                            <div class="workshop-wrapp ">
+                                <div class="workshop-left">
                                     <ul>
                                         <li>Lieu : Avignon</li>
                                         <li>Durée : 4h00</li>
                                         <li>Prix : 160 euros</li>
                                     </ul>
-
-                                    <p>image</p>
                                 </div>
+                                <div class="workshop-right">
+                                </div>
+                            </div>
 
                                 <?php
-                                // récupération de la url du site
-                                $url = substr(get_site_url(), 0, -2);
+                                    // récupération de la url du site
+                                    $url = substr(get_site_url(), 0, -2);
 
-                                // récupération de ID du post
-                                $atelier_id = get_the_ID();
+                                    // récupération de ID du post
+                                    $atelier_id = get_the_ID();
+
                                 ?>
 
-                                <button>En savoir plus</button> <button>S'insrire</button>
-                                <a href="<?= $url . 'user/register/' . $atelier_id; ?>">S'insrire</a>
+                                
+                                <a class="btn btn-primary" href="<?= $url . 'user/register/' . $atelier_id; ?>">S'insrire</a>
                             </div>
+                            
                         </div>
+                    </div>
 
-                </article>
-            <?php endwhile ?>
+        </article>
+    <?php endwhile ?>
 
     </div>
 
-    </article>
+
     <!-- /Article -->
 
 </div>
