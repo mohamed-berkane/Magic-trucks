@@ -1,12 +1,18 @@
 <?php
 
     get_header();
-    //$user = wp_get_current_user();
 
     $currentUser = $args['currentUser'];
 
     // workshop 
     $workshops = $args['workshops'];
+
+    if (isset($args['message'])) {
+        $message = $args['message'];
+        print_r($message);
+    }
+
+
 ?>
 
 <style>
@@ -137,24 +143,32 @@
 
                     // Workshops
                     $nb_workshops = count($workshops);
-                    echo "Atelier :" . $nb_workshops . "<br>";
+                    //echo "Atelier :" . $nb_workshops . "<br>";
                     
                     if ($nb_workshops > 0){
 
+                        // On stocke les id des workshops dans lesquels le user est enregistré pour les communiqués à single workshop
+                        $registeredWorkshops = [];
+
                         for ($i = 0; $i < count($workshops); $i++) {
+
                             $workshop = $workshops[$i]['workshop'];
+                            $registeredWorkshops[] += $workshop->ID;
+
                             echo "<strong>" . $workshop->post_title . "</strong>";
                             echo '<br>';
                             echo $workshop->post_content;
 
                         ?>
                             <br>
-                            <a href="<?= $workshop->guid ;?>">En savoir plus</a>
+                            <!-- On renvoie ici les paramètres à la vue -->
+                            <a href="<?= $workshop->guid; ?>">En savoir plus</a>
                             <br><br>
 
                         <?php
 
                         }
+                        
                     }
 
                     else {

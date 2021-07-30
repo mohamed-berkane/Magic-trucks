@@ -1,5 +1,6 @@
 <?php
-get_header();
+    get_header();
+
 ?>
 
 <body class="home">
@@ -64,6 +65,8 @@ get_header();
                                     <?php
                                     // récupération de ID du post
                                     $atelier_id = get_the_ID();
+
+
                                     ?>
                                     <!-- <button onclick="<?php get_post_permalink(); ?>>En savoir plus</button"> -->
                                     <a href="<?= get_permalink($atelier_id); ?>">En savoir plus</a>

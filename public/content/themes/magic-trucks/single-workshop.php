@@ -1,5 +1,5 @@
 <?php
-get_header();
+get_header();   
 ?>
 
 <div class='header-workshop'>
@@ -19,6 +19,9 @@ get_header();
         <article class="col-xs-12 maincontent">
             <header class="page-header">
                 <h1 class="page-title">Liste des atelier</h1>
+                <?php
+                    
+                ?>
             </header>
             <?php while (have_posts()) : the_post(); ?>
                 <article class="workshop-caps">
@@ -39,15 +42,16 @@ get_header();
                                 </div>
 
                                 <?php
-                                // récupération de la url du site
-                                $url = substr(get_site_url(), 0, -2);
+                                    // récupération de la url du site
+                                    $url = substr(get_site_url(), 0, -2);
 
-                                // récupération de ID du post
-                                $atelier_id = get_the_ID();
+                                    // récupération de ID du post
+                                    $atelier_id = get_the_ID();
+
                                 ?>
 
-                                <button>En savoir plus</button> <button>S'insrire</button>
-                                <a href="<?= $url . 'user/register/' . $atelier_id; ?>">S'insrire</a>
+                                
+                                <a class="btn btn-primary" href="<?= $url . 'user/register/' . $atelier_id; ?>">S'insrire</a>
                             </div>
                         </div>
 
