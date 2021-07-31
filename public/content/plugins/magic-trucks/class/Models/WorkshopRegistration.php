@@ -36,14 +36,14 @@ class WorkshopRegistration extends CoreModel
     }
 
 
-    public function insert($workshopId, $userId, $firstname, $lastname, $email, $phone = '', $comment = '')
+    public function insert($userId, $workshopId, $firstname, $lastname, $email, $phone = '', $comment = '')
     {
 
         // STEP WP CUSTOMTABLE insert
         // le tableau data stocke les données à insérer dans la table
         $data = [
-            'workshop_id' => $workshopId,
             'user_id' => $userId,
+            'workshop_id' => $workshopId,
             'first_name' => $firstname,
             'last_name' => $lastname,
             'email' => $email,
@@ -56,6 +56,7 @@ class WorkshopRegistration extends CoreModel
             'workshop_registration', // table dans laquelle insérer les données
             $data // les données à insérer dans la table
         );
+
     }
 
     public function delete($id)
@@ -92,30 +93,35 @@ class WorkshopRegistration extends CoreModel
 
     public function getWorkshopsByUserId($userId)
     {
-
+        // var_dump($userId);
+        // exit();
+        // Syntaxe WP : %d = partie variable qui est un entier - cf. sprintf
         $sql = "
-            SELECT
-                *
-            FROM `workshop_registration`
-            WHERE
+                SELECT *
+                FROM `workshop_registration`
+                WHERE
                 user_id = %d
-        ";
+            ";
 
-        $rows = $this->executePreparedStatement(
-            $sql,
+
+        $rows = $this->executePreparedStatement($sql,
             [
                 $userId
             ]
         );
+        
 
         $results = [];
+        // Pour chaque ligne de résultat, nous ajoutons l'id du Workshop à récupérer
         foreach($rows as $values) {
-            $workshop = get_term($values->workshop_id, 'workshop');
+
+            $workshop = get_post($values->workshop_id, 'workshop', 'raw');
+
+            // On stocke le résultat dans un tableau
             $results[] = [
-                'workshop' => $workshop,
-                'comment' => $values->comment
+                'workshop' => $workshop
             ];
-        }
+        } 
 
         return $results;
     }

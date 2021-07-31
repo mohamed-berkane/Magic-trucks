@@ -249,7 +249,7 @@ class Registration
             wp_insert_post([
                 'post_author' => $userId,
                 'post_status' => 'publish',
-                'post_title' => 'Mon compte' . $userId,
+                'post_title' => 'Profil' . " : " . $nicename,
                 'post_type' => 'registered-profile'
             ]);
 
@@ -269,7 +269,7 @@ class Registration
     }
 
     public function defaultUserPageRedirect() {
-        return '/apotheose/magic-trucks/public/user/home';
+        return home_url( '/user/home' );
     }
 
 

@@ -72,7 +72,6 @@ class Plugin
         );
 
     }
-    
 
     public function activate()
     {
@@ -89,6 +88,9 @@ class Plugin
         // Suppression de custom table au moment de l'desactivation du plugin
         // $model = new WorkshopRegistration();
         // $model->dropTable();
+
+        // On retire la rôle à la désactivation du plugin
+        remove_role('registered');
     }
 
 
@@ -113,7 +115,8 @@ class Plugin
                     'title',
                     'thumbnail',
                     'editor',
-                    'excerpt'
+                    'excerpt',
+                    'author'
                 ],
                 // IMPORTANT WP PLUGIN cpt cababilities
                 'capability_type' => 'post',

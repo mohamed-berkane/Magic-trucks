@@ -70,7 +70,7 @@ $router->map(
     '/test/model/update/',
     function() {
         $controller = new TestModelController();
-       $controller->update();
+        $controller->update();
     },
     'test-model-update'
 );
@@ -80,7 +80,7 @@ $router->map(
     '/test/model/delete/',
     function() {
         $controller = new TestModelController();
-       $controller->delete();
+        $controller->delete();
     },
     'test-model-delete'
 );
@@ -104,6 +104,7 @@ $router->map(
 
         // On appelle la méthode home
         $controller->home();
+        
     },
 
     // Id de la route
