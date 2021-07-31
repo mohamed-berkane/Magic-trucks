@@ -44,7 +44,6 @@ class WorkshopRegistration extends CoreModel
         $data = [
             'user_id' => $userId,
             'workshop_id' => $workshopId,
-            'user_id' => $userId,
             'first_name' => $firstname,
             'last_name' => $lastname,
             'email' => $email,
@@ -125,6 +124,26 @@ class WorkshopRegistration extends CoreModel
         } 
 
         return $results;
+    }
+
+    public function getUsersByWorkshopId($workshopId)
+    {
+        $sql = "
+            SELECT
+                user_id
+            FROM `workshop_registration`
+            WHERE
+                workshop_id = %d
+        ";
+
+        $rows = $this->executePreparedStatement(
+            $sql,
+            [
+                $workshopId
+            ]
+        );
+
+        return $rows;
     }
 }
 
