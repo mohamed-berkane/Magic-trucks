@@ -71,8 +71,13 @@ class Plugin
             [$this, 'createRegisteredProfileCustomPostType']
         );
 
+        // On crée un CPT de type projet pour presenter le projet en cours
+        add_action(
+            'init',
+            [$this, 'createProjectCustomPostType']
+        );
     }
-
+    
     public function activate()
     {
         // On appelle la méthode de création des capabilities
@@ -237,6 +242,35 @@ class Plugin
             ]
         );
     }
+
+        /* CPT Current Project */
+
+        public function createProjectCustomPostType()
+        {
+            // enregistrement du custom post type "Atelier (Workshop)"
+            register_post_type(
+                // L'identifiant du post_type
+                'project',
+                [
+                    'label' => 'Projet en cours',
+                    // true permet d'administrer le CPT dans le BO
+                    'public' => true,
+                    'hierarchical' => false,
+                    'has_archive' => true,
+                    'menu_icon' => 'dashicons-car',
+                    // NOTICE WP PLUGIN, fonctionnalités activable poure un cpt :  ‘title’, ‘editor’, ‘comments’, ‘revisions’, ‘trackbacks’, ‘author’, ‘excerpt’, ‘page-attributes’, ‘thumbnail’, ‘custom-fields’, and ‘post-formats’.
+                    'supports' => [
+                        'title',
+                        'thumbnail',
+                        'editor',
+                        'comments'
+                    ],
+                    // IMPORTANT WP PLUGIN cpt cababilities
+                    'capability_type' => 'post',
+                    'map_meta_cap' => true,
+                ]
+            );
+        }
 
     // CPT profile
     public function createRegisteredProfileCustomPostType()

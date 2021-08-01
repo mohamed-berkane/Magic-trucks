@@ -19,8 +19,6 @@ function remove_admin_bar() {
     }
 }
 
-
-
 add_action('acf/save_post', 'quotation_post_save');
  function quotation_post_save( $post_id ) {
  	// on verifie si c'est bien le formulaire de devis
@@ -71,5 +69,10 @@ function send_smtp_email( $phpmailer ) {
     $phpmailer->FromName   = SMTP_FROMNAME;
 }
 
+// function enable_comments_project() {
+// 	add_post_type_support( 'project', 'comments' );
+// }
+   
+//  add_action( 'init', 'enable_comments_project', 11 );
 
 ?>
