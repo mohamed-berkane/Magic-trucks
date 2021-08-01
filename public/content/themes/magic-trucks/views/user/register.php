@@ -1,15 +1,17 @@
-<?php
+<!-- <?php
     get_header();
-?>
+?> -->
 
 <?php    
     $currentUser = $args['currentUser'];
     $workshopId = $args['workshopId'];
     $message = $args['message'];
+    //var_dump(get_user_meta( $currentUser->ID, 'last_name', true ));
+    //get_user_meta( $currentUser->ID, 'first_name', true )
 ?>
 
 <?php 
-    if (isset($message)) {
+    if (isset($message) & $message !='') {
 ?>
     <div class="container">
         <div class="row">
@@ -26,18 +28,18 @@
 <?php   
     } else {
 ?>
-    
 
     <br><br><br>
     <h2>Merci de confirmer vos coordonnées</h2><br>
+    <!-- $nicename = $firstname . " " . $lastname;   -->
 
     <form action="" method="POST">
 
             <label for="firstname">Prénom</label><br>
-            <input type="text"  id="firstname" name="firstname" placeholder="Prénom" value=""><br>
+            <input type="text"  id="firstname" name="firstname" placeholder="Prénom" value="<?= get_user_meta( $currentUser->ID, 'first_name', true ) ?>"><br>
 
             <label for="lastname">Nom</label><br>
-            <input type="text"  id="lastname" name="lastname" placeholder="Nom" value=""><br>
+            <input type="text"  id="lastname" name="lastname" placeholder="Nom" value="<?= get_user_meta( $currentUser->ID, 'last_name', true ) ?>"><br>
             <!-- <input type="text"  id="lastname" name="lastname" placeholder="Nom" value="<?= $currentUser->data->user_nicename; ?>"><br> -->
 
             <label for="email">Email</label><br>

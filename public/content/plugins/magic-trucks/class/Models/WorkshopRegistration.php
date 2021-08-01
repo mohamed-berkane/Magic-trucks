@@ -125,5 +125,25 @@ class WorkshopRegistration extends CoreModel
 
         return $results;
     }
+
+    public function getUsersByWorkshopId($workshopId)
+    {
+        $sql = "
+            SELECT
+                user_id
+            FROM `workshop_registration`
+            WHERE
+                workshop_id = %d
+        ";
+
+        $rows = $this->executePreparedStatement(
+            $sql,
+            [
+                $workshopId
+            ]
+        );
+
+        return $rows;
+    }
 }
 

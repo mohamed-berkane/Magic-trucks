@@ -129,57 +129,76 @@ class UserController extends CoreController
         
         // On récupère les données de l'utilisateur WP actuel
         $user = wp_get_current_user();
-        $userId = $user->data->ID;
+        //$userId = $user->data->ID;
+        $userId = $user->ID;
 
-        // On récupère la liste des Workshops dans lesquels le user est déjà inscrit
         $model = new WorkshopRegistration();
         
+        // On récupère la liste des objets Workshop dans lesquels le user est déjà inscrit
         $workshops = $model->getWorkshopsByUserId($userId);
 
-        // On stocke les id de ces ateliers dans un tableau $registrations
-        foreach ($workshops as $workshop) {
-            $registrations [] = $workshop['workshop']->ID;
-        }
-
-        //print_r($registrations);
-
-        $checkRegistration = in_array($workshop_id, $registrations);
-        // echo __LINE__ . " " . $checkRegistration . '<hr>';
-        // echo __LINE__ . " " . $workshop_id . '<hr>';
-
-        // On vérifie si le user est déjà inscrit
-        if ($checkRegistration) {
-
-            //echo 'got' . $userId;
-
+        if (!empty($workshops)) {
+        
+                // On stocke les id de ces ateliers dans un tableau $registrations
+            //$registrations = [];
+            foreach ($workshops as $workshop) {
+                $registrations [] = $workshop['workshop']->ID;
+            }
+            
+            //print_r($registrations);
+        
+            //var_dump($registrations); die();
+            $checkRegistration = in_array($workshop_id, $registrations);
+            // echo __LINE__ . " " . $checkRegistration . '<hr>';
+            // echo __LINE__ . " " . $workshop_id . '<hr>';
+            // On vérifie si le user est déjà inscrit
+            if ($checkRegistration) {
+                
+                $this->show(
+                    'views/user/register', 
+                    [
+                        'workshops' => $workshops,
+                        'currentUser' => $user,
+                        'workshopId' => $workshop_id,
+                        'message' => 'Vous êtes déjà inscrit à cet atelier'
+                        ]
+                    );
+            }
+            else {
+                $this->show(
+                    'views/user/register', 
+                    [
+                        'workshops' => $workshops,
+                        'currentUser' => $user,
+                        'workshopId' => $workshop_id,
+                        'message' => ''
+                        ]
+                    );
+            }
+        }    
+        else {
+            // var_dump($checkRegistration);
+                //var_dump($workshopId);die();
             $this->show(
                 'views/user/register', 
                 [
                     'workshops' => $workshops,
                     'currentUser' => $user,
                     'workshopId' => $workshop_id,
-                    'message' => 'Vous êtes déjà inscrit à cet atelier'
-                ]
-            );
-        }
-        
-        else {
-            $this->show(
-                'views/user/register', 
-                [
-                    'currentUser' => $user,
-                    'workshopId' => $workshop_id
-                ]
-            );
+                    'message' => ''
+                    ]
+                );
         }
     }
-
+            
     public function insert($workshopId)
     {
 
         // récupération de l'utilisateur wordpress actuel
         $user = wp_get_current_user();
         $userId = $user->data->ID;
+
+        
 
         // Récupération des données du formulaire d'enregistrement à l'atelier
         $firstname = filter_input(INPUT_POST, 'firstname', FILTER_SANITIZE_STRING);
@@ -192,11 +211,9 @@ class UserController extends CoreController
         // s'il n'est pas connecté, nous le redirigeons vers la page de login
         $this->mustBeConnected();
 
-
-
         $model = new WorkshopRegistration();
         $model->insert(
-            $userId,
+            $userId, // id user
             $workshopId, // id atelier
             $firstname, // Prénom
             $lastname, // Nom
@@ -205,9 +222,13 @@ class UserController extends CoreController
             $comment, // commentaire
         );
 
+        // On récupère la liste des objets Workshop dans lesquels le user est déjà inscrit
+        $workshops = $model->getWorkshopsByUserId($userId);
+
         $this->show(
             'views/user/home', 
             [
+                'workshops' => $workshops,
                 'currentUser' => $user,
                 'message' => 'Votre inscription a bien été enregistrée'
             ]
