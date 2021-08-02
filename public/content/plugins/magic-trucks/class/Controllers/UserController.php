@@ -53,6 +53,7 @@ class UserController extends CoreController
         // WARNING WP User il faut faire un include manuel des fonction de gestion des utilisateurs avant de pouvoir appeler la fonction wp_delete_user
         require_once(ABSPATH.'wp-admin/includes/user.php');
 
+        
         $this->show(
             'views/user/update', 
             ['currentUser' => $user]
@@ -63,8 +64,7 @@ class UserController extends CoreController
     public function updateConfirmed() {
 
         $user = wp_get_current_user();
-        //print_r($user);
-        // var_dump($userId);
+        $userId = $user->data->ID;
         $login = filter_input(INPUT_POST, 'user_login');
         $firstname = filter_input(INPUT_POST, 'user_firstname');
         $lastname = filter_input(INPUT_POST, 'user_lastname');
@@ -79,6 +79,7 @@ class UserController extends CoreController
             'user_nicename' => $nicename,
             'user_email' => $email
         ]);
+
 
         $this->show(
             'views/user/update', 
@@ -143,11 +144,12 @@ class UserController extends CoreController
             foreach ($workshops as $workshop) {
                 $registrations [] = $workshop['workshop']->ID;
             }
-            
             //print_r($registrations);
         
             //var_dump($registrations); die();
             $checkRegistration = in_array($workshop_id, $registrations);
+
+            // print_r($checkRegistration);
             // echo __LINE__ . " " . $checkRegistration . '<hr>';
             // echo __LINE__ . " " . $workshop_id . '<hr>';
             // On vérifie si le user est déjà inscrit
