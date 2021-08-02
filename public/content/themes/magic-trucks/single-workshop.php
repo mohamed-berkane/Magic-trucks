@@ -9,6 +9,11 @@ $imageURL = get_the_post_thumbnail_url();
 <!-- container -->
 <div class="container">
 
+    <ol class="breadcrumb">
+        <li><a href="<?= get_home_url() ?>">Home</a></li>
+        <li class="active">User access</li>
+    </ol>
+
     <div class="row">
 
         <!-- Article main content -->
@@ -54,11 +59,8 @@ $imageURL = get_the_post_thumbnail_url();
 
                                 // récupération de ID du post
                                 $atelier_id = get_the_ID();
-
                             ?>
-
-                            
-                            <a class="btn btn-primary" href="<?= $url . 'user/register/' . $atelier_id; ?>">S'insrire</a>
+                            <span class="button-workshop"><a href="<?= $url . 'user/register/' . $atelier_id; ?>"></a></span>
                         </div>
                         
                     </div>
