@@ -32,7 +32,7 @@ $imageURL = get_the_post_thumbnail_url();
                     <div class="panel-body">
                         <h3 class="thin text-center"><?php the_title(); ?> </h3>
                         <h4 class="thin text-center"><?= the_field('lieux'); ?> - du <?= the_field('date_begin'); ?> au <?= the_field('date_end'); ?></h4>
-                        <img src="<?= $imageURL; ?>"/>
+                        <img src="<?= the_post_thumbnail( ); ?>"/>
                         <hr>
 
                         <p class="text-center text-muted"><?php the_content() ?></p>
