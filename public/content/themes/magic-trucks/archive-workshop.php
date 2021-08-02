@@ -51,7 +51,7 @@
 
 
                                     ?>
-                                    <span class="button-front"><a href="<?= get_post_type_archive_link('quotation') ?>"></a></span>
+                                    <span class="button-front"><a href="<?= get_permalink($atelier_id); ?>"></a></span>
                                 </div>
                             </div>
                     </article>
