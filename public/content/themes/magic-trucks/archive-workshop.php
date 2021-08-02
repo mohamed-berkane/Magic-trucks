@@ -1,6 +1,6 @@
 <?php
+    
     get_header();
-
 ?>
 
 
@@ -31,18 +31,28 @@
                             <div class="workshop-caps panel panel-default">
                                 <div class="panel-body">
                                     <h3 class="thin text-center"><?php the_title(); ?> </h3>
-                                    <p class="text-center text-muted"><?php the_content() ?></p>
+                                    <p class="text-center text-muted"><?= the_field('lieux'); ?> - du <?= the_field('date_begin'); ?> au <?= the_field('date_end'); ?></h3>
+                                    <img src="<?=get_the_post_thumbnail_url(); ?> ?>"/></p>
                                     <hr>
                                     <div class="workshop-wrapp ">
-                                        <div class="workshop-left">
-                                            <ul class="list-content-workshop">
-                                                <li>Lieu : Avignon</li>
-                                                <li>Durée : 4h00</li>
-                                                <li>Prix : 160 euros</li>
-                                            </ul>
-                                        </div>
-                                        <div class="workshop-right">
-                                        </div>
+                                        <!-- <div class="workshop-left"> -->
+                                        <ul>
+                                            <li>
+                                                <strong>Place disponible :</strong> <?php the_field('max_participants'); ?>
+                                            </li>
+                                            <li>
+                                                <strong>Lieu :</strong> <?php the_field('lieux'); ?>
+                                            </li>
+                                            <li>
+                                                <strong>horaires :</strong> de <?php the_field('hour_begin'); ?> à <?php the_field('hour_end'); ?>
+                                            </li>
+                                            <li>
+                                                <strong>Prix :</strong> <?php the_field('prix'); ?>
+                                            </li>
+                                        </ul>
+                                        <!-- </div> -->
+                                            <!-- <div class="workshop-right">
+                                        </div> -->
                                     </div>
 
                                     <?php

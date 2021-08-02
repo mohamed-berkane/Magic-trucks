@@ -75,7 +75,7 @@
                     );
 
                     // On ajoute une class css sur le lien de connexion
-                    $menu = str_replace('btn-default', '', $menu);
+                    $menu = str_replace('', '', $menu);
 
                     // On remplace le lien connexion par l'utilisateur connecté
                     $menu = str_replace(
