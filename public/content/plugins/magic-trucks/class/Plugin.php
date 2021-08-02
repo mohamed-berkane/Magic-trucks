@@ -76,6 +76,12 @@ class Plugin
             'init',
             [$this, 'createProjectCustomPostType']
         );
+
+        // // On crée un CPT de type projet pour presenter le projet en cours
+        // add_action(
+        //     'init',
+        //     [$this, 'createProjectNewsCustomPostType']
+        // );
     }
     
     public function activate()
@@ -243,34 +249,64 @@ class Plugin
         );
     }
 
-        /* CPT Current Project */
+    /* CPT Current Project */
 
-        public function createProjectCustomPostType()
-        {
-            // enregistrement du custom post type "Atelier (Workshop)"
-            register_post_type(
-                // L'identifiant du post_type
-                'project',
-                [
-                    'label' => 'Projet en cours',
-                    // true permet d'administrer le CPT dans le BO
-                    'public' => true,
-                    'hierarchical' => false,
-                    'has_archive' => true,
-                    'menu_icon' => 'dashicons-car',
-                    // NOTICE WP PLUGIN, fonctionnalités activable poure un cpt :  ‘title’, ‘editor’, ‘comments’, ‘revisions’, ‘trackbacks’, ‘author’, ‘excerpt’, ‘page-attributes’, ‘thumbnail’, ‘custom-fields’, and ‘post-formats’.
-                    'supports' => [
-                        'title',
-                        'thumbnail',
-                        'editor',
-                        'comments'
-                    ],
-                    // IMPORTANT WP PLUGIN cpt cababilities
-                    'capability_type' => 'post',
-                    'map_meta_cap' => true,
-                ]
-            );
-        }
+    public function createProjectCustomPostType()
+    {
+        // enregistrement du custom post type "Atelier (Workshop)"
+        register_post_type(
+            // L'identifiant du post_type
+            'project',
+            [
+                'label' => 'Projets',
+                // true permet d'administrer le CPT dans le BO
+                'public' => true,
+                'hierarchical' => false,
+                'has_archive' => true,
+                'menu_icon' => 'dashicons-car',
+                // NOTICE WP PLUGIN, fonctionnalités activable poure un cpt :  ‘title’, ‘editor’, ‘comments’, ‘revisions’, ‘trackbacks’, ‘author’, ‘excerpt’, ‘page-attributes’, ‘thumbnail’, ‘custom-fields’, and ‘post-formats’.
+                'supports' => [
+                    'title',
+                    'thumbnail',
+                    'editor',
+                    'comments',
+                    'excerpt'
+                ],
+                // IMPORTANT WP PLUGIN cpt cababilities
+                'capability_type' => 'post',
+                'map_meta_cap' => true,
+            ]
+        );
+    }
+
+    //  /* CPT Current Project */
+
+    //  public function createProjectNewsCustomPostType()
+    //  {
+    //      // enregistrement du custom post type "Atelier (Workshop)"
+    //      register_post_type(
+    //          // L'identifiant du post_type
+    //          'project-news',
+    //          [
+    //              'label' => 'Actualités de projet',
+    //              // true permet d'administrer le CPT dans le BO
+    //              'public' => true,
+    //              'hierarchical' => false,
+    //              'has_archive' => true,
+    //              'menu_icon' => 'dashicons-format-aside',
+    //              // NOTICE WP PLUGIN, fonctionnalités activable poure un cpt :  ‘title’, ‘editor’, ‘comments’, ‘revisions’, ‘trackbacks’, ‘author’, ‘excerpt’, ‘page-attributes’, ‘thumbnail’, ‘custom-fields’, and ‘post-formats’.
+    //              'supports' => [
+    //                  'title',
+    //                  'thumbnail',
+    //                  'editor',
+    //                  'comments'
+    //              ],
+    //              // IMPORTANT WP PLUGIN cpt cababilities
+    //              'capability_type' => 'post',
+    //              'map_meta_cap' => true,
+    //          ]
+    //      );
+    //  }
 
     // CPT profile
     public function createRegisteredProfileCustomPostType()

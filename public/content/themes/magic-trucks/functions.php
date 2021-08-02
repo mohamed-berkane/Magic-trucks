@@ -10,6 +10,17 @@ add_theme_support('menus');
 // On enregistre le menu de navigation principal
 register_nav_menu( 'menu-header', 'Menu principal in header');
 
+// On rajoute link login/logout dans le menu
+add_filter('wp_nav_menu_items', 'wp_add_login_logout_menu', 10, 2);
+function wp_add_login_logout_menu($items, $args) {
+        ob_start();
+        wp_loginout(substr(get_site_url(), 0, -2));
+        $loginoutlink = ob_get_contents();
+        ob_end_clean();
+        $items .= '<li style=" float: right;">'. $loginoutlink .'</li>';
+    return $items;
+}
+
 // On retire la barre d'admin wordpress pour tous les inscrits exceptés ceux qui ont le profil administrateur
 add_action('after_setup_theme', 'remove_admin_bar');
 
