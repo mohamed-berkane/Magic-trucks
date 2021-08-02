@@ -6,6 +6,7 @@
  */
 
 use magicTrucks\Plugin;
+use magicTrucks\Models\WorkshopRegistration;
 
 require __DIR__ . '/vendor-magic-trucks/autoload.php';
 
@@ -34,7 +35,7 @@ register_deactivation_hook(
  * Register meta box(es).
  */
 function wpdocs_register_meta_boxes() {
-    add_meta_box( 'meta-box-id', __( 'My Meta Box', 'textdomain' ), 'wpdocs_my_display_callback', 'workshop','side', 'high' );
+    add_meta_box( 'meta-box-id', __( 'Utilisateurs Inscits:', 'textdomain' ), 'wpdocs_my_display_callback', 'workshop','side', 'high' );
 }
 add_action( 'add_meta_boxes', 'wpdocs_register_meta_boxes' );
  
@@ -44,7 +45,19 @@ add_action( 'add_meta_boxes', 'wpdocs_register_meta_boxes' );
  * @param WP_Post $post Current post object.
  */
 function wpdocs_my_display_callback( $post ) {
-    echo 'coucou';
+    
+    $model = new WorkshopRegistration();
+
+    $users = [];
+    $users = $model->getUsersByWorkshopId($post->ID);
+    // var_dump($users); die();
+    foreach ($users as $key => $user) {
+        $userObject = get_user_by( 'id', $user->user_id );
+
+        echo $userObject->data->user_login; 
+        echo '<td>'.'<br>';
+    }
+    
     
     // Display code/markup goes here. Don't forget to include nonces!
 }

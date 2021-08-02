@@ -1,5 +1,5 @@
 <?php
-get_header();
+get_header();   
 ?>
 
 <div class='header-workshop'>
@@ -19,6 +19,9 @@ get_header();
         <article class="col-xs-12 maincontent">
             <header class="page-header">
                 <h1 class="page-title">Liste des atelier</h1>
+                <?php
+                    
+                ?>
             </header>
             <?php while (have_posts()) : the_post(); ?>
 
@@ -40,16 +43,17 @@ get_header();
                                 </div>
                             </div>
 
-                            <?php
-                            // récupération de la url du site
-                            $url = substr(get_site_url(), 0, -2);
+                                <?php
+                                    // récupération de la url du site
+                                    $url = substr(get_site_url(), 0, -2);
 
-                            // récupération de ID du post
-                            $atelier_id = get_the_ID();
-                            ?>
-                            <div class="button-workshop"><a href="<?= $url . 'user/register/' . $atelier_id; ?>"></a></div>
-                            <div class="honte">
-                                <p>Du texte ecrit en blanc et aussi en hidden pour camoufler cet échec de n'avoir sû déplacer ce bouton.. honte à moi (signé Atouss)</p>
+                                    // récupération de ID du post
+                                    $atelier_id = get_the_ID();
+
+                                ?>
+
+                                
+                                <a class="btn btn-primary" href="<?= $url . 'user/register/' . $atelier_id; ?>">S'insrire</a>
                             </div>
                             
                         </div>

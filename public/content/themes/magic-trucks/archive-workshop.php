@@ -1,5 +1,6 @@
 <?php
-get_header();
+    get_header();
+
 ?>
 
 
@@ -47,6 +48,8 @@ get_header();
                                     <?php
                                     // récupération de ID du post
                                     $atelier_id = get_the_ID();
+
+
                                     ?>
                                     <span class="button-front"><a href="<?= get_post_type_archive_link('quotation') ?>"></a></span>
                                 </div>
