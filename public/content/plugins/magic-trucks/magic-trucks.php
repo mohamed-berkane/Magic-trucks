@@ -53,7 +53,6 @@ function wpdocs_my_display_callback( $post ) {
     // var_dump($users); die();
     foreach ($users as $key => $user) {
         $userObject = get_user_by( 'id', $user->user_id );
-
         echo $userObject->data->user_login; 
         echo '<td>'.'<br>';
     }

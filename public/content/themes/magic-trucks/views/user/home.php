@@ -7,11 +7,14 @@
     // workshop 
     $workshops = $args['workshops'];
 
+    // Devis
+    $quotations = $args['quotations'];
+
+    // Message
     if (isset($args['message'])) {
         $message = $args['message'];
         print_r($message);
     }
-
 ?>
 
 <style>
@@ -106,16 +109,16 @@
                         ?>
 
                         <div class="media">
-                        <div class="media-left media-middle">
-                            <a href="#">
-                            <img class="media-object" style="float:left; max-width: 100px; padding:5px 10px 0 0px;" src="<?= get_the_post_thumbnail_url($workshop->ID); ;?>" alt="Vignette atelier">
-                            </a>
-                        </div>
-                        <div class="media-body">
-                            <h4 class="media-heading"><?= $workshop->post_title; ?></h4>
-                            <p><?= $workshop->post_content; ?></p>
-                            <a href="<?= $workshop->guid; ?>">En savoir plus</a>
-                        </div>
+                            <div class="media-left media-middle">
+                                <a href="#">
+                                <img class="media-object" style="float:left; max-width: 100px; padding:5px 10px 0 0px;" src="<?= get_the_post_thumbnail_url($workshop->ID); ;?>" alt="Vignette atelier">
+                                </a>
+                            </div>
+                            <div class="media-body">
+                                <h4 class="media-heading"><?= $workshop->post_title; ?></h4>
+                                <p><?= $workshop->post_content; ?></p>
+                                <a href="<?= $workshop->guid; ?>">En savoir plus</a>
+                            </div>
                         </div>
 
                         <?php
@@ -148,19 +151,54 @@
             <div class="panel panel-default">
                 <div class="panel-body">
                     <h3 class="thin text-center">Mes demandes de devis</h3>
-                    <p class="text-center text-muted"></p><p>Hello world</p>
+                    <p class="text-center text-muted"></p><p>Liste de vos demandes de devis</p>
                     <hr>
-                    <div class="workshop-img ">
-                        <ul>
-                            <li>Lieu : Avignon</li>
-                            <li>Durée : 4h00</li>
-                            <li>Prix : 160 euros</li>
-                        </ul>
-                        <p>image</p>
-                    </div>
+                    
 
-                    <!-- <button onclick=">En savoir plus</button"> -->
-                    <a href="http://localhost/apotheose/magic-trucks/public/workshop/mon-tout-1er-atelier/">En savoir plus</a>
+                    <?php
+
+                        // d($quotations);
+
+
+                        // quotations
+                        $nb_quotations = count($quotations);
+
+                        if ($nb_quotations > 0){
+
+                            // On stocke les id des quotations dans lesquels le user est enregistré pour les communiqués à single quotation
+                            $registeredQuotations = [];
+                            for ($i = 0; $i < count($quotations); $i++) {
+                                $quotation = $quotations[$i];
+                                $registeredQuotations[] += $quotation->ID;
+                            ?>
+
+                            <div class="media">
+                                <div class="media-body">
+                                    <span class="media-heading">
+                                        <strong><?= $quotation->post_title; ?></strong>
+                                </span> le <?= $quotation->post_date; ?>
+                                    
+                                    <p><?= $quotation->post_excerpt; ?></p>
+                                    <a class="btn btn-info" href="<?= $quotation->guid; ?>">Voir ma demande</a>
+                                </div>
+                            </div>
+
+                            <?php
+                            }
+                            
+                        }
+
+                        else {
+
+                        ?>    
+                            <p>Vous n'avez pas encore fait de demande de devis</p>
+                            <p class="text-center">
+                                <a class="btn btn-success" href="/apotheose/magic-trucks/quotation/workshop/">Liste des ateliers</a>
+                            </p>
+                        <?php        
+                        }
+                    ?>
+
                 </div>
             </div>
         </div>  

@@ -28,15 +28,67 @@ class UserController extends CoreController
         // On appelle la méthode getWorkshopsByUserId 
         $workshops = $model->getWorkshopsByUserId($user->ID);
 
+        // On appelle la méthode 
+        // $this->getUserQuotation($user->ID);
+
+        // On récupère les données de l'utilisateur
+        $userId = $user->data->ID;
+        
+        // On récupère les données du devis associé à l'utilisateur
+        $args = array(  
+            'post_type' => 'quotation',
+            'post_status' => 'publish',
+            'author' => $userId,
+            'posts_per_page' => -1, 
+            'order' => 'DESC',
+        );    
+        
+        $query = new WP_Query($args); 
+
+        //echo $query->have_posts($userId);
+        $quotations = get_posts($args);        
+
         // On retoure les données à la vue
         $this->show(
             'views/user/home', [
                 'currentUser' => $user,
                 'profile' => $profile,
-                'workshops' => $workshops
+                'workshops' => $workshops,
+                'quotations' => $quotations
             ]
         );
     }
+
+
+ /*    public function getUserQuotation($userId) {
+
+        // On vérife que l'utilisateur est bien connecté
+        if(!$this->mustBeConnected()) {
+            // si l'utilisateur n'est pas connecté, nous faisons un return pour nous assurer qu'aucun traitements ultérieur ne soit exécutés
+            return;
+        }        
+
+
+        // On récupère les données de l'utilisateur
+        $user = wp_get_current_user();
+        $userId = $user->data->ID;
+        
+        // On récupère les données du devis associé à l'utilisateur
+        $args = array(  
+            'post_type' => 'quotation',
+            'post_status' => 'publish',
+            'author' => $userId,
+            'posts_per_page' => -1, 
+            'order' => 'DESC',
+        );    
+        
+        $query = new WP_Query($args); 
+
+        //echo $query->have_posts($userId);
+        $quotations = get_posts($args);
+
+        return $quotations;
+    } */
 
 
     public function update() 
@@ -195,11 +247,14 @@ class UserController extends CoreController
     public function insert($workshopId)
     {
 
+        if(!isset($_POST['mt_register_nonce'] ) || !wp_verify_nonce($_POST['mt_register_nonce'], 'mt_register_action')) {
+            echo 'vérification ko';
+            exit();
+        }
+
         // récupération de l'utilisateur wordpress actuel
         $user = wp_get_current_user();
         $userId = $user->data->ID;
-
-        
 
         // Récupération des données du formulaire d'enregistrement à l'atelier
         $firstname = filter_input(INPUT_POST, 'firstname', FILTER_SANITIZE_STRING);
