@@ -1,5 +1,5 @@
 <?php
-get_header();   
+get_header();
 ?>
 
 <div class='header-workshop'>
@@ -9,7 +9,7 @@ get_header();
 <div class="container">
 
     <ol class="breadcrumb">
-        <li><a href="index.html">Home</a></li>
+        <li><a href="<?= get_home_url() ?>">Home</a></li>
         <li class="active">User access</li>
     </ol>
 
@@ -20,7 +20,7 @@ get_header();
             <header class="page-header">
                 <h1 class="page-title">Liste des atelier</h1>
                 <?php
-                    
+
                 ?>
             </header>
             <?php while (have_posts()) : the_post(); ?>
@@ -40,24 +40,25 @@ get_header();
                                     </ul>
                                 </div>
                                 <div class="workshop-right">
+                                    <img href="<? the_thumbnail() ?>">
                                 </div>
                             </div>
 
-                                <?php
-                                    // récupération de la url du site
-                                    $url = substr(get_site_url(), 0, -2);
+                            <?php
+                            // récupération de la url du site
+                            $url = substr(get_site_url(), 0, -2);
 
-                                    // récupération de ID du post
-                                    $atelier_id = get_the_ID();
-
-                                ?>
-
-                                
-                                <a class="btn btn-primary" href="<?= $url . 'user/register/' . $atelier_id; ?>">S'insrire</a>
+                            // récupération de ID du post
+                            $atelier_id = get_the_ID();
+                            ?>
+                            <div class="button-workshop"><a href="<?= $url . 'user/register/' . $atelier_id; ?>"></a></div>
+                            <div class="honte">
+                                <p>Du texte ecrit en blanc et aussi en hidden pour camoufler cet échec de n'avoir sû déplacer ce bouton.. honte à moi (signé Atouss)</p>
                             </div>
-                            
                         </div>
+
                     </div>
+                </div>
 
         </article>
     <?php endwhile ?>
