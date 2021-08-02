@@ -144,11 +144,12 @@ class UserController extends CoreController
             foreach ($workshops as $workshop) {
                 $registrations [] = $workshop['workshop']->ID;
             }
-            
             //print_r($registrations);
         
             //var_dump($registrations); die();
             $checkRegistration = in_array($workshop_id, $registrations);
+
+            // print_r($checkRegistration);
             // echo __LINE__ . " " . $checkRegistration . '<hr>';
             // echo __LINE__ . " " . $workshop_id . '<hr>';
             // On vérifie si le user est déjà inscrit
