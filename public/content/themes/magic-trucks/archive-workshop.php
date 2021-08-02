@@ -1,6 +1,7 @@
 <?php
     
     get_header();
+    $currentImage = get_the_post_thumbnail_url();;
 ?>
 
 <body class="home">
@@ -24,7 +25,7 @@
                                 <div class="panel-body">
                                     <h3 class="thin text-center"><?php the_title(); ?> </h3>
                                     <p class="text-center text-muted"><?= the_field('lieux'); ?> - du <?= the_field('date_begin'); ?> au <?= the_field('date_end'); ?></h3>
-                                    <img src="<?=get_the_post_thumbnail_url(); ?> ?>"/></p>
+                                    <img src="<?= $currentImage; ?> ?>"/></p>
                                     <hr>
                                     <div class="workshop-wrapp ">
                                         <!-- <div class="workshop-left"> -->
@@ -60,6 +61,7 @@
                             </div>
                     </article>
                 <?php endwhile ?>
+                <?php wp_reset_postdata(); ?>
         </div>
         </article>
         <!-- /Article -->
