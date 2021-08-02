@@ -478,6 +478,13 @@ body>div.jumbotron.top-space {
     font-size:1.5rem;
 }
 
+/*#################### DEVIS ##############################*/
+
+
+.quotation {
+    border: rgb(19, 139, 45) solid 20px;
+    margin-top:5rem;
+}
 /*####################   Mohamed   #################################*/
 
 .navbar-inverse .navbar-nav>li>a:hover {
