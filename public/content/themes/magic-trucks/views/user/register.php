@@ -69,8 +69,11 @@
                         <label for="comment">Commentaire</label><br>
                         <input type="text" class="form-control"  id="comment" name="comment" placeholder="Commentaire" value=""><br><br>
                     </div>
-
+                    <?php
+                        wp_nonce_field( 'mt_register_action', 'mt_register_nonce')
+                    ?>
                 <button type="submit" class="btn btn-default">Valider</button>
+
                 </form>
             </div>
         </div>
