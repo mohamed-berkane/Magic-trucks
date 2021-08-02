@@ -75,4 +75,89 @@ function send_smtp_email( $phpmailer ) {
    
 //  add_action( 'init', 'enable_comments_project', 11 );
 
+/* Personnalisation du formulaire ACF */
+
+
+/* On retire les styles ACF */
+add_action('wp_enqueue_scripts', 'acf_form_deregister_styles');
+
+function acf_form_deregister_styles(){
+    
+    // Deregister ACF Form style
+    wp_deregister_style('acf-global');
+    wp_deregister_style('acf-input');
+    
+    // Avoid dependency conflict
+    wp_register_style('acf-global', false);
+    wp_register_style('acf-input', false);
+    
+}
+
+/* On ajoute les classes Bootstrap */
+add_filter('acf/validate_form', 'acf_form_bootstrap_styles');
+function acf_form_bootstrap_styles($args){
+    
+    // Before ACF Form
+    if(!$args['html_before_fields'])
+        $args['html_before_fields'] = '<div class="row">'; // May be .form-row
+    
+    // After ACF Form
+    if(!$args['html_after_fields'])
+        $args['html_after_fields'] = '</div>';
+    
+    // Success Message
+    if($args['html_updated_message'] == '<div id="message" class="updated"><p>%s</p></div>')
+        $args['html_updated_message'] = '<div id="message" class="updated alert alert-success">%s</div>';
+    
+    // Submit button
+    if($args['html_submit_button'] == '<input type="submit" class="acf-button button button-primary button-large" value="%s" />')
+        $args['html_submit_button'] = '<input type="submit" class="acf-button button button-default button-large btn btn-default" value="%s" />';
+    
+    return $args;
+    
+}
+
+/* On rajoute les contrôles sur le formulaire */
+add_filter('acf/prepare_field', 'acf_form_fields_bootstrap_styles');
+function acf_form_fields_bootstrap_styles($field){
+    
+    // Target ACF Form Front only
+    if(is_admin() && !wp_doing_ajax())
+        return $field;
+    
+    // Add .form-group & .col-12 fallback on fields wrappers
+    $field['wrapper']['class'] .= ' form-group col-12';
+    
+    // Add .form-control on fields
+    $field['class'] .= ' form-control';
+    
+    return $field;
+    
+}
+
+
+
+/* On ajoute les * pour les champs définis comme obligatoires  */
+add_filter('acf/get_field_label', 'acf_form_fields_required_bootstrap_styles');
+function acf_form_fields_required_bootstrap_styles($label){
+    
+    // Target ACF Form Front only
+    if(is_admin() && !wp_doing_ajax())
+        return $label;
+    
+    // Add .text-danger
+    $label = str_replace('<span class="acf-required">*</span>', '<span class="acf-required text-danger">*</span>', $label);
+    
+    return $label;
+    
+}
+
+
+
+// wordpress va gérer les balises <title> du thème
+add_theme_support('title-tag');
+// le thème gère les images de mise en avant des posts
+add_theme_support('post-thumbnails');
+
+
 ?>

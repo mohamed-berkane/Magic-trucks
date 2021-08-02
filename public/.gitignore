@@ -29,3 +29,9 @@ content/plugins/*
 #!/content/themes/custom_theme
 
 
+# Fichiers mac Florent à virer
+.DS_Store
+public/.DS_Store
+public/content/themes/magic-trucks/.DS_Store
+public/content/themes/magic-trucks/assets/.DS_Store
+
