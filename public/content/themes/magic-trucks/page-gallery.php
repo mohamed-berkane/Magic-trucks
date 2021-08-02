@@ -9,57 +9,68 @@
 <?php
 get_header();
 ?>
+<div class='header-workshop'>
+    <!-- container -->
+    <div class="container">
+        <ol class="breadcrumb">
+            <li><a href="index.html">Home</a></li>
+            <li class="active">User access</li>
+        </ol>
 
-<section id="gallery">
-    <h2 class="titre-section"><span class="icone"><i class="fas fa-laptop-code"></i></span> Gallerie</h2>
-    <div class="gallery__card">
-        <div class="gallery__card-illu" data-text="gallery">
-            <img src="http://localhost/apotheose/magic-trucks/public/content/themes/magic-trucks/assets/images/camion7.jpg" alt="">
-        </div>
-        <div class="gallery__card-content">
-            <div>
-                <h3>Effet atypique garanti!</h3>
-                <p>Je vous propose la pose de bardage bois extérieur, donnez une touche chaleureuse à votre camion!</p>
-                <a href="#">Demandez moi un devis</a>
-            </div>
+        <div class="row">
+            <!-- Article main content -->
+            <article class="col-xs-12 maincontent">
+                <header class="page-header">
+                    <h1 class="workshop-title">Galerie photo</h1>
+                    <aside class="description">Un aperçu du monde des camions aménagé et de mes créations.
+                    </aside>
+                </header>
+                <!-- Gallery -->
+                <div class="row">
+                    <div class="col-lg-4 col-md-12 mb-4 mb-lg-0">
+                        <img src="<?= get_theme_file_uri() ?>/assets/images/camion7.jpg" alt="" class="w-100 shadow-1-strong rounded mb-4" alt="" />
+
+                        <img src="<?= get_theme_file_uri() ?>/assets/images/lit.jpg" class="w-100 shadow-1-strong rounded mb-4" alt="" />
+                    </div>
+
+                    <div class="col-lg-4 col-md-12 mb-4 mb-lg-0">
+                        <img src="<?= get_theme_file_uri() ?>/assets/images/bois-beau.jpg" class="w-100 shadow-1-strong rounded mb-4" alt="" />
+
+                        <img src="<?= get_theme_file_uri() ?>/assets/images/toit_2.jpg" class="w-100 shadow-1-strong rounded mb-4" alt="" />
+                    </div>
+
+                    <div class="col-lg-4 col-md-12 mb-4 mb-lg-0">
+                        <img src="<?= get_theme_file_uri() ?>/assets/images/douche.jpg" class="w-100 shadow-1-strong rounded mb-4" alt="" />
+
+                        <img src="<?= get_theme_file_uri() ?>/assets/images/toit_2.jpg" class="w-100 shadow-1-strong rounded mb-4" alt="" />
+                    </div>
+                    <div class="col-lg-4 col-md-12 mb-4 mb-lg-0">
+                        <img src="<?= get_theme_file_uri() ?>/assets/images/camion7.jpg" alt="" class="w-100 shadow-1-strong rounded mb-4" alt="" />
+
+                        <img src="<?= get_theme_file_uri() ?>/assets/images/lit.jpg" class="w-100 shadow-1-strong rounded mb-4" alt="" />
+                    </div>
+                    <div class="col-lg-4 col-md-12 mb-4 mb-lg-0">
+                        <img src="<?= get_theme_file_uri() ?>/assets/images/douche.jpg" class="w-100 shadow-1-strong rounded mb-4" alt="" />
+                        <img src="<?= get_theme_file_uri() ?>/assets/images/toit_2.jpg" class="w-100 shadow-1-strong rounded mb-4" alt="" />
+                    </div>
+
+                        <div class="col-lg-4 col-md-12 mb-4 mb-lg-0">
+                            <img src="<?= get_theme_file_uri() ?>/assets/images/bois-beau.jpg" class="w-100 shadow-1-strong rounded mb-4" alt="" />
+
+                            <img src="<?= get_theme_file_uri() ?>/assets/images/toit_2.jpg" class="w-100 shadow-1-strong rounded mb-4" alt="" />
+                        </div>
+
+
+
+                        
+
+                </div>
+            </article>
         </div>
     </div>
-    <div class="gallery__card">
-        <div class="gallery__card-illu" data-text="gallery">
-            <img src="http://localhost/apotheose/magic-trucks/public/content/themes/magic-trucks/assets/images/lit.jpg" alt="">
-        </div>
-        <div class="gallery__card-content">
-            <div>
-                <h3>Coin détente avec lit superposé</h3>
-                <p>Chez Magic-Trucks, tout est possible, nous réalisons vos souhaits!</p>
-                <a href="#">Demandez moi un devis</a>
-            </div>
-        </div>
-    </div>
-    <div class="gallery__card">
-        <div class="gallery__card-illu" data-text="gallery">
-            <img src="http://localhost/apotheose/magic-trucks/public/content/themes/magic-trucks/assets/images/bois-beau.jpg" alt="">
-        </div>
-        <div class="gallery__card-content">
-            <div>
-                <h3>Effet chaleureux garanti</h3>
-                <p>Rien de tels que le bois pour apporté un coté naturel à votre intérieur</p>
-                <a href="#">Demandez moi un devis</a>
-            </div>
-        </div>
-    </div>
-    <div class="gallery__card">
-        <div class="gallery__card-illu" data-text="gallery">
-            <img src="http://localhost/apotheose/magic-trucks/public/content/themes/magic-trucks/assets/images/toit_2.jpg" alt="">
-        </div>
-        <div class="gallery__card-content">
-            <div>
-                <h3>Besoin de tranquillité?</h3>
-                <p>En option, je peux vous installer une échelle pour accèder au toit, rien de tels pour profiter d'un moment au calme</p>
-                <a href="#">Demandez moi un devis</a>
-            </div>
-        </div>
-    </div>
+
+    <!-- Gallery -->
+
 
 
 

@@ -71,7 +71,7 @@ ul {
 #head {
     background-image: url("../images/photoaccueil.jpg");
     background-repeat: no-repeat;
-    
+
 }
 
 
@@ -96,6 +96,7 @@ body>div.jumbotron.top-space {
     margin-top: 1rem;
 }
 
+
 /* ################## Container Atelier + Devis ##################      */
 
 
@@ -107,6 +108,7 @@ body>div.jumbotron.top-space {
     width: 80%;
     border-bottom: solid white 1px;
     height: auto;
+    min-width: auto;
 }
 
 @media only screen and (min-width: 1300px) {
@@ -154,6 +156,7 @@ body>div.jumbotron.top-space {
     margin-left: 1rem;
     color: #4caf50;
     font-size: 1.7rem;
+    margin:2rem 0 2rem 0;
 }
 
 
@@ -166,6 +169,7 @@ body>div.jumbotron.top-space {
 
 }
 
+
 @media only screen and (min-width: 1000px) {
 
     #right-side-2,
@@ -177,10 +181,6 @@ body>div.jumbotron.top-space {
 
 }
 
-#right-side-2,
-#left-side {
-    font-size: 2rem;
-}
 
 @media only screen and (max-width: 600px) {
 
@@ -263,12 +263,7 @@ body>div.jumbotron.top-space {
     top: 5rem;
 }
 
-.row-about {
-    padding-top: 1rem;
-    color: white;
-    text-align: center;
-    margin-top: 2rem;
-}
+
 
 @import url('https://fonts.googleapis.com/css?family=Montserrat:600&display=swap');
 
@@ -340,20 +335,27 @@ body>div.jumbotron.top-space {
 
 .workshop-left,
 .workshop-right {
-    flex-basis: 50%
+    flex-basis: 50%;
 }
 
 .workshop-right {
     background: url(../images/bois-beau.jpg);
     background-size: cover;
+    min-height: 20rem;
 }
 
 .workshop-left {
     text-align: left;
+    
 }
 
 .workshop-title {
     color: seagreen;
+}
+
+.list-content-workshop {
+    padding-top:4rem;
+    
 }
 
 .button-workshop {
@@ -406,8 +408,12 @@ body>div.jumbotron.top-space {
 }
 
 .honte {
-    color:white;
+    color: white;
     visibility: hidden
+}
+
+.workshop-caps {
+    min-height: 60rem;
 }
 
 /************Fin Liste des ateliers ********************/
@@ -497,7 +503,13 @@ body>div.jumbotron.top-space {
     transition: .5s;
 }
 
-/*####################Mohamed#################################*/
+.description {
+    padding:3rem 0 3rem 0;
+    color:#9de25c;
+    font-size:1.5rem;
+}
+
+/*####################   Mohamed   #################################*/
 
 .navbar-inverse .navbar-nav>li>a:hover {
     color: #1eb635;
@@ -551,3 +563,13 @@ footer {
     display: flex;
     justify-content: space-between;
 }
+
+.row-about {
+    padding-top: 1rem;
+    color: white;
+    text-align: center;
+    margin-top: 2rem;
+}
+
+/*####################################*/
+

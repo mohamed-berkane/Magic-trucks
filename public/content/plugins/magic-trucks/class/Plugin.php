@@ -70,10 +70,6 @@ class Plugin
             'init',
             [$this, 'createRegisteredProfileCustomPostType']
         );
-<<<<<<< HEAD
-=======
-
->>>>>>> develop
     }
     
 

@@ -2,7 +2,7 @@
 get_header();
 ?>
 
-<body class="home">
+
 
     <div class='header-workshop'>
 
@@ -19,6 +19,10 @@ get_header();
             <article class="col-xs-12 maincontent">
                 <header class="page-header">
                     <h1 class="workshop-title">Liste des atelier</h1>
+                    <aside class="description">Ici, nous vous proposons des ateliers partout en France à des dates données !
+                        </br>
+                        Avec ces ateliers, nous vous aidons à fabriquer des éléments pour votre camion, et même à l'amenager de façon nouvelle et original.
+                    </aside>
                 </header>
                 <?php while (have_posts()) : the_post(); ?>
                     <article class="">
@@ -30,7 +34,7 @@ get_header();
                                     <hr>
                                     <div class="workshop-wrapp ">
                                         <div class="workshop-left">
-                                            <ul>
+                                            <ul class="list-content-workshop">
                                                 <li>Lieu : Avignon</li>
                                                 <li>Durée : 4h00</li>
                                                 <li>Prix : 160 euros</li>
@@ -44,8 +48,7 @@ get_header();
                                     // récupération de ID du post
                                     $atelier_id = get_the_ID();
                                     ?>
-                                    <!-- <button onclick="<?php get_post_permalink(); ?>>En savoir plus</button"> -->
-                                    <a href="<?= get_permalink($atelier_id); ?>">En savoir plus</a>
+                                    <span class="button-front"><a href="<?= get_post_type_archive_link('quotation') ?>"></a></span>
                                 </div>
                             </div>
                     </article>
