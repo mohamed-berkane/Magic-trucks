@@ -1,5 +1,5 @@
 <?php
-	get_header();
+get_header();
 ?>
 <!-- Header -->
 <header id="head">
@@ -70,9 +70,9 @@
 		<?php
 		// Récupération des articles "posts"
 		if (have_posts()) {
-			while(have_posts()){
+			while (have_posts()) {
 				the_post();
-				echo get_template_part('partials/thumbnails/article-thumbnails', 'article-thumbnail'); 
+				echo get_template_part('partials/thumbnails/article-thumbnails', 'article-thumbnail');
 			}
 		}
 		?>
@@ -82,7 +82,7 @@
 			<a href="#"></a>
 		</span>
 	</div>
-</div>	
+</div>
 <br><br>
 
 <!-- // Blog -->
@@ -90,52 +90,49 @@
 
 <!-- container -->
 <div class="container">
-    <!-- Atelier 1-->
-    <h2 class="text-center top-space">Prochains ateliers</h2>
+	<!-- Atelier 1-->
+	<h2 class="text-center top-space">Prochains ateliers</h2>
 	<br>
 	<div class="panel panel-default" style="padding: 35px 10px;">
 		<div class="narrow-content text-center">
 
-			<p >Venez découvrir les ateliers ambulant de Magic-Trucks.En groupe, nous apprendrons à fabriquer toutes sortes d'équipements ou de décorations utiles pour la vie en camion.</p><br>
+			<p>Venez découvrir les ateliers ambulant de Magic-Trucks.En groupe, nous apprendrons à fabriquer toutes sortes d'équipements ou de décorations utiles pour la vie en camion.</p><br>
 			<p>Vérifiez les dates et lieux des prochains rendez-vous, peut être que Magic-Trucks se présentera à côté de chez vous !</p>
 
 		</div>
 		<div class="panel-body">
-			<div class="row workshop">        
+			<div class="row workshop">
 
-			<?php
+				<?php
 
-				$args = array(  
+				$args = array(
 					'post_type' => 'workshop',
 					'post_status' => 'publish',
-					'posts_per_page' => 4, 
-					'orderby' => 'title', 
-					'order' => 'ASC', 
-				);    
-				
-				$query = new WP_Query($args); 
+					'posts_per_page' => 4,
+					'orderby' => 'title',
+					'order' => 'ASC',
+				);
+
+				$query = new WP_Query($args);
 
 				if ($query->have_posts()) {
-					while ($query->have_posts() ) {
+					while ($query->have_posts()) {
 						$query->the_post();
 						get_template_part('partials/thumbnails/workshop-thumbnails');
-					}  
-				}
-
-
-				else {
+					}
+				} else {
 					echo "Il n'y a pas d'atelier à venir pour l'instant";
 				}
-					
-				wp_reset_postdata(); 
-								
-			?>
 
-			</div> 
+				wp_reset_postdata();
+
+				?>
+
+			</div>
 		</div>
-		<!-- /row -->	
+		<!-- /row -->
 	</div>
-	<p class="text-center">		
+	<p class="text-center">
 		<span class="button-front">
 			<a href="/apotheose/magic-trucks/public/workshop/"></a>
 		</span>
