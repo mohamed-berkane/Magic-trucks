@@ -258,7 +258,7 @@ class Plugin
             // L'identifiant du post_type
             'project',
             [
-                'label' => 'Projets',
+                'label' => 'Mes créations',
                 // true permet d'administrer le CPT dans le BO
                 'public' => true,
                 'hierarchical' => false,
