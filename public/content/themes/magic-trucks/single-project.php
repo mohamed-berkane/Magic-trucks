@@ -4,44 +4,6 @@ get_header();
 
 <body class="home">
 
-<!-- <div class='header-workshop'>
-</div> -->
-    <!-- container -->
-    <!-- <div class="container">
-                <?php if( have_posts() ) : while( have_posts() ) : the_post(); ?>
-                    <div class="post">
-                        <h1 class="post__title"><?php the_title(); ?></h1>
-                        <div class="post__content">
-                            <?php the_content(); ?>
-
-                            <h2>Étapes du projet</h2>
-                            <?php 
-                                // $args = [
-                                //     'post_type' => 'project-news',
-                                //     'posts_per_page' => -1,
-                                //     'meta_query' => [
-                                //         [
-                                //             'key' => 'projet_lie',
-                                //             'value' => get_the_id(),
-                                //             'compare' => 'LIKE'
-                                //         ]
-                                //     ]
-                                // ];
-                                // $newsLinkedQuery = new WP_Query($args);
-
-                                // while($newsLinkedQuery->have_posts()) : $newsLinkedQuery->the_post();
-                                //     ?>
-                                //         <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a><br>
-                                //     <?php 
-                                // endwhile;
-                                // wp_reset_postdata();
-
-                            ?>
-                        </div>
-                    </div>
-                    <?php  get_template_part( 'content', get_post_format() ); ?>
-                <?php endwhile; endif; ?> -->
-
 
 <div class='header-workshop'>
 </div>
@@ -64,9 +26,7 @@ get_header();
                 <div class="workshop-caps panel panel-default">
                     <div class="panel-body">
                         <h3 class="thin text-center"><?php the_title(); ?> </h3>
-
-                        <hr>
-                        <img src="<?php  the_post_thumbnail(); ?>"/>
+                        <img src="<?= get_the_post_thumbnail_url(); ?>"/>
                         <p class="text-center text-muted"><?php the_content() ?></p>
                         <div class="workshop-wrapp ">
 
