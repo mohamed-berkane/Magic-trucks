@@ -491,6 +491,10 @@ body>div.jumbotron.top-space {
     color: #1eb635;
 }
 
+.current-menu-item a {
+    color: #1eb635 !important;
+}
+
 .jumbotron {
     width: 100%;
     background-color: #1eb635;

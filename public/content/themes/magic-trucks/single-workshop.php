@@ -20,7 +20,7 @@ $imageURL = get_the_post_thumbnail_url();
         <article class="col-xs-12 maincontent">
             <header class="page-header">
                 <h1 class="page-title"><?= get_the_title(); ?></h1>
-                <p class="go-back">
+                <p>
                     <a class="btn btn-success" href="<?= get_home_url(); ?>">
                         <i class="fas fa-long-arrow-alt-left"> </i>
                         Retour
