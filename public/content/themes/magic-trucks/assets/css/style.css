@@ -181,6 +181,7 @@ body>div.jumbotron.top-space {
         font-size: 1.8rem;
     }
 }
+
 #right-side-2,
 #left-side {
     font-size: 2rem;
@@ -409,30 +410,63 @@ body>div.jumbotron.top-space {
 .wrapper-single {
     display: flex;
     height: auto;
+    border: solid green 1px;
 }
 
-.single-left, 
+.header-single {
+    text-align: center;
+    margin-bottom: 5rem;
+    ;
+    padding: 2rem;
+}
+
+@media only screen and (max-width: 735px) {
+
+    .wrapper-single {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .single-right {
+        padding-bottom: 2rem;
+        width: 100%;
+        padding-top: 2rem;
+    }
+
+    .header-single {
+        margin-bottom: 0;
+    }
+}
+
+.single-left,
 .single-right {
     flex-basis: 50%;
 }
 
 .single-left {
-    border: solid rgb(20, 129, 6) 5px;
-    margin-left:1.5rem;
+
+
     text-align: center;
 }
 
 .single-right {
-    margin-right:1.5rem;
-    border-top: solid rgb(20, 129, 6) 5px;
-    border-right: solid rgb(20, 129, 6) 5px;
-    border-bottom: solid rgb(20, 129, 6) 5px;
+    margin-right: 1.5rem;
+    min-width: 20rem;
+
 }
 
-.header-single {
-    text-align: center;
-    margin-bottom: 5rem;;
 
+
+.footer-single {
+
+    margin-bottom: 5rem;
+    ;
+    padding: 2rem;
+}
+
+.back {
+    float: inline-end;
 }
 
 
@@ -573,7 +607,7 @@ footer {
     width: 100%;
 }
 
-.row-contact{
+.row-contact {
     padding-top: 1rem;
     color: white;
     text-align: center;
@@ -587,21 +621,23 @@ footer {
     position: relative;
     bottom: 0.5rem;
 }
-.details-contact{
+
+.details-contact {
     margin-bottom: 5rem;
-      border-radius: 50%;
+    border-radius: 50%;
     box-shadow: 1px 1px 40px 7px green;
     background: var(--fitback);
     padding: 3rem;
     width: 40%;
 }
-.contenu-contact{
-    
+
+.contenu-contact {
+
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
     width: 100%;
-    
+
 }
 
 
@@ -619,7 +655,6 @@ footer {
 }
 
 /*####################################*/
-.parti-droit{
+.parti-droit {
     margin-top: 13rem;
 }
-

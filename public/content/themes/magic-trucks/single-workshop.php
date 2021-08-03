@@ -8,26 +8,26 @@ $imageURL = get_the_post_thumbnail_url();
 </div>
 <!-- container -->
 <div class="container">
-</br>
-</br>
+    </br>
+    </br>
     <ol class="breadcrumb">
         <li><a href="<?= get_home_url() ?>">Home</a></li>
         <li class="active">User access</li>
     </ol>
-    <span>
-        <a class="btn btn-success" href="<?= get_post_type_archive_link('workshop') ?>">
-            <i class="fas fa-long-arrow-alt-left"> </i>
-            Retour
-        </a>
-    </span>
 
-</br>
-</br>
-</br>
-</br>
+    </br>
+    </br>
+    </br>
+    </br>
 
     <div class="row workshop-caps panel">
         <div class="header-single">
+            <span class="back">
+                <a class="btn btn-success" href="<?= get_post_type_archive_link('workshop') ?>">
+                    <i class="fas fa-long-arrow-alt-left"> </i>
+                    Retour
+                </a>
+            </span>
             <h3><?= get_the_title(); ?></h3>
             <span><?= the_field('lieux'); ?></span>
             <span>Du <?= the_field('date_begin'); ?> au <?= the_field('date_end'); ?></span>
@@ -50,7 +50,7 @@ $imageURL = get_the_post_thumbnail_url();
             </div>
 
         </div>
-        <div class="header-single">
+        <div class="footer-single">
             <hr class="hr-single">
             <span><?php the_content() ?></span>
             <hr class="hr-single">
