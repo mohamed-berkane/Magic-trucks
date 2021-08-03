@@ -1,7 +1,7 @@
 <?php
 
 get_header();
-$currentImage = get_the_post_thumbnail_url();;
+//$currentImage = ;
 ?>
 
 
@@ -35,7 +35,7 @@ $currentImage = get_the_post_thumbnail_url();;
                                 <p class="text-center text-muted">Lieu : <?= the_field('lieux'); ?> - du <?= the_field('date_begin'); ?> au <?= the_field('date_end'); ?></p>
                                 <hr>
                                 <div class="workshop-wrapp ">
-                                    <div class="workshop-right"><img  src="<?= $currentImage; ?> ?>" /></div>
+                                    <div class="workshop-right"><img  src="<?=get_the_post_thumbnail_url(); ?>" /></div>
                                     <!-- <div class="workshop-left"> -->
                                     <div class="workshop-left">
                                         <ul>
