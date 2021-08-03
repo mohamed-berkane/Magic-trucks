@@ -16,7 +16,7 @@ get_header();
 <div class="container">
 
 	<ol class="breadcrumb">
-		<li><a href="index.html">Home</a></li>
+		<li><a href="<?= get_home_url() ?>">Home</a></li>
 		<li class="active">About</li>
 	</ol>
 
@@ -36,30 +36,32 @@ get_header();
 				Mes envies, c’est bien sûr le voyage, car le “mouvement c’est ma vie”; le deuxième, la création, celle qui agite mon cerveau jour et nuit et la dernière, les rencontres humaines qui représentent l’essence même des voyages.
 				Je vous proposons une carte sur mon site internet afin de suivre mes itinéraire et de me retrouver lors d'événements mais aussi de me contacter si vous avez un projet d'aménagement et que je suis dans votre région.
 
-				<h1>Magic-Trucks-Creations</h1>
+			<h1>Magic-Trucks-Creations</h1>
 
-				C’est l’entreprise qui est gérée par Guillaume. Il a une trentaine d'années et a adopté la vie en camion depuis 2013 et crée ses camions et leurs aménagements depuis 5 ans maintenant.
-				L'idée d’une "capsule" monter sur camion plateau formant LE magictrucks est née près de Benicassim en Espagne pendant un festival nommé “ROTOTOM”.
-				Le concept est de créer des cellules amovibles sur des camions plateaux. Que le tout soit complètement autonome et surtout que chaque création soit unique !
-				Magic-Trucks-Creations est itinérant et propose donc :
-				- Des ateliers lors d’évènements.
-				- Des stages un peu partout en France ou à l’étranger selon notre itinéraire, pour apprendre à créer par vous-mêmes, les indispensables pour votre camion.
-				- La possibilité de nous contacter via le formulaire ( à préciser avec flo) pour nous présenter ton projet d’aménagement de camion ou une demande de création d’un nouveau Magic Truck.
+			C’est l’entreprise qui est gérée par Guillaume. Il a une trentaine d'années et a adopté la vie en camion depuis 2013 et crée ses camions et leurs aménagements depuis 5 ans maintenant.
+			L'idée d’une "capsule" monter sur camion plateau formant LE magictrucks est née près de Benicassim en Espagne pendant un festival nommé “ROTOTOM”.
+			Le concept est de créer des cellules amovibles sur des camions plateaux. Que le tout soit complètement autonome et surtout que chaque création soit unique !
+			Magic-Trucks-Creations est itinérant et propose donc :
+			- Des ateliers lors d’évènements.
+			- Des stages un peu partout en France ou à l’étranger selon notre itinéraire, pour apprendre à créer par vous-mêmes, les indispensables pour votre camion.
+			- La possibilité de nous contacter via le formulaire ( à préciser avec flo) pour nous présenter ton projet d’aménagement de camion ou une demande de création d’un nouveau Magic Truck.
 			</p>
 
 		</article>
 		<!-- /Article -->
 
 		<!-- Sidebar -->
-		<aside class="col-sm-5 sidebar sidebar-right">
+		<div class="parti-droit">
+			<aside class="col-sm-5 sidebar sidebar-right">
 
-			<div class="img-camion"><img src="<?= get_theme_file_uri() ?>/assets/images/2camion.png">
-			</div>
+				<div class="img-camion"><img src="<?= get_theme_file_uri() ?>/assets/images/2camion.png">
+				</div>
 
-		</aside>
-		<!-- /Sidebar -->
-
+			</aside>
+			<!-- /Sidebar -->
+		</div>
 	</div>
+
 </div> <!-- /container -->
 <?php
 get_footer();

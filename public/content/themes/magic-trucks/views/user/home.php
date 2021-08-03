@@ -1,17 +1,26 @@
 <?php
 
     get_header();
+
     $currentUser = $args['currentUser'];
-    $user = wp_get_current_user();
-    
+
+    // workshop 
+    $workshops = $args['workshops'];
+
+    // Devis
+    $quotations = $args['quotations'];
+
+    // Message
+    if (isset($args['message'])) {
+        $message = $args['message'];
+        print_r($message);
+    }
 ?>
 
 <style>
 .jumbotron {
     margin-top:20px; 
     background:#fff;
-    display: flex;
-    flex-wrap: wrap;
 }
 
 .jumbotron img {
@@ -28,10 +37,6 @@
 
 .mt {
     margin-top:150px;
-}
-
-.half {
-    width: 50%;
 }
 
 .jumbotron-wrapper {
@@ -52,104 +57,148 @@
             <p class="lead">Bienvenue dans votre espace personnel. Vous pouvez modifier vos coordonnées ou consulter votre historique d'actions sur le site. </p>
         </div>
 
-        <div class="half">
+        <p>
             <h4>Coordonnées :</h4>
             <strong>Prénom</strong> : <?= $currentUser->user_firstname; ?><br>
             <strong>Nom</strong> : <?= $currentUser->user_lastname; ?><br>
-            <strong>Email</strong> : <?= $currentUser->data->user_email; ?>
-        </div>
+            <strong>Email</strong> : <?= $currentUser->data->user_email; ?><br><br>
+        </p>
 
-        <div class="half">
-            <h4>Actions :</h4>
-            <a href="/apotheose/magic-trucks/public/user/update/">
+        <p>
+            <a class="btn btn-default" href="/apotheose/magic-trucks/public/user/update/">
                 <i class="fas fa-edit"></i> Mettre à jour
-            </a><br>
-            <a href="/apotheose/magic-trucks/public/user/delete" onclick="return confirm('Are you sure you want to delete this item?');">
+            </a>
+            <a class="btn btn-success" href="/apotheose/magic-trucks/public/user/delete" onclick="return confirm('Etes-vous sûr de vouloir supprimer votre compte ? Cette action est définitive');">
                 <i class="fas fa-trash-alt"></i> Supprimer
-            </a><br>
-            <a href="/apotheose/magic-trucks/public/wp/wp-login.php?action=logout">
+            </a>
+            <a class="btn btn-info" href="/apotheose/magic-trucks/public/wp/wp-login.php?action=logout">
                 <i class="fas fa-sign-out-alt"></i> Déconnecter
             </a>
-        </div>
+        </p>
 
     </div>
 
     <div class="row">
 
         <!-- panel 1 -->
-        <div class="col-sm-6" style="color:black;">
+        <div class="col-sm-12" style="color:black;">
             <div class="panel panel-default">
                 <div class="panel-body">
                 <h3 class="thin text-center">Mes ateliers</h3>
                 <p class="text-center text-muted"></p><p>Liste des ateliers dans lesquels vous êtes inscrits</p>
                 <hr>
+                
+                
                 <?php
 
-                    // pour l'instant on liste les post_type classiques pour vérifier le fonctionnement
-                    // TODO : remplacer par le bon post_type
-                    $args = array(
-                        'post_type' => 'post',
-                        'post_status' => 'publish',
-                        'author' => $currentUser->ID,
-                        'orderby' => 'post_date',
-                        'order' => 'ASC',
-                        'posts_per_page' => 1
-                    );
+                    // print_r($workshops[0]);
 
-                    // On instancie l'objet auteur
-                    $author_query = new WP_Query($args); 
+                    // Workshops
+                    $nb_workshops = count($workshops);
+                    //echo "Atelier :" . $nb_workshops . "<br>";
+                    
+                    if ($nb_workshops > 0){
 
-                    // On regarde si l'auteur a un post 
-                    // TODO : remplacer par le bon post
-                    $nb_post = count_user_posts($currentUser->ID, 'post', false );
+                        // On stocke les id des workshops dans lesquels le user est enregistré pour les communiqués à single workshop
+                        $registeredWorkshops = [];
+                        for ($i = 0; $i < count($workshops); $i++) {
 
-                    // Si l'auteur a des posts, on les affiche
-                    if ($nb_post > 0) {
+                            $workshop = $workshops[$i]['workshop'];
+                            $registeredWorkshops[] += $workshop->ID;
 
-                        while ($author_query->have_posts() ) : $author_query->the_post();
+                        ?>
 
-                        $title = get_the_title();
-                        $content = substr(get_the_content(), 0, 150);
-    
-  
-                            echo $title;
-                            echo $content;
-    
-                        endwhile;
+                        <div class="media">
+                            <div class="media-left media-middle">
+                                <a href="#">
+                                <img class="media-object" style="float:left; max-width: 100px; padding:5px 10px 0 0px;" src="<?= get_the_post_thumbnail_url($workshop->ID); ;?>" alt="Vignette atelier">
+                                </a>
+                            </div>
+                            <div class="media-body">
+                                <h4 class="media-heading"><?= $workshop->post_title; ?></h4>
+                                <p><?= $workshop->post_content; ?></p>
+                                <a href="<?= $workshop->guid; ?>">En savoir plus</a>
+                            </div>
+                        </div>
+
+                        <?php
+                        }
+                        
                     }
 
-                    // Sinon, on lui indique qu'il pourrait se bouger un peu
                     else {
-                    ?>
+
+                    ?>    
                         <p>Vous êtes inscrit à aucun atelier pour l'intant</p>
                         <p>Voir la <a href="/apotheose/magic-trucks/public/workshop/">liste des ateliers</a></p>
-                    <?php
+                    <?php        
                     }
-
+                    
  
                     ?>
+                    <br> 
+                    <p></p>
+                    <p class="text-center">
+                        <a class="btn btn-success" href="/apotheose/magic-trucks/public/workshop/">Liste des ateliers</a>
+                    </p>
                 </div>
+
             </div>
         </div>
        
         <!-- panel 2 --> 
-        <div class="col-sm-6" style="color:black;">
+        <div class="col-sm-12" style="color:black;">
             <div class="panel panel-default">
                 <div class="panel-body">
                     <h3 class="thin text-center">Mes demandes de devis</h3>
-                    <p class="text-center text-muted"></p><p>Hello world</p>
+                    <p class="text-center text-muted"></p><p>Liste de vos demandes de devis</p>
                     <hr>
-                    <div class="workshop-img ">
-                        <ul>
-                            <li>Lieu : Avignon</li>
-                            <li>Durée : 4h00</li>
-                            <li>Prix : 160 euros</li>
-                        </ul>
-                        <p>image</p>
-                    </div>
+                    
 
-                    <!-- <button onclick=">En savoir plus</button"> -->
-                    <a href="http://localhost/apotheose/magic-trucks/public/workshop/mon-tout-1er-atelier/">En savoir plus</a>
+                    <?php
+
+                        // d($quotations);
+
+
+                        // quotations
+                        $nb_quotations = count($quotations);
+
+                        if ($nb_quotations > 0){
+
+                            // On stocke les id des quotations dans lesquels le user est enregistré pour les communiqués à single quotation
+                            $registeredQuotations = [];
+                            for ($i = 0; $i < count($quotations); $i++) {
+                                $quotation = $quotations[$i];
+                                $registeredQuotations[] += $quotation->ID;
+                            ?>
+
+                            <div class="media">
+                                <div class="media-body">
+                                    <span class="media-heading">
+                                        <strong><?= $quotation->post_title; ?></strong>
+                                </span> le <?= $quotation->post_date; ?>
+                                    
+                                    <p><?= $quotation->post_excerpt; ?></p>
+                                    <a class="btn btn-info" href="<?= $quotation->guid; ?>">Voir ma demande</a>
+                                </div>
+                            </div>
+
+                            <?php
+                            }
+                            
+                        }
+
+                        else {
+
+                        ?>    
+                            <p>Vous n'avez pas encore fait de demande de devis</p>
+                            <p class="text-center">
+                                <a class="btn btn-success" href="/apotheose/magic-trucks/quotation/workshop/">Liste des ateliers</a>
+                            </p>
+                        <?php        
+                        }
+                    ?>
+
                 </div>
             </div>
         </div>  

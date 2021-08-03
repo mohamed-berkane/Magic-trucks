@@ -15,16 +15,80 @@ class UserController extends CoreController
         
         // On récupère les données de l'utilisateur WP actuel
         $user = wp_get_current_user();
+        //var_dump($user);
 
         // On récupère le profil
         $profile = $this->getProfile($user);
-        
-        $this->show(
-            'views/user/home', 
-            ['currentUser' => $user]
-        );
 
+        // TODO : déplacer le getWorkshopByUserId dans une autre méthode pour plus de propreté
+
+        // On instancie l'objet WorkshopRegistration
+        $model = new  WorkshopRegistration;
+
+        // On appelle la méthode getWorkshopsByUserId 
+        $workshops = $model->getWorkshopsByUserId($user->ID);
+
+        // On appelle la méthode 
+        // $this->getUserQuotation($user->ID);
+
+        // On récupère les données de l'utilisateur
+        $userId = $user->data->ID;
+        
+        // On récupère les données du devis associé à l'utilisateur
+        $args = array(  
+            'post_type' => 'quotation',
+            'post_status' => 'publish',
+            'author' => $userId,
+            'posts_per_page' => -1, 
+            'order' => 'DESC',
+        );    
+        
+        $query = new WP_Query($args); 
+
+        //echo $query->have_posts($userId);
+        $quotations = get_posts($args);        
+
+        // On retoure les données à la vue
+        $this->show(
+            'views/user/home', [
+                'currentUser' => $user,
+                'profile' => $profile,
+                'workshops' => $workshops,
+                'quotations' => $quotations
+            ]
+        );
     }
+
+
+ /*    public function getUserQuotation($userId) {
+
+        // On vérife que l'utilisateur est bien connecté
+        if(!$this->mustBeConnected()) {
+            // si l'utilisateur n'est pas connecté, nous faisons un return pour nous assurer qu'aucun traitements ultérieur ne soit exécutés
+            return;
+        }        
+
+
+        // On récupère les données de l'utilisateur
+        $user = wp_get_current_user();
+        $userId = $user->data->ID;
+        
+        // On récupère les données du devis associé à l'utilisateur
+        $args = array(  
+            'post_type' => 'quotation',
+            'post_status' => 'publish',
+            'author' => $userId,
+            'posts_per_page' => -1, 
+            'order' => 'DESC',
+        );    
+        
+        $query = new WP_Query($args); 
+
+        //echo $query->have_posts($userId);
+        $quotations = get_posts($args);
+
+        return $quotations;
+    } */
 
 
     public function update() 
@@ -41,6 +105,7 @@ class UserController extends CoreController
         // WARNING WP User il faut faire un include manuel des fonction de gestion des utilisateurs avant de pouvoir appeler la fonction wp_delete_user
         require_once(ABSPATH.'wp-admin/includes/user.php');
 
+        
         $this->show(
             'views/user/update', 
             ['currentUser' => $user]
@@ -51,9 +116,7 @@ class UserController extends CoreController
     public function updateConfirmed() {
 
         $user = wp_get_current_user();
-        //print_r($user);
         $userId = $user->data->ID;
-        // var_dump($userId);
         $login = filter_input(INPUT_POST, 'user_login');
         $firstname = filter_input(INPUT_POST, 'user_firstname');
         $lastname = filter_input(INPUT_POST, 'user_lastname');
@@ -68,6 +131,7 @@ class UserController extends CoreController
             'user_nicename' => $nicename,
             'user_email' => $email
         ]);
+
 
         $this->show(
             'views/user/update', 
@@ -117,19 +181,80 @@ class UserController extends CoreController
         
         // On récupère les données de l'utilisateur WP actuel
         $user = wp_get_current_user();
+        //$userId = $user->data->ID;
+        $userId = $user->ID;
 
-        $this->show(
-            'views/user/register', 
-            [
-                'currentUser' => $user,
-                'workshopId' => $workshop_id
-            ]
-        );
-   
+        $model = new WorkshopRegistration();
+        
+        // On récupère la liste des objets Workshop dans lesquels le user est déjà inscrit
+        $workshops = $model->getWorkshopsByUserId($userId);
+
+        if (!empty($workshops)) {
+        
+                // On stocke les id de ces ateliers dans un tableau $registrations
+            //$registrations = [];
+            foreach ($workshops as $workshop) {
+                $registrations [] = $workshop['workshop']->ID;
+            }
+            //print_r($registrations);
+        
+            //var_dump($registrations); die();
+            $checkRegistration = in_array($workshop_id, $registrations);
+
+            // print_r($checkRegistration);
+            // echo __LINE__ . " " . $checkRegistration . '<hr>';
+            // echo __LINE__ . " " . $workshop_id . '<hr>';
+            // On vérifie si le user est déjà inscrit
+            if ($checkRegistration) {
+                
+                $this->show(
+                    'views/user/register', 
+                    [
+                        'workshops' => $workshops,
+                        'currentUser' => $user,
+                        'workshopId' => $workshop_id,
+                        'message' => 'Vous êtes déjà inscrit à cet atelier'
+                        ]
+                    );
+            }
+            else {
+                $this->show(
+                    'views/user/register', 
+                    [
+                        'workshops' => $workshops,
+                        'currentUser' => $user,
+                        'workshopId' => $workshop_id,
+                        'message' => ''
+                        ]
+                    );
+            }
+        }    
+        else {
+            // var_dump($checkRegistration);
+                //var_dump($workshopId);die();
+            $this->show(
+                'views/user/register', 
+                [
+                    'workshops' => $workshops,
+                    'currentUser' => $user,
+                    'workshopId' => $workshop_id,
+                    'message' => ''
+                    ]
+                );
+        }
     }
-
+            
     public function insert($workshopId)
     {
+
+        if(!isset($_POST['mt_register_nonce'] ) || !wp_verify_nonce($_POST['mt_register_nonce'], 'mt_register_action')) {
+            echo 'vérification ko';
+            exit();
+        }
+
+        // récupération de l'utilisateur wordpress actuel
+        $user = wp_get_current_user();
+        $userId = $user->data->ID;
 
         // Récupération des données du formulaire d'enregistrement à l'atelier
         $firstname = filter_input(INPUT_POST, 'firstname', FILTER_SANITIZE_STRING);
@@ -142,17 +267,27 @@ class UserController extends CoreController
         // s'il n'est pas connecté, nous le redirigeons vers la page de login
         $this->mustBeConnected();
 
-        // récupération de l'utilisateur wordpress actuel
-        $user = wp_get_current_user();
-
         $model = new WorkshopRegistration();
         $model->insert(
+            $userId, // id user
             $workshopId, // id atelier
             $firstname, // Prénom
             $lastname, // Nom
             $email, // email
             $phone, // nr de tel
             $comment, // commentaire
+        );
+
+        // On récupère la liste des objets Workshop dans lesquels le user est déjà inscrit
+        $workshops = $model->getWorkshopsByUserId($userId);
+
+        $this->show(
+            'views/user/home', 
+            [
+                'workshops' => $workshops,
+                'currentUser' => $user,
+                'message' => 'Votre inscription a bien été enregistrée'
+            ]
         );
 
     }
@@ -162,14 +297,16 @@ class UserController extends CoreController
     {
         $options = [
             'author' => $user->ID,
-            'post_type' => 'registered'
+            'post_type' => 'registered-profile'
         ];
 
         // On prépare la requête dans une syntaxe propre à WP
         $query = new WP_Query($options);
 
+        //print_r($query);
+
         // On exécute la requête
-        $result = $query->have_posts();
+        //$result = $query->have_posts();
 
         // On vérifie que le profile de l'utilisateur connecté existe bien
 /*         if(count($query->posts) === 0) {
