@@ -9,6 +9,8 @@ add_theme_support('menus');
 
 // On enregistre le menu de navigation principal
 register_nav_menu( 'menu-header', 'Menu principal in header');
+// On enregistre le menu de navigation footer
+register_nav_menu( 'menu-footer', 'Menu principal in footer');
 
 // On rajoute link login/logout dans le menu
 add_filter('wp_nav_menu_items', 'wp_add_login_logout_menu', 10, 2);
