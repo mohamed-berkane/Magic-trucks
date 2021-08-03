@@ -31,6 +31,7 @@ body {
     margin-top: 8px;
 }
 
+
 #head>div>div>h1 {
     /* L'évasion en camion aménagé sur-mesure */
     color: #973a0e;
@@ -97,7 +98,10 @@ body>div.jumbotron.top-space {
 }
 
 
-/* ################## Container Atelier + Devis ##################      */
+/* ################## Resume Front Page ##################      */
+
+
+
 
 
 /* ################## Container Atelier + Devis ##################      */
@@ -111,6 +115,7 @@ body>div.jumbotron.top-space {
     height: auto;
     min-width: auto;
 }
+
 @media only screen and (min-width: 1300px) {
     #wraapper-fluid {
         display: flex;
@@ -118,6 +123,7 @@ body>div.jumbotron.top-space {
         padding-bottom: 8rem;
     }
 }
+
 @media only screen and (min-width: 1500px) {
     #wraapper-fluid {
         display: flex;
@@ -125,6 +131,7 @@ body>div.jumbotron.top-space {
         padding-bottom: 12rem;
     }
 }
+
 @media only screen and (min-width: 1500px) {
     #wraapper-fluid {
         display: flex;
@@ -132,6 +139,7 @@ body>div.jumbotron.top-space {
         padding-bottom: 12rem;
     }
 }
+
 @media only screen and (min-width: 1700px) {
     #wraapper-fluid {
         display: flex;
@@ -139,6 +147,7 @@ body>div.jumbotron.top-space {
         padding-bottom: 15rem;
     }
 }
+
 #left-side,
 #right-side,
 #left-side-2,
@@ -152,15 +161,19 @@ body>div.jumbotron.top-space {
     margin-left: 1rem;
     color: #4caf50;
     font-size: 1.7rem;
-    margin:2rem 0 2rem 0;
+    margin: 2rem 0 2rem 0;
 }
+
 @media only screen and (max-width: 600px) {
+
     #right-side-2,
     #left-side {
         font-size: 1.5rem;
     }
 }
+
 @media only screen and (min-width: 1000px) {
+
     #right-side-2,
     #left-side {
         font-size: 1.5rem;
@@ -172,7 +185,9 @@ body>div.jumbotron.top-space {
 #left-side {
     font-size: 2rem;
 }
+
 @media only screen and (max-width: 600px) {
+
     #left-side,
     #right-side,
     #left-side-2,
@@ -180,33 +195,33 @@ body>div.jumbotron.top-space {
         flex-direction: column;
     }
 }
+
 #left-side>h2,
 #right-side-2>h2 {
     font-size: 4rem;
 }
+
 @media only screen and (min-width: 1500px) {
+
     #left-side>h2,
     #right-side-2>h2 {
         font-size: 5rem;
     }
 }
-@media only screen and (max-width: 600px) {
-    #left-side-2,
-    #right-side-2 {
-        flex-basis: 50%;
-    }
-}
+
 #right-side-2 {
     text-align: right;
     text-align: justify;
     color: #8bc34a;
 
 }
+
 @media only screen and (max-width: 600px) {
     #right-side-2 {
         padding-right: 1rem;
     }
 }
+
 .img-quote,
 .img-workshop {
     position: relative;
@@ -217,7 +232,9 @@ body>div.jumbotron.top-space {
     max-width: 60%;
     min-width: 15rem;
 }
+
 @media only screen and (max-width: 600px) {
+
     .img-workshop,
     .img-quote {
         margin-bottom: 5rem;
@@ -225,20 +242,25 @@ body>div.jumbotron.top-space {
         top: 22rem;
     }
 }
+
 .div-atelier {
     position: absolute;
 }
+
 #right-side>button {
     position: relative;
     top: 5rem;
 }
+
 .row-about {
     padding-top: 1rem;
     color: white;
     text-align: center;
     margin-top: 2rem;
 }
+
 @import url('https://fonts.googleapis.com/css?family=Montserrat:600&display=swap');
+
 .button-front {
     position: relative;
     display: inline-flex;
@@ -248,6 +270,7 @@ body>div.jumbotron.top-space {
     perspective: 1000px;
     padding-top: 3rem;
 }
+
 .button-front a {
     font-size: 1.5rem;
     letter-spacing: 1px;
@@ -270,11 +293,13 @@ body>div.jumbotron.top-space {
     box-sizing: border-box;
     border-radius: 5px;
 }
+
 .button-front a:before {
     color: rgb(253, 253, 253);
     background: rgb(0, 0, 0);
     transform: rotateY(0deg) translateZ(25px);
 }
+
 .button-front a:after {
     color: rgb(20, 129, 6);
     transform: rotateX(90deg) translateZ(25px);
@@ -287,7 +312,6 @@ body>div.jumbotron.top-space {
 /************Liste des ateliers ********************/
 
 .workshop-caps {
-
     border: rgb(19, 139, 45) solid 20px;
 }
 
@@ -297,8 +321,7 @@ body>div.jumbotron.top-space {
 
 .workshop-wrapp {
     display: flex;
-    height: auto;
-    min-height: 15rem;
+    width: auto;
 }
 
 .workshop-left,
@@ -313,7 +336,7 @@ body>div.jumbotron.top-space {
 
 .workshop-left {
     text-align: left;
-    
+
 }
 
 .workshop-title {
@@ -321,8 +344,8 @@ body>div.jumbotron.top-space {
 }
 
 .list-content-workshop {
-    padding-top:4rem;
-    
+    padding-top: 4rem;
+
 }
 
 .button-workshop {
@@ -382,6 +405,36 @@ body>div.jumbotron.top-space {
 .workshop-caps {
     min-height: 60rem;
 }
+
+.wrapper-single {
+    display: flex;
+    height: auto;
+}
+
+.single-left, 
+.single-right {
+    flex-basis: 50%;
+}
+
+.single-left {
+    border: solid rgb(20, 129, 6) 5px;
+    margin-left:1.5rem;
+    text-align: center;
+}
+
+.single-right {
+    margin-right:1.5rem;
+    border-top: solid rgb(20, 129, 6) 5px;
+    border-right: solid rgb(20, 129, 6) 5px;
+    border-bottom: solid rgb(20, 129, 6) 5px;
+}
+
+.header-single {
+    text-align: center;
+    margin-bottom: 5rem;;
+
+}
+
 
 /************Fin Liste des ateliers ********************/
 
@@ -471,9 +524,9 @@ body>div.jumbotron.top-space {
 }
 
 .description {
-    padding:3rem 0 3rem 0;
-    color:#9de25c;
-    font-size:1.5rem;
+    padding: 3rem 0 3rem 0;
+    color: #9de25c;
+    font-size: 1.5rem;
 }
 
 /*#################### DEVIS ##############################*/
@@ -481,8 +534,9 @@ body>div.jumbotron.top-space {
 
 .quotation {
     border: rgb(19, 139, 45) solid 20px;
-    margin-top:5rem;
+    margin-top: 5rem;
 }
+
 /*####################   Mohamed   #################################*/
 
 .navbar-inverse .navbar-nav>li>a:hover {
