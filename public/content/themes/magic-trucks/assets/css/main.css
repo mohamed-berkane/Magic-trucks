@@ -312,3 +312,19 @@ img.pull-left {
 .widget-simplenav a {
 	margin: 0 5px;
 }
+
+
+ol.comment-list  {
+	list-style: none;
+	padding: 10px 0;
+}
+
+.comment-list img {
+	float: left;
+	margin-right: 10px;
+}
+
+
+.navbar-inverse .navbar-nav > li > a, .navbar-inverse .navbar-nav > .open ul > a {
+	color: rgba(255, 255, 255, .8);
+}
