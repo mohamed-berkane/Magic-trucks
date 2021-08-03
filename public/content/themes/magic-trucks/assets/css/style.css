@@ -167,9 +167,7 @@ body>div.jumbotron.top-space {
         padding-left: 10rem;
         font-size: 1.8rem;
     }
-
 }
-
 #right-side-2,
 #left-side {
     font-size: 2rem;
@@ -521,9 +519,11 @@ footer {
     width: 100%;
 }
 
-.rating a {
-    float: right;
+.row-contact{
+    padding-top: 1rem;
     color: white;
+    text-align: center;
+    margin-top: 10rem;
     text-decoration: none;
     font-size: 1.5em;
 }
@@ -533,6 +533,23 @@ footer {
     position: relative;
     bottom: 0.5rem;
 }
+.details-contact{
+    margin-bottom: 5rem;
+      border-radius: 50%;
+    box-shadow: 1px 1px 40px 7px green;
+    background: var(--fitback);
+    padding: 3rem;
+    width: 40%;
+}
+.contenu-contact{
+    
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 100%;
+    
+}
+
 
 .star {
 
@@ -548,4 +565,7 @@ footer {
 }
 
 /*####################################*/
+.parti-droit{
+    margin-top: 13rem;
+}
 
