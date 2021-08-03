@@ -1,6 +1,6 @@
 <?php
-get_header();
-$imageURL = get_the_post_thumbnail_url();
+    get_header();   
+    $imageURL = get_the_post_thumbnail_url();
 ?>
 
 <div class='header-workshop'>
@@ -8,37 +8,20 @@ $imageURL = get_the_post_thumbnail_url();
 </div>
 <!-- container -->
 <div class="container">
-    </br>
-    </br>
+
     <ol class="breadcrumb">
         <li><a href="<?= get_home_url() ?>">Home</a></li>
         <li class="active">User access</li>
     </ol>
 
-    </br>
-    </br>
-    </br>
-    </br>
+    <div class="row">
 
-    <div class="row workshop-caps panel">
-        <div class="header-single">
-            <span class="back">
-                <a class="btn btn-success" href="<?= get_post_type_archive_link('workshop') ?>">
-                    <i class="fas fa-long-arrow-alt-left"> </i>
-                    Retour
-                </a>
-            </span>
-            <h3><?= get_the_title(); ?></h3>
-            <span><?= the_field('lieux'); ?></span>
-            <span>Du <?= the_field('date_begin'); ?> au <?= the_field('date_end'); ?></span>
-            <hr class="hr-single">
-        </div>
         <!-- Article main content -->
         <article class="col-xs-12 maincontent">
             <header class="page-header">
                 <h1 class="page-title"><?= get_the_title(); ?></h1>
-                <p>
-                    <a class="btn btn-success" href="<?= get_home_url(); ?>">
+                <p class="go-back">
+                    <a class="btn btn-success" href="/apotheose/magic-trucks/public/workshop/">
                         <i class="fas fa-long-arrow-alt-left"> </i>
                         Retour
                     </a>
@@ -49,7 +32,7 @@ $imageURL = get_the_post_thumbnail_url();
                     <div class="panel-body">
                         <h3 class="thin text-center"><?php the_title(); ?> </h3>
                         <h4 class="thin text-center"><?= the_field('lieux'); ?> - du <?= the_field('date_begin'); ?> au <?= the_field('date_end'); ?></h4>
-                        <img src="<?= the_post_thumbnail( ); ?>"/>
+                        <img src="<?= the_post_thumbnail_url(); ?>"/>
                         <hr>
 
                         <p class="text-center text-muted"><?php the_content() ?></p>
@@ -82,44 +65,15 @@ $imageURL = get_the_post_thumbnail_url();
                         
                     </div>
                 </div>
-        <div class="wrapper-single">
-            <div class="single-left">
-                <h2>Information sur l'atelier :</h2>
-                <ul>
-                    <li>Lieu : <?= the_field('lieux'); ?></li>
-                    <li> Du <?= the_field('date_begin'); ?> au <?= the_field('date_end'); ?></li>
-                    <li>Nombre maximum de camions : <?php the_field('max_participants'); ?></li>
-                    <li>Prix par camion : <?php the_field('prix'); ?> euros.</li>
-                </ul>
             </div>
 
-            <div class="single-right">
-                <img src="<?= the_post_thumbnail_url(); ?>" alt="">
-            </div>
+        </article>
 
-        </div>
-        <div class="footer-single">
-            <hr class="hr-single">
-            <span><?php the_content() ?></span>
-            <hr class="hr-single">
-            <?php
-            // récupération de la url du site
-            $url = substr(get_site_url(), 0, -2);
-
-            // récupération de ID du post
-            $atelier_id = get_the_ID();
-            ?>
-            <span class="button-workshop"><a href="<?= $url . 'user/register/' . $atelier_id; ?>"></a></span>
-        </div>
 
     </div>
 
 
-
-</div>
-
-
-<!-- /Article -->
+    <!-- /Article -->
 
 
 </div> <!-- /container -->
