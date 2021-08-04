@@ -82,7 +82,26 @@ class Plugin
         //     'init',
         //     [$this, 'createProjectNewsCustomPostType']
         // );
+
+            // Redirect Registration Page
+ 
+        add_action(
+            'user_register', 
+            [$this, 'auto_login_new_user']
+        );   
+            
     }
+
+
+    public function auto_login_new_user( $user_id ) {
+        wp_set_current_user($user_id);
+        wp_set_auth_cookie($user_id);
+        wp_redirect('/apotheose/magic-trucks/public/user/home/');
+        exit();
+    }
+    
+
+    // You can change home_url() to the specific URL,such as "wp_redirect( 'http://www.wpcoke.com' )";
     
     public function activate()
     {

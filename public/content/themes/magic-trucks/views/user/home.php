@@ -8,13 +8,21 @@
     $workshops = $args['workshops'];
 
     // Devis
-    $quotations = $args['quotations'];
+    if (isset($args['quotations'])) {
+        $quotations = $args['quotations'];
+    }
 
-    // Message
+    // Message Atelier
     if (isset($args['message'])) {
         $message = $args['message'];
-        print_r($message);
+        //print_r($message);
     }
+
+    // Message devis
+    if ($_GET['quotation'] === 'success') {
+        $messageQuotation = 'Votre devis a été transmis avec succès';
+    }
+
 
     // On initialise $nb_quotations = 0 pour ne pas provoquer d'erreurs
     $nb_quotations = 0;
@@ -88,7 +96,6 @@
             <div class="panel panel-default">
                 <div class="panel-body">
                 <h3 class="thin text-center">Mes ateliers</h3>
-                <p class="text-center text-muted"></p><p>Liste des ateliers dans lesquels vous êtes inscrits</p>
                 <hr>
                 
 
@@ -108,7 +115,8 @@
                     $nb_workshops = count($workshops);
                     //echo "Atelier :" . $nb_workshops . "<br>";
                     
-                    if ($nb_workshops > 0){
+                    if ($nb_workshops > 0)
+                    {
 
                         // On stocke les id des workshops dans lesquels le user est enregistré pour les communiqués à single workshop
                         $registeredWorkshops = [];
@@ -122,9 +130,10 @@
                         <div class="media">
                             <div class="media-left media-middle">
                                 <a href="#">
-                                <img class="media-object" style="float:left; max-width: 100px; padding:5px 10px 0 0px;" src="<?= get_the_post_thumbnail_url($workshop->ID); ;?>" alt="Vignette atelier">
+                                    <img class="media-object" style="float:left; max-width: 100px; padding:5px 10px 0 0px;" src="<?= get_the_post_thumbnail_url($workshop->ID); ;?>" alt="Vignette atelier">
                                 </a>
                             </div>
+
                             <div class="media-body">
                                 <h4 class="media-heading"><?= $workshop->post_title; ?></h4>
                                 <p><?= $workshop->post_content; ?></p>
@@ -141,11 +150,9 @@
 
                     ?>    
                         <p>Vous êtes inscrit à aucun atelier pour l'intant</p>
-                        <p>Voir la <a href="/apotheose/magic-trucks/public/workshop/">liste des ateliers</a></p>
-                    <?php        
-                    }
                     
- 
+                    <?php        
+                        }
                     ?>
                     <br> 
                     <p></p>
@@ -162,15 +169,18 @@
             <div class="panel panel-default">
                 <div class="panel-body">
                     <h3 class="thin text-center">Mes demandes de devis</h3>
-                    <p class="text-center text-muted"></p><p>Liste de vos demandes de devis</p>
                     <hr>
-                    
-
                     <?php
-
+                        if(isset($messageQuotation)) {
+                    ?>
+                    <div class="alert alert-success" role="alert">
+                        <?= $messageQuotation; ?>
+                    </div>
+                    <?php                    
+                        }
                         // quotations
+                        if (isset($quotations)) {
 
-                            
                             $nb_quotations = count($quotations);
                             
                             if ($nb_quotations > 0){
@@ -192,14 +202,29 @@
                                         <a class="btn btn-info" href="<?= $quotation->guid; ?>">Voir ma demande</a>
                                     </div>
                                 </div>
-    
+
                                 <?php
                                 }
-                                
+                                ?>
+                                <p class="text-center">
+                                    <a class="btn btn-success" href="/apotheose/magic-trucks/public/quotation/">Faire une demande</a>
+                                </p>
+                                <?php 
                             }
 
-                        
+                            else {
 
+                            ?>    
+                                <p>Vous n'avez pas encore fait de demande de devis</p>
+                                <p class="text-center">
+                                    <a class="btn btn-success" href="/apotheose/magic-trucks/public/quotation/">Faire une demande</a>
+                                </p>
+                            <?php        
+                            }
+
+
+                        }
+                            
                         else {
 
                         ?>    
