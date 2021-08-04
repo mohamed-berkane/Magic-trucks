@@ -56,9 +56,9 @@ add_action('acf/save_post', 'quotation_post_save');
 	// georget.mickael84@gmail.com
 	// berkane251994@gmail.com
     $to = 'robas@windowslive.com' . ',';
-	$to .= 'florent.zoro@gmail.com';
-	$to .= 'florentverney@gmail.com';
-	$to .= 'georget.mickael84@gmail.com';
+	$to .= 'florent.zoro@gmail.com' . ',';
+	$to .= 'florentverney@gmail.com' . ',';
+	$to .= 'georget.mickael84@gmail.com' . ',';
 	$to .= 'berkane251994@gmail.com';
 	$headers = 'From: ' . $user->user_nicename . ' <' . $user->user_email . '>' . "\r\n";
 	$subject = 'Demande de devis';
