@@ -4,7 +4,10 @@
     $currentUser = $args['currentUser'];
     $user = wp_get_current_user();
 
-    $message = $args['message'];
+    if(isset($message)){
+
+        $message = $args['message'];
+    };
 ?>
 <style>
 

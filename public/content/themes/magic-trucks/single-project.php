@@ -66,7 +66,7 @@ get_header();
                         <h3 class="thin text-center"><?php the_title(); ?> </h3>
 
                         <hr>
-                        <img src="<?php  the_post_thumbnail(); ?>"/>
+                        <!-- <img src="<?php  the_post_thumbnail_url(); ?>"/> -->
                         <p class="text-center text-muted"><?php the_content() ?></p>
                         <div class="workshop-wrapp ">
 
