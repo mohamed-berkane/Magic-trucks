@@ -55,21 +55,27 @@ add_action('acf/save_post', 'quotation_post_save');
 	// florentverney@gmail.com
 	// georget.mickael84@gmail.com
 	// berkane251994@gmail.com
-/* 	$to = 'robas@windowslive.com' . ',';
-	$to .= 'robas@free.fr';
+    $to = 'robas@windowslive.com' . ',';
+	$to .= 'florent.zoro@gmail.com' . ',';
+	$to .= 'florentverney@gmail.com' . ',';
+	$to .= 'georget.mickael84@gmail.com' . ',';
+	$to .= 'berkane251994@gmail.com';
 	$headers = 'From: ' . $user->user_nicename . ' <' . $user->user_email . '>' . "\r\n";
 	$subject = 'Demande de devis';
 	$body = '<h1>Une nouvelle demande de devis est arrivé:</h1><br>'.get_the_content($post_id);
-	// send email
-	wp_mail($to, $subject, $body, $headers ); */
+
+ 	//sending email
+	wp_mail($to, $subject, $body, $headers );
 	//var_dump($headers); die();
 
 	// Update the post into the database
 	 wp_update_post( $args );
-	 wp_redirect(add_query_arg('updated', 'success', wp_get_referer()));
+     $redurl = get_home_url().'/user/home';
+	 wp_redirect($redurl);
+     exit();
 }
 
-/* add_action( 'phpmailer_init', 'send_smtp_email' );
+add_action( 'phpmailer_init', 'send_smtp_email' );
 function send_smtp_email( $phpmailer ) {
     $phpmailer->isSMTP();
     $phpmailer->Host       = SMTP_HOST;
@@ -80,7 +86,7 @@ function send_smtp_email( $phpmailer ) {
     $phpmailer->Password   = SMTP_PASSWORD;
     $phpmailer->From       = SMTP_FROM;
     $phpmailer->FromName   = SMTP_FROMNAME;
-} */
+} 
 
 // function enable_comments_project() {
 // 	add_post_type_support( 'project', 'comments' );

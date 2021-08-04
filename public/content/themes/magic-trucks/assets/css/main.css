@@ -339,3 +339,13 @@
 	.navbar-inverse .navbar-nav>.open ul>a {
 		color: rgba(255, 255, 255, .8);
 	}
+.navbar-inverse .navbar-nav > li > a, .navbar-inverse .navbar-nav > .open ul > a {
+	color: rgba(255, 255, 255, .8);
+}
+
+
+@media(max-width:767px) {
+	ul#menu-menu-header-1 li {
+		float: none !important;
+	}
+}

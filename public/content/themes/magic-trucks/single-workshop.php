@@ -8,6 +8,7 @@ $imageURL = get_the_post_thumbnail_url();
 </div>
 <!-- container -->
 <div class="container">
+
     </br>
     </br>
     <ol class="breadcrumb">
@@ -33,6 +34,11 @@ $imageURL = get_the_post_thumbnail_url();
             <span>Du <?= the_field('date_begin'); ?> au <?= the_field('date_end'); ?></span>
             <hr class="hr-single">
         </div>
+
+
+    <div class="row">
+
+
         <!-- Article main content -->
         <article class="col-xs-12 maincontent">
 
