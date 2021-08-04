@@ -5,23 +5,53 @@ require __DIR__ . '/includes/load-assets.php';
 // gestion des menus via le back office de Wordpress pour le thème Magic-Trucks
 add_theme_support('menus');
 add_action('acf/save_post', 'quotation_post_save');
-add_theme_support('menus');
 
 // On enregistre le menu de navigation principal
 register_nav_menu( 'menu-header', 'Menu principal in header');
+
 // On enregistre le menu de navigation footer
 register_nav_menu( 'menu-footer', 'Menu principal in footer');
 
 // On rajoute link login/logout dans le menu
-add_filter('wp_nav_menu_items', 'wp_add_login_logout_menu', 10, 2);
-function wp_add_login_logout_menu($items, $args) {
-        ob_start();
-        wp_loginout(substr(get_site_url(), 0, -2));
-        $loginoutlink = ob_get_contents();
-        ob_end_clean();
-        $items .= '<li style=" float: right;">'. $loginoutlink .'</li>';
+ add_filter('wp_nav_menu_items', 'wp_add_login_logout_menu', 10, 2);
+    
+function wp_add_login_logout_menu($items, $args) 
+{
+/*     
+    Ce truc fiche un bazar pas possible : 
+    ob_start();
+    wp_loginout(substr(get_site_url(), 0, -2));
+    $loginoutlink = ob_get_contents();
+    ob_end_clean(); 
+*/
+
+    // On récupère l'utilisateur courant
+    $user = wp_get_current_user();
+
+    // On récupère son avatar si la personne est connectée
+    if (is_user_logged_in()) {
+        $avatar = get_avatar_url(
+            $user->data->ID,
+            [
+                'size' => 20,
+                'force_default' => true
+            ]
+        );
+    
+        $avatar_display = "<img src='$avatar' style='border-radius: 50%;' />";
+    
+        $items .= '<li class="menu-item"><a href="/apotheose/magic-trucks/public/user/home/">' .  $user->data->user_nicename . ' ' . $avatar_display . '</a></li><li class="right"><a href="'. wp_logout_url() .'">Se déconnecter</a></li>';
+    } 
+    
+    else {
+
+        $items .= $userToDisplay . '<li style=" float: right;">'. $loginoutlink .'</li>';
+    }
+    
     return $items;
 }
+
+
 
 // On retire la barre d'admin wordpress pour tous les inscrits exceptés ceux qui ont le profil administrateur
 add_action('after_setup_theme', 'remove_admin_bar');
