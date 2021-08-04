@@ -40,12 +40,12 @@ function wp_add_login_logout_menu($items, $args)
     
         $avatar_display = "<img src='$avatar' style='border-radius: 50%;' />";
     
-        $items .= '<li class="menu-item"><a href="/apotheose/magic-trucks/public/user/home/">' .  $user->data->user_nicename . ' ' . $avatar_display . '</a></li><li class="right"><a href="'. wp_logout_url() .'">Se déconnecter</a></li>';
+        $items .= '<li class="menu-item"><a href="/apotheose/magic-trucks/public/user/home/">' .  $user->data->user_nicename . ' ' . $avatar_display . '</a></li><li><a href="'. wp_logout_url() .'">Se déconnecter</a></li>';
     } 
     
     else {
 
-        $items .= $userToDisplay . '<li style=" float: right;">'. $loginoutlink .'</li>';
+        $items .= '<li><a href="'. wp_login_url() . '">Se connecter</a></li>';
     }
     
     return $items;
