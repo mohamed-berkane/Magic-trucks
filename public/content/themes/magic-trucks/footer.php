@@ -28,6 +28,16 @@
                 <div class="col-md-6 widget">
                     <h3 class="widget-title">Avis clients</h3>
                     <div class="widget-body">
+                        <?php
+                            $args = array(
+                                'user_id' => 1, // use user_id
+                            );
+                            $comments = get_comments( $args );
+                            
+                            foreach ( $comments as $comment ) :
+                                echo $comment->comment_author . '<br />' . $comment->comment_content;
+                            endforeach;
+                        ?>
 
                         <p><strong>Robert, le 15/01/21 ★★★★★ </strong>
                             Guillaume a donné vie à mon camion! Le meilleur en conceptions et agencements! Camion fonctionnel et spacieux car réalisé par un <strong>VRAI</strong> professionnel! Bonne continuation à Guillaume aux mains d'or ;-)
