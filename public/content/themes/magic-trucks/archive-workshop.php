@@ -11,10 +11,6 @@ get_header();
 </div>
 <!-- container -->
 <div class="container">
-    <ol class="breadcrumb">
-        <li><a href="<?= get_home_url() ?>">Home</a></li>
-        <li class="active">User access</li>
-    </ol>
 
     <div class="row">
         <!-- Article main content -->

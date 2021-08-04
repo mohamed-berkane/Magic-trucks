@@ -13,7 +13,7 @@ get_header();
         <!-- Article main content -->
         <article class="col-xs-12 maincontent">
             <header class="page-header">
-                <h1 class="page-title"><?= get_the_title(); ?></h1>
+                <h1 class="workshop-title"><?= get_the_title(); ?></h1>
             </header>
             <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
                 <div class="workshop-caps panel panel-default">
@@ -52,7 +52,7 @@ get_header();
                             ?>
 
                             
-                                <a class="btn btn-success" href="/apotheose/magic-trucks/public/user/home">
+                                <a class="btn btn-success" href="/apotheose/magic-trucks/public/quotation/">
                                     <i class="fas fa-long-arrow-alt-left"> </i>
                                     Retour
                                 </a>

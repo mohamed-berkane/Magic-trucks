@@ -193,7 +193,7 @@
                         ?>    
                             <p>Vous n'avez pas encore fait de demande de devis</p>
                             <p class="text-center">
-                                <a class="btn btn-success" href="/apotheose/magic-trucks/quotation/workshop/">Liste des ateliers</a>
+                                <a class="btn btn-success" href="/apotheose/magic-trucks/public/quotation/">Faire une demande</a>
                             </p>
                         <?php        
                         }
