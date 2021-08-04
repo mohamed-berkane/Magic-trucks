@@ -10,6 +10,8 @@ body {
 #head {
     height: 80rem;
     margin: 0rem 0rem 5rem 0rem;
+    background-image: url("../images/photoaccueil.jpg");
+
 }
 
 .tagline {
@@ -32,7 +34,7 @@ body {
 }
 
 
-#head>div>div>h1 {
+.main-title {
     /* L'évasion en camion aménagé sur-mesure */
     color: #973a0e;
     font-size: 5rem;
@@ -47,6 +49,19 @@ body {
     background-color: rgba(255, 228, 196, 0.89);
     font-family: "Gill Sans Extrabold", sans-serif;
     font-family: "Goudy Bookletter 1911", sans-serif;
+}
+
+@media only screen and (max-width: 500px) {
+    .main-title {
+        font-size: 3rem;
+    }
+}
+
+@media only screen and (max-width: 760px) {
+    .main-title {
+        margin-left: 2rem;
+        margin-right: 2rem;
+    }
 }
 
 
@@ -67,12 +82,6 @@ ul {
 
 .row {
     padding-top: 1rem;
-}
-
-#head {
-    background-image: url("../images/photoaccueil.jpg");
-    background-repeat: no-repeat;
-
 }
 
 
@@ -99,6 +108,22 @@ body>div.jumbotron.top-space {
     margin-top: 1rem;
 }
 
+@media only screen and (max-width: 500px) {
+    .logo-accueil {
+        width: 50%;
+        margin-top: 1rem;
+        position: relative;
+        left: 5rem;
+    }
+
+    .navbar-toggle {
+        margin-top: 1rem;
+    }
+}
+
+.breadcrumb {
+    background-color: black;
+}
 
 /* ################## Resume Front Page ##################      */
 
@@ -123,6 +148,7 @@ body>div.jumbotron.top-space {
         display: flex;
         margin-bottom: 8rem;
         padding-bottom: 8rem;
+
     }
 }
 
@@ -150,6 +176,8 @@ body>div.jumbotron.top-space {
     }
 }
 
+
+
 #left-side,
 #right-side,
 #left-side-2,
@@ -162,7 +190,7 @@ body>div.jumbotron.top-space {
     margin-right: 1rem;
     margin-left: 1rem;
     color: #4caf50;
-    font-size: 1.7rem;
+    font-size: 1.5rem;
     margin: 2rem 0 2rem 0;
 }
 
@@ -199,6 +227,8 @@ body>div.jumbotron.top-space {
     }
 }
 
+
+
 #left-side>h2,
 #right-side-2>h2 {
     font-size: 4rem;
@@ -225,9 +255,17 @@ body>div.jumbotron.top-space {
     }
 }
 
+@media only screen and (min-width: 701px) {
+
+    .img-quote,
+    .img-workshop {
+        position: relative;
+    }
+}
+
+
 .img-quote,
 .img-workshop {
-    position: relative;
     top: 5rem;
     left: 20%;
     border-radius: 20%;
@@ -310,6 +348,32 @@ body>div.jumbotron.top-space {
 
 .button-front a:hover {
     transform: translateZ(-25px) rotateX(-90deg);
+}
+
+@media only screen and (max-width: 700px) {
+    #wraapper-fluid {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .img-quote,
+    .img-workshop {
+        max-width: 80%;
+        margin: auto;
+    }
+
+    .img-quote {
+        margin-bottom: 0;
+        margin-top: 5rem;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+
+    .workshop-home,
+    .quote-home {
+        font-size: smaller;
+    }
 }
 
 /************Liste des ateliers ********************/
@@ -412,7 +476,7 @@ body>div.jumbotron.top-space {
 .wrapper-single {
     display: flex;
     height: auto;
-    border: solid green 1px;
+    border: solid green 5px;
 }
 
 .header-single {
@@ -422,7 +486,41 @@ body>div.jumbotron.top-space {
     padding: 2rem;
 }
 
-@media only screen and (max-width: 735px) {
+.single-title {
+    font-size: 2.5rem;
+    text-align: left;
+    margin-left: 4rem;
+    padding-bottom: 2rem;
+}
+
+.single-ul {
+    text-align: left;
+}
+
+.single-content {
+    font-weight: bold;
+}
+
+.single-left,
+.single-right {
+    flex-basis: 50%;
+}
+
+.single-left {
+
+    text-align: center;
+}
+
+@media only screen and (max-width: 728px) {
+
+    .single-ul {
+        font-size: smaller;
+        margin-left: 0;
+    }
+
+    .single-title {
+        font-size: 2rem;
+    }
 
     .wrapper-single {
         display: flex;
@@ -434,26 +532,25 @@ body>div.jumbotron.top-space {
         padding-bottom: 2rem;
         width: 100%;
         padding-top: 2rem;
+        flex-basis: 80%;
     }
 
     .header-single {
         margin-bottom: 0;
     }
+
+    .single-left {
+        width: 20rem;
+        width: 100%;
+        flex-basis: 100%;
+        margin: auto;
+    }
 }
 
-.single-left,
-.single-right {
-    flex-basis: 50%;
-}
 
-.single-left {
-
-
-    text-align: center;
-}
 
 .single-right {
-    margin-right: 1.5rem;
+
     min-width: 20rem;
 
 }

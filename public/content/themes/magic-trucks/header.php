@@ -41,15 +41,13 @@
                     <span class="icon-bar"></span>
                 </button>
                 <a class="navbar-brand" href="<?= substr(get_site_url(), 0, -2) ?>">
-                    <img src="<?= get_theme_file_uri('assets/images/magictrucks10.png') ?>" alt="">
+                    <img class="logo-accueil"src="<?= get_theme_file_uri('assets/images/magictrucks10.png') ?>" alt="">
                 </a>
             </div>
-
-            <!-- Ce commentaire doit s'afficher dans le HTML PUTAIN -->
             <div class="collapse navbar-collapse" id="menu-header">
                     
                 <?php
-                /* 
+                
                     $defaults = array(
                     'theme_location'  => '',
                     'menu'            => 'menu-header',
@@ -71,8 +69,9 @@
 
                 
                 $menu = wp_nav_menu($defaults); 
+                echo $menu;
                 
-                */
+                
                 ?>
             </div>
             <!--/.nav-collapse -->
