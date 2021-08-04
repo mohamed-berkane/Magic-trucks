@@ -75,7 +75,7 @@ add_action('acf/save_post', 'quotation_post_save');
      exit();
 }
 
-/* add_action( 'phpmailer_init', 'send_smtp_email' );
+add_action( 'phpmailer_init', 'send_smtp_email' );
 function send_smtp_email( $phpmailer ) {
     $phpmailer->isSMTP();
     $phpmailer->Host       = SMTP_HOST;
@@ -86,7 +86,7 @@ function send_smtp_email( $phpmailer ) {
     $phpmailer->Password   = SMTP_PASSWORD;
     $phpmailer->From       = SMTP_FROM;
     $phpmailer->FromName   = SMTP_FROMNAME;
-} */
+} 
 
 // function enable_comments_project() {
 // 	add_post_type_support( 'project', 'comments' );
