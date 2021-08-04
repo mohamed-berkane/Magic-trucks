@@ -334,4 +334,8 @@ ol.comment-list  {
 	ul#menu-menu-header-1 li {
 		float: none !important;
 	}
+
+	.navbar-brand img {
+		max-width: 150px;
+	}
 }

@@ -27,21 +27,32 @@
 </head>
 
 <body class="home">
+
+
+
     <!-- Fixed navbar -->
     <div class="navbar navbar-inverse navbar-fixed-top headroom">
         <div class="container">
             <div class="navbar-header">
                 <!-- Button for smallest screens -->
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"><span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#menu-header">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
                 <a class="navbar-brand" href="<?= substr(get_site_url(), 0, -2) ?>">
                     <img src="<?= get_theme_file_uri('assets/images/magictrucks10.png') ?>" alt="">
                 </a>
             </div>
-            <div class="navbar-collapse collapse">
+
+
+            <div class="collapse navbar-collapse" id="menu-header">
+                    
                 <?php
-                $defaults = array(
+                /* 
+                    $defaults = array(
                     'theme_location'  => '',
-                    'menu'            => '',
+                    'menu'            => 'menu-header',
                     'container'       => 'div',
                     'container_class' => '',
                     'container_id'    => '',
@@ -57,41 +68,15 @@
                     'depth'           => 0,
                     'walker'          => ''
                 );
-                $menu = wp_nav_menu($defaults);
 
-                // On remplace Se connecter par les coordonnées de l'utilisateur connecté
-                if (is_user_logged_in()) {
-
-                    // On récupère l'utilisateur courant
-                    $user = wp_get_current_user();
-
-                    // On récupère son avatar
-                    $avatar = get_avatar_url(
-                        $user->data->ID,
-                        [
-                            'size' => 20,
-                            'force_default' => true
-                        ]
-                    );
-
-                    // On ajoute une class css sur le lien de connexion
-                    $menu = str_replace('', '', $menu);
-
-                    // On remplace le lien connexion par l'utilisateur connecté
-                    $menu = str_replace(
-                        '<a href="/apotheose/magic-trucks/public/wp-login.php">Se connecter</a></li>',
-                        '<a href="/apotheose/magic-trucks/public/user/home">' . $user->data->user_nicename . ' <img style="border-radius:50%;" src="' . $avatar . '"/></a><li class="menu-item"><a style="text-decoration:underline;" href="/apotheose/magic-trucks/public/wp/wp-login.php?action=logout">Se déconnecter</a></li>',
-                        $menu
-                    );
-                }
-
-
-                echo $menu;
+                
+                $menu = wp_nav_menu($defaults); 
+                
+                */
                 ?>
             </div>
             <!--/.nav-collapse -->
         </div>
-
+        <!-- /. container -->
     </div>
-    <!--/.nav-collapse -->
     <!-- /.navbar -->
