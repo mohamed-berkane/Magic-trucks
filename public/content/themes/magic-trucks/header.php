@@ -67,11 +67,8 @@
                     'walker'          => ''
                 );
 
-                
                 $menu = wp_nav_menu($defaults); 
-                echo $menu;
-                
-                
+                echo $menu;                
                 ?>
             </div>
             <!--/.nav-collapse -->
