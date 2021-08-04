@@ -5,10 +5,16 @@ get_header();
 <header id="head">
 	<div class="container">
 		<div class="row">
-			<h1>L'évasion en camion aménagé sur-mesure</h1>
+			<h1 class="main-title">Bienvenu sur Magic-Trucks</h1>
 		</div>
 	</div>
 </header>
+
+<!-- Resume -->
+
+<div>
+
+</div>
 
 <!-- Atelier -->
 <div id="wraapper-fluid">
@@ -59,44 +65,18 @@ get_header();
 <!-- /Devis-->
 
 
-<!-- blog -->
 
-<div class="container blog">
-
-	<h2 class="text-center top-space">L'actualité de Magic-Trucks</h2>
-	<br><br>
-
-	<div class="row">
-		<?php
-		// Récupération des articles "posts"
-		if (have_posts()) {
-			while (have_posts()) {
-				the_post();
-				echo get_template_part('partials/thumbnails/article-thumbnails', 'article-thumbnail');
-			}
-		}
-		?>
-	</div> <!-- /row -->
-	<div class="row text-center">
-		<span class="button-front">
-			<a href="#"></a>
-		</span>
-	</div>
-</div>
-<br><br>
-
-<!-- // Blog -->
 
 
 <!-- container -->
-<div class="container">
+<div class="container ">
 	<!-- Atelier 1-->
-	<h2 class="text-center top-space">Prochains ateliers</h2>
+	<h2 class="text-center top-space workshop-title">Prochains ateliers</h2>
 	<br>
-	<div class="panel panel-default" style="padding: 35px 10px;">
-		<div class="narrow-content text-center">
+	<div class="panel panel-default workshop-caps" style="padding: 35px 10px;">
+		<div class="narrow-content text-center ">
 
-			<p>Venez découvrir les ateliers ambulant de Magic-Trucks.En groupe, nous apprendrons à fabriquer toutes sortes d'équipements ou de décorations utiles pour la vie en camion.</p><br>
+			<p><strong>Venez découvrir les ateliers ambulant de Magic-Trucks.En groupe, nous apprendrons à fabriquer toutes sortes d'équipements ou de décorations utiles pour la vie en camion.</strong></p><br>
 			<p>Vérifiez les dates et lieux des prochains rendez-vous, peut être que Magic-Trucks se présentera à côté de chez vous !</p>
 
 		</div>
@@ -128,15 +108,17 @@ get_header();
 
 				?>
 
+				<p class="text-center">
+					<span class="button-front">
+						<a href="/apotheose/magic-trucks/public/workshop/"></a>
+					</span>
+				</p>
+
 			</div>
 		</div>
 		<!-- /row -->
 	</div>
-	<p class="text-center">
-		<span class="button-front">
-			<a href="/apotheose/magic-trucks/public/workshop/"></a>
-		</span>
-	</p>
+
 </div>
 
 

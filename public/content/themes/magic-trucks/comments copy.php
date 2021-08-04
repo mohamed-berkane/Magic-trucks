@@ -55,3 +55,35 @@
     <?php comment_form(); ?>
  
 </div><!-- #comments -->
+
+
+
+
+<!-- blog -->
+
+<div class="container blog">
+
+	<h2 class="text-center top-space">L'actualité de Magic-Trucks</h2>
+	<br><br>
+
+	<div class="row">
+		<?php
+		// Récupération des articles "posts"
+		if (have_posts()) {
+			while (have_posts()) {
+				the_post();
+				echo get_template_part('partials/thumbnails/article-thumbnails', 'article-thumbnail');
+			}
+		}
+		?>
+	</div> <!-- /row -->
+	<div class="row text-center">
+		<span class="button-front">
+			<a href="#"></a>
+		</span>
+	</div>
+</div>
+<br><br>
+
+<!-- // Blog -->
+
