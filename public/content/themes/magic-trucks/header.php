@@ -34,7 +34,7 @@
                 <!-- Button for smallest screens -->
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"><span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
                 <a class="navbar-brand" href="<?= substr(get_site_url(), 0, -2) ?>">
-                    <img src="<?= get_theme_file_uri('assets/images/magictrucks10.png') ?>" alt="">
+                    <img class="logo-accueil"src="<?= get_theme_file_uri('assets/images/magictrucks10.png') ?>" alt="">
                 </a>
             </div>
             <div class="navbar-collapse collapse">
