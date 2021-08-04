@@ -29,17 +29,16 @@
                     <h3 class="widget-title">Avis clients</h3>
                     <div class="widget-body">
                         <?php
-                            $args = array(
-                                'user_id' => 1, // use user_id
-                            );
-                            $comments = get_comments( $args );
+                            $comments = get_comments(array("number" => 4));
                             
-                            foreach ( $comments as $comment ) :
-                                echo $comment->comment_author . '<br />' . $comment->comment_content;
-                            endforeach;
+                            foreach ( $comments as $comment ) : ?>
+                                <p><strong> <?= $comment->comment_author ?>, le <?= $comment->comment_date ?> ★★★★★ </strong>
+                                    <p><?= $comment->comment_content ?> </p>
+                                </p>
+                            <?php endforeach;
                         ?>
 
-                        <p><strong>Robert, le 15/01/21 ★★★★★ </strong>
+                        <!-- <p><strong>Robert, le 15/01/21 ★★★★★ </strong>
                             Guillaume a donné vie à mon camion! Le meilleur en conceptions et agencements! Camion fonctionnel et spacieux car réalisé par un <strong>VRAI</strong> professionnel! Bonne continuation à Guillaume aux mains d'or ;-)
                             <div class="rating">
                         </p>
@@ -47,19 +46,12 @@
                         <p><strong> Mohamed, le 16/04/21 ★★★★★ </strong>
                             <p> Super travail, professionnel à l'écoute du client, l'aménagement est très bien fait dans les normes, le patron a été de très bon conseils</p>
                         </p>
-                        <p><strong>Florent, le 26/06/21 ★★★★★
-
-
-                            </strong>
+                        <p><strong>Florent, le 26/06/21 ★★★★★ </strong>
                             <p> J'ai aujourd'hui récupéré mon camion aménagé et j'en suis ravi. Guillaume à travaillé brillamment sur un projet original et a su s'adapter à toutes mes exigences. A savoir optimiser un espace petit en une cuisine fonctionnelle</p>
-
-
-                            <p><strong>Mickael, le 23/07/21 ★★★★★
-
-
-                                </strong> C'était l'interlocuteur idéal pour adapter la conception de notre camion à notre budget.<strong> Nous recommandons sans hésiter</strong>
-                            </p>
                         </p>
+                        <p><strong>Mickael, le 23/07/21 ★★★★★ </strong>
+                             C'était l'interlocuteur idéal pour adapter la conception de notre camion à notre budget.<strong> Nous recommandons sans hésiter</strong>
+                        </p> -->
                     </div>
                 </div>
 
