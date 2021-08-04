@@ -66,7 +66,11 @@ add_action('acf/save_post', 'quotation_post_save');
 
 	// Update the post into the database
 	 wp_update_post( $args );
-	 wp_redirect(add_query_arg('updated', 'success', wp_get_referer()));
+	 //wp_redirect(add_query_arg('updated', 'success', wp_get_referer()));
+     $redurl = get_home_url().'/user/home';
+     //var_dump($redurl);die();
+	 wp_redirect($redurl);
+     exit();
 }
 
 /* add_action( 'phpmailer_init', 'send_smtp_email' );

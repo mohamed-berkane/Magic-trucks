@@ -281,12 +281,26 @@ class UserController extends CoreController
         // On récupère la liste des objets Workshop dans lesquels le user est déjà inscrit
         $workshops = $model->getWorkshopsByUserId($userId);
 
+        $args = array(  
+            'post_type' => 'quotation',
+            'post_status' => 'publish',
+            'author' => $userId,
+            'posts_per_page' => -1, 
+            'order' => 'DESC',
+        );    
+
+        $query = new WP_Query($args); 
+
+        //echo $query->have_posts($userId);
+        $quotations = get_posts($args);      
+
         $this->show(
             'views/user/home', 
             [
                 'workshops' => $workshops,
                 'currentUser' => $user,
-                'message' => 'Votre inscription a bien été enregistrée'
+                'message' => 'Votre inscription a bien été enregistrée',
+                'quotations' => $quotations
             ]
         );
 
