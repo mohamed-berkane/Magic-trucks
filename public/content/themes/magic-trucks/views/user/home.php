@@ -15,6 +15,9 @@
         $message = $args['message'];
         print_r($message);
     }
+
+    // On initialise $nb_quotations = 0 pour ne pas provoquer d'erreurs
+    $nb_quotations = 0;
 ?>
 
 <style>
@@ -88,8 +91,16 @@
                 <p class="text-center text-muted"></p><p>Liste des ateliers dans lesquels vous êtes inscrits</p>
                 <hr>
                 
-                
+
                 <?php
+                    if(isset($message)) {
+                ?>
+                    <div class="alert alert-success" role="alert">
+                        <?= $message; ?>
+                    </div>
+                <?php
+
+                    }
 
                     // print_r($workshops[0]);
 
@@ -157,36 +168,37 @@
 
                     <?php
 
-                        // d($quotations);
-
-
                         // quotations
-                        $nb_quotations = count($quotations);
 
-                        if ($nb_quotations > 0){
-
-                            // On stocke les id des quotations dans lesquels le user est enregistré pour les communiqués à single quotation
-                            $registeredQuotations = [];
-                            for ($i = 0; $i < count($quotations); $i++) {
-                                $quotation = $quotations[$i];
-                                $registeredQuotations[] += $quotation->ID;
-                            ?>
-
-                            <div class="media">
-                                <div class="media-body">
-                                    <span class="media-heading">
-                                        <strong><?= $quotation->post_title; ?></strong>
-                                </span> le <?= $quotation->post_date; ?>
-                                    
-                                    <p><?= $quotation->post_excerpt; ?></p>
-                                    <a class="btn btn-info" href="<?= $quotation->guid; ?>">Voir ma demande</a>
-                                </div>
-                            </div>
-
-                            <?php
-                            }
                             
-                        }
+                            $nb_quotations = count($quotations);
+                            
+                            if ($nb_quotations > 0){
+                                
+                                // On stocke les id des quotations dans lesquels le user est enregistré pour les communiqués à single quotation
+                                $registeredQuotations = [];
+                                for ($i = 0; $i < count($quotations); $i++) {
+                                    $quotation = $quotations[$i];
+                                    $registeredQuotations[] += $quotation->ID;
+                                ?>
+    
+                                <div class="media">
+                                    <div class="media-body">
+                                        <span class="media-heading">
+                                            <strong><?= $quotation->post_title; ?></strong>
+                                    </span> le <?= $quotation->post_date; ?>
+                                        
+                                        <p><?= $quotation->post_excerpt; ?></p>
+                                        <a class="btn btn-info" href="<?= $quotation->guid; ?>">Voir ma demande</a>
+                                    </div>
+                                </div>
+    
+                                <?php
+                                }
+                                
+                            }
+
+                        
 
                         else {
 

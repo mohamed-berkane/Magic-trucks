@@ -15,7 +15,6 @@ class UserController extends CoreController
         
         // On récupère les données de l'utilisateur WP actuel
         $user = wp_get_current_user();
-        //var_dump($user);
 
         // On récupère le profil
         $profile = $this->getProfile($user);
@@ -23,7 +22,7 @@ class UserController extends CoreController
         // TODO : déplacer le getWorkshopByUserId dans une autre méthode pour plus de propreté
 
         // On instancie l'objet WorkshopRegistration
-        $model = new  WorkshopRegistration;
+        $model = new WorkshopRegistration;
 
         // On appelle la méthode getWorkshopsByUserId 
         $workshops = $model->getWorkshopsByUserId($user->ID);
@@ -108,7 +107,10 @@ class UserController extends CoreController
         
         $this->show(
             'views/user/update', 
-            ['currentUser' => $user]
+            [
+                'currentUser' => $user
+            ]
+            
         );
     }
     
@@ -185,9 +187,12 @@ class UserController extends CoreController
         $userId = $user->ID;
 
         $model = new WorkshopRegistration();
-        
+
+
         // On récupère la liste des objets Workshop dans lesquels le user est déjà inscrit
         $workshops = $model->getWorkshopsByUserId($userId);
+
+        // S'il n'y a pas de workshop enregistré
         if (!empty($workshops)) {
         
                 // On stocke les id de ces ateliers dans un tableau $registrations
@@ -195,14 +200,9 @@ class UserController extends CoreController
             foreach ($workshops as $workshop) {
                 $registrations [] = $workshop['workshop']->ID;
             }
-            //print_r($registrations);
-        
-            //var_dump($registrations); die();
+
             $checkRegistration = in_array($workshop_id, $registrations);
 
-            // print_r($checkRegistration);
-            // echo __LINE__ . " " . $checkRegistration . '<hr>';
-            // echo __LINE__ . " " . $workshop_id . '<hr>';
             // On vérifie si le user est déjà inscrit
             if ($checkRegistration) {
                 
@@ -227,21 +227,20 @@ class UserController extends CoreController
                         ]
                     );
             }
-        }    
-        else {
-            // var_dump($checkRegistration);
-                //var_dump($workshops);die();
+        } 
+
+         else {
+
             $this->show(
                 'views/user/register', 
                 [
                     'workshops' => $workshops,
                     'currentUser' => $user,
                     'workshopId' => $workshop_id,
-                    //'message' => 'L\'inscription n\'a pas fonctionné'
                     'message' => ''
                     ]
                 );
-        }
+        } 
     }
             
     public function insert($workshopId)
@@ -281,26 +280,12 @@ class UserController extends CoreController
         // On récupère la liste des objets Workshop dans lesquels le user est déjà inscrit
         $workshops = $model->getWorkshopsByUserId($userId);
 
-        $args = array(  
-            'post_type' => 'quotation',
-            'post_status' => 'publish',
-            'author' => $userId,
-            'posts_per_page' => -1, 
-            'order' => 'DESC',
-        );    
-
-        $query = new WP_Query($args); 
-
-        //echo $query->have_posts($userId);
-        $quotations = get_posts($args);      
-
         $this->show(
             'views/user/home', 
             [
                 'workshops' => $workshops,
                 'currentUser' => $user,
-                'message' => 'Votre inscription a bien été enregistrée',
-                'quotations' => $quotations
+                'message' => 'Votre inscription a bien été enregistrée'
             ]
         );
 

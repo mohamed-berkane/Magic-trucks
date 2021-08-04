@@ -45,7 +45,7 @@
                 </a>
             </div>
 
-
+            <!-- Ce commentaire doit s'afficher dans le HTML PUTAIN -->
             <div class="collapse navbar-collapse" id="menu-header">
                     
                 <?php

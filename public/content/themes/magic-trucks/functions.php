@@ -30,7 +30,6 @@ function wp_add_login_logout_menu($items, $args)
 
     // On récupère son avatar si la personne est connectée
     if (is_user_logged_in()) {
-
         $avatar = get_avatar_url(
             $user->data->ID,
             [
