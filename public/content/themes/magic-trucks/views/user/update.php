@@ -106,7 +106,7 @@
                                 <input id="user_email" type="text" name="user_email" value="<?= $currentUser->data->user_email; ?>" class="form-control">
                                 <br>
                                 
-                                <input type="submit" value="Sauvegarder"class="btn btn-primary"/>
+                                <input type="submit" value="Sauvegarder"class="btn btn-info"/>
                             </form>
                         </div>
                     </div>

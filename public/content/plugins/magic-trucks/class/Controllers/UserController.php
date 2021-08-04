@@ -238,7 +238,7 @@ class UserController extends CoreController
                     'workshops' => $workshops,
                     'currentUser' => $user,
                     'workshopId' => $workshop_id,
-                    'message' => ''
+                    'message' => 'L\'inscription n\'a pas fonctionné'
                     ]
                 );
         }
