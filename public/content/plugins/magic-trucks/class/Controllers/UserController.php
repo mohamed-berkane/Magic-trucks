@@ -188,7 +188,6 @@ class UserController extends CoreController
         
         // On récupère la liste des objets Workshop dans lesquels le user est déjà inscrit
         $workshops = $model->getWorkshopsByUserId($userId);
-
         if (!empty($workshops)) {
         
                 // On stocke les id de ces ateliers dans un tableau $registrations
@@ -231,14 +230,15 @@ class UserController extends CoreController
         }    
         else {
             // var_dump($checkRegistration);
-                //var_dump($workshopId);die();
+                //var_dump($workshops);die();
             $this->show(
                 'views/user/register', 
                 [
                     'workshops' => $workshops,
                     'currentUser' => $user,
                     'workshopId' => $workshop_id,
-                    'message' => 'L\'inscription n\'a pas fonctionné'
+                    //'message' => 'L\'inscription n\'a pas fonctionné'
+                    'message' => ''
                     ]
                 );
         }
@@ -281,12 +281,26 @@ class UserController extends CoreController
         // On récupère la liste des objets Workshop dans lesquels le user est déjà inscrit
         $workshops = $model->getWorkshopsByUserId($userId);
 
+        $args = array(  
+            'post_type' => 'quotation',
+            'post_status' => 'publish',
+            'author' => $userId,
+            'posts_per_page' => -1, 
+            'order' => 'DESC',
+        );    
+
+        $query = new WP_Query($args); 
+
+        //echo $query->have_posts($userId);
+        $quotations = get_posts($args);      
+
         $this->show(
             'views/user/home', 
             [
                 'workshops' => $workshops,
                 'currentUser' => $user,
-                'message' => 'Votre inscription a bien été enregistrée'
+                'message' => 'Votre inscription a bien été enregistrée',
+                'quotations' => $quotations
             ]
         );
 

@@ -29,7 +29,10 @@ get_header();
                 <div class="workshop-caps panel panel-default">
                     <div class="panel-body">
                         <h3 class="thin text-center"><?php the_title(); ?> </h3>
+
+
                         <img src="<?= get_the_post_thumbnail_url(); ?>"/>
+
                         <p class="text-center text-muted"><?php the_content() ?></p>
                         <div class="workshop-wrapp ">
 
