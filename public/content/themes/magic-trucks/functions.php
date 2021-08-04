@@ -66,7 +66,7 @@ add_action('acf/save_post', 'quotation_post_save');
 
  	//sending email
 	wp_mail($to, $subject, $body, $headers );
-	var_dump($headers); die();
+	//var_dump($headers); die();
 
 	// Update the post into the database
 	 wp_update_post( $args );
