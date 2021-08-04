@@ -54,23 +54,19 @@ get_header();
                         <img src="<?= get_theme_file_uri() ?>/assets/images/toit_2.jpg" class="w-100 shadow-1-strong rounded mb-4" alt="" />
                     </div>
 
-                        <div class="col-lg-4 col-md-12 mb-4 mb-lg-0">
-                            <img src="<?= get_theme_file_uri() ?>/assets/images/bois-beau.jpg" class="w-100 shadow-1-strong rounded mb-4" alt="" />
+                    <div class="col-lg-4 col-md-12 mb-4 mb-lg-0">
+                        <img src="<?= get_theme_file_uri() ?>/assets/images/bois-beau.jpg" class="w-100 shadow-1-strong rounded mb-4" alt="" />
 
-                            <img src="<?= get_theme_file_uri() ?>/assets/images/toit_2.jpg" class="w-100 shadow-1-strong rounded mb-4" alt="" />
-                        </div>
-
-
-
-                        
-
+                        <img src="<?= get_theme_file_uri() ?>/assets/images/toit_2.jpg" class="w-100 shadow-1-strong rounded mb-4" alt="" />
+                    </div>
                 </div>
+
             </article>
         </div>
     </div>
 
     <!-- Gallery -->
-
+</div>
 
 
 
