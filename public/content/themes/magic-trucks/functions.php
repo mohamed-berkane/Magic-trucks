@@ -100,8 +100,7 @@ add_action('acf/save_post', 'quotation_post_save');
 	$body = '<h1>Une nouvelle demande de devis est arrivé:</h1><br>'.get_the_content($post_id);
 
  	//sending email
-	//wp_mail($to, $subject, $body, $headers );
-	//var_dump($headers); die();
+	wp_mail($to, $subject, $body, $headers );
 
 	// Update the post into the database
 	 wp_update_post( $args );
