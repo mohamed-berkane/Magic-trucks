@@ -349,10 +349,30 @@ ol.comment-list {
 	.navbar-brand img {
 		max-width: 150px;
 	}
+	.workshop-thumbnails {
+		height: 380px;
+	}
 }
 
 @media(min-width:768px) and (max-width:992px) {
 	.navbar-brand img {
 		max-width: 200px;
 	}
+
+	.workshop-thumbnails {
+		height: 420px;
+	}	
 }
+
+@media(min-width:992px) {
+	.workshop-thumbnails {
+		height: 440px;
+	}
+}
+
+@media(min-width:1240px) {
+	.workshop-thumbnails {
+		height: 360px;
+	}
+}
+
