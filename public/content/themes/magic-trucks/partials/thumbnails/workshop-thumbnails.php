@@ -2,7 +2,7 @@
 	$imageURL = get_the_post_thumbnail_url();
 ?>
 
-<div class="col-sm-6">
+<div class="col-sm-6 workshop-thumbnails">
 	<div class="row">
 		<div class="col-xs-12">
 			<h3><?= get_the_title(); ?></h3>
@@ -34,7 +34,6 @@
 			</a>
 		</div>					
 	</div>
-	<hr>
 </div>
 
 

@@ -5,8 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
-    <meta name="author" content="Sergey Pozhilov (GetTemplate.com)">
-    <link rel="shortcut icon" href="content/themes/magic-trucks/assets/images/gt_favicon.png" />
+    <link rel="shortcut icon" type="image/png" href="<?= get_theme_file_uri() ?>/assets/images/favicon.png" />
     <link rel="stylesheet" media="screen" href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,700" />
     <link rel="stylesheet" href="<?= get_theme_file_uri() ?>/assets/css/bootstrap.min.css" />
     <!-- <link rel="stylesheet" href="<?= get_theme_file_uri() ?>/assets/css/font-awesome.min.css">-->
@@ -41,14 +40,14 @@
                     <span class="icon-bar"></span>
                 </button>
                 <a class="navbar-brand" href="<?= substr(get_site_url(), 0, -2) ?>">
-                    <img class="logo-accueil"src="<?= get_theme_file_uri('assets/images/magictrucks10.png') ?>" alt="">
+                    <img class="logo-accueil" src="<?= get_theme_file_uri('assets/images/magictrucks10.png') ?>" alt="">
                 </a>
             </div>
             <div class="collapse navbar-collapse" id="menu-header">
-                    
+
                 <?php
-                
-                    $defaults = array(
+
+                $defaults = array(
                     'theme_location'  => '',
                     'menu'            => 'menu-header',
                     'container'       => 'div',
@@ -67,12 +66,12 @@
                     'walker'          => ''
                 );
 
-                $menu = wp_nav_menu($defaults); 
-                echo $menu;                
+                $menu = wp_nav_menu($defaults);
+                echo $menu;
                 ?>
             </div>
             <!--/.nav-collapse -->
         </div>
         <!-- /. container -->
     </div>
-    <!-- /.navbar -->
+        <!-- /.navbar -->

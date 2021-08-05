@@ -37,12 +37,12 @@ body {
 .main-title {
     /* L'évasion en camion aménagé sur-mesure */
     color: #973a0e;
+    text-shadow: 1px 1px rgb(0, 0, 0);
     font-size: 5rem;
     margin-top: 10rem;
     padding-right: 1.6rem;
     max-width: 85rem;
     margin: auto;
-    text-shadow: 1px 1px rgb(0, 0, 0);
     border-style: double;
     padding: 0.5rem;
     border-radius: 5px;
@@ -67,17 +67,6 @@ body {
 
 ul {
     list-style: none;
-}
-
-
-
-.footer1 {
-    background: #1eb635;
-    min-width: 100%;
-}
-
-#footer>div.footer1 {
-    color: black;
 }
 
 .row {
@@ -127,7 +116,103 @@ body>div.jumbotron.top-space {
 
 /* ################## Resume Front Page ##################      */
 
+#container-resume {
+    margin: auto;
+    text-align: center;
+    width: 70%;
+    padding-top: 10rem;
+    text-justify: distribute;
+    max-width: 1500px;
 
+}
+
+.title-resume {
+    color: seagreen;
+    font-size: 3.5rem;
+    display: inline;
+    border: #146317 solid 10px;
+    padding: 2rem 5rem 2rem 5rem;
+    border-radius: 5px;
+    
+}
+
+.capsule-resume {
+    border: rgb(19, 139, 45) solid 20px;
+    border-radius: 10px;
+    margin-top: 10rem;
+    background-color: rgb(255, 255, 255);
+    color: black;
+    font-weight: boild;
+    padding: 2rem;
+    
+
+}
+
+
+
+.resume {
+    border-bottom: rgb(207, 197, 179) 4px solid;
+    padding-bottom: 2rem;
+}
+
+.resume-wrapper {
+    display: flex;
+}
+
+.small-resume {
+    flex-basis: 33.33%;
+    height: auto;
+    padding: 1rem;
+    margin: 2rem;
+    
+}
+
+
+
+@media only screen and (max-width: 1100px) {
+    .resume-wrapper {
+        display: flex;
+        flex-direction: column;
+    }
+
+    #container-resume>div>div.resume-wrapper>div:nth-child(2) {
+        border-top: solid 1px white;
+        border-bottom: solid 1px white;
+    }
+
+    .resume>h3 {
+        font-size: 2rem;
+    }
+
+    .small-resume {
+        font-size: 1.4rem;
+    }
+
+    .title-resume {
+        font-size: 2rem;
+    }
+}
+
+@media only screen and (max-width: 680px) {
+    .title-resume {
+        font-size: 1.4rem;
+        border: #146317 solid 5px;
+        
+        padding: 1rem;
+    }
+
+    .small-resume {
+        padding: 0.4rem;}
+}
+
+@media only screen and (max-width: 360px) {
+    .title-resume {
+        font-size: 1rem;
+        border: #146317 solid 5px;
+        
+        padding: 0.8rem;
+    }
+}
 
 
 
@@ -141,6 +226,7 @@ body>div.jumbotron.top-space {
     border-bottom: solid white 1px;
     height: auto;
     min-width: auto;
+    max-width: 1500px;
 }
 
 @media only screen and (min-width: 1300px) {
@@ -706,10 +792,6 @@ body>div.jumbotron.top-space {
     color: black;
 }
 
-footer {
-    width: 100%;
-}
-
 .row-contact {
     padding-top: 1rem;
     color: white;
@@ -760,4 +842,24 @@ footer {
 /*####################################*/
 .parti-droit {
     margin-top: 13rem;
+}
+
+.camion-dev img {
+    text-align: center;
+    border-radius: 17%;
+    height: 50%;
+    width: 70%;
+    margin: 12px;
+    max-width: 80%;
+
+}
+
+.footer1 {
+    background: #1EB635;
+    min-width: 100%;
+}
+
+#footer>div.footer1 {
+    color: black;
+    background-image: linear-gradient(rgb(13, 88, 13), rgb(68, 119, 21));
 }

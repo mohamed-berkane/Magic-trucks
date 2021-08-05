@@ -2,10 +2,15 @@
 get_header();
 $imageURL = get_the_post_thumbnail_url();
 ?>
-
-<div class='header-workshop'>
-
-</div>
+<br>
+    <br>
+    <br>
+    <div class='header-workshop'>
+        <div class="container">
+            <ol class="breadcrumb">
+                <li><a href="<?= get_home_url() ?>">Accueil</a></li>
+            </ol>
+        </div>
 <!-- container -->
 <div class="container">
 
@@ -29,37 +34,37 @@ $imageURL = get_the_post_thumbnail_url();
                     Retour
                 </a>
             </span>
-            <h3 class ="workshop-title"><?= get_the_title(); ?></h3>
+            <h3 class="workshop-title"><?= get_the_title(); ?></h3>
             <span><?= the_field('lieux'); ?></span>
             <span>Du <?= the_field('date_begin'); ?> au <?= the_field('date_end'); ?></span>
             <hr class="hr-single">
         </div>
 
 
-    <div class="row">
+        <div class="row">
 
 
-        <!-- Article main content -->
-        <article class="col-xs-12 maincontent">
+            <!-- Article main content -->
+            <article class="col-xs-12 maincontent">
 
-            <div class="workshop-wrapp ">
+                <div class="workshop-wrapp ">
 
-                <div class="wrapper-single">
-                    <div class="single-left">
-                        <h2 class="single-title">Information sur l'atelier :</h2>
-                        <ul class="single-ul">
-                            <li>Lieu : <?= the_field('lieux'); ?></li>
-                            <li> Du <?= the_field('date_begin'); ?> au <?= the_field('date_end'); ?></li>
-                            <li>Nombre maximum de camions : <?php the_field('max_participants'); ?></li>
-                            <li>Prix par camion : <?php the_field('prix'); ?> euros.</li>
-                        </ul>
+                    <div class="wrapper-single">
+                        <div class="single-left">
+                            <h2 class="single-title">Information sur l'atelier :</h2>
+                            <ul class="single-ul">
+                                <li>Lieu : <?= the_field('lieux'); ?></li>
+                                <li> Du <?= the_field('date_begin'); ?> au <?= the_field('date_end'); ?></li>
+                                <li>Nombre maximum de camions : <?php the_field('max_participants'); ?></li>
+                                <li>Prix par camion : <?php the_field('prix'); ?> euros.</li>
+                            </ul>
+                        </div>
+
+
+                        <div class="single-right">
+                            <img src="<?= the_post_thumbnail_url(); ?>" alt="">
+                        </div>
                     </div>
-
-
-                    <div class="single-right">
-                        <img src="<?= the_post_thumbnail_url(); ?>" alt="">
-                    </div>
-                </div>
                 </div>
                 <div class="footer-single">
                     <hr class="hr-single">
@@ -75,7 +80,7 @@ $imageURL = get_the_post_thumbnail_url();
                     <span class="button-workshop"><a href="<?= $url . 'user/register/' . $atelier_id; ?>"></a></span>
                 </div>
 
-            </div>
+        </div>
         </article>
 
 

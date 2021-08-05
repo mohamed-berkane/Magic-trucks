@@ -3,10 +3,15 @@
 get_header();
 //$currentImage = ;
 ?>
-
-
-
-<div class='header-workshop'>
+<br>
+    <br>
+    <br>
+    <div class='header-workshop'>
+        <div class="container">
+            <ol class="breadcrumb">
+                <li><a href="<?= get_home_url() ?>">Accueil</a></li>
+            </ol>
+        </div>
 
 </div>
 <!-- container -->
@@ -16,7 +21,7 @@ get_header();
         <!-- Article main content -->
         <article class="col-xs-12 maincontent">
             <header class="page-header">
-                <h1 class="workshop-title">Liste des atelier</h1>
+                <h1 class="workshop-title">Liste des ateliers</h1>
                 <aside class="description">Ici, nous vous proposons des ateliers partout en France à des dates données !
                     </br>
                     Avec ces ateliers, nous vous aidons à fabriquer des éléments pour votre camion, et même à l'amenager de façon nouvelle et original.
@@ -25,13 +30,15 @@ get_header();
             <?php while (have_posts()) : the_post(); ?>
                 <article class="">
                     <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+
                         <div class="workshop-caps workshop-wrapp panel panel-default">
+
                             <div class="panel-body">
                                 <h3 class="thin text-center"><?php the_title(); ?> </h3>
                                 <p class="text-center text-muted">Lieu : <?= the_field('lieux'); ?> - du <?= the_field('date_begin'); ?> au <?= the_field('date_end'); ?></p>
                                 <hr>
                                 <div class="workshop-wrapp ">
-                                    <div class="workshop-right"><img  src="<?=get_the_post_thumbnail_url(); ?>" /></div>
+                                    <div class="workshop-right"><img src="<?= get_the_post_thumbnail_url(); ?>" /></div>
                                     <!-- <div class="workshop-left"> -->
                                     <div class="workshop-left">
                                         <ul>
@@ -54,16 +61,19 @@ get_header();
                                         <?php
                                         // récupération de ID du post
                                         $atelier_id = get_the_ID();
-        
-        
+
+
                                         ?>
                                         <span class="button-front"><a href="<?= get_permalink($atelier_id); ?>"></a></span>
                                     </div>
                                     <!-- </div> -->
                                     <!-- <div class="workshop-right">
                                         </div> -->
+                                </div>
                             </div>
                         </div>
+                    </div>
+
                 </article>
             <?php endwhile ?>
             <?php wp_reset_postdata(); ?>

@@ -14,7 +14,9 @@ register_nav_menu( 'menu-footer', 'Menu principal in footer');
 
 // On rajoute link login/logout dans le menu
  add_filter('wp_nav_menu_items', 'wp_add_login_logout_menu', 10, 2);
-    
+ 
+ 
+ // On ajoute ici une fonction qui gère le login / logout sur le site 
 function wp_add_login_logout_menu($items, $args) 
 {
 /*     
@@ -38,11 +40,14 @@ function wp_add_login_logout_menu($items, $args)
             ]
         );
     
+        // On stocke l'avater
         $avatar_display = "<img src='$avatar' style='border-radius: 50%;' />";
     
+        // On aajoute le nom de l'utilisteur, son nom et un lien de déconnexion
         $items .= '<li class="menu-item"><a href="/apotheose/magic-trucks/public/user/home/">' .  $user->data->user_nicename . ' ' . $avatar_display . '</a></li><li><a href="'. wp_logout_url() .'">Se déconnecter</a></li>';
     } 
     
+    // S'il n'est pas connecter, on donne à l'utilisateur un lien de connexion
     else {
 
         $items .= '<li><a href="'. wp_login_url() . '">Se connecter</a></li>';
@@ -95,12 +100,12 @@ add_action('acf/save_post', 'quotation_post_save');
 	$body = '<h1>Une nouvelle demande de devis est arrivé:</h1><br>'.get_the_content($post_id);
 
  	//sending email
-	wp_mail($to, $subject, $body, $headers );
+	//wp_mail($to, $subject, $body, $headers );
 	//var_dump($headers); die();
 
 	// Update the post into the database
 	 wp_update_post( $args );
-     $redurl = get_home_url().'/user/home';
+     $redurl = get_home_url().'/user/home/?quotation=success';
 	 wp_redirect($redurl);
      exit();
 }
@@ -201,12 +206,7 @@ function acf_form_fields_required_bootstrap_styles($label){
     
 }
 
-
-
 // wordpress va gérer les balises <title> du thème
 add_theme_support('title-tag');
 // le thème gère les images de mise en avant des posts
 add_theme_support('post-thumbnails');
-
-
-?>
