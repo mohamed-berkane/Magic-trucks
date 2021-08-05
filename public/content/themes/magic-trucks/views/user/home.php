@@ -19,7 +19,7 @@
     }
 
     // Message devis
-    if ($_GET['quotation'] === 'success') {
+    if (isset($_GET['quotation']) && $_GET['quotation'] === 'success') {
         $messageQuotation = 'Votre devis a été transmis avec succès';
     }
 
