@@ -176,6 +176,7 @@ class UserController extends CoreController
     }    
 
 
+    // On s'inscrit à un atelier
     public function register($workshop_id)
     {
         // On vérifie que l'utilisateur est connecté via le CoreController
@@ -243,6 +244,7 @@ class UserController extends CoreController
         } 
     }
             
+    // Inscription à l'atelier
     public function insert($workshopId)
     {
 
@@ -280,14 +282,7 @@ class UserController extends CoreController
         // On récupère la liste des objets Workshop dans lesquels le user est déjà inscrit
         $workshops = $model->getWorkshopsByUserId($userId);
 
-        $this->show(
-            'views/user/home', 
-            [
-                'workshops' => $workshops,
-                'currentUser' => $user,
-                'message' => 'Votre inscription a bien été enregistrée'
-            ]
-        );
+        $this->home();
 
     }
 

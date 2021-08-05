@@ -111,6 +111,7 @@
                 </div>
             </div>
         </div>
+        <div class="half-block__image "></div>
     </div>                            
 
 </div>	<!-- /container -->
