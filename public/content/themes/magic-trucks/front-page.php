@@ -16,9 +16,9 @@ get_header();
 	<h2 class="title-resume">Magic-Trucks, qu'est-ce que c'est ?</h2>
 	<div class="capsule-resume">
 		<div class="resume">
-			<h3>Accompagné de mon fidèle camion, j'arpente les routes de France en partant à la rencontre de personnes qui ont fait le choix d'une vie alternative. Les Magic-Trucks sont des camions aménagés. Ils sont imaginés, créés 
-				
-</h3>
+			<h3>Accompagné de mon fidèle camion, j'arpente les routes de France en partant à la rencontre de personnes qui ont fait le choix d'une vie alternative. Les Magic-Trucks sont des camions aménagés. Ils sont imaginés, créés
+
+			</h3>
 		</div>
 		<div class="resume-wrapper">
 			<div class="small-resume">Sur ma route, je met en place des <strong>Ateliers</strong> ici et là, pour vous permettre de decouvrir la vie en camion aménagé, mais aussi pour travailler sur vos camion, leur installer des panneaux solaires, fabriquer des objets de décoration, mettre en place un systeme d'eau sous pression, et bien d'autres !</div>
@@ -102,8 +102,8 @@ get_header();
 					'post_type' => 'workshop',
 					'post_status' => 'publish',
 					'posts_per_page' => 4,
-					'orderby' => 'title',
-					'order' => 'ASC',
+					'orderby' => 'ID',
+					'order' => 'DESC',
 				);
 
 				$query = new WP_Query($args);

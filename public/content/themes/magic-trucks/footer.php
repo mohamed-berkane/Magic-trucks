@@ -1,21 +1,18 @@
 <footer id="footer" class="top-space">
 
-    <div class="footer">
+    <div class="footer1">
         <div class="container">
             <div class="row">
-
                 <div class="col-md-3 widget">
-
-                    <h3 class="footer-title">Contact</h3>
-
+                    <h3 class="widget-title">Contact</h3>
                     <div class="widget-body">
-                        <a href="mailto:#">contact@magictrucks.com</a><br>
+                        <p>06 74 28 54 17<br>
+                            <a href="mailto:#">contact@magictrucks.com</a><br>
                         </p>
                     </div>
                 </div>
-
                 <div class="col-md-3 widget">
-                    <h3 class="footer-title">Mes réseaux sociaux</h3>
+                    <h3 class="widget-title">Mes réseaux sociaux</h3>
                     <div class="widget-body">
                         <p class="follow-me-icons">
                             <a href=""><i class="fa fa-twitter fa-2"></i></a>
@@ -25,25 +22,21 @@
                         </p>
                     </div>
                 </div>
-                </br>
                 <div class="col-md-6 widget">
-                    <h3 class="footer-title">Derniers commentaires</h3>
+                    <h3 class="widget-title">Avis clients</h3>
                     <div class="widget-body">
                         <?php
                         $comments = get_comments(array("number" => 4));
-
                         foreach ($comments as $comment) : ?>
-                            <p><strong> <?= $comment->comment_author ?>, le <?= $comment->comment_date ?></strong>
+                            <p><strong> <?= $comment->comment_author ?>, le <?= $comment->comment_date ?> ★★★★★ </strong>
                                 <p><?= $comment->comment_content ?> </p>
                             </p>
                         <?php endforeach;
                         ?>
-
                         <!-- <p><strong>Robert, le 15/01/21 ★★★★★ </strong>
                             Guillaume a donné vie à mon camion! Le meilleur en conceptions et agencements! Camion fonctionnel et spacieux car réalisé par un <strong>VRAI</strong> professionnel! Bonne continuation à Guillaume aux mains d'or ;-)
                             <div class="rating">
                         </p>
-
                         <p><strong> Mohamed, le 16/04/21 ★★★★★ </strong>
                             <p> Super travail, professionnel à l'écoute du client, l'aménagement est très bien fait dans les normes, le patron a été de très bon conseils</p>
                         </p>
@@ -55,13 +48,9 @@
                         </p> -->
                     </div>
                 </div>
-
             </div> <!-- /row of widgets -->
         </div>
     </div>
-
-
-
 </footer>
 <?php
 wp_footer();

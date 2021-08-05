@@ -9,13 +9,6 @@
 <?php
 get_header();
 ?>
-<div class='header-workshop'>
-    <!-- container -->
-    <div class="container">
-        <ol class="breadcrumb">
-            <li><a href="<?=get_home_url() ?>">Home</a></li>
-            <li class="active">User access</li>
-        </ol>
 
         <div class="row">
             <!-- Article main content -->
@@ -71,6 +64,6 @@ get_header();
 
 
 
-    <?php
-    get_footer();
-    ?>
+<?php
+get_footer();
+?>

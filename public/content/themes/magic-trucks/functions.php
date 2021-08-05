@@ -210,6 +210,3 @@ function acf_form_fields_required_bootstrap_styles($label){
 add_theme_support('title-tag');
 // le thème gère les images de mise en avant des posts
 add_theme_support('post-thumbnails');
-
-
-?>
