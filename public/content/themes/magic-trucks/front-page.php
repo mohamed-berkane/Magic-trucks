@@ -89,8 +89,8 @@ get_header();
 					'post_type' => 'workshop',
 					'post_status' => 'publish',
 					'posts_per_page' => 4,
-					'orderby' => 'title',
-					'order' => 'ASC',
+					'orderby' => 'ID',
+					'order' => 'DESC',
 				);
 
 				$query = new WP_Query($args);
