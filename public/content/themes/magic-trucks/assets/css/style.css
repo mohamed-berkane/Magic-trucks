@@ -37,12 +37,12 @@ body {
 .main-title {
     /* L'évasion en camion aménagé sur-mesure */
     color: #973a0e;
+    text-shadow: 1px 1px rgb(0, 0, 0);
     font-size: 5rem;
     margin-top: 10rem;
     padding-right: 1.6rem;
     max-width: 85rem;
     margin: auto;
-    text-shadow: 1px 1px rgb(0, 0, 0);
     border-style: double;
     padding: 0.5rem;
     border-radius: 5px;
@@ -70,14 +70,37 @@ ul {
 }
 
 
-
-.footer1 {
-    background: #1eb635;
-    min-width: 100%;
+#footer,
+.footer {
+    
+    width: 100%;
+    color: rgb(255, 255, 255);
+    text-shadow: 0.1em 0.1em 0.2em rgb(0, 0, 0);
+    min-height: 300px;
+    background-image: url("https://i.picsum.photos/id/623/1000/300.jpg?hmac=WcNUNOBCyFmG2ITLXloBsJrHpXe0UAQEqNreTvDnJ1c");
+    background-size: cover;
+    background-image: linear-gradient(rgb(13, 88, 13), rgb(68, 119, 21));
+    padding-left: 10rem;
 }
 
-#footer>div.footer1 {
-    color: black;
+
+
+@media only screen and (max-width: 800px) {
+
+    #footer {
+        font-size: 1rem;
+        padding-left: 2rem;
+    }
+
+    .footer-title {
+        font-size: 2rem;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    #footer {
+        padding-left: 2rem;
+    }
 }
 
 .row {
@@ -706,10 +729,6 @@ body>div.jumbotron.top-space {
     color: black;
 }
 
-footer {
-    width: 100%;
-}
-
 .row-contact {
     padding-top: 1rem;
     color: white;
@@ -761,3 +780,4 @@ footer {
 .parti-droit {
     margin-top: 13rem;
 }
+
