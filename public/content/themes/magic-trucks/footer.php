@@ -3,7 +3,6 @@
     <div class="footer1">
         <div class="container">
             <div class="row">
-
                 <div class="col-md-3 widget">
                     <h3 class="widget-title">Contact</h3>
                     <div class="widget-body">
@@ -12,7 +11,6 @@
                         </p>
                     </div>
                 </div>
-
                 <div class="col-md-3 widget">
                     <h3 class="widget-title">Mes réseaux sociaux</h3>
                     <div class="widget-body">
@@ -24,25 +22,21 @@
                         </p>
                     </div>
                 </div>
-
                 <div class="col-md-6 widget">
                     <h3 class="widget-title">Avis clients</h3>
                     <div class="widget-body">
                         <?php
-                            $comments = get_comments(array("number" => 4));
-                            
-                            foreach ( $comments as $comment ) : ?>
-                                <p><strong> <?= $comment->comment_author ?>, le <?= $comment->comment_date ?> ★★★★★ </strong>
-                                    <p><?= $comment->comment_content ?> </p>
-                                </p>
-                            <?php endforeach;
+                        $comments = get_comments(array("number" => 4));
+                        foreach ($comments as $comment) : ?>
+                            <p><strong> <?= $comment->comment_author ?>, le <?= $comment->comment_date ?> ★★★★★ </strong>
+                                <p><?= $comment->comment_content ?> </p>
+                            </p>
+                        <?php endforeach;
                         ?>
-
                         <!-- <p><strong>Robert, le 15/01/21 ★★★★★ </strong>
                             Guillaume a donné vie à mon camion! Le meilleur en conceptions et agencements! Camion fonctionnel et spacieux car réalisé par un <strong>VRAI</strong> professionnel! Bonne continuation à Guillaume aux mains d'or ;-)
                             <div class="rating">
                         </p>
-
                         <p><strong> Mohamed, le 16/04/21 ★★★★★ </strong>
                             <p> Super travail, professionnel à l'écoute du client, l'aménagement est très bien fait dans les normes, le patron a été de très bon conseils</p>
                         </p>
@@ -54,13 +48,9 @@
                         </p> -->
                     </div>
                 </div>
-
             </div> <!-- /row of widgets -->
         </div>
     </div>
-
-   
-
 </footer>
 <?php
 wp_footer();

@@ -40,14 +40,14 @@
                     <span class="icon-bar"></span>
                 </button>
                 <a class="navbar-brand" href="<?= substr(get_site_url(), 0, -2) ?>">
-                    <img class="logo-accueil"src="<?= get_theme_file_uri('assets/images/magictrucks10.png') ?>" alt="">
+                    <img class="logo-accueil" src="<?= get_theme_file_uri('assets/images/magictrucks10.png') ?>" alt="">
                 </a>
             </div>
             <div class="collapse navbar-collapse" id="menu-header">
-                    
+
                 <?php
-                
-                    $defaults = array(
+
+                $defaults = array(
                     'theme_location'  => '',
                     'menu'            => 'menu-header',
                     'container'       => 'div',
@@ -66,12 +66,12 @@
                     'walker'          => ''
                 );
 
-                $menu = wp_nav_menu($defaults); 
-                echo $menu;                
+                $menu = wp_nav_menu($defaults);
+                echo $menu;
                 ?>
             </div>
             <!--/.nav-collapse -->
         </div>
         <!-- /. container -->
     </div>
-    <!-- /.navbar -->
+        <!-- /.navbar -->

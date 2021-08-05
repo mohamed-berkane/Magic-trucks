@@ -3,10 +3,15 @@
 get_header();
 //$currentImage = ;
 ?>
-
-
-
-<div class='header-workshop'>
+<br>
+    <br>
+    <br>
+    <div class='header-workshop'>
+        <div class="container">
+            <ol class="breadcrumb">
+                <li><a href="<?= get_home_url() ?>">Accueil</a></li>
+            </ol>
+        </div>
 
 </div>
 <!-- container -->
