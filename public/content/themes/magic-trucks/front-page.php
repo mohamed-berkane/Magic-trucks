@@ -5,7 +5,7 @@ get_header();
 <header id="head">
 	<div class="container">
 		<div class="row">
-			<h1 class="main-title">Bienvenu sur Magic-Trucks</h1>
+			<h1 class="main-title">Bienvenue sur Magic-Trucks</h1>
 		</div>
 	</div>
 </header>
