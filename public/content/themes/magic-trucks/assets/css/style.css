@@ -78,6 +78,7 @@ ul {
 
 #footer>div.footer1 {
     color: black;
+    background: #1eb635;
 }
 
 .row {
@@ -760,4 +761,13 @@ footer {
 /*####################################*/
 .parti-droit {
     margin-top: 13rem;
+}
+.camion-dev img{
+    text-align: center;
+    border-radius: 17%;
+    height: 50%;
+    width: 70%;
+    margin:12px;
+    max-width: 80%;
+    
 }
