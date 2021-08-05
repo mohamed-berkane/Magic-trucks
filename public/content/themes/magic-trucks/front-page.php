@@ -12,7 +12,7 @@ get_header();
 
 <!-- Resume -->
 
-<div>
+<div class="resume">
 
 </div>
 
@@ -47,13 +47,13 @@ get_header();
 	<div id="right-side-2">
 		<h2 class="thin">Les devis</h2><br><br>
 		<section class="quote-home">
-			<p>Vous rêvez vous aussi de vous lancer dans l'aventure ? Je construit votre camion personnalisé selon vos envies et à votre image.
+			<p>Vous rêvez vous aussi de vous lancer dans l'aventure ? Je construit votre camion personnalisé selon vos envies, vos gouts et à vos possibiltés.
+				</br>
+				</br>
+				Si vous avez déjà un camion, et que vous souhaitez faire des travaux dessus (hors-mécanique), par exemple installer des fenetres, des panneaux solaires, réamenager l'interieur, réparer l'étanchéité...etc, vous pouvez aussi faire une demande via le formulaire de devis.
+				</br>
 
-				</br>
-				En groupe, nous apprendrons à fabriquer toutes sortes d'équipements ou de décorations utile pour la vie en camion.
-				</br>
-				</br>
-				Vérifiez les dates et lieux des prochains rendez-vous, peut être que Magic-Trucks se présente à côté de chez toi !
+
 			</p>
 			<span class="button-front"><a href="<?= get_post_type_archive_link('quotation') ?>"></a></span>
 
@@ -63,10 +63,6 @@ get_header();
 
 </div>
 <!-- /Devis-->
-
-
-
-
 
 <!-- container -->
 <div class="container ">
