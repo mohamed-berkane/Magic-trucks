@@ -12,7 +12,24 @@ get_header();
 
 <!-- Resume -->
 
-<div class="resume">
+<div id="container-resume">
+	<h2 class="title-resume">Magic-Trucks, qu'est-ce que c'est ?</h2>
+	<div class="capsule-resume">
+		<div class="resume">
+			<h3>Accompagné de mon fidèle camion, j'arpente les routes de France en partant à la rencontre de personnes qui ont fait le choix d'une vie alternative. Les Magic-Trucks sont des camions aménagés. Ils sont imaginés, créés 
+				
+</h3>
+		</div>
+		<div class="resume-wrapper">
+			<div class="small-resume">Sur ma route, je met en place des <strong>Ateliers</strong> ici et là, pour vous permettre de decouvrir la vie en camion aménagé, mais aussi pour travailler sur vos camion, leur installer des panneaux solaires, fabriquer des objets de décoration, mettre en place un systeme d'eau sous pression, et bien d'autres !</div>
+
+			<div class="small-resume">Si l'envie de posséder votre propre camion aux couleurs des Magic-Trucks vous prennait, il vous est aussi possible de remplir un formulaire de <strong>Devis</strong>. Si vous possédez déjà votre van, camping-car ou camion aménagé, et que vous voulez y faire des travaux, rajouter des fenêtres, installer un poil à bois, ou toutes autres possibiltés, c'est possible, avec le même formulaire.</div>
+
+			<div class="small-resume">Vous pouvez également faire un petit tour du coté de <strong>Mes créations</strong> et ainsi voir les différents camion que j'ai fabriqué. J'essaye d'en faire un ou deux par an, malgré une demande très forte. Chaque camion, est différent, unique, à l'image du client. A chaque nouveau camion, je prends du temps pour connaitre son futur propriétaire</div>
+		</div>
+
+	</div>
+
 
 </div>
 
