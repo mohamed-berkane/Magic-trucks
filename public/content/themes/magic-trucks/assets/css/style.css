@@ -78,7 +78,7 @@ ul {
 
 #footer>div.footer1 {
     color: black;
-    background: #1eb635;
+    background-image: linear-gradient(rgb(13, 88, 13), rgb(68, 119, 21));
 }
 
 .row {
