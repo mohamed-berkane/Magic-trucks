@@ -1,4 +1,31 @@
-<footer id="footer" class="top-space">
+<style>
+    .carousel-indicators {
+        bottom: 0;
+    }
+    .carousel-caption{
+        left:0;
+        right:0;
+        position: relative;
+    }
+
+    .carousel-control {
+        display: none;
+    }
+
+    .footer1, #footer>div.footer1, .footer1 a {
+        color: #fff;
+        font-size: 14px;
+        line-height: 2;
+    }
+
+    .menu-footer {
+        padding: 25px 0;
+    }
+</style>
+
+
+
+<footer id="footer" class="top-space" style="color:#fff;">
 
     <div class="footer1">
         <div class="container">
@@ -6,7 +33,8 @@
                 <div class="col-md-3 widget">
                     <h3 class="widget-title">Contact</h3>
                     <div class="widget-body">
-                        <p>06 74 28 54 17<br>
+                        <p>
+                            06 74 28 54 17<br>
                             <a href="mailto:#">contact@magictrucks.com</a><br>
                         </p>
                     </div>
