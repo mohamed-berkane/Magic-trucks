@@ -9,15 +9,7 @@
 <?php
 get_header();
 ?>
-<br>
-    <br>
-    <br>
-    <div class='header-workshop'>
-        <div class="container">
-            <ol class="breadcrumb">
-                <li><a href="<?= get_home_url() ?>">Accueil</a></li>
-            </ol>
-        </div>
+
 
 	<!-- container -->
 	<div class="container">
@@ -29,7 +21,7 @@ get_header();
 			<!-- Article main content -->
 			<article class="col-sm-8 maincontent">
 				<header class="page-header">
-					<h1 class="page-title">Contacter le <img src="<?= get_theme_file_uri('assets/images/magictrucks10.png') ?>" alt="">ou nous suivre sur nos réseaux sociaux </h1>
+					<h1 class="workshop-title">Contacter le <img src="<?= get_theme_file_uri('assets/images/magictrucks10.png') ?>" alt="">ou nous suivre sur nos réseaux sociaux </h1>
 				</header>
 				<div class="contenu-contact">
 					<div class="details-contact">

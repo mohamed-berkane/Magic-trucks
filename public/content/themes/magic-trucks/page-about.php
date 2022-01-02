@@ -28,7 +28,7 @@ get_header();
 				<!-- Article main content -->
 				<article class="col-sm-7 maincontent">
 					<header class="page-header">
-						<h1 class="page-title">Qui suis-je ?</h1>
+						<h1 class="workshop-title">Qui suis-je ?</h1>
 					</header>
 
 					<p>
@@ -39,7 +39,7 @@ get_header();
 						Mes envies, c’est bien sûr le voyage, car le “mouvement c’est ma vie”; le deuxième, la création, celle qui agite mon cerveau jour et nuit et la dernière, les rencontres humaines qui représentent l’essence même des voyages.
 						Je vous proposons une carte sur mon site internet afin de suivre mes itinéraire et de me retrouver lors d'événements mais aussi de me contacter si vous avez un projet d'aménagement et que je suis dans votre région.
 
-						<h1>Magic-Trucks-Creations</h1>
+						<h1 class="workshop-title">Magic-Trucks-Creations</h1>
 
 						C’est l’entreprise qui est gérée par Guillaume. Il a une trentaine d'années et a adopté la vie en camion depuis 2013 et crée ses camions et leurs aménagements depuis 5 ans maintenant.
 						L'idée d’une "capsule" monter sur camion plateau formant LE magictrucks est née près de Benicassim en Espagne pendant un festival nommé “ROTOTOM”.

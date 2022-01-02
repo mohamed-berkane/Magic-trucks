@@ -1,30 +1,3 @@
-<style>
-    .carousel-indicators {
-        bottom: 0;
-    }
-    .carousel-caption{
-        left:0;
-        right:0;
-        position: relative;
-    }
-
-    .carousel-control {
-        display: none;
-    }
-
-    .footer1, #footer>div.footer1, .footer1 a {
-        color: #fff;
-        font-size: 14px;
-        line-height: 2;
-    }
-
-    .menu-footer {
-        padding: 25px 0;
-    }
-</style>
-
-
-
 <footer id="footer" class="top-space" style="color:#fff;">
 
     <div class="footer1">
@@ -57,7 +30,7 @@
                         $comments = get_comments(array("number" => 4));
                         foreach ($comments as $comment) : ?>
                             <p><strong> <?= $comment->comment_author ?>, le <?= $comment->comment_date ?> ★★★★★ </strong>
-                                <p><?= $comment->comment_content ?> </p>
+                            <p><?= $comment->comment_content ?> </p>
                             </p>
                         <?php endforeach;
                         ?>

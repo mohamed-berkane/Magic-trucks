@@ -2,3 +2,4 @@ path: wp
 apache_modules:
   - mod_rewrite
   
+  wp core install --url="WORDPRES_URL" --title="Association de l'espoir pour la jeunesse" --admin_user="explorateur" --admin_password="Ereul9Aeng" --admin_email="WORDPRES_ADMIN_EMAIL" --skip-email;

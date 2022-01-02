@@ -28,7 +28,7 @@ get_header();
 				<!-- Article main content -->
 				<article class="col-sm-8 maincontent">
 					<header class="page-header">
-						<h1 class="page-title">les créateurs du site</h1>
+						<h1 class="workshop-title">les créateurs du site</h1>
 					</header>
 					<div class="contenu-contact">
 						<div class="details-contact">
